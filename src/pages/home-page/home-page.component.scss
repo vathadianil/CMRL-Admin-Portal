@@ -1,0 +1,20 @@
+.home {
+  height: 100vh;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  &__sidenav-content {
+    height: 100%;
+  }
+
+  &__sidenav {
+    padding: 20px;
+  }
+
+  &__chart-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 2em;
+    place-content: center;
+    margin: 2em;
+  }
+}

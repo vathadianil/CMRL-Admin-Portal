@@ -1,0 +1,47 @@
+.card {
+  //   max-width: 450px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-radius: 1em;
+  overflow: hidden;
+
+  &__description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title,
+    &__bottom-title {
+      font-weight: 700;
+      color: var(--text-color1);
+    }
+
+    &__number {
+      color: var(--green800);
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+  }
+
+  &__chart {
+    flex: 1;
+    background-color: var(--green50);
+  }
+  &__btn-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1em;
+  }
+  &__btn {
+    background-color: var(--white);
+    color: var(--text-color1);
+  }
+  &__bottom-text {
+    padding: 1em 0 0 1em;
+    color: var(--green800);
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,17 @@
+<mat-drawer-container class="home" autosize>
+  <mat-drawer #drawer class="home__sidenav" mode="side" opened>
+    <p>Auto-resizing sidenav</p>
+  </mat-drawer>
+
+  <div class="home__sidenav-content">
+    <button type="button" (click)="drawer.toggle()" mat-raised-button>
+      Toggle sidenav
+    </button>
+
+    <div class="home__chart-container">
+      <app-chart-container></app-chart-container>
+      <app-chart-container></app-chart-container>
+      <app-chart-container></app-chart-container>
+    </div>
+  </div>
+</mat-drawer-container>
