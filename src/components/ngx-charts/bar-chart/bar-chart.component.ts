@@ -16,6 +16,17 @@ export class BarChartComponent implements OnInit {
   data: any[] = [];
   multi: any[] = [];
 
+  view: any = [250, 200];
+  // options
+  showXAxis = false;
+  showYAxis = false;
+  gradient = false;
+  showLegend = false;
+  showXAxisLabel = true;
+  xAxisLabel = '';
+  showYAxisLabel = true;
+  yAxisLabel = '';
+
   ngOnInit(): void {
     this.colorScheme = {
       domain: [
@@ -27,20 +38,10 @@ export class BarChartComponent implements OnInit {
       ],
       group: ScaleType.Ordinal,
       selectable: true,
-      name: 'country population',
+      name: this.chartData?.title,
     };
     this.data = this.chartData?.data;
   }
-  view: any = [250, 200];
-  // options
-  showXAxis = false;
-  showYAxis = false;
-  gradient = false;
-  showLegend = false;
-  showXAxisLabel = true;
-  xAxisLabel = 'Country';
-  showYAxisLabel = true;
-  yAxisLabel = 'Population';
 
   onSelect(event: any) {
     console.log(event);
