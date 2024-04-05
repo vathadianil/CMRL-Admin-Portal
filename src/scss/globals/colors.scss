@@ -1,50 +1,50 @@
 :root {
-  --blue800:#3361FF;
-  --blue500:#8833ff
-  --blue50:#F0F3FF;
+  --blue800: #3361ff;
+  --blue500: #8833ff;
+  --blue50: #f0f3ff;
 
-  --twitter-blue500:#33BFFF;
-  --twitter-blue400:#6AD2FF;
+  --twitter-blue500: #33bfff;
+  --twitter-blue400: #6ad2ff;
 
-  --green800:#128822;
-  --green500:#29CC39;
-  --green50:#F4FCF5;
+  --green800: #128822;
+  --green500: #29cc39;
+  --green50: #f4fcf5;
 
-  --orange800:#FF6633;
-  --orange50:#FFF7F5;
+  --orange800: #ff6633;
+  --orange50: #fff7f5;
 
-  --yellow500:#FECA33;
+  --yellow500: #feca33;
 
-  --background-color:#F7F8FA;
+  --background-color: #f7f8fa;
 
-  --text-color1:#bec7d6;
+  --text-color1: #bec7d6;
 
-  --white:#fff;
-  --black:#000;
+  --white: #fff;
+  --black: #000;
 
- --gradient-color1: #004a87;
- --gradient-color2: #063d72;
- --gradient-color3: #08305d;
- --gradient-color4: #07244a;
- --gradient-color5:#051937;
+  --gradient-color1: #004a87;
+  --gradient-color2: #063d72;
+  --gradient-color3: #08305d;
+  --gradient-color4: #07244a;
+  --gradient-color5: #051937;
 
- --background-gradient:linear-gradient(
-  to top,
-  var(--gradient-color1),
-  var(--gradient-color2),
-  var(--gradient-color3),
-  var(--gradient-color4),
-  var(--gradient-color3)
-);
+  --background-gradient: linear-gradient(
+    to top,
+    var(--gradient-color1),
+    var(--gradient-color2),
+    var(--gradient-color3),
+    var(--gradient-color4),
+    var(--gradient-color3)
+  );
 
- --logo-gradient: linear-gradient(
-  to left top,
-  var(--gradient-color1),
-  var(--gradient-color2),
-  var(--gradient-color3),
-  var(--gradient-color4),
-  var(--gradient-color5)
-);
+  --logo-gradient: linear-gradient(
+    to left top,
+    var(--gradient-color1),
+    var(--gradient-color2),
+    var(--gradient-color3),
+    var(--gradient-color4),
+    var(--gradient-color5)
+  );
 }
 
 // @media (prefers-color-scheme: dark) {

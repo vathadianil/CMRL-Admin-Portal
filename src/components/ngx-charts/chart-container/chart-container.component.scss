@@ -28,7 +28,17 @@
 
   &__chart {
     flex: 1;
-    background-color: var(--green50);
+
+    &-entry-traffic {
+      background-color: var(--green50);
+    }
+
+    &-exit-traffic {
+      background-color: var(--blue50);
+    }
+    &-revenue {
+      background-color: var(--orange50);
+    }
   }
   &__btn-container {
     display: flex;
