@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
-import { single } from '../../../assets/data';
 import { COLORS } from '../../../util/colors';
 
 @Component({
@@ -11,18 +10,18 @@ import { COLORS } from '../../../util/colors';
   styleUrl: './bar-chart.component.scss',
 })
 export class BarChartComponent implements OnInit {
-  @Input() chartType = '';
+  @Input() chartData: any;
   colorScheme: any;
 
-  single: any[] = single;
+  data: any[] = [];
   multi: any[] = [];
 
   ngOnInit(): void {
     this.colorScheme = {
       domain: [
-        this.chartType === 'entry-traffic'
+        this.chartData?.chartType === 'entry-traffic'
           ? COLORS.green800
-          : this.chartType === 'exit-traffic'
+          : this.chartData?.chartType === 'exit-traffic'
           ? COLORS.blue800
           : COLORS.orange800,
       ],
@@ -30,6 +29,7 @@ export class BarChartComponent implements OnInit {
       selectable: true,
       name: 'country population',
     };
+    this.data = this.chartData?.data;
   }
   view: any = [250, 200];
   // options
