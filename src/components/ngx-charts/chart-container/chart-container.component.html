@@ -1,15 +1,24 @@
 <mat-card class="card">
   <mat-card-content class="card__description">
-    <p class="card__description__title">Traffic</p>
-    <p class="card__description__number">200</p>
-    <p class="card__description__bottom-title">All Stations</p>
+    <p class="card__description__title">{{ chartData?.title }}</p>
+    <p
+      class="card__description__number"
+      [ngClass]="{
+      'card__description__number-entry-traffic': chartData?.chartType === 'entry-traffic',
+      'card__description__number-exit-traffic': chartData?.chartType === 'exit-traffic',
+      'card__description__number-revenue': chartData?.chartType === 'revenue',
+    }"
+    >
+      {{ chartData?.value }}
+    </p>
+    <p class="card__description__bottom-title">{{ chartData?.bottomTitle }}</p>
   </mat-card-content>
   <mat-card-content
     class="card__chart"
     [ngClass]="{
-      'card__chart-entry-traffic': chartType === 'entry-traffic',
-      'card__chart-exit-traffic': chartType === 'exit-traffic',
-      'card__chart-revenue': chartType === 'revenue',
+      'card__chart-entry-traffic': chartData?.chartType === 'entry-traffic',
+      'card__chart-exit-traffic': chartData?.chartType === 'exit-traffic',
+      'card__chart-revenue': chartData?.chartType === 'revenue',
     }"
   >
     <div class="card__btn-container">
@@ -17,7 +26,16 @@
         <mat-icon fontIcon="more_horiz"></mat-icon>
       </button>
     </div>
-    <app-bar-chart chartType="chartType"></app-bar-chart>
-    <p class="card__bottom-text">Last 6 Months</p>
+    <app-bar-chart [chartType]="chartData?.chartType"></app-bar-chart>
+    <p
+      class="card__bottom-text"
+      [ngClass]="{
+      'card__bottom-text-entry-traffic': chartData?.chartType === 'entry-traffic',
+      'card__bottom-text-exit-traffic': chartData?.chartType === 'exit-traffic',
+      'card__bottom-text-revenue': chartData?.chartType === 'revenue',
+    }"
+    >
+      {{ chartData?.duration }}
+    </p>
   </mat-card-content>
 </mat-card>

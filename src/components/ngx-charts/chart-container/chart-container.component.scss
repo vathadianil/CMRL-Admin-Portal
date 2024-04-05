@@ -19,10 +19,24 @@
       color: var(--text-color1);
     }
 
+    &__bottom-title {
+      padding-bottom: 1em;
+    }
+
     &__number {
-      color: var(--green800);
       font-size: 2.5em;
       font-weight: bold;
+
+      &-entry-traffic {
+        color: var(--green800);
+      }
+
+      &-exit-traffic {
+        color: var(--blue800);
+      }
+      &-revenue {
+        color: var(--orange800);
+      }
     }
   }
 
@@ -51,7 +65,17 @@
   }
   &__bottom-text {
     padding: 1em 0 0 1em;
-    color: var(--green800);
     font-weight: 700;
+
+    &-entry-traffic {
+      color: var(--green800);
+    }
+
+    &-exit-traffic {
+      color: var(--blue800);
+    }
+    &-revenue {
+      color: var(--orange800);
+    }
   }
 }

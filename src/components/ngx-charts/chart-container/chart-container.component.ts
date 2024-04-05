@@ -19,5 +19,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './chart-container.component.scss',
 })
 export class ChartContainerComponent {
-  @Input() chartType = '';
+  @Input() chartData: any = {};
 }

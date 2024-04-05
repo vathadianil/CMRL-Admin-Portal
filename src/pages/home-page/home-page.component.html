@@ -9,9 +9,12 @@
     </button>
 
     <div class="home__chart-container">
-      <app-chart-container chartType="entry-traffic"></app-chart-container>
+      @for (chart of barChartList; track chart.chartType) {
+      <app-chart-container [chartData]="chart"></app-chart-container>
+      }
+      <!-- <app-chart-container chartType="entry-traffic"></app-chart-container>
       <app-chart-container chartType="exit-traffic"></app-chart-container>
-      <app-chart-container chartType="revenue"></app-chart-container>
+      <app-chart-container chartType="revenue"></app-chart-container> -->
     </div>
   </div>
 </mat-drawer-container>

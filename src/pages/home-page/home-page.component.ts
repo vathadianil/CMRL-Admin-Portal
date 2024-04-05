@@ -11,4 +11,28 @@ import { ChartContainerComponent } from '../../components/ngx-charts/chart-conta
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
-export class HomePageComponent {}
+export class HomePageComponent {
+  barChartList = [
+    {
+      chartType: 'entry-traffic',
+      title: 'Entry Traffic',
+      bottomTitle: 'All Stations',
+      value: 2000,
+      duration: 'Last 6 Months',
+    },
+    {
+      chartType: 'exit-traffic',
+      title: 'Exit Traffic',
+      bottomTitle: 'All Stations',
+      value: 2000,
+      duration: 'Last 6 Months',
+    },
+    {
+      chartType: 'revenue',
+      title: 'Revenue',
+      bottomTitle: 'All Stations',
+      value: 10000,
+      duration: 'Last 1 Month',
+    },
+  ];
+}

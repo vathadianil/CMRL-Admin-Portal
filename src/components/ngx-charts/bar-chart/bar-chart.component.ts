@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Color, NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
+import { NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
 import { single } from '../../../assets/data';
 import { COLORS } from '../../../util/colors';
 
@@ -12,13 +12,26 @@ import { COLORS } from '../../../util/colors';
 })
 export class BarChartComponent implements OnInit {
   @Input() chartType = '';
+  colorScheme: any;
+
   single: any[] = single;
   multi: any[] = [];
+
   ngOnInit(): void {
-    console.log(this.chartType);
+    this.colorScheme = {
+      domain: [
+        this.chartType === 'entry-traffic'
+          ? COLORS.green800
+          : this.chartType === 'exit-traffic'
+          ? COLORS.blue800
+          : COLORS.orange800,
+      ],
+      group: ScaleType.Ordinal,
+      selectable: true,
+      name: 'country population',
+    };
   }
   view: any = [250, 200];
-
   // options
   showXAxis = false;
   showYAxis = false;
@@ -29,20 +42,6 @@ export class BarChartComponent implements OnInit {
   showYAxisLabel = true;
   yAxisLabel = 'Population';
 
-  colorScheme: Color = {
-    domain: [this.getColor()],
-    group: ScaleType.Ordinal,
-    selectable: true,
-    name: 'country population',
-  };
-
-  getColor() {
-    return this.chartType === 'traffic'
-      ? COLORS.green800
-      : this.chartType === 'revenue'
-      ? COLORS.blue800
-      : COLORS.orange800;
-  }
   onSelect(event: any) {
     console.log(event);
   }
