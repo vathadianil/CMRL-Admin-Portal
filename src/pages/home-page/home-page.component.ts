@@ -3,11 +3,25 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { ChartContainerComponent } from '../../components/ngx-charts/chart-container/chart-container.component';
+import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
+import { CommonModule } from '@angular/common';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-home-page',
   standalone: true,
-  imports: [MatSidenavModule, MatButtonModule, ChartContainerComponent],
+  imports: [
+    CommonModule,
+    MatSidenavModule,
+    MatButtonModule,
+    ChartContainerComponent,
+    MatIconModule,
+    RouterModule,
+    MatMenuModule,
+    MatExpansionModule,
+  ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
@@ -112,6 +126,15 @@ export class HomePageComponent {
           value: 5000000,
         },
       ],
+    },
+  ];
+  menuItems = [
+    { icon: 'dashboard', label: 'Dashboard', route: 'dashboard' },
+    { icon: 'home', label: 'Home', route: 'home' },
+    {
+      icon: 'report',
+      label: 'Reports',
+      route: 'report',
     },
   ];
 }

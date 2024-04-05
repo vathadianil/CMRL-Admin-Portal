@@ -17,4 +17,30 @@
     place-content: center;
     margin: 2em;
   }
+
+  &__menu-button {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 15px 0 20px;  
+    width: 300px; 
+    height: 60px;
+   
+    mat-icon {
+      margin-right: 8px;
+    }
+  }
+
+  &__side-customise {
+    height: 50vh;
+    border-radius: 20px;
+    border: 1px solid rgb(136, 130, 130); 
+    background-color: #f7f8fa;
+    margin: 20px;
+  }
+
+  &__icon-label-container {
+    display: flex;
+    align-items: center; 
+  }
 }

@@ -1,17 +1,21 @@
 <mat-drawer-container class="home" autosize>
-  <mat-drawer #drawer class="home__sidenav" mode="side" opened>
-    <p>Auto-resizing sidenav</p>
-  </mat-drawer>
-
-  <div class="home__sidenav-content">
-    <button type="button" (click)="drawer.toggle()" mat-raised-button>
-      Toggle sidenav
+  <mat-drawer mode="side" class="home__side-customise" opened>
+    <button
+      mat-raised-button
+      class="home__menu-button"
+      *ngFor="let item of menuItems"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+    >
+      <div class="home__icon-label-container">
+        <mat-icon>{{ item.icon }}</mat-icon>
+        <span>{{ item.label }}</span>
+      </div>
     </button>
-
-    <div class="home__chart-container">
-      @for (chart of barChartList; track chart.chartType) {
-      <app-chart-container [chartData]="chart"></app-chart-container>
-      }
-    </div>
+  </mat-drawer>
+  <div class="home__chart-container">
+    @for (chart of barChartList; track chart.chartType) {
+    <app-chart-container [chartData]="chart"></app-chart-container>
+    }
   </div>
 </mat-drawer-container>
