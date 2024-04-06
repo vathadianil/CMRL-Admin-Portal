@@ -1,0 +1,37 @@
+<mat-card class="card">
+  <mat-card-content class="card__description">
+    <p class="card__description__title">{{ chartData?.title }}</p>
+    <p class="card__description__number card__description__number-cash">
+      {{ chartData?.data[0]?.displayValue }}
+    </p>
+    <p
+      class="card__description__bottom-title card__description__bottom-title-cash"
+    >
+      {{ chartData?.data[0]?.name }}
+    </p>
+  </mat-card-content>
+  <mat-card-content class="card__chart">
+    <app-gauge-chart></app-gauge-chart>
+    <mat-card class="card__total-container">
+      <mat-card-content class="card__total-content">{{
+        chartData?.total
+      }}</mat-card-content>
+    </mat-card>
+  </mat-card-content>
+
+  <mat-card-content class="card__description">
+    <div class="card__btn-container">
+      <button class="card__btn" mat-mini-fab aria-label="View Detailed Chart">
+        <mat-icon fontIcon="more_horiz"></mat-icon>
+      </button>
+    </div>
+    <p class="card__description__number card__description__number-non-cash">
+      {{ chartData?.data[1]?.displayValue }}
+    </p>
+    <p
+      class="card__description__bottom-title card__description__bottom-title-non-cash"
+    >
+      {{ chartData?.data[1]?.name }}
+    </p>
+  </mat-card-content>
+</mat-card>

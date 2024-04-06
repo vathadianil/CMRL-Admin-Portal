@@ -17,5 +17,8 @@
     @for (chart of barChartList; track chart.chartType) {
     <app-bar-chart-container [chartData]="chart"></app-bar-chart-container>
     }
+    <app-gauge-chart-contaienr
+      [chartData]="gaugeChartList"
+    ></app-gauge-chart-contaienr>
   </div>
 </mat-drawer-container>

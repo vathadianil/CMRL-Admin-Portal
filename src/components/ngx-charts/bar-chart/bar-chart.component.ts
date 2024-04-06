@@ -16,7 +16,7 @@ export class BarChartComponent implements OnInit {
   data: any[] = [];
   multi: any[] = [];
 
-  view: any = [250, 200];
+  view: any = [250, 150];
   // options
   showXAxis = false;
   showYAxis = false;

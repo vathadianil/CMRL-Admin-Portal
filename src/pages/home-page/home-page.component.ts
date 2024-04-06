@@ -8,6 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BarChartContainerComponent } from '../../components/ngx-charts/bar-chart-container/bar-chart-container.component';
+import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge-chart-contaienr/gauge-chart-contaienr.component';
 
 @Component({
   selector: 'app-home-page',
@@ -17,6 +18,7 @@ import { BarChartContainerComponent } from '../../components/ngx-charts/bar-char
     MatSidenavModule,
     MatButtonModule,
     BarChartContainerComponent,
+    GaugeChartContaienrComponent,
     MatIconModule,
     RouterModule,
     MatMenuModule,
@@ -128,6 +130,25 @@ export class HomePageComponent {
       ],
     },
   ];
+
+  gaugeChartList = {
+    chartType: 'revenue',
+    title: 'Revenue',
+    total: '10k',
+    data: [
+      {
+        name: 'Cash',
+        value: 7000,
+        displayValue: '7k',
+      },
+      {
+        name: 'Non Cash',
+        value: 3000,
+        displayValue: '3k',
+      },
+    ],
+  };
+
   menuItems = [
     { icon: 'dashboard', label: 'Dashboard', route: 'dashboard' },
     { icon: 'home', label: 'Home', route: 'home' },
