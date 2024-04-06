@@ -4,10 +4,10 @@
     <p
       class="card__description__number"
       [ngClass]="{
-      'card__description__number-entry-traffic': chartData?.chartType === 'entry-traffic',
-      'card__description__number-exit-traffic': chartData?.chartType === 'exit-traffic',
-      'card__description__number-revenue': chartData?.chartType === 'revenue',
-    }"
+        'card__description__number-entry-traffic': chartData?.chartType === 'entry-traffic',
+        'card__description__number-exit-traffic': chartData?.chartType === 'exit-traffic',
+        'card__description__number-revenue': chartData?.chartType === 'revenue',
+      }"
     >
       {{ chartData?.value }}
     </p>
@@ -16,10 +16,10 @@
   <mat-card-content
     class="card__chart"
     [ngClass]="{
-      'card__chart-entry-traffic': chartData?.chartType === 'entry-traffic',
-      'card__chart-exit-traffic': chartData?.chartType === 'exit-traffic',
-      'card__chart-revenue': chartData?.chartType === 'revenue',
-    }"
+        'card__chart-entry-traffic': chartData?.chartType === 'entry-traffic',
+        'card__chart-exit-traffic': chartData?.chartType === 'exit-traffic',
+        'card__chart-revenue': chartData?.chartType === 'revenue',
+      }"
   >
     <div class="card__btn-container">
       <button class="card__btn" mat-mini-fab aria-label="View Detailed Chart">
@@ -30,10 +30,10 @@
     <p
       class="card__bottom-text"
       [ngClass]="{
-      'card__bottom-text-entry-traffic': chartData?.chartType === 'entry-traffic',
-      'card__bottom-text-exit-traffic': chartData?.chartType === 'exit-traffic',
-      'card__bottom-text-revenue': chartData?.chartType === 'revenue',
-    }"
+        'card__bottom-text-entry-traffic': chartData?.chartType === 'entry-traffic',
+        'card__bottom-text-exit-traffic': chartData?.chartType === 'exit-traffic',
+        'card__bottom-text-revenue': chartData?.chartType === 'revenue',
+      }"
     >
       {{ chartData?.duration }}
     </p>

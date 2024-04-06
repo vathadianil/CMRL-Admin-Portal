@@ -15,7 +15,7 @@
   </mat-drawer>
   <div class="home__chart-container">
     @for (chart of barChartList; track chart.chartType) {
-    <app-chart-container [chartData]="chart"></app-chart-container>
+    <app-bar-chart-container [chartData]="chart"></app-bar-chart-container>
     }
   </div>
 </mat-drawer-container>

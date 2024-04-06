@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { ChartContainerComponent } from '../../components/ngx-charts/chart-container/chart-container.component';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
 import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { BarChartContainerComponent } from '../../components/ngx-charts/bar-chart-container/bar-chart-container.component';
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +16,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     CommonModule,
     MatSidenavModule,
     MatButtonModule,
-    ChartContainerComponent,
+    BarChartContainerComponent,
     MatIconModule,
     RouterModule,
     MatMenuModule,

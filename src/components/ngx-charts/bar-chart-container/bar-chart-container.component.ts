@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-chart-container',
+  selector: 'app-bar-chart-container',
   standalone: true,
   imports: [
     MatCardModule,
@@ -15,9 +15,9 @@ import { CommonModule } from '@angular/common';
     BarChartComponent,
     CommonModule,
   ],
-  templateUrl: './chart-container.component.html',
-  styleUrl: './chart-container.component.scss',
+  templateUrl: './bar-chart-container.component.html',
+  styleUrl: './bar-chart-container.component.scss',
 })
-export class ChartContainerComponent {
+export class BarChartContainerComponent {
   @Input() chartData: any = {};
 }
