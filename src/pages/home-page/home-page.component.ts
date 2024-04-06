@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BarChartContainerComponent } from '../../components/ngx-charts/bar-chart-container/bar-chart-container.component';
 import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge-chart-contaienr/gauge-chart-contaienr.component';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
   selector: 'app-home-page',
@@ -23,6 +24,7 @@ import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge-
     RouterModule,
     MatMenuModule,
     MatExpansionModule,
+    MatListModule,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
@@ -150,12 +152,16 @@ export class HomePageComponent {
   };
 
   menuItems = [
-    { icon: 'dashboard', label: 'Dashboard', route: 'dashboard' },
+    { icon: 'dashboard', label: 'Dashboard', route: 'login' },
     { icon: 'home', label: 'Home', route: 'home' },
     {
       icon: 'report',
       label: 'Reports',
-      route: 'report',
+      route: 'reports',
+      submenu: [
+        { icon: 'done', label: 'Tom Shift Start', route: 'shiftStart' },
+        { icon: 'close', label: 'Tom Shift End', route: 'shiftEnd' },
+      ],
     },
   ];
 }

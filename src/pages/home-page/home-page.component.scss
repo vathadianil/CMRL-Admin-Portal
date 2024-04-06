@@ -2,14 +2,6 @@
   height: 100vh;
   border: 1px solid rgba(0, 0, 0, 0.5);
 
-  &__sidenav-content {
-    height: 100%;
-  }
-
-  &__sidenav {
-    padding: 20px;
-  }
-
   &__chart-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -20,27 +12,35 @@
 
   &__menu-button {
     display: grid;
-    align-items: center;
-    justify-content: center;
-    margin: 10px 15px 0 20px;  
-    width: 300px; 
-    height: 60px;
-   
+    align-items: left;
+    justify-content: left;
+    margin: 10px;  
+    width: 250px; 
+    border: 1px solid #e8dfdf;
+    border-radius: 8px;    
+    background-color:#fff; 
     mat-icon {
-      margin-right: 8px;
-    }
+      margin-right: 18px;
+    } 
+   
   }
 
   &__side-customise {
     height: 50vh;
     border-radius: 20px;
-    border: 1px solid rgb(136, 130, 130); 
-    background-color: #f7f8fa;
+    border: 1px solid rgb(185, 177, 177); 
+    background-color: #F7F8FA;
     margin: 20px;
   }
 
-  &__icon-label-container {
-    display: flex;
-    align-items: center; 
+  &__submenu-panel {
+    border-radius: 10px; 
+   // overflow: hidden;
+    margin: 10px; 
+    padding-left:0;
+    mat-icon {
+      margin-right: 18px;
+    }
   }
+
 }

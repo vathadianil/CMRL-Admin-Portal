@@ -1,17 +1,32 @@
 <mat-drawer-container class="home" autosize>
   <mat-drawer mode="side" class="home__side-customise" opened>
-    <button
-      mat-raised-button
-      class="home__menu-button"
-      *ngFor="let item of menuItems"
-      [routerLink]="item.route"
-      routerLinkActive="active"
-    >
-      <div class="home__icon-label-container">
-        <mat-icon>{{ item.icon }}</mat-icon>
-        <span>{{ item.label }}</span>
-      </div>
-    </button>
+    <ng-container *ngFor="let item of menuItems">
+      <ng-container *ngIf="!item?.submenu?.length">
+        <mat-list-item class="home__menu-button" [routerLink]="['/item.route']">
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </mat-list-item>
+      </ng-container>
+      <ng-template [ngIf]="item?.submenu?.length">
+        <mat-expansion-panel class="home__submenu-panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title [routerLink]="[item.route]">
+              <mat-icon>{{ item.icon }}</mat-icon>
+              <span> {{ item.label }}</span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-list>
+            <mat-list-item
+              *ngFor="let submenu of item.submenu"
+              [routerLink]="[submenu.route]"
+            >
+              <mat-icon>{{ submenu.icon }}</mat-icon>
+              <span>{{ submenu.label }}</span>
+            </mat-list-item>
+          </mat-list>
+        </mat-expansion-panel>
+      </ng-template>
+    </ng-container>
   </mat-drawer>
   <div class="home__chart-container">
     @for (chart of barChartList; track chart.chartType) {
