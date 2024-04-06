@@ -33,7 +33,7 @@ export class HomePageComponent {
       chartType: 'entry-traffic',
       title: 'Entry Traffic',
       bottomTitle: 'All Stations',
-      value: 2000,
+      value: '2k',
       duration: 'Last 6 Days',
       data: [
         {
@@ -66,7 +66,7 @@ export class HomePageComponent {
       chartType: 'exit-traffic',
       title: 'Exit Traffic',
       bottomTitle: 'All Stations',
-      value: 2000,
+      value: '2k',
       duration: 'Last 6 Days',
       data: [
         {
@@ -99,7 +99,7 @@ export class HomePageComponent {
       chartType: 'revenue',
       title: 'Revenue',
       bottomTitle: 'All Stations',
-      value: 10000,
+      value: '10k',
       duration: 'Last 6 Days',
       data: [
         {
