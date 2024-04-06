@@ -152,15 +152,26 @@ export class HomePageComponent {
   };
 
   menuItems = [
-    { icon: 'dashboard', label: 'Dashboard', route: 'login' },
-    { icon: 'home', label: 'Home', route: 'home' },
+    { icon: 'dashboard', label: 'Dashboard', route: 'login', color: 'blue' },
+    { icon: 'home', label: 'Home', route: 'home', color: 'orange' },
     {
       icon: 'report',
       label: 'Reports',
       route: 'reports',
+      color: '#15b72e',
       submenu: [
-        { icon: 'done', label: 'Tom Shift Start', route: 'shiftStart' },
-        { icon: 'close', label: 'Tom Shift End', route: 'shiftEnd' },
+        {
+          icon: 'done',
+          label: 'Tom Shift Start',
+          route: 'shiftStart',
+          color: '#b026b0',
+        },
+        {
+          icon: 'close',
+          label: 'Tom Shift End',
+          route: 'shiftEnd',
+          color: '#cd4040',
+        },
       ],
     },
   ];

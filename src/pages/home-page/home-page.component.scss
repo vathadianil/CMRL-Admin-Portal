@@ -11,9 +11,9 @@
   }
 
   &__menu-button {
-    display: grid;
-    align-items: left;
-    justify-content: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;;
     margin: 10px;  
     width: 250px; 
     border: 1px solid #e8dfdf;
