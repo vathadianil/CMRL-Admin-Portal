@@ -1,13 +1,33 @@
 .home {
   height: 100vh;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+//  border: 1px solid rgba(0, 0, 0, 0.5);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F7F8FA;
+    //padding: 8px;
+  }
+
+  &__logo{
+    margin-right: auto;
+    height: 120px;  
+    aspect-ratio: 1;
+  }
+
+  &__icons {
+    display: flex;
+    gap:1em;
+    color:#938a8a;
+  }
 
   &__chart-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 2em;
     place-content: center;
-    margin: 2em;
+    margin-left: 2em;
   }
 
   &__menu-button {
@@ -30,7 +50,7 @@
     border-radius: 20px;
     border: 1px solid rgb(185, 177, 177); 
     background-color: #F7F8FA;
-    margin: 20px;
+    margin-left: 20px;
   }
 
   &__submenu-panel {
