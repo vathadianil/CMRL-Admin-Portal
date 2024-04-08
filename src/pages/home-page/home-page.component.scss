@@ -1,6 +1,4 @@
-.home {
-  height: 100vh;
-
+.header {
   &__container {
     display: flex;
     align-items: center;
@@ -21,13 +19,15 @@
     color: #938a8a;
     margin: 1em;
   }
+}
 
+.home {
   &__chart-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 2em;
     place-content: center;
-    margin: 0 1em 0 2em;
+    margin: 0 1em 1em 2em;
   }
 
   &__menu-button {
