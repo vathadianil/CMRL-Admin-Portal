@@ -1,12 +1,11 @@
 .home {
-  height: 100vh;
-//  border: 1px solid rgba(0, 0, 0, 0.5);
+  //height: 100vh;
 
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #F7F8FA;
+    background-color: var(--background-color);
     //padding: 8px;
   }
 
@@ -20,6 +19,7 @@
     display: flex;
     gap:1em;
     color:#938a8a;
+    margin: 1em;
   }
 
   &__chart-container {
@@ -27,7 +27,7 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 2em;
     place-content: center;
-    margin-left: 2em;
+    margin:0 1em 0 2em;
   }
 
   &__menu-button {
@@ -49,7 +49,7 @@
     height: 50vh;
     border-radius: 20px;
     border: 1px solid rgb(185, 177, 177); 
-    background-color: #F7F8FA;
+    background-color: var(--background-color);
     margin-left: 20px;
   }
 
