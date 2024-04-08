@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
-import { single } from '../../../assets/data';
 import { COLORS } from '../../../util/colors';
 
 @Component({
@@ -10,8 +9,9 @@ import { COLORS } from '../../../util/colors';
   templateUrl: './gauge-chart.component.html',
   styleUrl: './gauge-chart.component.scss',
 })
-export class GaugeChartComponent {
-  single: any[];
+export class GaugeChartComponent implements OnInit {
+  @Input() chartData = [];
+  data = [];
   view: any = [170, 260];
   legend: boolean = false;
   legendPosition: any = 'below';
@@ -23,8 +23,8 @@ export class GaugeChartComponent {
     name: '',
   };
 
-  constructor() {
-    Object.assign(this, { single });
+  ngOnInit(): void {
+    this.data = this.chartData;
   }
 
   onSelect(data): void {

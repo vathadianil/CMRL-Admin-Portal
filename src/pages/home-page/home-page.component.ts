@@ -10,6 +10,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { BarChartContainerComponent } from '../../components/ngx-charts/bar-chart-container/bar-chart-container.component';
 import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge-chart-contaienr/gauge-chart-contaienr.component';
 import { MatListModule } from '@angular/material/list';
+import { PieChartContainerComponent } from '../../components/ngx-charts/pie-chart-container/pie-chart-container.component';
 
 @Component({
   selector: 'app-home-page',
@@ -20,6 +21,7 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     BarChartContainerComponent,
     GaugeChartContaienrComponent,
+    PieChartContainerComponent,
     MatIconModule,
     RouterModule,
     MatMenuModule,
@@ -147,6 +149,22 @@ export class HomePageComponent {
         name: 'Non Cash',
         value: 3000,
         displayValue: '3k',
+      },
+    ],
+  };
+
+  pieChartList = {
+    chartType: 'stock',
+    title: 'Card Sale Percentage',
+    percentage: '70%',
+    data: [
+      {
+        name: 'Sold',
+        value: 7000,
+      },
+      {
+        name: 'Remaining',
+        value: 3000,
       },
     ],
   };

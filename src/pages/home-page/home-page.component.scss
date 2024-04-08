@@ -1,5 +1,5 @@
 .home {
-  //height: 100vh;
+  height: 100vh;
 
   &__container {
     display: flex;
@@ -9,16 +9,16 @@
     //padding: 8px;
   }
 
-  &__logo{
+  &__logo {
     margin-right: auto;
-    height: 120px;  
+    height: 120px;
     aspect-ratio: 1;
   }
 
   &__icons {
     display: flex;
-    gap:1em;
-    color:#938a8a;
+    gap: 1em;
+    color: #938a8a;
     margin: 1em;
   }
 
@@ -27,40 +27,38 @@
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-gap: 2em;
     place-content: center;
-    margin:0 1em 0 2em;
+    margin: 0 1em 0 2em;
   }
 
   &__menu-button {
     display: flex;
     align-items: center;
-    justify-content: center;;
-    margin: 10px;  
-    width: 250px; 
+    justify-content: center;
+    margin: 10px;
+    width: 250px;
     border: 1px solid #e8dfdf;
-    border-radius: 8px;    
-    background-color:#fff; 
-    mat-icon {
-      margin-right: 18px;
-    } 
-   
-  }
-
-  &__side-customise {
-    height: 50vh;
-    border-radius: 20px;
-    border: 1px solid rgb(185, 177, 177); 
-    background-color: var(--background-color);
-    margin-left: 20px;
-  }
-
-  &__submenu-panel {
-    border-radius: 10px; 
-   // overflow: hidden;
-    margin: 10px; 
-    padding-left:0;
+    border-radius: 8px;
+    background-color: #fff;
     mat-icon {
       margin-right: 18px;
     }
   }
 
+  &__side-customise {
+    height: 50vh;
+    border-radius: 20px;
+    border: 1px solid rgb(185, 177, 177);
+    background-color: var(--background-color);
+    margin-left: 20px;
+  }
+
+  &__submenu-panel {
+    border-radius: 10px;
+    // overflow: hidden;
+    margin: 10px;
+    padding-left: 0;
+    mat-icon {
+      margin-right: 18px;
+    }
+  }
 }

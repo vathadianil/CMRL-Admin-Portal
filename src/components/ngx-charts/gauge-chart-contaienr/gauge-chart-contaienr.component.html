@@ -11,7 +11,7 @@
     </p>
   </mat-card-content>
   <mat-card-content class="card__chart">
-    <app-gauge-chart></app-gauge-chart>
+    <app-gauge-chart [chartData]="chartData?.data"></app-gauge-chart>
     <mat-card class="card__total-container">
       <mat-card-content class="card__total-content">{{
         chartData?.total
