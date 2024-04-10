@@ -12,6 +12,7 @@ import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge-
 import { MatListModule } from '@angular/material/list';
 import { PieChartContainerComponent } from '../../components/ngx-charts/pie-chart-container/pie-chart-container.component';
 import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/merchant-wise-revenue/merchant-wise-revenue.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -34,6 +35,13 @@ import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/mercha
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
+  constructor(private router: Router) {}
+
+  navigateTo(route: string): void {
+    debugger;
+    this.router.navigate([route]);
+  }
+
   barChartList = [
     {
       title: 'Entry Traffic',
@@ -216,6 +224,7 @@ export class HomePageComponent {
   menuItems = [
     { icon: 'dashboard', label: 'Dashboard', route: 'login', color: 'blue' },
     { icon: 'home', label: 'Home', route: 'home', color: 'orange' },
+    { icon: 'subway', label: 'Services', route: 'services', color: 'red' },
     {
       icon: 'report',
       label: 'Reports',

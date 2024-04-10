@@ -16,4 +16,11 @@ export const routes: Routes = [
         (c) => c.HomePageComponent
       ),
   },
+  {
+    path: 'services',
+    loadComponent: () =>
+      import(`../pages/services/services.component`).then(
+        (c) => c.ServicesComponent
+      ),
+  },
 ];
