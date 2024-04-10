@@ -45,10 +45,12 @@ export class HomePageComponent {
   barChartList = [
     {
       title: 'Entry Traffic',
-      type: 'entryTraffic',
+      type: 'bar',
       bottomTitle: 'All Stations',
       value: '2k',
       duration: 'Last 6 Days',
+      xAxisLabel: 'Date',
+      yAxisLabel: 'Entry Count',
       style: {
         backgroundColor: '#f4fcf5',
         color: '#128822',
@@ -82,10 +84,12 @@ export class HomePageComponent {
     },
     {
       title: 'Exit Traffic',
-      type: 'exitTraffic',
+      type: 'bar',
       bottomTitle: 'All Stations',
       value: '2k',
       duration: 'Last 6 Days',
+      xAxisLabel: 'Date',
+      yAxisLabel: 'Exit Count',
       style: {
         backgroundColor: '#f0f3ff',
         color: '#3361ff',
@@ -119,10 +123,12 @@ export class HomePageComponent {
     },
     {
       title: 'Revenue',
-      type: 'revenueBar',
+      type: 'bar',
       bottomTitle: 'All Stations',
       value: '10k',
       duration: 'Last 6 Days',
+      xAxisLabel: 'Date',
+      yAxisLabel: 'Revenue',
       style: {
         backgroundColor: '#fff7f5',
         color: '#ff6633',

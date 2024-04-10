@@ -11,8 +11,8 @@ import { MatCardModule } from '@angular/material/card';
   styleUrl: './chart-dialog.component.scss',
 })
 export class ChartDialogComponent {
-  type = '';
+  title = '';
   constructor(@Inject(MAT_DIALOG_DATA) public chartData: any) {
-    this.type = this.chartData?.type;
+    this.title = this.chartData?.title;
   }
 }

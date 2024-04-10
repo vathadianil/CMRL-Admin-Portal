@@ -1,4 +1,4 @@
-@if (chartData?.type === type) {
+@if (chartData?.type === 'bar' && chartData?.title === title) {
 <mat-card class="card">
   <mat-card-header
     class="card__header"
@@ -12,8 +12,8 @@
       [showYAxis]="true"
       [showXAxisLabel]="true"
       [showYAxisLabel]="true"
-      [xAxisLabel]="'Date'"
-      [yAxisLabel]="'Entry Count'"
+      [xAxisLabel]="chartData?.xAxisLabel"
+      [yAxisLabel]="chartData?.yAxisLabel"
       [gradient]="true"
       [view]="[600, 300]"
     ></app-bar-chart>
