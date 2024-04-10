@@ -21,7 +21,12 @@
 
   <mat-card-content class="card__description">
     <div class="card__btn-container">
-      <button class="card__btn" mat-mini-fab aria-label="View Detailed Chart">
+      <button
+        class="card__btn"
+        mat-mini-fab
+        aria-label="View Detailed Chart"
+        (click)="openGraphDetail()"
+      >
         <mat-icon fontIcon="more_horiz"></mat-icon>
       </button>
     </div>

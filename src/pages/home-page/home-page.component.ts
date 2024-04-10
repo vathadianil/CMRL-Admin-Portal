@@ -164,7 +164,7 @@ export class HomePageComponent {
   ];
 
   gaugeChartList = {
-    chartType: 'revenue',
+    type: 'gauge',
     title: 'Revenue',
     total: '10k',
     data: [
