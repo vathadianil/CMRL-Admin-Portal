@@ -1,0 +1,10 @@
+.card {
+  &__header {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+  }
+  &__content {
+    padding: 4em;
+  }
+}

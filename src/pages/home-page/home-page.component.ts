@@ -45,6 +45,7 @@ export class HomePageComponent {
   barChartList = [
     {
       title: 'Entry Traffic',
+      type: 'entryTraffic',
       bottomTitle: 'All Stations',
       value: '2k',
       duration: 'Last 6 Days',
@@ -81,6 +82,7 @@ export class HomePageComponent {
     },
     {
       title: 'Exit Traffic',
+      type: 'exitTraffic',
       bottomTitle: 'All Stations',
       value: '2k',
       duration: 'Last 6 Days',
@@ -117,6 +119,7 @@ export class HomePageComponent {
     },
     {
       title: 'Revenue',
+      type: 'revenueBar',
       bottomTitle: 'All Stations',
       value: '10k',
       duration: 'Last 6 Days',

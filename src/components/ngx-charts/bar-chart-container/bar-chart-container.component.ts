@@ -28,7 +28,6 @@ export class BarChartContainerComponent {
 
   openGraphDetail(): void {
     const dialogRef = this.dialog.open(ChartDialogComponent, {
-      width: '600px',
       data: this.chartData,
     });
   }

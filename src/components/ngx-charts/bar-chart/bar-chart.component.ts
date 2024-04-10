@@ -12,20 +12,17 @@ import { COLORS } from '../../../util/colors';
 export class BarChartComponent implements OnInit {
   @Input() chartData: any;
   colorScheme: any;
-
   data: any[] = [];
-  multi: any[] = [];
-
-  view: any = [250, 150];
+  @Input() view: any = [250, 150];
   // options
-  showXAxis = false;
-  showYAxis = false;
-  gradient = false;
-  showLegend = false;
-  showXAxisLabel = true;
-  xAxisLabel = '';
-  showYAxisLabel = true;
-  yAxisLabel = '';
+  @Input() showXAxis = false;
+  @Input() showYAxis = false;
+  @Input() gradient = false;
+  @Input() showLegend = false;
+  @Input() showXAxisLabel = false;
+  @Input() xAxisLabel = '';
+  @Input() showYAxisLabel = false;
+  @Input() yAxisLabel = '';
 
   ngOnInit(): void {
     this.colorScheme = {
@@ -35,9 +32,5 @@ export class BarChartComponent implements OnInit {
       name: this.chartData?.title,
     };
     this.data = this.chartData?.data;
-  }
-
-  onSelect(event: any) {
-    console.log(event);
   }
 }

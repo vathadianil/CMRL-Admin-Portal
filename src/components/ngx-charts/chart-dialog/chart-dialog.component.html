@@ -1,1 +1,22 @@
-<app-bar-chart [chartData]="chartData"></app-bar-chart>
+@if (chartData?.type === type) {
+<mat-card class="card">
+  <mat-card-header
+    class="card__header"
+    [style.color]="chartData?.style?.color"
+    >{{ chartData?.title }}</mat-card-header
+  >
+  <mat-card-content class="card__content">
+    <app-bar-chart
+      [chartData]="chartData"
+      [showXAxis]="true"
+      [showYAxis]="true"
+      [showXAxisLabel]="true"
+      [showYAxisLabel]="true"
+      [xAxisLabel]="'Date'"
+      [yAxisLabel]="'Entry Count'"
+      [gradient]="true"
+      [view]="[600, 300]"
+    ></app-bar-chart>
+  </mat-card-content>
+</mat-card>
+}
