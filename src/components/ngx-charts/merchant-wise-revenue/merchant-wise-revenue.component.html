@@ -1,0 +1,63 @@
+<mat-card class="card">
+  <mat-card-content>
+    <div class="card__header">
+      <p class="card__title">{{ chartData?.title }}</p>
+      <button class="card__btn" mat-mini-fab aria-label="View Detailed Chart">
+        <mat-icon fontIcon="more_horiz"></mat-icon>
+      </button>
+    </div>
+    <div class="card__merchant-container">
+      @for (item of chartData?.data; track chartData?.name) {
+      <div class="card__merchant">
+        <div class="card__image-title-wrrapper">
+          <mat-card class="card__image-container">
+            <img [src]="item?.image" alt="logo" class="card__image" />
+          </mat-card>
+          <p class="card__title" [style.color]="item?.style?.color">
+            {{ item?.name }}
+          </p>
+        </div>
+        <div
+          class="card__value-container"
+          [style.background-color]="item?.style?.backgroundColor"
+        >
+          <p class="card__value" [style.color]="item?.style?.color">
+            &#8377; {{ item?.value }}
+          </p>
+        </div>
+      </div>
+      }
+
+      <!-- <div class="card__merchant">
+        <div class="card__image-title-wrrapper">
+          <mat-card class="card__image-container">
+            <img
+              src="../../../assets/img/paytm.webp"
+              alt="logo"
+              class="card__image"
+            />
+          </mat-card>
+          <p class="card__title">Paytm</p>
+        </div>
+        <div class="card__value-container">
+          <p class="card__value">&#8377; 22.20</p>
+        </div>
+      </div>
+      <div class="card__merchant">
+        <div class="card__image-title-wrrapper">
+          <mat-card class="card__image-container">
+            <img
+              src="../../../assets/img/paytm.webp"
+              alt="logo"
+              class="card__image"
+            />
+          </mat-card>
+          <p class="card__title">Paytm</p>
+        </div>
+        <div class="card__value-container">
+          <p class="card__value">&#8377; 22.20</p>
+        </div>
+      </div> -->
+    </div>
+  </mat-card-content>
+</mat-card>

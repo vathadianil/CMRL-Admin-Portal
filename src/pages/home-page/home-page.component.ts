@@ -11,6 +11,7 @@ import { BarChartContainerComponent } from '../../components/ngx-charts/bar-char
 import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge-chart-contaienr/gauge-chart-contaienr.component';
 import { MatListModule } from '@angular/material/list';
 import { PieChartContainerComponent } from '../../components/ngx-charts/pie-chart-container/pie-chart-container.component';
+import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/merchant-wise-revenue/merchant-wise-revenue.component';
 
 @Component({
   selector: 'app-home-page',
@@ -22,6 +23,7 @@ import { PieChartContainerComponent } from '../../components/ngx-charts/pie-char
     BarChartContainerComponent,
     GaugeChartContaienrComponent,
     PieChartContainerComponent,
+    MerchantWiseRevenueComponent,
     MatIconModule,
     RouterModule,
     MatMenuModule,
@@ -165,6 +167,39 @@ export class HomePageComponent {
       {
         name: 'Remaining',
         value: 3000,
+      },
+    ],
+  };
+
+  merchantWiseRevenue = {
+    title: 'Merchant Wise Revenue',
+    data: [
+      {
+        name: 'Paytm',
+        image: '../../../assets/img/paytm.webp',
+        value: '10L',
+        style: {
+          backgroundColor: '#f0f3ff',
+          color: '#00baf2',
+        },
+      },
+      {
+        name: 'PhonePe',
+        image: '../../../assets/img/phonepe.png',
+        value: '15L',
+        style: {
+          backgroundColor: '#ddc7fc',
+          color: '#8833ff',
+        },
+      },
+      {
+        name: 'Google Pay',
+        image: '../../../assets/img/gpay.webp',
+        value: '5L',
+        style: {
+          backgroundColor: '#fff',
+          color: '#3361ff',
+        },
       },
     ],
   };
