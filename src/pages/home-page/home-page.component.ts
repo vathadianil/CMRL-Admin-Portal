@@ -12,6 +12,8 @@ import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge-
 import { MatListModule } from '@angular/material/list';
 import { PieChartContainerComponent } from '../../components/ngx-charts/pie-chart-container/pie-chart-container.component';
 import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/merchant-wise-revenue/merchant-wise-revenue.component';
+import { MatDialog } from '@angular/material/dialog';
+import { GraphDetailDialogComponent } from '../graph-detail-dialog/graph-detail-dialog.component';
 
 @Component({
   selector: 'app-home-page',
@@ -34,6 +36,15 @@ import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/mercha
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
+  constructor(private dialog: MatDialog) {}
+
+  openGraphDetail(data: any): void {
+    const dialogRef = this.dialog.open(GraphDetailDialogComponent, {
+      width: '600px',
+      data: this.barChartList,
+    });
+  }
+
   barChartList = [
     {
       title: 'Entry Traffic',
