@@ -35,7 +35,7 @@
     } }
   </mat-drawer>
   <div class="home__chart-container">
-    @for (chart of barChartList; track chart.chartType) {
+    @for (chart of barChartList; track chart?.title) {
     <app-bar-chart-container [chartData]="chart"></app-bar-chart-container>
     }
     <app-gauge-chart-contaienr

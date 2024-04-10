@@ -3,11 +3,7 @@
     <p class="card__description__title">{{ chartData?.title }}</p>
     <p
       class="card__description__number"
-      [ngClass]="{
-        'card__description__number-entry-traffic': chartData?.chartType === 'entry-traffic',
-        'card__description__number-exit-traffic': chartData?.chartType === 'exit-traffic',
-        'card__description__number-revenue': chartData?.chartType === 'revenue',
-      }"
+      [style.color]="chartData?.style?.color"
     >
       {{ chartData?.value }}
     </p>
@@ -15,11 +11,7 @@
   </mat-card-content>
   <mat-card-content
     class="card__chart"
-    [ngClass]="{
-        'card__chart-entry-traffic': chartData?.chartType === 'entry-traffic',
-        'card__chart-exit-traffic': chartData?.chartType === 'exit-traffic',
-        'card__chart-revenue': chartData?.chartType === 'revenue',
-      }"
+    [style.background-color]="chartData?.style?.backgroundColor"
   >
     <div class="card__btn-container">
       <button class="card__btn" mat-mini-fab aria-label="View Detailed Chart">
@@ -27,14 +19,7 @@
       </button>
     </div>
     <app-bar-chart [chartData]="chartData"></app-bar-chart>
-    <p
-      class="card__bottom-text"
-      [ngClass]="{
-        'card__bottom-text-entry-traffic': chartData?.chartType === 'entry-traffic',
-        'card__bottom-text-exit-traffic': chartData?.chartType === 'exit-traffic',
-        'card__bottom-text-revenue': chartData?.chartType === 'revenue',
-      }"
-    >
+    <p class="card__bottom-text" [style.color]="chartData?.style?.color">
       {{ chartData?.duration }}
     </p>
   </mat-card-content>

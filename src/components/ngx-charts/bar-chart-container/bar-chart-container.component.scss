@@ -26,33 +26,11 @@
     &__number {
       font-size: 2.5em;
       font-weight: bold;
-
-      &-entry-traffic {
-        color: var(--green800);
-      }
-
-      &-exit-traffic {
-        color: var(--blue800);
-      }
-      &-revenue {
-        color: var(--orange800);
-      }
     }
   }
 
   &__chart {
     flex: 1;
-
-    &-entry-traffic {
-      background-color: var(--green50);
-    }
-
-    &-exit-traffic {
-      background-color: var(--blue50);
-    }
-    &-revenue {
-      background-color: var(--orange50);
-    }
   }
   &__btn-container {
     display: flex;
@@ -66,16 +44,5 @@
   &__bottom-text {
     padding: 1em 0 0 1em;
     font-weight: 700;
-
-    &-entry-traffic {
-      color: var(--green800);
-    }
-
-    &-exit-traffic {
-      color: var(--blue800);
-    }
-    &-revenue {
-      color: var(--orange800);
-    }
   }
 }

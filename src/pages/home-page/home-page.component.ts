@@ -36,11 +36,14 @@ import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/mercha
 export class HomePageComponent {
   barChartList = [
     {
-      chartType: 'entry-traffic',
       title: 'Entry Traffic',
       bottomTitle: 'All Stations',
       value: '2k',
       duration: 'Last 6 Days',
+      style: {
+        backgroundColor: '#f4fcf5',
+        color: '#128822',
+      },
       data: [
         {
           name: '01/04/2024',
@@ -69,11 +72,14 @@ export class HomePageComponent {
       ],
     },
     {
-      chartType: 'exit-traffic',
       title: 'Exit Traffic',
       bottomTitle: 'All Stations',
       value: '2k',
       duration: 'Last 6 Days',
+      style: {
+        backgroundColor: '#f0f3ff',
+        color: '#3361ff',
+      },
       data: [
         {
           name: '01/04/2024',
@@ -102,11 +108,14 @@ export class HomePageComponent {
       ],
     },
     {
-      chartType: 'revenue',
       title: 'Revenue',
       bottomTitle: 'All Stations',
       value: '10k',
       duration: 'Last 6 Days',
+      style: {
+        backgroundColor: '#fff7f5',
+        color: '#ff6633',
+      },
       data: [
         {
           name: '01/04/2024',

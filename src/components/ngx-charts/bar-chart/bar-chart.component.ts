@@ -29,13 +29,7 @@ export class BarChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.colorScheme = {
-      domain: [
-        this.chartData?.chartType === 'entry-traffic'
-          ? COLORS.green800
-          : this.chartData?.chartType === 'exit-traffic'
-          ? COLORS.blue800
-          : COLORS.orange800,
-      ],
+      domain: [this.chartData?.style?.color],
       group: ScaleType.Ordinal,
       selectable: true,
       name: this.chartData?.title,
