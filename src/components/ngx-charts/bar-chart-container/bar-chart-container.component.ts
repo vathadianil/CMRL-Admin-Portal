@@ -4,9 +4,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-import { GraphDetailDialogComponent } from '../../../pages/graph-detail-dialog/graph-detail-dialog.component';
+import { ChartDialogComponent } from '../chart-dialog/chart-dialog.component';
 
 @Component({
   selector: 'app-bar-chart-container',
@@ -24,11 +24,10 @@ import { GraphDetailDialogComponent } from '../../../pages/graph-detail-dialog/g
 })
 export class BarChartContainerComponent {
   @Input() chartData: any = {};
-
   constructor(private dialog: MatDialog) {}
 
   openGraphDetail(): void {
-    const dialogRef = this.dialog.open(GraphDetailDialogComponent, {
+    const dialogRef = this.dialog.open(ChartDialogComponent, {
       width: '600px',
       data: this.chartData,
     });
