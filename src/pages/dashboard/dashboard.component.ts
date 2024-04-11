@@ -195,11 +195,13 @@ export class DashboardComponent {
 
   merchantWiseRevenue = {
     title: 'Merchant Wise Revenue',
+    type: 'card',
     data: [
       {
         name: 'Paytm',
         image: '../../../assets/img/paytm.webp',
-        value: '10L',
+        value: 10000,
+        displayValue: '10k',
         style: {
           backgroundColor: '#f0f3ff',
           color: '#00baf2',
@@ -208,7 +210,8 @@ export class DashboardComponent {
       {
         name: 'PhonePe',
         image: '../../../assets/img/phonepe.png',
-        value: '15L',
+        value: 15000,
+        displayValue: '15k',
         style: {
           backgroundColor: '#ddc7fc',
           color: '#8833ff',
@@ -217,7 +220,8 @@ export class DashboardComponent {
       {
         name: 'Google Pay',
         image: '../../../assets/img/gpay.webp',
-        value: '5L',
+        value: 5000,
+        displayValue: '5k',
         style: {
           backgroundColor: '#fff',
           color: '#3361ff',
