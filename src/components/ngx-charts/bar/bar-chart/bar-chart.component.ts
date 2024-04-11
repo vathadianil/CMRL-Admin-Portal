@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
-import { COLORS } from '../../../util/colors';
 
 @Component({
   selector: 'app-bar-chart',

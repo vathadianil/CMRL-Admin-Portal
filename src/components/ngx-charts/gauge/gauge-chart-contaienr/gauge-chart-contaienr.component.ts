@@ -1,29 +1,28 @@
 import { Component, Input } from '@angular/core';
-import { BarChartComponent } from '../bar-chart/bar-chart.component';
+import { GaugeChartComponent } from '../gauge-chart/gauge-chart.component';
+import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
-import { MatMenuModule } from '@angular/material/menu';
-import { ChartDialogComponent } from '../chart-dialog/chart-dialog.component';
+import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component';
 
 @Component({
-  selector: 'app-bar-chart-container',
+  selector: 'app-gauge-chart-contaienr',
   standalone: true,
   imports: [
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    BarChartComponent,
+    GaugeChartComponent,
     CommonModule,
-    MatMenuModule,
   ],
-  templateUrl: './bar-chart-container.component.html',
-  styleUrl: './bar-chart-container.component.scss',
+  templateUrl: './gauge-chart-contaienr.component.html',
+  styleUrl: './gauge-chart-contaienr.component.scss',
 })
-export class BarChartContainerComponent {
+export class GaugeChartContaienrComponent {
   @Input() chartData: any = {};
+
   constructor(private dialog: MatDialog) {}
 
   openGraphDetail(): void {

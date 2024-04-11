@@ -1,8 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { BarChartComponent } from '../bar-chart/bar-chart.component';
 import { MatCardModule } from '@angular/material/card';
-import { GaugeChartComponent } from '../gauge-chart/gauge-chart.component';
+import { GaugeChartComponent } from '../gauge/gauge-chart/gauge-chart.component';
+import { BarChartComponent } from '../bar/bar-chart/bar-chart.component';
 
 @Component({
   selector: 'app-chart-dialog',
