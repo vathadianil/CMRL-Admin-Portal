@@ -11,9 +11,18 @@
 <mat-drawer-container class="home" autosize>
   <mat-drawer mode="side" class="home__side-customise" opened>
     @for(item of menuItems; track item.label ) { @if(!item?.submenu?.length) {
-    <mat-list-item class="home__menu-button" (click)="navigateTo(item.route)">
-      <mat-icon [style.color]="item.color">{{ item.icon }}</mat-icon>
-      <span [style.color]="item.color">{{ item.label }}</span>
+    <mat-list-item
+      class="home__menu-button"
+      [routerLink]="[item.route]"
+      routerLinkActive="active"
+      #active="routerLinkActive"
+    >
+      <mat-icon [style.color]="active.isActive ? '#fff' : item.color">{{
+        item.icon
+      }}</mat-icon>
+      <span [style.color]="active.isActive ? '#fff' : item.color">{{
+        item.label
+      }}</span>
     </mat-list-item>
     } @if(item?.submenu?.length){
     <mat-expansion-panel class="home__submenu-panel">
@@ -25,9 +34,17 @@
       </mat-expansion-panel-header>
       <mat-list>
         @for(submenu of item.submenu; track submenu.label ){
-        <mat-list-item (click)="navigateTo(submenu.route)">
-          <mat-icon [style.color]="submenu.color">{{ submenu.icon }}</mat-icon>
-          <span [style.color]="submenu.color">{{ submenu.label }}</span>
+        <mat-list-item
+          [routerLink]="[submenu.route]"
+          routerLinkActive="active"
+          #active="routerLinkActive"
+        >
+          <mat-icon [style.color]="active.isActive ? '#fff' : submenu.color">{{
+            submenu.icon
+          }}</mat-icon>
+          <span [style.color]="active.isActive ? '#fff' : submenu.color">{{
+            submenu.label
+          }}</span>
         </mat-list-item>
         }
       </mat-list>
