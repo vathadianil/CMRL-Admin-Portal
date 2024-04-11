@@ -20,11 +20,10 @@ export class GaugeChartComponent implements OnInit {
   @Input() units = '';
 
   ngOnInit(): void {
+    const colors = [];
+    this.chartData?.data.map((value: any) => colors.push(value?.style?.color));
     this.colorScheme = {
-      domain: [
-        this.chartData?.data[0]?.style?.color,
-        this.chartData?.data[1]?.style?.color,
-      ],
+      domain: colors,
       group: ScaleType.Ordinal,
       selectable: true,
       name: this.chartData?.title,

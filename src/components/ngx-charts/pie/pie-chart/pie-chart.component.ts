@@ -25,8 +25,10 @@ export class PieChartComponent implements OnInit {
   @Input() tooltipDisabled: boolean = true;
 
   ngOnInit(): void {
+    const colors = [];
+    this.chartData?.data.map((value: any) => colors.push(value?.style?.color));
     this.colorScheme = {
-      domain: [COLORS.green800, COLORS.green50],
+      domain: colors,
       group: ScaleType.Ordinal,
       selectable: true,
       name: '',

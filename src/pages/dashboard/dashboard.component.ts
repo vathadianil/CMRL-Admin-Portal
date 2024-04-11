@@ -179,10 +179,16 @@ export class DashboardComponent {
       {
         name: 'Sold',
         value: 7000,
+        style: {
+          color: '#128822',
+        },
       },
       {
         name: 'Remaining',
         value: 3000,
+        style: {
+          color: '#f4fcf5',
+        },
       },
     ],
   };
