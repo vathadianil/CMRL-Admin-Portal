@@ -21,7 +21,10 @@ export class GaugeChartComponent implements OnInit {
 
   ngOnInit(): void {
     this.colorScheme = {
-      domain: [COLORS.orange800, COLORS.blue800],
+      domain: [
+        this.chartData?.data[0]?.style?.color,
+        this.chartData?.data[1]?.style?.color,
+      ],
       group: ScaleType.Ordinal,
       selectable: true,
       name: this.chartData?.title,

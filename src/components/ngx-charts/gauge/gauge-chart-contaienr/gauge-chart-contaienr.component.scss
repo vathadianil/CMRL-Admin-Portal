@@ -57,12 +57,10 @@
     position: absolute;
     top: 40%;
     left: 73px;
-    background-color: var(--green50);
   }
 
   &__total-content {
     font-weight: 700;
-    color: var(--green800);
   }
 
   &__btn-container {
@@ -76,7 +74,7 @@
   }
 }
 
-mat-card:is([class*="card__total-container"]) {
-  box-shadow: 0 2px 1px -1px var(--green50), 0 1px 1px 0 var(--green50),
-    0 1px 3px 0 var(--green800);
-}
+// mat-card:is([class*="card__total-container"]) {
+//   box-shadow: 0 2px 1px -1px var(--green50), 0 1px 1px 0 var(--green50),
+//     0 1px 3px 0 var(--green800);
+// }

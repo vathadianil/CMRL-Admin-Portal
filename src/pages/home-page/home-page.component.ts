@@ -168,18 +168,26 @@ export class HomePageComponent {
     title: 'Revenue',
     total: '10k',
     style: {
-      color: '#ff6633',
+      titleColor: '#ff6633',
+      totalTextBackgroundColor: '#f4fcf5',
+      totalTextColor: '#128822',
     },
     data: [
       {
         name: 'Cash',
         value: 7000,
         displayValue: '7k',
+        style: {
+          color: '#ff6633',
+        },
       },
       {
         name: 'Non Cash',
         value: 3000,
         displayValue: '3k',
+        style: {
+          color: '#3361ff',
+        },
       },
     ],
   };

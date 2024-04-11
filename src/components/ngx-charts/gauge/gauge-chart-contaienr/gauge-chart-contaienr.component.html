@@ -12,10 +12,23 @@
   </mat-card-content>
   <mat-card-content class="card__chart">
     <app-gauge-chart [chartData]="chartData"></app-gauge-chart>
-    <mat-card class="card__total-container">
-      <mat-card-content class="card__total-content">{{
-        chartData?.total
-      }}</mat-card-content>
+    <mat-card
+      class="card__total-container"
+      [style.background-color]="chartData?.style?.totalTextBackgroundColor"
+      [style.box-shadow]="
+        '0 2px 1px -1px ' +
+        chartData?.style?.totalTextBackgroundColor +
+        ', 0 1px 1px 0 ' +
+        chartData?.style?.totalTextBackgroundColor +
+        ',0 1px 3px 0 ' +
+        chartData?.style?.totalTextColor
+      "
+    >
+      <mat-card-content
+        class="card__total-content"
+        [style.color]="chartData?.style?.totalTextColor"
+        >{{ chartData?.total }}</mat-card-content
+      >
     </mat-card>
   </mat-card-content>
 
