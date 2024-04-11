@@ -167,6 +167,9 @@ export class HomePageComponent {
     type: 'gauge',
     title: 'Revenue',
     total: '10k',
+    style: {
+      color: '#ff6633',
+    },
     data: [
       {
         name: 'Cash',

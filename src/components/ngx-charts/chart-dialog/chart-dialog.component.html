@@ -26,8 +26,15 @@
     [style.color]="chartData?.style?.color"
     >{{ chartData?.title }}</mat-card-header
   >
-  <mat-card-content class="card__content">
-    <app-gauge-chart [chartData]="chartData?.data"></app-gauge-chart>
+  <mat-card-content>
+    <app-gauge-chart
+      [chartData]="chartData"
+      [view]="[600, 400]"
+      [showAxis]="true"
+      [showLegend]="true"
+      [showText]="true"
+      [units]="'&#8377;'"
+    ></app-gauge-chart>
   </mat-card-content>
 </mat-card>
 }

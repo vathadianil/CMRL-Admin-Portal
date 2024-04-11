@@ -2,11 +2,10 @@
   [view]="view"
   [scheme]="colorScheme"
   [results]="data"
-  [legend]="legend"
-  [showAxis]="false"
-  [angleSpan]="240"
-  [showText]="false"
-  [legendPosition]="legendPosition"
-  (select)="onSelect($event)"
+  [legend]="showLegend"
+  [showAxis]="showAxis"
+  [showText]="showText"
+  [legendTitle]="''"
+  [units]="units"
 >
 </ngx-charts-gauge>

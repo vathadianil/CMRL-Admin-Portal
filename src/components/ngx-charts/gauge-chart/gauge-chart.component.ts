@@ -10,24 +10,22 @@ import { COLORS } from '../../../util/colors';
   styleUrl: './gauge-chart.component.scss',
 })
 export class GaugeChartComponent implements OnInit {
-  @Input() chartData = [];
+  @Input() chartData: any;
   data = [];
-  view: any = [170, 260];
-  legend: boolean = false;
-  legendPosition: any = 'below';
-
-  colorScheme = {
-    domain: [COLORS.orange800, COLORS.blue800],
-    group: ScaleType.Ordinal,
-    selectable: true,
-    name: '',
-  };
+  colorScheme: any;
+  @Input() view: any = [170, 260];
+  @Input() showLegend: boolean = false;
+  @Input() showAxis = false;
+  @Input() showText = false;
+  @Input() units = '';
 
   ngOnInit(): void {
-    this.data = this.chartData;
-  }
-
-  onSelect(data): void {
-    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
+    this.colorScheme = {
+      domain: [COLORS.orange800, COLORS.blue800],
+      group: ScaleType.Ordinal,
+      selectable: true,
+      name: this.chartData?.title,
+    };
+    this.data = this.chartData?.data;
   }
 }
