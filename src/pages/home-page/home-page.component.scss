@@ -23,7 +23,7 @@
 }
 
 .home {
-  height: 100vh;
+  min-height: 80vh;
   &__chart-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));

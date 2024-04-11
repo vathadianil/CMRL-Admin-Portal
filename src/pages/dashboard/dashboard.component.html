@@ -1,4 +1,7 @@
 <div class="dashboard__chart-container">
+  <!-- @for (item of [1,2,3,4,5,6]; track $index) {
+  <app-dashboard-skelton></app-dashboard-skelton>
+  } -->
   @for (chart of barChartList; track chart?.title) {
   <app-bar-chart-container [chartData]="chart"></app-bar-chart-container>
   }

@@ -3,6 +3,7 @@ import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/mercha
 import { BarChartContainerComponent } from '../../components/ngx-charts/bar/bar-chart-container/bar-chart-container.component';
 import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge/gauge-chart-contaienr/gauge-chart-contaienr.component';
 import { PieChartContainerComponent } from '../../components/ngx-charts/pie/pie-chart-container/pie-chart-container.component';
+import { DashboardSkeltonComponent } from '../../components/skelton/dashboard-skelton/dashboard-skelton.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +13,7 @@ import { PieChartContainerComponent } from '../../components/ngx-charts/pie/pie-
     GaugeChartContaienrComponent,
     PieChartContainerComponent,
     MerchantWiseRevenueComponent,
+    DashboardSkeltonComponent,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
