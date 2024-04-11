@@ -1,0 +1,12 @@
+<div class="dashboard__chart-container">
+  @for (chart of barChartList; track chart?.title) {
+  <app-bar-chart-container [chartData]="chart"></app-bar-chart-container>
+  }
+  <app-gauge-chart-contaienr
+    [chartData]="gaugeChartList"
+  ></app-gauge-chart-contaienr>
+  <app-pie-chart-container [chartData]="pieChartList"></app-pie-chart-container>
+  <app-merchant-wise-revenue
+    [chartData]="merchantWiseRevenue"
+  ></app-merchant-wise-revenue>
+</div>

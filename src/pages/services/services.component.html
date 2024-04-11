@@ -1,1 +1,61 @@
-<p>services works!</p>
+<!-- <mat-menu #menu="matMenu">
+  <button mat-menu-item *ngFor="let column of columns">
+    <mat-checkbox class="m-5" [(ngModel)]="column.show">
+      {{ column.header | titlecase }}
+    </mat-checkbox>
+  </button>
+</mat-menu>
+
+<div class="mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container
+      *ngFor="let column of columns; let i = index"
+      [cdkColumnDef]="column.columnDef"
+    >
+      <mat-header-cell *cdkHeaderCellDef mat-sort-header>{{
+        column.header
+      }}</mat-header-cell>
+      <mat-cell *cdkCellDef="let row">
+        <span
+          *ngIf="column.header === 'Id'; else normalCol"
+          [class.truncate-text]="column.header === 'Id'"
+          [innerHTML]="column.cell(row) | highlight : dataSource.filter"
+          [matTooltip]="column.cell(row)"
+        ></span>
+        <ng-template #normalCol>
+          <span [innerHTML]="column.cell(row) | highlight : dataSource.filter">
+          </span>
+        </ng-template>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="noData">
+      <mat-footer-cell
+        *matFooterCellDef
+        [attr.colspan]="displayedColumns.length"
+      >
+        <div>No records found.</div>
+      </mat-footer-cell>
+    </ng-container>
+
+    <mat-header-row
+      *matHeaderRowDef="displayedColumns | toggleColumns : columns"
+    ></mat-header-row>
+    <mat-row
+      *matRowDef="let row; columns: displayedColumns | toggleColumns : columns"
+    ></mat-row>
+    <mat-footer-row
+      *matFooterRowDef="['noData']"
+      [ngClass]="{
+        'hide-not-found-msg': !(
+          dataSource !== null && dataSource.filteredData.length === 0
+        )
+      }"
+    >
+    </mat-footer-row>
+  </mat-table>
+  <mat-paginator
+    [pageSizeOptions]="[2, 5, 10]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div> -->

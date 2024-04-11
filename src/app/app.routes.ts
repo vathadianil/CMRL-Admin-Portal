@@ -15,12 +15,22 @@ export const routes: Routes = [
       import(`../pages/home-page/home-page.component`).then(
         (c) => c.HomePageComponent
       ),
-  },
-  {
-    path: 'services',
-    loadComponent: () =>
-      import(`../pages/services/services.component`).then(
-        (c) => c.ServicesComponent
-      ),
+    children: [
+      { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+      {
+        path: 'dashboard',
+        loadComponent: () =>
+          import(`../pages/dashboard/dashboard.component`).then(
+            (c) => c.DashboardComponent
+          ),
+      },
+      {
+        path: 'services',
+        loadComponent: () =>
+          import(`../pages/services/services.component`).then(
+            (c) => c.ServicesComponent
+          ),
+      },
+    ],
   },
 ];
