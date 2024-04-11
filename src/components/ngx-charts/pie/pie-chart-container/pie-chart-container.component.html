@@ -1,6 +1,6 @@
 <mat-card class="card">
   <mat-card-content class="card__chart">
-    <app-pie-chart [chartData]="chartData?.data"></app-pie-chart>
+    <app-pie-chart [chartData]="chartData"></app-pie-chart>
     <mat-card class="card__total-container">
       <mat-card-content class="card__total-content">{{
         chartData?.percentage
@@ -9,7 +9,12 @@
   </mat-card-content>
   <mat-card-content class="card__description">
     <div class="card__btn-container">
-      <button class="card__btn" mat-mini-fab aria-label="View Detailed Chart">
+      <button
+        class="card__btn"
+        mat-mini-fab
+        aria-label="View Detailed Chart"
+        (click)="openGraphDetail()"
+      >
         <mat-icon fontIcon="more_horiz"></mat-icon>
       </button>
     </div>

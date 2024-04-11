@@ -10,28 +10,28 @@ import { NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
   styleUrl: './pie-chart.component.scss',
 })
 export class PieChartComponent implements OnInit {
-  @Input() chartData = [];
+  @Input() chartData: any;
   data = [];
-  view: any = [220, 245];
+  colorScheme: any;
+
+  @Input() view: any = [220, 245];
+  isAdvancedChart = false;
 
   // options
-  gradient: boolean = true;
-  showLegend: boolean = false;
-  showLabels: boolean = false;
-  isDoughnut: boolean = true;
-  tooltipDisabled: boolean = true;
+  @Input() gradient: boolean = true;
+  @Input() showLegend: boolean = false;
+  @Input() showLabels: boolean = false;
+  @Input() isDoughnut: boolean = true;
+  @Input() tooltipDisabled: boolean = true;
 
-  colorScheme = {
-    domain: [COLORS.green800, COLORS.green50],
-    group: ScaleType.Ordinal,
-    selectable: true,
-    name: '',
-  };
   ngOnInit(): void {
-    this.data = this.chartData;
-  }
-
-  onSelect(event) {
-    console.log(event);
+    this.colorScheme = {
+      domain: [COLORS.green800, COLORS.green50],
+      group: ScaleType.Ordinal,
+      selectable: true,
+      name: '',
+    };
+    this.data = this.chartData?.data;
+    this.isAdvancedChart = this.chartData?.isAdvancedChart;
   }
 }

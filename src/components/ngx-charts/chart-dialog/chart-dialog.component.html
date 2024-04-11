@@ -37,4 +37,20 @@
     ></app-gauge-chart>
   </mat-card-content>
 </mat-card>
+} @if (chartData?.type === 'pie' && chartData?.title === title) {
+<mat-card class="card">
+  <mat-card-header
+    class="card__header"
+    [style.color]="chartData?.style?.titleColor"
+    >{{ chartData?.title }}</mat-card-header
+  >
+  <mat-card-content class="card__content-pie">
+    <app-pie-chart
+      [chartData]="chartData"
+      [view]="[800, 300]"
+      [showLegend]="true"
+      [showLabels]="true"
+    ></app-pie-chart>
+  </mat-card-content>
+</mat-card>
 }

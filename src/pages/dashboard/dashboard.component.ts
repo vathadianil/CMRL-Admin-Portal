@@ -168,9 +168,13 @@ export class DashboardComponent {
   };
 
   pieChartList = {
-    chartType: 'stock',
+    type: 'pie',
     title: 'Card Sale Percentage',
     percentage: '70%',
+    isAdvancedChart: false,
+    style: {
+      titleColor: '#128822',
+    },
     data: [
       {
         name: 'Sold',

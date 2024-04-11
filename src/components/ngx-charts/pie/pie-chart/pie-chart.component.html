@@ -1,3 +1,13 @@
+@if (isAdvancedChart) {
+<ngx-charts-advanced-pie-chart
+  style="text-align: center"
+  [view]="view"
+  [scheme]="colorScheme"
+  [results]="data"
+  [gradient]="gradient"
+>
+</ngx-charts-advanced-pie-chart>
+}@else{
 <ngx-charts-pie-chart
   [view]="view"
   [scheme]="colorScheme"
@@ -8,6 +18,7 @@
   [doughnut]="isDoughnut"
   [tooltipDisabled]="tooltipDisabled"
   [arcWidth]="0.07"
-  (select)="onSelect($event)"
 >
 </ngx-charts-pie-chart>
+
+}
