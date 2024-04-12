@@ -1,0 +1,19 @@
+.search-box {
+  height: 60px;
+  margin-right:  16px;
+  margin-bottom: 12px;
+}
+
+.search-box input[type="text"] {  
+  width:250px;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 12px;
+  box-sizing: border-box;
+  border-radius: 2em;
+  border: 1px solid #DFEAF2;
+  background-color: #f5f7fa
+}
+
+

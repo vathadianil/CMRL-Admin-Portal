@@ -1,0 +1,21 @@
+<div class="example-flex-container">
+  <div class="example-button-container">
+    <button mat-fab style="background-color: rgb(248, 235, 248)">
+      <mat-icon style="color: purple">add</mat-icon>
+    </button>
+  </div>
+  <div class="example-button-container">
+    <button
+      mat-fab
+      style="background-color: rgb(228, 238, 228)"
+      [matMenuTriggerFor]="menu"
+    >
+      <mat-icon style="color: green">download</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item class="menu-content">XL Format</button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item class="menu-content">PDF Format</button>
+      </mat-menu>
+    </button>
+  </div>
+</div>

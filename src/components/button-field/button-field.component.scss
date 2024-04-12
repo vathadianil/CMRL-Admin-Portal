@@ -1,0 +1,11 @@
+.app-button {
+  background-color: var(--blue800) !important;
+  color: #fff !important;
+  text-wrap: nowrap;
+  font-family:  "Montserrat", Roboto, "Helvetica Neue", sans-serif !important;
+  //font-size: toRem(16);
+
+  &__icon {
+    padding: 0.1em;
+  }
+}

@@ -73,6 +73,12 @@ export class HomePageComponent {
           route: 'shiftEnd',
           color: '#cd4040',
         },
+        {
+          icon: 'article_shortcut',
+          label: 'Transaction Data',
+          route: 'transactionDataQuery',
+          color: '#04870d',
+        },
       ],
     },
   ];

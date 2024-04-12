@@ -1,0 +1,28 @@
+<div class="dense-2">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ label }}</mat-label>
+    <input
+      type="text"
+      [placeholder]="placeholder"
+      aria-label="Number"
+      [formControl]="control"
+      matInput
+      [matAutocomplete]="auto"
+    />
+    <mat-icon matSuffix>expand_more</mat-icon>
+    <mat-autocomplete
+      #auto
+      [displayWith]="displayWith.bind(this)"
+      (optionSelected)="onSelectionChange($event)"
+    >
+      <ng-container *ngIf="filteredListData?.length">
+        <mat-option *ngFor="let item of filteredListData" [value]="item.value">
+          {{ item.name }}
+        </mat-option>
+      </ng-container>
+      <ng-container *ngIf="!filteredListData?.length">
+        <mat-option> No Data Found </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

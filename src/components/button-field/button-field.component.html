@@ -1,0 +1,15 @@
+<button
+  mat-raised-button
+  class="app-button"
+  [disabled]="disabled"
+  [ngStyle]="{
+    height: height + 'rem',
+  }"
+  [type]="type"
+  (click)="onButtonClick()"
+>
+  {{ label }}
+  <mat-icon *ngIf="showSpinner" class="app-button__icon">
+    <mat-spinner diameter="20"> </mat-spinner
+  ></mat-icon>
+</button>

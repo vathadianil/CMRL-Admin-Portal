@@ -31,6 +31,13 @@ export const routes: Routes = [
             (c) => c.ServicesComponent
           ),
       },
+      {
+        path: 'transactionDataQuery',
+        loadComponent: () =>
+          import(
+            `../pages/reports/transaction-data-query/transaction-data-query.component`
+          ).then((c) => c.TransactionDataQueryComponent),
+      },
     ],
   },
 ];

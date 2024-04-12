@@ -1,0 +1,14 @@
+<mat-form-field appearance="outline">
+  <mat-label>{{ label }}</mat-label>
+  <input
+    matInput
+    [placeholder]="placeholder"
+    class="custom-input"
+    [(ngModel)]="value"
+    (ngModelChange)="onChange($event)"
+    (blur)="onTouched()"
+    [errorStateMatcher]="errorMatcher()"
+    [disabled]="disabled"
+  />
+  <mat-error class="input-error"> {{ hint }} </mat-error>
+</mat-form-field>

@@ -1,0 +1,100 @@
+<div class="trans">
+  <mat-card class="trans__card">
+    <div class="trans__title-wrapper">
+      <app-page-title title="Transaction Data Query"></app-page-title>
+    </div>
+    <mat-card-content>
+      <form class="trans__outer-container" [formGroup]="transReportForm">
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Stations"
+          placeholder="Select Station"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+          (dropdownValue)="stationValue($event)"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Transaction Type"
+          placeholder="Select Transaction Type"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+          (dropdownValue)="stationValue($event)"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Equipments"
+          placeholder="Select Equipments"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+          (dropdownValue)="stationValue($event)"
+        >
+        </app-drop-down>
+        <div class="trans__btn-container">
+          <app-button-field
+            type="submit"
+            label="Search"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+          <app-button-field
+            type="submit"
+            label="Clear"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+        </div>
+
+        <!--  <div class="trans__btn-container">
+           <app-button-field
+              type="submit"
+              label="Search"
+              [fontSize]="16"
+              [width]="8"
+              [height]="2.9"
+            >
+            </app-button-field> -->
+        <!-- <div
+            class="trans__export-icon-container"
+            *ngIf="transDataCopy.length"
+            matTooltip="Download Excel"
+          >
+            <mat-icon
+                svgIcon="export-excel-2"
+                style="width: 50px; height: 50px"
+                (click)="exportData()"
+              ></mat-icon>
+          </div> -->
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="trans__card">
+    <mat-card-content>
+      <div class="content-container">
+        <app-search></app-search>
+        <app-fab-button></app-fab-button>
+      </div>
+      <app-table></app-table>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- <div class="tim-trans__search-container">
+    <div *ngIf="transDataCopy.length" class="doc-count">
+      Number of Records - {{ transDataCopy.length }}
+    </div>
+    <app-search *ngIf="timDataCopy.length || searchValue.length"></app-search> 
+  </div> -->
+
+  <!-- <app-table
+    *ngIf="transDataCopy?.length"
+    [tableData]="transDataCopy"
+    [displayedColumns]="tableCols"
+    [sortCols]="sortCols"
+    [isAPIFailed]="isAPIFailed"
+  >
+  </app-table> -->
+</div>
