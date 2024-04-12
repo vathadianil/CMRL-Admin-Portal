@@ -35,6 +35,7 @@
       <mat-list>
         @for(submenu of item.submenu; track submenu.label ){
         <mat-list-item
+          style="border-radius: 1em"
           [routerLink]="[submenu.route]"
           routerLinkActive="active"
           #active="routerLinkActive"
