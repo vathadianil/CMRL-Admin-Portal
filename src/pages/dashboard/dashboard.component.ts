@@ -4,6 +4,10 @@ import { BarChartContainerComponent } from '../../components/ngx-charts/bar/bar-
 import { GaugeChartContaienrComponent } from '../../components/ngx-charts/gauge/gauge-chart-contaienr/gauge-chart-contaienr.component';
 import { PieChartContainerComponent } from '../../components/ngx-charts/pie/pie-chart-container/pie-chart-container.component';
 import { DashboardSkeltonComponent } from '../../components/skelton/dashboard-skelton/dashboard-skelton.component';
+import { EntryExitRevenueBarChartModel } from '../../models/entry-exit-revenue-bar-chart.model';
+import { RevenueGaugeChartModel } from '../../models/revenue-gauge-chart.model';
+import { CardSalePercentagePieChartModel } from '../../models/card-sale-percentage-pie-chart.model';
+import { MerchantWiseRevenueChartModel } from '../../models/merchant-wise-revenue-chart.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -19,7 +23,7 @@ import { DashboardSkeltonComponent } from '../../components/skelton/dashboard-sk
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
-  barChartList = [
+  barChartList: EntryExitRevenueBarChartModel[] = [
     {
       title: 'Entry Traffic',
       type: 'bar',
@@ -140,7 +144,7 @@ export class DashboardComponent {
     },
   ];
 
-  gaugeChartList = {
+  gaugeChartList: RevenueGaugeChartModel = {
     type: 'gauge',
     title: 'Revenue',
     total: '10k',
@@ -169,7 +173,7 @@ export class DashboardComponent {
     ],
   };
 
-  pieChartList = {
+  pieChartList: CardSalePercentagePieChartModel = {
     type: 'pie',
     title: 'Card Sale Percentage',
     percentage: '70%',
@@ -195,7 +199,7 @@ export class DashboardComponent {
     ],
   };
 
-  merchantWiseRevenue = {
+  merchantWiseRevenue: MerchantWiseRevenueChartModel = {
     title: 'Merchant Wise Revenue',
     type: 'card',
     data: [
