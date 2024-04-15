@@ -13,6 +13,7 @@ import { CustomInputComponent } from '../../../components/custom-input/custom-in
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionDataQueryInterface } from '../../../models/transaction-data-query.interface';
 import { CommonService } from '../../../services/common.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-transaction-data-query',
@@ -29,6 +30,7 @@ import { CommonService } from '../../../services/common.service';
     SearchComponent,
     FabButtonFieldComponent,
     CustomInputComponent,
+    MatIconModule,
   ],
   templateUrl: './transaction-data-query.component.html',
   styleUrl: './transaction-data-query.component.scss',
