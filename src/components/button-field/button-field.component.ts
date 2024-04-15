@@ -25,6 +25,8 @@ export class ButtonFieldComponent {
   @Input() type = 'button';
   @Input() showSpinner: boolean = false;
   @Output() buttonClick = new EventEmitter<void>();
+  @Input() backgroundColor = '#3361ff';
+  @Input() color = '#fff';
 
   onButtonClick() {
     this.buttonClick.emit();
