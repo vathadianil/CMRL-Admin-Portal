@@ -1,4 +1,4 @@
-export interface transactionDataQueryInterface {
+export interface TransactionDataQueryInterface {
   transId: string;
   transType: string;
   lineId: string;

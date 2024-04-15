@@ -11,7 +11,7 @@ import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { transactionDataQueryInterface } from '../../../models/transaction-data-query.interface';
+import { TransactionDataQueryInterface } from '../../../models/transaction-data-query.interface';
 
 @Component({
   selector: 'app-transaction-data-query',
@@ -36,7 +36,7 @@ export class TransactionDataQueryComponent implements OnInit {
   transReportForm!: FormGroup;
   myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<transactionDataQueryInterface>;
+    dataSource: MatTableDataSource<TransactionDataQueryInterface>;
   }[] = [
     {
       displayedColumns: [
@@ -50,7 +50,7 @@ export class TransactionDataQueryComponent implements OnInit {
         'operatorId',
         'terminalId',
       ],
-      dataSource: new MatTableDataSource<transactionDataQueryInterface>([
+      dataSource: new MatTableDataSource<TransactionDataQueryInterface>([
         {
           transId: '764566834220230824025339',
           transType: '03',
