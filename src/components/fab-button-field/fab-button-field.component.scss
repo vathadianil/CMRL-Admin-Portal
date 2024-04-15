@@ -1,30 +1,28 @@
+.fab {
+  &__btn {
+    border-radius: 16px !important;
+    width: 56px;
+    height: 56px;
+  }
+  &__downlod-btn {
+    background-color: var(--green50);
+    &__color {
+      color: var(--green800) !important;
+    }
+  }
 
-.example-flex-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  &__add-btn {
+    background-color: var(--orange50);
+    &__color {
+      color: var(--orange800) !important;
+    }
+  }
+
+  &__menu-content {
+    color: var(--blue800);
+  }
 }
 
-.example-button-container {
-  display: flex;
-  justify-content: center;
-  margin-right: 10px; 
+::ng-deep .mat-mdc-menu-panel {
+  border-radius: 1em !important;
 }
-
-.example-button-container button {
- // background-color: rgb(228, 238, 228);
-  border-radius: 16px; 
-  width: 56px; 
-  height: 56px; 
-}
-
-.example-button-container button:hover {
-  background-color: rgb(228, 238, 228); 
-}
-
-.menu-content{
-  color: var(--blue800);
-  border: 1px ;
-  border-radius: 2em;;
-}
-

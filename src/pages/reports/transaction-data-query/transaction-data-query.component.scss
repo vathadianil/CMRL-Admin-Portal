@@ -1,101 +1,63 @@
 .trans {
   margin: 0 1em 1em 2em;
 
- &__title-wrapper {
-   padding: 1em 0 1em 1em;
-   font-weight: bold;
-   font-size: larger;
-   color: rgb(71, 71, 239);
- }
- 
- &__outer-container {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  grid-gap: 1em;
-  place-content: center;
- }
+  &__card {
+    border-radius: 1em;
+    margin-bottom: 2em;
+  }
 
- &__search{
-  background-color: var(--blue800) !important;
-  color: #fff !important;
- }
+  &__title-wrapper {
+    padding: 1em 0 1em 1em;
+    font-weight: bold;
+    font-size: larger;
+    color: var(--blue800);
+  }
 
+  &__outer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1em;
+    place-content: center;
+  }
 
- &__search-input{
-  border-radius: 20px;
- }
+  &__fab-btn-wrapper {
+    display: flex;
+    gap: 2em;
+  }
 
+  &__btn-container {
+    display: flex;
+    gap: 1em;
+  }
 
- &__input-container {
-   margin-right: 20em;
- }
-
- &__btn-container {
-   display: flex;   
-   gap:1em;
- }
-
-
- &__search-container{
-   display: flex;
-   justify-content: end;
-   gap: 1em;
-   align-items: center;
- }
-
-
- &__doc-count {
-   margin: 1%;
-   font-weight: 500;
- }
-
-
- &__export-icon-container {
-   margin-left: 1em;
-   cursor: pointer;
-   transition: transform 250ms ease-in-out;
- }
-
- &__export-icon-container:hover {
-   transform: scale(1.2);
- }
- 
- &__empty-state {
-   display: flex;
-   justify-content: center;
- }
-
- &__card{
-  border-radius: 1em;
-  margin-bottom: 32px;
- }
-
+  &__empty-state {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 table {
-  border:1px solid gray;
+  border: 1px solid gray;
   border-collapse: collapse;
 }
 
-td,th {
-  border:1px solid #ccc;
-  padding:1rem;
+td,
+th {
+  border: 1px solid #ccc;
+  padding: 1rem;
 }
-
 
 .content-container {
   display: flex;
   justify-content: space-between;
 }
 
-
 // .input-container {
 //   display: flex;
 //   flex-direction: column;
-//   margin-bottom: 16px; 
+//   margin-bottom: 16px;
 // }
 
 // .top-label {
-//   margin-bottom: 8px; 
+//   margin-bottom: 8px;
 // }
-

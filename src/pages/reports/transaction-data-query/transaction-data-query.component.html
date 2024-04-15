@@ -48,7 +48,9 @@
     <mat-card-content>
       <div class="content-container">
         <app-search></app-search>
-        <app-fab-button></app-fab-button>
+        <div class="trans__fab-btn-wrapper">
+          <app-fab-button></app-fab-button>
+        </div>
       </div>
       <app-table [tableData]="myTableData"></app-table>
     </mat-card-content>

@@ -1,21 +1,34 @@
-<div class="example-flex-container">
-  <div class="example-button-container">
-    <button mat-fab style="background-color: rgb(248, 235, 248)">
-      <mat-icon style="color: purple">add</mat-icon>
-    </button>
-  </div>
-  <div class="example-button-container">
-    <button
-      mat-fab
-      style="background-color: rgb(228, 238, 228)"
-      [matMenuTriggerFor]="menu"
+<div class="fab">
+  <button
+    class="fab__btn"
+    mat-fab
+    [matMenuTriggerFor]="showMenu && menu"
+    [ngClass]="isDownloadBtn ? 'fab__downlod-btn' : 'fab__add-btn'"
+  >
+    <mat-icon
+      [ngClass]="
+        isDownloadBtn ? 'fab__downlod-btn__color' : 'fab__add-btn__color'
+      "
+      >{{ icon }}</mat-icon
     >
-      <mat-icon style="color: green">download</mat-icon>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item class="menu-content">XL Format</button>
-        <mat-divider></mat-divider>
-        <button mat-menu-item class="menu-content">PDF Format</button>
-      </mat-menu>
-    </button>
-  </div>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="fab__menu-content">
+        <mat-icon class="fab__downlod-btn__color"> file_copy</mat-icon>
+        <span>Excel</span>
+      </button>
+      @if (showPdf) {
+      <mat-divider></mat-divider>
+      <button mat-menu-item class="fab__menu-content">
+        <mat-icon class="fab__add-btn__color">picture_as_pdf</mat-icon>
+        <span>PDF</span>
+      </button>
+      }
+    </mat-menu>
+  </button>
 </div>
+
+<!-- <mat-menu #menu="matMenu">
+  <button mat-menu-item class="menu-content">XL Format</button>
+  <mat-divider></mat-divider>
+  <button mat-menu-item class="menu-content">PDF Format</button>
+</mat-menu> -->
