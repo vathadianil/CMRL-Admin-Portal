@@ -1,6 +1,9 @@
 .app-button {
-  background-color: var(--blue800) !important;
-  color: #fff !important;
+ // background-color: var(--blue800) !important;
+ // color: #fff !important;
+ border:2px solid;
+ border-color: var(--blue800);
+ border-radius: 8px;
   text-wrap: nowrap;
   font-family:  "Montserrat", Roboto, "Helvetica Neue", sans-serif !important;
   //font-size: toRem(16);

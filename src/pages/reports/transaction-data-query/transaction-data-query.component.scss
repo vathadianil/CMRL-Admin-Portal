@@ -15,6 +15,10 @@
   place-content: center;
  }
 
+ &__search{
+  background-color: var(--blue800) !important;
+  color: #fff !important;
+ }
 
 
  &__search-input{
@@ -82,6 +86,11 @@ td,th {
 .content-container {
   display: flex;
   justify-content: space-between;
+}
+
+.search {
+  background-color: var(--blue800) !important;
+  color: #fff !important;
 }
 
 

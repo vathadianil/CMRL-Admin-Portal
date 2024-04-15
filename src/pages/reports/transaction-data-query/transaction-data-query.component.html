@@ -9,27 +9,18 @@
           class="station-dropdown-container"
           label="Stations"
           placeholder="Select Station"
-          [listData]="stationData"
-          [defaultValue]="stationDefaultValue"
-          (dropdownValue)="stationValue($event)"
         >
         </app-drop-down>
         <app-drop-down
           class="station-dropdown-container"
           label="Transaction Type"
           placeholder="Select Transaction Type"
-          [listData]="stationData"
-          [defaultValue]="stationDefaultValue"
-          (dropdownValue)="stationValue($event)"
         >
         </app-drop-down>
         <app-drop-down
           class="station-dropdown-container"
           label="Equipments"
           placeholder="Select Equipments"
-          [listData]="stationData"
-          [defaultValue]="stationDefaultValue"
-          (dropdownValue)="stationValue($event)"
         >
         </app-drop-down>
         <div class="trans__btn-container">
@@ -78,7 +69,7 @@
         <app-search></app-search>
         <app-fab-button></app-fab-button>
       </div>
-      <app-table></app-table>
+      <app-table [tableData]="myTableData"></app-table>
     </mat-card-content>
   </mat-card>
 
