@@ -37,10 +37,10 @@
     align-items: center;
     justify-content: center;
     margin: 10px;
-    width: 250px;
     border: 1px solid #e8dfdf;
-    border-radius: 8px;
+    border-radius: 8px !important;
     background-color: #fff;
+    cursor: pointer !important;
     mat-icon {
       margin-right: 18px;
     }
@@ -56,7 +56,6 @@
 
   &__submenu-panel {
     border-radius: 10px;
-    // overflow: hidden;
     margin: 10px;
     padding-left: 0;
     mat-icon {

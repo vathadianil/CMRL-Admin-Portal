@@ -13,13 +13,17 @@
     @for(item of menuItems; track item.label ) { @if(!item?.submenu?.length) {
     <mat-list-item
       class="home__menu-button"
+      style="width: 273px"
       [routerLink]="[item.route]"
       routerLinkActive="active"
       #active="routerLinkActive"
     >
-      <mat-icon [style.color]="active.isActive ? '#fff' : item.color">{{
-        item.icon
-      }}</mat-icon>
+      <mat-icon
+        [style.color]="active.isActive ? '#fff' : item.color"
+        matListItemIcon
+        >{{ item.icon }}</mat-icon
+      >
+
       <span [style.color]="active.isActive ? '#fff' : item.color">{{
         item.label
       }}</span>
@@ -35,14 +39,16 @@
       <mat-list>
         @for(submenu of item.submenu; track submenu.label ){
         <mat-list-item
-          style="border-radius: 1em"
+          class="home__menu-button"
           [routerLink]="[submenu.route]"
           routerLinkActive="active"
           #active="routerLinkActive"
         >
-          <mat-icon [style.color]="active.isActive ? '#fff' : submenu.color">{{
-            submenu.icon
-          }}</mat-icon>
+          <mat-icon
+            [style.color]="active.isActive ? '#fff' : submenu.color"
+            matListItemIcon
+            >{{ submenu.icon }}</mat-icon
+          >
           <span [style.color]="active.isActive ? '#fff' : submenu.color">{{
             submenu.label
           }}</span>
