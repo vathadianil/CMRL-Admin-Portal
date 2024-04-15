@@ -1,14 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {
-  FormBuilder,
+import { 
   FormGroup,
-  ReactiveFormsModule,
-  Validators,
+  ReactiveFormsModule,  ,
 } from '@angular/forms';
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
@@ -85,3 +80,67 @@ export class TransactionDataQueryComponent {
     },
   ];
 }
+
+// columnsInfo: any = {
+//   transId: 'Transaction Id',
+//   transType: 'Transaction Type',
+//   lineId: 'Line Id',
+//   stationId: 'Station Id',
+//   equipmentGroupId: 'Equipment Group ID',
+//   equipId: 'Euipment Id',
+//   acquirerId: 'Acquirer Id',
+//   operatorId: 'Operator Id',
+//   terminalId: 'Terminal Id',
+// };
+
+// ngOnInit(): void {
+//   this.tableCols = Object.values(this.columnsInfo);
+//   this.sortCols = JSON.parse(JSON.stringify(this.tableCols));
+
+//   this.onSubmit();
+// }
+
+// onSubmit() {
+//   const res = Response;
+//   if (res?.transData) {
+//     const transDataList = res.transData;
+//     this.transData = transDataList.map((element: any) => {
+//       let obj: any = {};
+//       const keys = Object.keys(element);
+//       keys.forEach((key) => {
+//         obj[this.columnsInfo[key]] = element[key];
+//       });
+//       return obj;
+//     });
+//     this.transDataCopy = JSON.parse(JSON.stringify(this.transData));
+//     console.log(this.transDataCopy);
+//   } else {
+//   }
+// }}
+
+// const Response = {
+//   transData: [
+//     {
+//       transId: '764566834220230824025339',
+//       transType: '03',
+//       lineId: '0303-Stadium',
+//       stationId: '3',
+//       equipmentGroupId: '1143',
+//       equipId: '4',
+//       acquirerId: '6014',
+//       operatorId: '3030C2',
+//       terminalId: '3030C2',
+//     },
+//     {
+//       transId: '764566834220230824025339',
+//       transType: '03',
+//       lineId: '0303-Stadium',
+//       stationId: '3',
+//       equipmentGroupId: '1143',
+//       equipId: '4',
+//       acquirerId: '6014',
+//       operatorId: '3030C2',
+//       terminalId: '3030C2',
+//     },
+//   ],
+// };
