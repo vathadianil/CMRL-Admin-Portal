@@ -50,12 +50,6 @@ export class HomePageComponent {
       color: 'orange',
     },
     {
-      icon: 'subway',
-      label: 'Services',
-      route: '/home/services',
-      color: 'red',
-    },
-    {
       icon: 'report',
       label: 'Reports',
       route: 'reports',

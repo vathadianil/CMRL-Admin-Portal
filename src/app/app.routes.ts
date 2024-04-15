@@ -24,13 +24,7 @@ export const routes: Routes = [
             (c) => c.DashboardComponent
           ),
       },
-      {
-        path: 'services',
-        loadComponent: () =>
-          import(`../pages/services/services.component`).then(
-            (c) => c.ServicesComponent
-          ),
-      },
+
       {
         path: 'transactionDataQuery',
         loadComponent: () =>
