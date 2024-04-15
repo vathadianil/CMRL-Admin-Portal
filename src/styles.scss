@@ -71,3 +71,19 @@ $cmrl_admin_panel-theme: mat.define-light-theme(
 body {
   font-family: "Poppins", "Helvetica Neue", sans-serif;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 0.5em;
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
