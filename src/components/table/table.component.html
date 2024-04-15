@@ -3,13 +3,12 @@
     <div class="table-container">
       <table mat-table [dataSource]="data.dataSource">
         <!-- Define table columns dynamically based on data structure -->
-        <ng-container
-          *ngFor="let column of data.displayedColumns"
-          [matColumnDef]="column"
-        >
+        @for (column of data.displayedColumns; track $index) {
+        <ng-container [matColumnDef]="column">
           <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
           <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
         </ng-container>
+        }
 
         <!-- Define header and row definitions -->
         <tr mat-header-row *matHeaderRowDef="data.displayedColumns"></tr>

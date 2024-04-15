@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
@@ -32,7 +32,7 @@ import { transactionDataQueryInterface } from '../../../models/transaction-data-
   templateUrl: './transaction-data-query.component.html',
   styleUrl: './transaction-data-query.component.scss',
 })
-export class TransactionDataQueryComponent {
+export class TransactionDataQueryComponent implements OnInit {
   transReportForm!: FormGroup;
   myTableData: {
     displayedColumns: string[];
@@ -76,6 +76,11 @@ export class TransactionDataQueryComponent {
       ]),
     },
   ];
+  ngOnInit(): void {
+    this.transReportForm = new FormGroup({
+      firstName: new FormControl(),
+    });
+  }
 }
 
 // columnsInfo: any = {
