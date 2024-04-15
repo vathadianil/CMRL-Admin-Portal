@@ -12,6 +12,7 @@ import { FabButtonFieldComponent } from '../../../components/fab-button-field/fa
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionDataQueryInterface } from '../../../models/transaction-data-query.interface';
+import { CommonService } from '../../../services/common.service';
 
 @Component({
   selector: 'app-transaction-data-query',
@@ -34,6 +35,11 @@ import { TransactionDataQueryInterface } from '../../../models/transaction-data-
 })
 export class TransactionDataQueryComponent implements OnInit {
   transReportForm!: FormGroup;
+  stationDefaultValue = 'All Stations';
+  stationData: any[] = [];
+  transactionTypeData: any[] = [];
+  equipmentData: any[] = [];
+  constructor(private commonService: CommonService) {}
   myTableData: {
     displayedColumns: string[];
     dataSource: MatTableDataSource<TransactionDataQueryInterface>;
@@ -76,7 +82,12 @@ export class TransactionDataQueryComponent implements OnInit {
       ]),
     },
   ];
-  ngOnInit(): void {
+
+  ngOnInit() {
+    this.stationData = this.commonService.getStationsList();
+    this.transactionTypeData = this.commonService.getTransactionTypes();
+    this.equipmentData = this.commonService.getEquipments();
+
     this.transReportForm = new FormGroup({
       firstName: new FormControl(),
     });
