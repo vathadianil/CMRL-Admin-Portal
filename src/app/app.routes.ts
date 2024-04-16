@@ -32,6 +32,14 @@ export const routes: Routes = [
             `../pages/reports/transaction-data-query/transaction-data-query.component`
           ).then((c) => c.TransactionDataQueryComponent),
       },
+
+      {
+        path: 'shiftEnd',
+        loadComponent: () =>
+          import(
+            `../pages/reports/shift-end/shift-end.component`
+          ).then((c) => c.ShiftEndComponent),
+      },
     ],
   },
 ];
