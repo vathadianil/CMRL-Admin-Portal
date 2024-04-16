@@ -62,7 +62,7 @@ export class HomePageComponent {
           color: '#b026b0',
         },
         {
-          icon: 'close',
+          icon: 'inbox',
           label: 'Tom Shift End',
           route: 'shiftEnd',
           color: '#cd4040',
