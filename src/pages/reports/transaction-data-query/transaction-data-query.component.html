@@ -5,8 +5,19 @@
       <app-page-title title="Transaction Data Query"></app-page-title>
     </div>
     <mat-card-content>
-      <form class="trans__outer-container" [formGroup]="transReportForm">
-        <app-date-time-picker></app-date-time-picker>
+      <form
+        class="trans__outer-container"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="transReportForm"
+      >
+        <app-date-time-picker
+          label="Start Date Time"
+          formControlName="startDateTime"
+        ></app-date-time-picker>
+        <app-date-time-picker
+          label="End Date Time"
+          formControlName="endDateTime"
+        ></app-date-time-picker>
         <app-drop-down
           class="station-dropdown-container"
           label="Stations"

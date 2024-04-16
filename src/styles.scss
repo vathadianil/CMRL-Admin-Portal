@@ -101,7 +101,7 @@ body {
 }
 
 .mat-calendar-body-selected {
-  background-color: #007f51;
+  background-color: var(--gradient-color1);
   color: #fff;
 }
 
