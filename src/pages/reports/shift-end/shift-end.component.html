@@ -1,0 +1,90 @@
+<div class="shiftEnd">
+  <mat-card class="shiftEnd__card">
+    <div class="shiftEnd__title-wrapper">
+      <mat-icon>article_shortcut</mat-icon>
+      <app-page-title title="Tom Shift End"></app-page-title>
+    </div>
+
+  <mat-card-content>
+    <form class="shiftEnd__outer-container" [formGroup]="shiftEndForm">
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Stations"
+          placeholder="Select Station"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Transaction Type"
+          placeholder="Select Transaction Type"
+          [listData]="transactionTypeData"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Equipments"
+          placeholder="Select Equipments"
+          [listData]="equipmentData"
+        >
+        </app-drop-down>
+
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Stations"
+          placeholder="Select Station"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Transaction Type"
+          placeholder="Select Transaction Type"
+          [listData]="transactionTypeData"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Equipments"
+          placeholder="Select Equipments"
+          [listData]="equipmentData"
+        >
+        </app-drop-down>
+        
+        <div class="shiftEnd__btn-container">
+          <app-button-field
+            type="submit"
+            label="Search"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+          <app-button-field
+            type="button"
+            backgroundColor="#fff"
+            color="#3361ff"
+            label="Clear"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+        </div>
+      </form>
+  </mat-card-content>
+
+</mat-card>
+
+<mat-card class="shiftEnd__card">
+    <mat-card-content>
+      <div class="content-container">
+        <app-search></app-search>
+        <div class="shiftEnd__fab-btn-wrapper">
+          <app-fab-button></app-fab-button>
+        </div>
+      </div>
+      <app-table [tableData]="shiftEndTableData"></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>
