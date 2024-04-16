@@ -1,7 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
@@ -93,7 +98,37 @@ export class TransactionDataQueryComponent implements OnInit {
     this.equipmentData = this.commonService.getEquipments();
 
     this.transReportForm = new FormGroup({
-      firstName: new FormControl(),
+      startDateTime: new FormControl(
+        {
+          value: new Date(
+            new Date().getFullYear(),
+            new Date().getMonth() + 1,
+            new Date().getDate(),
+            0,
+            0,
+            0
+          ),
+          disabled: false,
+        },
+        Validators.required
+      ),
+      endDateTime: new FormControl(
+        {
+          value: new Date(
+            new Date().getFullYear(),
+            new Date().getMonth() + 1,
+            new Date().getDate(),
+            23,
+            59,
+            59
+          ),
+          disabled: false,
+        },
+        Validators.required
+      ),
     });
+  }
+  onSubmit() {
+    console.log(this.transReportForm.value);
   }
 }
