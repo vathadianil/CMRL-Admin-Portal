@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableDataSource } from '@angular/material/table';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
@@ -12,6 +16,9 @@ import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { ShiftEndDataInterface } from '../../../models/shift-end-data.interface';
 import { TableComponent } from '../../../components/table/table.component';
+import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
+import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
+
 
 @Component({
   selector: 'app-shift-end',
@@ -28,6 +35,10 @@ import { TableComponent } from '../../../components/table/table.component';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
+    DateTimePickerComponent,
+    CustomInputComponent,
+    MatInputModule,
+    MatFormFieldModule
   ],
 })
 export class ShiftEndComponent implements OnInit {

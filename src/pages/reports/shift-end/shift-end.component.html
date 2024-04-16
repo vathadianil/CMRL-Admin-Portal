@@ -1,12 +1,14 @@
 <div class="shiftEnd">
   <mat-card class="shiftEnd__card">
     <div class="shiftEnd__title-wrapper">
-      <mat-icon>article_shortcut</mat-icon>
+      <mat-icon>inbox</mat-icon>
       <app-page-title title="Tom Shift End"></app-page-title>
     </div>
 
   <mat-card-content>
     <form class="shiftEnd__outer-container" [formGroup]="shiftEndForm">
+      <app-date-time-picker></app-date-time-picker>
+      <app-date-time-picker></app-date-time-picker>
         <app-drop-down
           class="station-dropdown-container"
           label="Stations"
@@ -15,13 +17,7 @@
           [defaultValue]="stationDefaultValue"
         >
         </app-drop-down>
-        <app-drop-down
-          class="station-dropdown-container"
-          label="Transaction Type"
-          placeholder="Select Transaction Type"
-          [listData]="transactionTypeData"
-        >
-        </app-drop-down>
+       
         <app-drop-down
           class="station-dropdown-container"
           label="Equipments"
@@ -30,14 +26,7 @@
         >
         </app-drop-down>
 
-        <app-drop-down
-          class="station-dropdown-container"
-          label="Stations"
-          placeholder="Select Station"
-          [listData]="stationData"
-          [defaultValue]="stationDefaultValue"
-        >
-        </app-drop-down>
+      
         <app-drop-down
           class="station-dropdown-container"
           label="Transaction Type"
@@ -45,14 +34,16 @@
           [listData]="transactionTypeData"
         >
         </app-drop-down>
-        <app-drop-down
-          class="station-dropdown-container"
-          label="Equipments"
-          placeholder="Select Equipments"
-          [listData]="equipmentData"
-        >
-        </app-drop-down>
+        <div class="dense-2"> 
+        <mat-form-field appearance="outline">
+          <mat-label>Shift Id</mat-label>
+          <input matInput placeholder="Enter Shift Id Here....">
+        </mat-form-field>
+        </div>
+
         
+
+
         <div class="shiftEnd__btn-container">
           <app-button-field
             type="submit"
