@@ -34,11 +34,19 @@ export const routes: Routes = [
       },
 
       {
-        path: 'shiftEnd',
+        path: 'shiftStart',
         loadComponent: () =>
           import(
-            `../pages/reports/shift-end/shift-end.component`
-          ).then((c) => c.ShiftEndComponent),
+            `../pages/reports/shift-start-report/shift-start-report.component`
+          ).then((c) => c.ShiftStartReportComponent),
+      },
+
+      {
+        path: 'shiftEnd',
+        loadComponent: () =>
+          import(`../pages/reports/shift-end/shift-end.component`).then(
+            (c) => c.ShiftEndComponent
+          ),
       },
     ],
   },
