@@ -4,8 +4,6 @@
 @use "./scss/globals";
 @use "./scss/util";
 
-
-
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -94,4 +92,19 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.mat-datepicker-content {
+  box-shadow: 0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f;
+  background-color: #fff;
+  color: #000000de;
+}
+
+.mat-calendar-body-selected {
+  background-color: #007f51;
+  color: #fff;
+}
+
+.mat-calendar-body-cell-content {
+  border: none !important;
 }
