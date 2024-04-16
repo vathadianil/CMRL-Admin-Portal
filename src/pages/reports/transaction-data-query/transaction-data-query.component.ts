@@ -13,6 +13,7 @@ import { CustomInputComponent } from '../../../components/custom-input/custom-in
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionDataQueryInterface } from '../../../models/transaction-data-query.interface';
 import { CommonService } from '../../../services/common.service';
+import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 
 @Component({
@@ -31,6 +32,7 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
     FabButtonFieldComponent,
     CustomInputComponent,
     DateTimePickerComponent,
+    MatIconModule,
   ],
   templateUrl: './transaction-data-query.component.html',
   styleUrl: './transaction-data-query.component.scss',
