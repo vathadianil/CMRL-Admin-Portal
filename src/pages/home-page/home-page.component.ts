@@ -56,7 +56,7 @@ export class HomePageComponent {
       color: '#15b72e',
       submenu: [
         {
-          icon: 'done',
+          icon: 'alarm',
           label: 'Tom Shift Start',
           route: 'shiftStart',
           color: '#b026b0',
