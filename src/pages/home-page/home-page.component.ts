@@ -73,6 +73,14 @@ export class HomePageComponent {
           route: 'transactionDataQuery',
           color: '#04870d',
         },
+        {
+          icon: 'input',
+          label: 'Entry Summary',
+          route: 'entrySummary',
+          color: '#8833ff',
+        },
+
+
       ],
     },
   ];

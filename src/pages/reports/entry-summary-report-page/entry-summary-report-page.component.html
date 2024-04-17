@@ -1,0 +1,75 @@
+<div class="entrySummary">
+  <mat-card class="entrySummary__card">
+    <div class="entrySummary__title-wrapper">
+      <mat-icon>input</mat-icon>
+      <app-page-title title="Entry Summary Report"></app-page-title>
+    </div>
+
+    <mat-card-content>
+      <form
+        class="entrySummary__outer-container"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="entrySummaryForm"
+      >
+        <app-date-time-picker
+          label="Shift Start Date Time"
+          formControlName="startDateTime"
+        ></app-date-time-picker>
+
+        <app-date-time-picker
+          label="Shift End Date Time"
+          formControlName="endDateTime"
+        ></app-date-time-picker>
+
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Stations"
+          placeholder="Select Station"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+        >
+        </app-drop-down>
+
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Equipments"
+          placeholder="Select Equipments"
+          [listData]="equipmentData"
+        >
+        </app-drop-down>
+
+        <div class="entrySummary__btn-container">
+          <app-button-field
+            type="submit"
+            label="Search"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+          <app-button-field
+            type="button"
+            backgroundColor="#fff"
+            color="#3361ff"
+            label="Clear"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+
+  <mat-card class="entrySummary__card">
+    <mat-card-content>
+      <div class="content-container">
+        <app-search></app-search>
+        <div class="entrySummary__fab-btn-wrapper">
+          <app-fab-button></app-fab-button>
+        </div>
+      </div>
+      <app-table [tableData]="entrySummaryTableData"></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

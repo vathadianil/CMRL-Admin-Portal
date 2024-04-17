@@ -6,9 +6,19 @@
     </div>
 
   <mat-card-content>
-    <form class="shiftEnd__outer-container" [formGroup]="shiftEndForm">
-      <app-date-time-picker></app-date-time-picker>
-      <app-date-time-picker></app-date-time-picker>
+    <form class="shiftEnd__outer-container" (ngSubmit)="onSubmit()" [formGroup]="shiftEndForm" >
+      <app-date-time-picker
+      label="Shift Start Date Time"
+      formControlName="startDateTime"  
+      ></app-date-time-picker>
+
+
+      <app-date-time-picker
+      label="Shift End Date Time"
+      formControlName="endDateTime"
+      ></app-date-time-picker>
+
+
         <app-drop-down
           class="station-dropdown-container"
           label="Stations"

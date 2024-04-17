@@ -10,7 +10,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule,Validators } from '@angular/forms';
 import { CommonService } from '../../../services/common.service';
 import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
@@ -248,7 +248,40 @@ export class ShiftEndComponent implements OnInit {
     this.equipmentData = this.commonService.getEquipments();
 
     this.shiftEndForm = new FormGroup({
-      firstName: new FormControl(),
+      startDateTime: new FormControl(
+        {
+          value: new Date(
+            new Date().getFullYear(),
+            new Date().getMonth() + 1,
+            new Date().getDate(),
+            0,
+            0,
+            0
+          ),
+          disabled: false,
+        },
+        Validators.required
+      ),
+      endDateTime: new FormControl(
+        {
+          value: new Date(
+            new Date().getFullYear(),
+            new Date().getMonth() + 1,
+            new Date().getDate(),
+            23,
+            59,
+            59
+          ),
+          disabled: false,
+        },
+        Validators.required
+      ),
+     
     });
   }
+
+  onSubmit() {
+    console.log(this.shiftEndForm.value);
+  }
+
 }
