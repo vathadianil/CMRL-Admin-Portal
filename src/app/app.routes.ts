@@ -53,7 +53,7 @@ export const routes: Routes = [
           import(`../pages/reports/ridership-report/ridership-report.component`).then(
             (c) => c.RidershipReportComponent
           ),
-      }
+      },
 
       {
         path: 'entrySummary',
