@@ -47,6 +47,13 @@ export const routes: Routes = [
             (c) => c.ShiftEndComponent
           ),
       },
+      {
+        path: 'rider',
+        loadComponent: () =>
+          import(`../pages/reports/ridership-report/ridership-report.component`).then(
+            (c) => c.RidershipReportComponent
+          ),
+      },
 
       {
         path: 'entrySummary',
