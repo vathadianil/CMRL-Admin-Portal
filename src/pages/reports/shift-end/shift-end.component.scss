@@ -40,17 +40,11 @@
     display: flex;
     justify-content: center;
   }
-}
 
-table {
-  border: 1px solid gray;
-  border-collapse: collapse;
-}
-
-td,
-th {
-  border: 1px solid #ccc;
-  padding: 1rem;
+  &__content-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .content-container {
