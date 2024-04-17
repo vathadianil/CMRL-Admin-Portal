@@ -12,7 +12,7 @@
   <mat-drawer mode="side" class="home__side-customise" opened>
     @for(item of menuItems; track item.label ) { @if(!item?.submenu?.length) {
     <mat-list-item
-      class="home__menu-button home__list-item"
+      class="home__menu-button home__list-item mat-elevation-z2"
       [routerLink]="[item.route]"
       routerLinkActive="active"
       #active="routerLinkActive"

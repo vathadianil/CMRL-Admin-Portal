@@ -1,3 +1,4 @@
+@use "../../scss/util" as *;
 .header {
   &__container {
     display: flex;
@@ -48,19 +49,21 @@
 
   &__list-item {
     width: 273px;
+    height: 50px !important;
   }
 
   &__expansion-item {
     width: 200px;
+    height: 50px !important;
   }
 
   &__menu-text {
-    font-weight: 500 !important;
-    font-size: 14px !important;
+    font-weight: 500;
+    font-size: toRem(14);
   }
 
   &__side-customise {
-   height: fit-content;
+    height: fit-content;
     border-radius: 20px;
     border: 1px solid rgb(185, 177, 177);
     background-color: var(--background-color);
