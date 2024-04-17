@@ -23,6 +23,8 @@ import { TableComponent } from '../../../components/table/table.component';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { ExportService } from '../../../services/export.service';
+import { ExportPdfService } from '../../../services/export-pdf.service';
+
 
 @Component({
   selector: 'app-shift-end',
@@ -51,10 +53,14 @@ export class ShiftEndComponent implements OnInit {
   stationDefaultValue: any;
   transactionTypeData: any[];
   equipmentData: any[];
+  params: any[] = [];
+  fileName = 'Shift End Report';
+  columnsToExport = shiftEndReportData;
 
   constructor(
     private commonService: CommonService,
-    private exportService: ExportService
+    private exportService: ExportService,
+    private exportPdfService: ExportPdfService
   ) {}
 
   shiftEndTableData: {
@@ -286,15 +292,10 @@ export class ShiftEndComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    console.log(this.shiftEndForm.value);
-  }
 
-  onExcelClicked() {
-    const fileName = 'Transaction Data Query';
-    const fileType = 'TRANSACTION DATA QUERY';
-    const columnsToExport = shiftEndReportData;
-    let params = [
+
+  getParameters() {
+    this.params = [
       {
         key: 'fromDate',
         value: this.shiftEndForm.get('fromDate')?.value,
@@ -316,17 +317,34 @@ export class ShiftEndComponent implements OnInit {
         value: this.shiftEndForm.get('equipmentName')?.value,
       },
     ];
+    return this.params;
+  }
+
+  onSubmit() {
+    console.log(this.shiftEndForm.value);
+  }
+
+
+
+  onExcelClicked() {
     this.exportService.exportToExcel(
       this.shiftEndTableData[0].dataSource.data,
-      fileName,
-      columnsToExport,
-      params
+      this.fileName,
+      this.columnsToExport,
+      this.getParameters()
+    );
+  }
+  
+  onPdfClicked() {
+    this.exportPdfService.exportToPDF(
+      this.shiftEndTableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.getParameters()
     );
   }
 
-  onPdfClicked() {
-    console.log('PDF button clicked in parent component');
-  }
+
 }
 
 export const shiftEndReportData = [
