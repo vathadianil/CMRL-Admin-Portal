@@ -52,28 +52,7 @@ export class TransactionDataQueryComponent implements OnInit {
   equipmentData: any[] = [];
   fileName = 'Transaction Data Query';
   columnsToExport = transactionData;
-  params = [
-    {
-      key: 'fromDate',
-      value: this.transReportForm.get('fromDate')?.value,
-    },
-    {
-      key: 'toDate',
-      value: this.transReportForm.get('toDate')?.value,
-    },
-    {
-      key: 'stations',
-      value: this.transReportForm.get('transactionType')?.value,
-    },
-    {
-      key: 'transactionType',
-      value: this.transReportForm.get('transactionType')?.value,
-    },
-    {
-      key: 'equipmentName',
-      value: this.transReportForm.get('equipmentName')?.value,
-    },
-  ];
+  params: any[] = [];
 
   constructor(
     private commonService: CommonService,
@@ -129,7 +108,7 @@ export class TransactionDataQueryComponent implements OnInit {
     this.equipmentData = this.commonService.getEquipments();
 
     this.transReportForm = new FormGroup({
-      startDateTime: new FormControl(
+      fromDate: new FormControl(
         {
           value: new Date(
             new Date().getFullYear(),
@@ -143,7 +122,7 @@ export class TransactionDataQueryComponent implements OnInit {
         },
         Validators.required
       ),
-      endDateTime: new FormControl(
+      toDate: new FormControl(
         {
           value: new Date(
             new Date().getFullYear(),
@@ -159,6 +138,32 @@ export class TransactionDataQueryComponent implements OnInit {
       ),
     });
   }
+
+  getParameters() {
+    this.params = [
+      {
+        key: 'fromDate',
+        value: this.transReportForm.get('fromDate')?.value,
+      },
+      {
+        key: 'toDate',
+        value: this.transReportForm.get('toDate')?.value,
+      },
+      {
+        key: 'stations',
+        value: this.transReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'transactionType',
+        value: this.transReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'equipmentName',
+        value: this.transReportForm.get('equipmentName')?.value,
+      },
+    ];
+    return this.params;
+  }
   onSubmit() {
     console.log(this.transReportForm.value);
   }
@@ -168,7 +173,7 @@ export class TransactionDataQueryComponent implements OnInit {
       this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
-      this.params
+      this.getParameters()
     );
   }
 
@@ -177,7 +182,7 @@ export class TransactionDataQueryComponent implements OnInit {
       this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
-      this.params
+      this.getParameters()
     );
   }
 }
