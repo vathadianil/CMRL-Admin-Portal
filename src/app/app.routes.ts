@@ -49,13 +49,7 @@ export const routes: Routes = [
           ),
       },
       
-      {
-        path: 'rider',
-        loadComponent: () =>
-          import(`../pages/reports/ridership-report/ridership-report.component`).then(
-            (c) => c.RidershipReportComponent
-          ),
-      },
+     
     ],
 
 
