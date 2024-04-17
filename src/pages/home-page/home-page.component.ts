@@ -62,7 +62,7 @@ export class HomePageComponent {
           color: '#b026b0',
         },
         {
-          icon: 'close',
+          icon: 'inbox',
           label: 'Tom Shift End',
           route: 'shiftEnd',
           color: '#cd4040',
@@ -73,6 +73,14 @@ export class HomePageComponent {
           route: 'transactionDataQuery',
           color: '#04870d',
         },
+        {
+          icon: 'input',
+          label: 'Entry Summary',
+          route: 'entrySummary',
+          color: '#8833ff',
+        },
+
+
       ],
     },
   ];
