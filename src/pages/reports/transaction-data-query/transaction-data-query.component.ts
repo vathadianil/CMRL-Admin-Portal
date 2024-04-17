@@ -65,6 +65,7 @@ export class TransactionDataQueryComponent implements OnInit {
   }[] = [
     {
       displayedColumns: [
+        'transactionDateTime',
         'transId',
         'transType',
         'lineId',
@@ -74,9 +75,16 @@ export class TransactionDataQueryComponent implements OnInit {
         'acquirerId',
         'operatorId',
         'terminalId',
+        'panSha',
+        'serviceType',
+        'tomEfoShiftId',
+        'paytmTid',
+        'paytmMid',
+        'bussinessDate',
       ],
       dataSource: new MatTableDataSource<TransactionDataQueryInterface>([
         {
+          transactionDateTime: '03-Feb-2611 06:50:25',
           transId: '764566834220230824025339',
           transType: '03',
           lineId: '0303-Stadium',
@@ -86,8 +94,15 @@ export class TransactionDataQueryComponent implements OnInit {
           acquirerId: '6014',
           operatorId: '3030C2',
           terminalId: '3030C2',
+          panSha: '••••••••••••1788',
+          serviceType: '1',
+          tomEfoShiftId: '0303354555',
+          paytmTid: '11075316',
+          paytmMid: 'LTMetr33790038971459',
+          bussinessDate: '24-Aug-2023',
         },
         {
+          transactionDateTime: '03-Feb-2611 06:50:25',
           transId: '764566834220230824025339',
           transType: '03',
           lineId: '0303-Stadium',
@@ -97,6 +112,12 @@ export class TransactionDataQueryComponent implements OnInit {
           acquirerId: '6014',
           operatorId: '3030C2',
           terminalId: '3030C2',
+          panSha: '••••••••••••1788',
+          serviceType: '1',
+          tomEfoShiftId: '0303354555',
+          paytmTid: '11075316',
+          paytmMid: 'LTMetr33790038971459',
+          bussinessDate: '24-Aug-2023',
         },
       ]),
     },
@@ -188,6 +209,7 @@ export class TransactionDataQueryComponent implements OnInit {
 }
 
 export const transactionData = [
+  'transactionDateTime',
   'transId',
   'transType',
   'lineId',
@@ -197,4 +219,10 @@ export const transactionData = [
   'acquirerId',
   'operatorId',
   'terminalId',
+  'panSha',
+  'serviceType',
+  'tomEfoShiftId',
+  'paytmTid',
+  'paytmMid',
+  'bussinessDate',
 ];

@@ -5,6 +5,9 @@
     border-radius: 1em;
     margin-bottom: 2em;
   }
+  &__card-table {
+    border-radius: 1em;
+  }
 
   &__title-wrapper {
     display: flex;
@@ -36,30 +39,10 @@
     display: flex;
     justify-content: center;
   }
+
+  &__content-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-table {
-  border: 1px solid gray;
-  border-collapse: collapse;
-}
-
-td,
-th {
-  border: 1px solid #ccc;
-  padding: 1rem;
-}
-
-.content-container {
-  display: flex;
-  justify-content: space-between;
-}
-
-// .input-container {
-//   display: flex;
-//   flex-direction: column;
-//   margin-bottom: 16px;
-// }
-
-// .top-label {
-//   margin-bottom: 8px;
-// }

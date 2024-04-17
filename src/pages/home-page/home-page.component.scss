@@ -60,7 +60,7 @@
   }
 
   &__side-customise {
-    min-height: 80vh;
+   height: fit-content;
     border-radius: 20px;
     border: 1px solid rgb(185, 177, 177);
     background-color: var(--background-color);

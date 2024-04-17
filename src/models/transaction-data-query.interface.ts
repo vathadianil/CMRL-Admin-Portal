@@ -1,4 +1,5 @@
 export interface TransactionDataQueryInterface {
+  transactionDateTime: string;
   transId: string;
   transType: string;
   lineId: string;
@@ -8,4 +9,10 @@ export interface TransactionDataQueryInterface {
   acquirerId: string;
   operatorId: string;
   terminalId: string;
+  panSha: string;
+  serviceType: string;
+  tomEfoShiftId: string;
+  paytmTid: string;
+  paytmMid: string;
+  bussinessDate: string;
 }
