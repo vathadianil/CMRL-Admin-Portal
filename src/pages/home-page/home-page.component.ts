@@ -59,25 +59,32 @@ export class HomePageComponent {
           icon: 'alarm',
           label: 'Tom Shift Start',
           route: 'shiftStart',
-          color: '#b026b0',
+          
         },
         {
           icon: 'inbox',
           label: 'Tom Shift End',
           route: 'shiftEnd',
-          color: '#cd4040',
+         
         },
         {
           icon: 'article_shortcut',
           label: 'Transaction Data',
           route: 'transactionDataQuery',
-          color: '#04870d',
+       
         },
         {
           icon: 'input',
           label: 'Entry Summary',
           route: 'entrySummary',
-          color: '#8833ff',
+   
+        },
+
+        {
+          icon: 'supervisor_account',
+          label: 'Ridership Report',
+          route: 'ridershipReport',
+   
         },
 
 

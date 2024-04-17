@@ -48,7 +48,7 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'rider',
+        path: 'ridershipReport',
         loadComponent: () =>
           import(`../pages/reports/ridership-report/ridership-report.component`).then(
             (c) => c.RidershipReportComponent

@@ -3,14 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableDataSource } from '@angular/material/table';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
-import { FormControl, FormGroup, ReactiveFormsModule,Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { CommonService } from '../../../services/common.service';
 import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
@@ -18,7 +22,7 @@ import { ShiftEndDataInterface } from '../../../models/shift-end-data.interface'
 import { TableComponent } from '../../../components/table/table.component';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
-
+import { ExportService } from '../../../services/export.service';
 
 @Component({
   selector: 'app-shift-end',
@@ -38,7 +42,7 @@ import { CustomInputComponent } from '../../../components/custom-input/custom-in
     DateTimePickerComponent,
     CustomInputComponent,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
   ],
 })
 export class ShiftEndComponent implements OnInit {
@@ -48,7 +52,10 @@ export class ShiftEndComponent implements OnInit {
   transactionTypeData: any[];
   equipmentData: any[];
 
-  constructor(private commonService: CommonService) {}
+  constructor(
+    private commonService: CommonService,
+    private exportService: ExportService
+  ) {}
 
   shiftEndTableData: {
     displayedColumns: string[];
@@ -276,7 +283,6 @@ export class ShiftEndComponent implements OnInit {
         },
         Validators.required
       ),
-     
     });
   }
 
@@ -284,4 +290,56 @@ export class ShiftEndComponent implements OnInit {
     console.log(this.shiftEndForm.value);
   }
 
+  onExcelClicked() {
+    const fileName = 'Transaction Data Query';
+    const fileType = 'TRANSACTION DATA QUERY';
+    const columnsToExport = shiftEndReportData;
+    let params = [
+      {
+        key: 'fromDate',
+        value: this.shiftEndForm.get('fromDate')?.value,
+      },
+      {
+        key: 'toDate',
+        value: this.shiftEndForm.get('toDate')?.value,
+      },
+      {
+        key: 'stations',
+        value: this.shiftEndForm.get('transactionType')?.value,
+      },
+      {
+        key: 'transactionType',
+        value: this.shiftEndForm.get('transactionType')?.value,
+      },
+      {
+        key: 'equipmentName',
+        value: this.shiftEndForm.get('equipmentName')?.value,
+      },
+    ];
+    this.exportService.exportToExcel(
+      this.shiftEndTableData[0].dataSource.data,
+      fileName,
+      fileType,
+      columnsToExport,
+      params
+    );
+  }
+
+  onPdfClicked() {
+    console.log('PDF button clicked in parent component');
+  }
 }
+
+export const shiftEndReportData = [
+  'id',
+  'equipmentID',
+  'acquirerID',
+  'opertatorID',
+  'terminalID',
+  'agentID',
+  'shiftID',
+  'businessDate',
+  'shiftStartTime',
+  'shiftEndTime',
+  'actions',
+];
