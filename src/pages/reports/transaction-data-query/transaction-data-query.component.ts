@@ -21,6 +21,7 @@ import { CommonService } from '../../../services/common.service';
 import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { ExportService } from '../../../services/export.service';
+import { ExportPdfService } from '../../../services/export-pdf.service';
 
 @Component({
   selector: 'app-transaction-data-query',
@@ -49,9 +50,35 @@ export class TransactionDataQueryComponent implements OnInit {
   stationData: any[] = [];
   transactionTypeData: any[] = [];
   equipmentData: any[] = [];
+  fileName = 'Transaction Data Query';
+  columnsToExport = transactionData;
+  params = [
+    {
+      key: 'fromDate',
+      value: this.transReportForm.get('fromDate')?.value,
+    },
+    {
+      key: 'toDate',
+      value: this.transReportForm.get('toDate')?.value,
+    },
+    {
+      key: 'stations',
+      value: this.transReportForm.get('transactionType')?.value,
+    },
+    {
+      key: 'transactionType',
+      value: this.transReportForm.get('transactionType')?.value,
+    },
+    {
+      key: 'equipmentName',
+      value: this.transReportForm.get('equipmentName')?.value,
+    },
+  ];
+
   constructor(
     private commonService: CommonService,
-    private exportService: ExportService
+    private exportService: ExportService,
+    private exportPdfService: ExportPdfService
   ) {}
   myTableData: {
     displayedColumns: string[];
@@ -137,42 +164,21 @@ export class TransactionDataQueryComponent implements OnInit {
   }
 
   onExcelClicked() {
-    const fileName = 'Transaction Data Query';
-    const fileType = 'TRANSACTION DATA QUERY';
-    const columnsToExport = transactionData;
-    let params = [
-      {
-        key: 'fromDate',
-        value: this.transReportForm.get('fromDate')?.value,
-      },
-      {
-        key: 'toDate',
-        value: this.transReportForm.get('toDate')?.value,
-      },
-      {
-        key: 'stations',
-        value: this.transReportForm.get('transactionType')?.value,
-      },
-      {
-        key: 'transactionType',
-        value: this.transReportForm.get('transactionType')?.value,
-      },
-      {
-        key: 'equipmentName',
-        value: this.transReportForm.get('equipmentName')?.value,
-      },
-    ];
     this.exportService.exportToExcel(
       this.myTableData[0].dataSource.data,
-      fileName,
-      fileType,
-      columnsToExport,
-      params
+      this.fileName,
+      this.columnsToExport,
+      this.params
     );
   }
 
   onPdfClicked() {
-    console.log('PDF button clicked in parent component');
+    this.exportPdfService.exportToPDF(
+      this.myTableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.params
+    );
   }
 }
 

@@ -11,7 +11,6 @@ export class ExportService {
   exportToExcel(
     data: any[],
     fileName: string,
-    fileType: string,
     columnsToExport: string[],
     params: { key: string; value: any }[],
     data2?: any[],
