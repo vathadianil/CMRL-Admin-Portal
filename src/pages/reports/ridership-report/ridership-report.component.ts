@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonService } from '../../../services/common.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { ridershipreportInterface } from '../../../models/ridership-report-interface';
+import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 
 @Component({
   selector: 'app-ridership-report',
@@ -31,6 +32,7 @@ import { ridershipreportInterface } from '../../../models/ridership-report-inter
     FabButtonFieldComponent,
     CustomInputComponent,
     MatIconModule,
+    DateTimePickerComponent 
   ],
   templateUrl: './ridership-report.component.html',
   styleUrl: './ridership-report.component.scss'
@@ -52,44 +54,21 @@ export class RidershipReportComponent {
   }[] = [
     {
       displayedColumns: [
-        'shift_start_date_time',
-        'lineId',
         'stationId',
-        'equipmentGroupId',
-        'equepmentId',
-        'acquirerId',
-        'operatorId',
-        'terminalId',
-        'agentId',
-        'tom_Efo_Shift_start',
+        'stationName',
+        'entryCount',
+        'exitCount'
+
        
       ],
       dataSource: new MatTableDataSource<ridershipreportInterface>([
         {
-          shift_start_date_time:'30-Mar-2020 10:35:29',
-          lineId:'01' ,
-          stationId: '0106-Moosapet',
-          equipmentGroupId: 3,
-          equepmentId: 1002,
-          acquirerId: 4,
-          operatorId: 6014,
-          terminalId: '1010C2',
-          agentId: 11102,
-          tom_Efo_Shift_start:'0101',
-         
+          stationId:'0101',
+          stationName:'miyapur',
+          entryCount:0,
+          exitCount:0,
         },
-        {
-          shift_start_date_time:'30-Mar-2020 10:35:29',
-          lineId:'01' ,
-          stationId: '0106-Moosapet',
-          equipmentGroupId: 3,
-          equepmentId: 1002,
-          acquirerId: 4,
-          operatorId: 6014,
-          terminalId: '1010C2',
-          agentId: 1102,
-          tom_Efo_Shift_start:'0101',
-        },
+        
      
        
        
@@ -103,7 +82,38 @@ export class RidershipReportComponent {
     this.equipmentData = this.commonService.getEquipments();
 
     this.ridershipReportForm = new FormGroup({
-      firstName: new FormControl(),
+      // firstName: new FormControl(),
+      startDateTime: new FormControl(
+        {
+          value: new Date(
+            new Date().getFullYear(),
+            new Date().getMonth() + 1,
+            new Date().getDate(),
+            0,
+            0,
+            0
+          ),
+          disabled: false,
+        },
+        Validators.required
+      ),
+      endDateTime: new FormControl(
+        {
+          value: new Date(
+            new Date().getFullYear(),
+            new Date().getMonth() + 1,
+            new Date().getDate(),
+            23,
+            59,
+            59
+          ),
+          disabled: false,
+        },
+        Validators.required
+      ),
     });
+  }
+  onSubmit() {
+    console.log(this.ridershipReportForm.value);
   }
 }
