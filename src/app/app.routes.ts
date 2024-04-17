@@ -40,7 +40,6 @@ export const routes: Routes = [
             `../pages/reports/shift-start-report/shift-start-report.component`
           ).then((c) => c.ShiftStartReportComponent),
       },
-
       {
         path: 'shiftEnd',
         loadComponent: () =>
@@ -48,11 +47,6 @@ export const routes: Routes = [
             (c) => c.ShiftEndComponent
           ),
       },
-      
-     
     ],
-
-
-    
   },
 ];
