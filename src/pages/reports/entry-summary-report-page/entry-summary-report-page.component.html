@@ -1,23 +1,26 @@
-<div class="trans">
-  <mat-card class="trans__card">
-    <div class="trans__title-wrapper">
-      <mat-icon>article_shortcut</mat-icon>
-      <app-page-title title="Transaction Data Query"></app-page-title>
+<div class="entrySummary">
+  <mat-card class="entrySummary__card">
+    <div class="entrySummary__title-wrapper">
+      <mat-icon>input</mat-icon>
+      <app-page-title title="Entry Summary Report"></app-page-title>
     </div>
+
     <mat-card-content>
       <form
-        class="trans__outer-container"
+        class="entrySummary__outer-container"
         (ngSubmit)="onSubmit()"
-        [formGroup]="transReportForm"
+        [formGroup]="entrySummaryForm"
       >
         <app-date-time-picker
-          label="Start Date Time"
+          label="Shift Start Date Time"
           formControlName="startDateTime"
         ></app-date-time-picker>
+
         <app-date-time-picker
-          label="End Date Time"
+          label="Shift End Date Time"
           formControlName="endDateTime"
         ></app-date-time-picker>
+
         <app-drop-down
           class="station-dropdown-container"
           label="Stations"
@@ -26,13 +29,7 @@
           [defaultValue]="stationDefaultValue"
         >
         </app-drop-down>
-        <app-drop-down
-          class="station-dropdown-container"
-          label="Transaction Type"
-          placeholder="Select Transaction Type"
-          [listData]="transactionTypeData"
-        >
-        </app-drop-down>
+
         <app-drop-down
           class="station-dropdown-container"
           label="Equipments"
@@ -40,7 +37,8 @@
           [listData]="equipmentData"
         >
         </app-drop-down>
-        <div class="trans__btn-container">
+
+        <div class="entrySummary__btn-container">
           <app-button-field
             type="submit"
             label="Search"
@@ -61,19 +59,17 @@
       </form>
     </mat-card-content>
   </mat-card>
-  <mat-card class="trans__card">
+
+
+  <mat-card class="entrySummary__card">
     <mat-card-content>
       <div class="content-container">
         <app-search></app-search>
-        <div class="trans__fab-btn-wrapper">
-          <app-fab-button
-            (excelClicked)="onExcelClicked()"
-            (pdfClicked)="onPdfClicked()"
-          >
-          </app-fab-button>
+        <div class="entrySummary__fab-btn-wrapper">
+          <app-fab-button></app-fab-button>
         </div>
       </div>
-      <app-table [tableData]="myTableData"></app-table>
+      <app-table [tableData]="entrySummaryTableData"></app-table>
     </mat-card-content>
   </mat-card>
 </div>

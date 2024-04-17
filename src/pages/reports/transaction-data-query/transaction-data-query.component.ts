@@ -20,6 +20,7 @@ import { TransactionDataQueryInterface } from '../../../models/transaction-data-
 import { CommonService } from '../../../services/common.service';
 import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
+import { ExportService } from '../../../services/export.service';
 
 @Component({
   selector: 'app-transaction-data-query',
@@ -48,7 +49,10 @@ export class TransactionDataQueryComponent implements OnInit {
   stationData: any[] = [];
   transactionTypeData: any[] = [];
   equipmentData: any[] = [];
-  constructor(private commonService: CommonService) {}
+  constructor(
+    private commonService: CommonService,
+    private exportService: ExportService
+  ) {}
   myTableData: {
     displayedColumns: string[];
     dataSource: MatTableDataSource<TransactionDataQueryInterface>;
@@ -131,4 +135,55 @@ export class TransactionDataQueryComponent implements OnInit {
   onSubmit() {
     console.log(this.transReportForm.value);
   }
+
+  onExcelClicked() {
+    const fileName = 'Transaction Data Query';
+    const fileType = 'TRANSACTION DATA QUERY';
+    const columnsToExport = transactionData;
+    let params = [
+      {
+        key: 'fromDate',
+        value: this.transReportForm.get('fromDate')?.value,
+      },
+      {
+        key: 'toDate',
+        value: this.transReportForm.get('toDate')?.value,
+      },
+      {
+        key: 'stations',
+        value: this.transReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'transactionType',
+        value: this.transReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'equipmentName',
+        value: this.transReportForm.get('equipmentName')?.value,
+      },
+    ];
+    this.exportService.exportToExcel(
+      this.myTableData[0].dataSource.data,
+      fileName,
+      fileType,
+      columnsToExport,
+      params
+    );
+  }
+
+  onPdfClicked() {
+    console.log('PDF button clicked in parent component');
+  }
 }
+
+export const transactionData = [
+  'transId',
+  'transType',
+  'lineId',
+  'stationId',
+  'equipmentGroupId',
+  'equipId',
+  'acquirerId',
+  'operatorId',
+  'terminalId',
+];

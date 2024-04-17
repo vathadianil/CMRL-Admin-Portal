@@ -54,6 +54,14 @@ export const routes: Routes = [
             (c) => c.RidershipReportComponent
           ),
       }
+
+      {
+        path: 'entrySummary',
+        loadComponent: () =>
+          import(`../pages/reports/entry-summary-report-page/entry-summary-report-page.component`).then(
+            (c) => c.EntrySummaryReportPageComponent
+          ),
+      },
     ],
   },
 ];

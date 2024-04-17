@@ -1,6 +1,6 @@
-.shiftEnd{
-    margin: 0 1em 1em 2em;
-
+.entrySummary{
+    margin: 0 1em 1em 2em; 
+     
     &__card {
         border-radius: 1em;
         margin-bottom: 2em;
@@ -13,31 +13,30 @@
         font-size: larger;
         color: var(--blue800);
       }
-      
-    &__outer-container {
+    
+     &__outer-container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         grid-gap: 1em;
         place-content: center;
       }
 
-      
-  &__fab-btn-wrapper {
-    display: flex;
-    gap: 2em;
-  }
+      &__fab-btn-wrapper {
+        display: flex;
+        gap: 2em;
+      }
+    
+      &__btn-container {
+        display: flex;
+        gap: 1em;
+      }
+    
+      &__empty-state {
+        display: flex;
+        justify-content: center;
+      }
 
-  &__btn-container {
-    display: flex;
-    gap: 1em;
-  }
-
-  &__empty-state {
-    display: flex;
-    justify-content: center;
-  }
-
-
+    
 
 }
 
@@ -57,10 +56,3 @@ table {
     justify-content: space-between;
   }
   
-
-  .mat-mdc-form-field {
-    min-width: 100% !important;
-  }
-  :host ::ng-deep .mdc-text-field--outlined{
-    --mdc-outlined-text-field-container-shape: 1em;
-  }
