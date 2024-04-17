@@ -46,8 +46,21 @@
     }
   }
 
+  &__list-item {
+    width: 273px;
+  }
+
+  &__expansion-item {
+    width: 200px;
+  }
+
+  &__menu-text {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+  }
+
   &__side-customise {
-    height: 70vh;
+    min-height: 80vh;
     border-radius: 20px;
     border: 1px solid rgb(185, 177, 177);
     background-color: var(--background-color);

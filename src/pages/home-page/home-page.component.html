@@ -12,11 +12,12 @@
   <mat-drawer mode="side" class="home__side-customise" opened>
     @for(item of menuItems; track item.label ) { @if(!item?.submenu?.length) {
     <mat-list-item
-      class="home__menu-button"
-      style="width: 273px"
+      class="home__menu-button home__list-item"
       [routerLink]="[item.route]"
       routerLinkActive="active"
       #active="routerLinkActive"
+      matTooltipPosition="above"
+      [matTooltip]="item.label.length > 18 ? item.label : ''"
     >
       <mat-icon
         [style.color]="active.isActive ? '#fff' : item.color"
@@ -24,9 +25,11 @@
         >{{ item.icon }}</mat-icon
       >
 
-      <span [style.color]="active.isActive ? '#fff' : item.color">{{
-        item.label
-      }}</span>
+      <span
+        class="home__menu-text"
+        [style.color]="active.isActive ? '#fff' : item.color"
+        >{{ item.label }}</span
+      >
     </mat-list-item>
     } @if(item?.submenu?.length){
     <mat-expansion-panel class="home__submenu-panel">
@@ -39,19 +42,23 @@
       <mat-list>
         @for(submenu of item.submenu; track submenu.label ){
         <mat-list-item
-          class="home__menu-button"
+          class="home__menu-button home__expansion-item"
           [routerLink]="[submenu.route]"
           routerLinkActive="active"
           #active="routerLinkActive"
+          matTooltipPosition="above"
+          [matTooltip]="submenu.label.length > 18 ? submenu.label : ''"
         >
           <mat-icon
-            [style.color]="active.isActive ? '#fff' : submenu.color"
+            [style.color]="active.isActive ? '#fff' : ''"
             matListItemIcon
             >{{ submenu.icon }}</mat-icon
           >
-          <span [style.color]="active.isActive ? '#fff' : submenu.color">{{
-            submenu.label
-          }}</span>
+          <span
+            class="home__menu-text"
+            [style.color]="active.isActive ? '#fff' : ''"
+            >{{ submenu.label }}</span
+          >
         </mat-list-item>
         }
       </mat-list>

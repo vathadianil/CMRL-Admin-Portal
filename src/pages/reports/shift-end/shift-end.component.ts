@@ -319,7 +319,6 @@ export class ShiftEndComponent implements OnInit {
     this.exportService.exportToExcel(
       this.shiftEndTableData[0].dataSource.data,
       fileName,
-      fileType,
       columnsToExport,
       params
     );

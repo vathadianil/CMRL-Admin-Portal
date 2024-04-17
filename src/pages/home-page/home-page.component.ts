@@ -13,6 +13,7 @@ import { PieChartContainerComponent } from '../../components/ngx-charts/pie/pie-
 import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/merchant-wise-revenue/merchant-wise-revenue.component';
 import { Router } from '@angular/router';
 import { BarChartContainerComponent } from '../../components/ngx-charts/bar/bar-chart-container/bar-chart-container.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-home-page',
@@ -30,6 +31,7 @@ import { BarChartContainerComponent } from '../../components/ngx-charts/bar/bar-
     MatMenuModule,
     MatExpansionModule,
     MatListModule,
+    MatTooltipModule,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
@@ -47,47 +49,40 @@ export class HomePageComponent {
       icon: 'home',
       label: 'Dashboard',
       route: '/home/dashboard',
-      color: 'orange',
+      color: '#15b72e',
     },
     {
-      icon: 'report',
+      icon: 'file_open',
       label: 'Reports',
       route: 'reports',
-      color: '#15b72e',
+      color: '#FF6633',
       submenu: [
         {
           icon: 'alarm',
           label: 'Tom Shift Start',
           route: 'shiftStart',
-          
         },
         {
           icon: 'inbox',
           label: 'Tom Shift End',
           route: 'shiftEnd',
-         
         },
         {
           icon: 'article_shortcut',
-          label: 'Transaction Data',
+          label: 'Transaction Data Query',
           route: 'transactionDataQuery',
-       
         },
         {
           icon: 'input',
           label: 'Entry Summary',
           route: 'entrySummary',
-   
         },
 
         {
           icon: 'supervisor_account',
           label: 'Ridership Report',
           route: 'ridershipReport',
-   
         },
-
-
       ],
     },
   ];
