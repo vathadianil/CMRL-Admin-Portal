@@ -8,6 +8,7 @@ export class CommonService {
   stationData: any[] = [];
   transactionTypeData: any[] = [];
   equipmentData: any[] = [];
+  statusData : any[] = [];
 
   constructor() {}
 
@@ -61,4 +62,24 @@ export class CommonService {
     );
     return this.equipmentData;
   }
+
+  getStatus() {
+    const status = [
+      { statusId: '1', statusName: 'Status 1' },
+      { statusId: '2', statusName: 'Status 2' },
+      { statusId: '3', statusName: 'Status 3' },
+      { statusId: '4', statusName: 'Status 4' },
+    ];
+    this.statusData = status.map(
+      (stat: { statusId: any; statusName: any }) => ({
+        name: stat.statusId + '-' + stat.statusName,
+        value: stat.statusId,
+      })
+    );
+    return this.statusData;
+  }
+
+
+
+
 }

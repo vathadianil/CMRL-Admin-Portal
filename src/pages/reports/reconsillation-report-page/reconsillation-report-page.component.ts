@@ -45,8 +45,7 @@ import { ReconsillationReportInterface } from '../../../models/reconsillation-re
 })
 export class ReconsillationReportPageComponent implements OnInit {
   reconsillationForm!: FormGroup;
-  stationDefaultValue = 'All Stations';
-  stationData: any[] = [];
+  statusData : any[] = [];
   params: any[] = [];
   fileName = 'Exit Summary Report';
   columnsToExport = exitSummaryReportData;
@@ -91,7 +90,7 @@ export class ReconsillationReportPageComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.stationData = this.commonService.getStationsList();
+    this.statusData = this.commonService.getStatus();
 
     this.reconsillationForm = new FormGroup({
       startDateTime: new FormControl(
