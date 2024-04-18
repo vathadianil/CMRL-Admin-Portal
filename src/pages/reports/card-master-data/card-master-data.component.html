@@ -1,0 +1,74 @@
+<div class="cardMaster">
+  <mat-card class="cardMaster__card">
+    <div class="cardMaster__title-wrapper">
+      <mat-icon>credit_card</mat-icon>
+      <app-page-title title="Card Master Data"></app-page-title>
+    </div>
+    <mat-card-content>
+      <form
+        class="cardMaster__outer-container"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="cardMasterForm"
+      >
+        <app-date-time-picker
+          label="Start Date Time"
+          formControlName="fromDate"
+        ></app-date-time-picker>
+        <app-date-time-picker
+          label="End Date Time"
+          formControlName="toDate"
+        ></app-date-time-picker>
+
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Transaction Type"
+          placeholder="Select Transaction Type"
+          [listData]="transactionTypeData"
+        >
+        </app-drop-down>
+        <!-- <div class="dense-2">
+          <mat-form-field appearance="outline">
+            <mat-label>Customer Mobile Number</mat-label>
+            <input
+              matInput
+              placeholder="Enter Customer Mobile Number Here...."
+            />
+          </mat-form-field>
+        </div> -->
+        <div class="cardMaster__btn-container">
+          <app-button-field
+            type="submit"
+            label="Search"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+          <app-button-field
+            type="button"
+            backgroundColor="#fff"
+            color="#3361ff"
+            label="Clear"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="cardMaster__card-table">
+    <mat-card-content>
+      <div class="cardMaster__content-container">
+        <app-search></app-search>
+        <div class="cardMaster__fab-btn-wrapper">
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table [tableData]="cardMasterData"></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>
