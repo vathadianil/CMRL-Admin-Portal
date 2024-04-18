@@ -73,6 +73,11 @@ export class HomePageComponent {
           route: 'transactionDataQuery',
         },
         {
+          icon: 'credit_card',
+          label: 'Card master Data',
+          route: 'cardMasterData',
+        },
+        {
           icon: 'input',
           label: 'Entry Summary Report',
           route: 'entrySummaryReport',

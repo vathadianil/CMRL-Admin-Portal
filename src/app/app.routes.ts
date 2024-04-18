@@ -34,6 +34,14 @@ export const routes: Routes = [
       },
 
       {
+        path: 'cardMasterData',
+        loadComponent: () =>
+          import(
+            `../pages/reports/card-master-data/card-master-data.component`
+          ).then((c) => c.CardMasterDataComponent),
+      },
+
+      {
         path: 'shiftStart',
         loadComponent: () =>
           import(
@@ -50,17 +58,17 @@ export const routes: Routes = [
       {
         path: 'ridershipReport',
         loadComponent: () =>
-          import(`../pages/reports/ridership-report/ridership-report.component`).then(
-            (c) => c.RidershipReportComponent
-          ),
+          import(
+            `../pages/reports/ridership-report/ridership-report.component`
+          ).then((c) => c.RidershipReportComponent),
       },
 
       {
         path: 'entrySummaryReport',
         loadComponent: () =>
-          import(`../pages/reports/entry-summary-report-page/entry-summary-report-page.component`).then(
-            (c) => c.EntrySummaryReportPageComponent
-          ),
+          import(
+            `../pages/reports/entry-summary-report-page/entry-summary-report-page.component`
+          ).then((c) => c.EntrySummaryReportPageComponent),
       },
 
       {
