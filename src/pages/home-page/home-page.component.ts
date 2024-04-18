@@ -74,8 +74,14 @@ export class HomePageComponent {
         },
         {
           icon: 'input',
-          label: 'Entry Summary',
-          route: 'entrySummary',
+          label: 'Entry Summary Report',
+          route: 'entrySummaryReport',
+        },
+
+        {
+          icon: 'cancel_presentation',
+          label: 'Exit Summary Report',
+          route: 'exitSummaryReport',
         },
 
         {

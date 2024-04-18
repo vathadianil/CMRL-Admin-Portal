@@ -44,13 +44,10 @@
   &__content-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 1em;
   }
 }
 
-.content-container {
-  display: flex;
-  justify-content: space-between;
-}
 
 .mat-mdc-form-field {
   min-width: 100% !important;

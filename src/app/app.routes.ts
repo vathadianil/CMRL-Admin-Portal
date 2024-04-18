@@ -62,6 +62,14 @@ export const routes: Routes = [
             (c) => c.EntrySummaryReportPageComponent
           ),
       },
+
+      {
+        path: 'exitSummary',
+        loadComponent: () =>
+          import(`../pages/reports/exit-summary-report-page/exit-summary-report-page.component`).then(
+            (c) => c.ExitSummaryReportPageComponent
+          ),
+      },
     ],
   },
 ];
