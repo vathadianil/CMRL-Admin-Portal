@@ -89,6 +89,11 @@ export class HomePageComponent {
           label: 'Ridership Report',
           route: 'ridershipReport',
         },
+        {
+          icon: 'domain_verification',
+          label: 'Reconsillation Report',
+          route: 'reconsillationReport',
+        },
       ],
     },
   ];
