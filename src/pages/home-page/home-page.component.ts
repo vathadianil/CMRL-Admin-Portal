@@ -102,7 +102,7 @@ export class HomePageComponent {
           route: 'reconsillationReport',
         },
         {
-          icon: 'supervisor_account',
+          icon: 'assignment_turned_in',
           label: 'Transaction Sequence',
           route: 'transactionSequence',
         },
