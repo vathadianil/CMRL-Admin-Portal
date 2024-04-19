@@ -23,6 +23,7 @@ import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { CardMasterInterface } from '../../../models/card-master-data.interface';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-card-master-data',
@@ -41,6 +42,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     CustomInputComponent,
     MatIconModule,
     DateTimePickerComponent,
+    MatInputModule,
     MatFormFieldModule,
   ],
   templateUrl: './card-master-data.component.html',
