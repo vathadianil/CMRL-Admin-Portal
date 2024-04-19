@@ -18,16 +18,20 @@
             class="station-dropdown-container"
             label="Equipment Id"
             placeholder="All Equipments"
-            [listData]="transactionTypeData"
-          >
-          </app-drop-down>
-          <app-drop-down
-            class="station-dropdown-container"
-            label="Shift Id"
-            placeholder="Enter Shift Id"
             [listData]="equipmentData"
           >
           </app-drop-down>
+      
+
+          <div class="dense-2">
+            <mat-form-field appearance="outline">
+              <mat-label>Shift Id</mat-label>
+              <input matInput placeholder="Enter Shift Id Here...." />
+            </mat-form-field>
+          </div>
+
+          
+          
           <div class="shiftstart__btn-container">
             <app-button-field
               type="submit"

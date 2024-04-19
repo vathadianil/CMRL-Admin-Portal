@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
@@ -14,8 +15,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonService } from '../../../services/common.service';
 import { ShiftStartdatainterface } from '../../../models/shift-start-interface';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatLabel } from '@angular/material/form-field';
+
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 @Component({
@@ -34,6 +40,12 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
     FabButtonFieldComponent,
     CustomInputComponent,
     MatIconModule,
+    MatLabel,
+    MatFormFieldModule,
+    MatInputModule
+    
+    
+    
   ],
   templateUrl: './shift-start-report.component.html',
   styleUrl: './shift-start-report.component.scss'

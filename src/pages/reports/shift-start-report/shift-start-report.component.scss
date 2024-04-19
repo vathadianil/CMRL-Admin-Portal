@@ -25,6 +25,8 @@
     &__fab-btn-wrapper {
       display: flex;
       gap: 2em;
+      
+      
     }
   
     &__btn-container {
@@ -41,6 +43,7 @@
   table {
     border: 1px solid gray;
     border-collapse: collapse;
+    
   }
   
   td,
@@ -53,14 +56,11 @@
     display: flex;
     justify-content: space-between;
   }
+  .mat-mdc-form-field {
+    min-width: 100% !important;
+  }
+  :host ::ng-deep .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 1em;
+  }
   
-  // .input-container {
-  //   display: flex;
-  //   flex-direction: column;
-  //   margin-bottom: 16px;
-  // }
-  
-  // .top-label {
-  //   margin-bottom: 8px;
-  // }
   

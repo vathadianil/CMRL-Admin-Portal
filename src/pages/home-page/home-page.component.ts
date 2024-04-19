@@ -101,6 +101,11 @@ export class HomePageComponent {
           label: 'Reconsillation Report',
           route: 'reconsillationReport',
         },
+        {
+          icon: 'supervisor_account',
+          label: 'Transaction Sequence',
+          route: 'transactionSequence',
+        },
       ],
     },
   ];
