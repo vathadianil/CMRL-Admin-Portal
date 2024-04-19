@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
@@ -24,28 +24,28 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
+import { InputTextComponent } from "../../../components/input-text/input-text.component";
 
 
 @Component({
-  selector: 'app-shift-end',
-  standalone: true,
-  templateUrl: './shift-end.component.html',
-  styleUrl: './shift-end.component.scss',
-  imports: [
-    MatCardModule,
-    MatIconModule,
-    PagetitleComponent,
-    DropDownComponent,
-    ButtonFieldComponent,
-    ReactiveFormsModule,
-    SearchComponent,
-    FabButtonFieldComponent,
-    TableComponent,
-    DateTimePickerComponent,
-    CustomInputComponent,
-    MatInputModule,
-    MatFormFieldModule,
-  ],
+    selector: 'app-shift-end',
+    standalone: true,
+    templateUrl: './shift-end.component.html',
+    styleUrl: './shift-end.component.scss',
+    imports: [
+        MatCardModule,
+        MatIconModule,
+        PagetitleComponent,
+        DropDownComponent,
+        ButtonFieldComponent,
+        ReactiveFormsModule,
+        SearchComponent,
+        FabButtonFieldComponent,
+        TableComponent,
+        DateTimePickerComponent,
+        CustomInputComponent,
+        InputTextComponent
+    ]
 })
 export class ShiftEndComponent implements OnInit {
   shiftEndForm!: FormGroup;
