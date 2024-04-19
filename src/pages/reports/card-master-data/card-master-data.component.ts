@@ -24,6 +24,7 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
 import { CardMasterInterface } from '../../../models/card-master-data.interface';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { InputTextComponent } from '../../../components/input-text/input-text.component';
 
 @Component({
   selector: 'app-card-master-data',
@@ -44,6 +45,7 @@ import { MatInputModule } from '@angular/material/input';
     DateTimePickerComponent,
     MatInputModule,
     MatFormFieldModule,
+    InputTextComponent,
   ],
   templateUrl: './card-master-data.component.html',
   styleUrl: './card-master-data.component.scss',

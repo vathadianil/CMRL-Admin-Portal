@@ -1,0 +1,6 @@
+.mat-mdc-form-field {
+  min-width: 100% !important;
+}
+:host ::ng-deep .mdc-text-field--outlined {
+  --mdc-outlined-text-field-container-shape: 1em;
+}
