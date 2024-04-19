@@ -1,6 +1,6 @@
 @use "../../scss/util" as *;
 .content {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 120px);
 }
 .header {
   &__container {
@@ -97,4 +97,5 @@
   background-color: #333;
   color: #fff;
   text-align: center;
+  z-index: 1000;
 }
