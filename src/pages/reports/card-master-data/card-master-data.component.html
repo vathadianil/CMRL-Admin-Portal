@@ -26,15 +26,10 @@
           [listData]="transactionTypeData"
         >
         </app-drop-down>
-        <div class="dense-2">
-          <mat-form-field appearance="outline">
-            <mat-label>Customer Mobile Number</mat-label>
-            <input
-              matInput
-              placeholder="Enter Customer Mobile Number Here...."
-            />
-          </mat-form-field>
-        </div>
+        <app-input-text
+          [label]="'Customer Mobile Number'"
+          [placeholder]="'Enter Customer Mobile'"
+        ></app-input-text>
         <div class="cardMaster__btn-container">
           <app-button-field
             type="submit"
