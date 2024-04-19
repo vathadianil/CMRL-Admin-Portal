@@ -15,14 +15,13 @@
       [displayWith]="displayWith.bind(this)"
       (optionSelected)="onSelectionChange($event)"
     >
-      <ng-container *ngIf="filteredListData?.length">
-        <mat-option *ngFor="let item of filteredListData" [value]="item.value">
-          {{ item.name }}
-        </mat-option>
-      </ng-container>
-      <ng-container *ngIf="!filteredListData?.length">
-        <mat-option> No Data Found </mat-option>
-      </ng-container>
+      @if(filteredListData?.length){ @for(item of filteredListData;track item){
+      <mat-option [value]="item.value">
+        {{ item.name }}
+      </mat-option>
+      } } @if(!filteredListData?.length){
+      <mat-option> No Data Found </mat-option>
+      }
     </mat-autocomplete>
   </mat-form-field>
 </div>

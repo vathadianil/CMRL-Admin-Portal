@@ -14,7 +14,6 @@ import { ButtonFieldComponent } from '../../../components/button-field/button-fi
 import { MatCardModule } from '@angular/material/card';
 import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
-import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { CommonService } from '../../../services/common.service';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,8 +21,6 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { CardMasterInterface } from '../../../models/card-master-data.interface';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
 
 @Component({
@@ -40,11 +37,8 @@ import { InputTextComponent } from '../../../components/input-text/input-text.co
     MatCardModule,
     SearchComponent,
     FabButtonFieldComponent,
-    CustomInputComponent,
     MatIconModule,
     DateTimePickerComponent,
-    MatInputModule,
-    MatFormFieldModule,
     InputTextComponent,
   ],
   templateUrl: './card-master-data.component.html',

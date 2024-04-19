@@ -1,4 +1,5 @@
-<div class="table" *ngFor="let data of tableData">
+@for(data of tableData;track data){
+<div class="table">
   <div class="table-container">
     <table mat-table [dataSource]="data.dataSource">
       <!-- Define table columns dynamically based on data structure -->
@@ -27,3 +28,4 @@
   >
   </mat-paginator>
 </div>
+}

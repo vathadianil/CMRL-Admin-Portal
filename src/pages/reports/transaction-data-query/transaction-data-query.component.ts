@@ -14,7 +14,6 @@ import { ButtonFieldComponent } from '../../../components/button-field/button-fi
 import { MatCardModule } from '@angular/material/card';
 import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
-import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { TransactionDataQueryInterface } from '../../../models/transaction-data-query.interface';
 import { CommonService } from '../../../services/common.service';
@@ -37,7 +36,6 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
     MatCardModule,
     SearchComponent,
     FabButtonFieldComponent,
-    CustomInputComponent,
     MatIconModule,
     DateTimePickerComponent,
   ],
