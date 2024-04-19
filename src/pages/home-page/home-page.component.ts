@@ -79,14 +79,25 @@ export class HomePageComponent {
         },
         {
           icon: 'input',
-          label: 'Entry Summary',
-          route: 'entrySummary',
+          label: 'Entry Summary Report',
+          route: 'entrySummaryReport',
+        },
+
+        {
+          icon: 'cancel_presentation',
+          label: 'Exit Summary Report',
+          route: 'exitSummaryReport',
         },
 
         {
           icon: 'supervisor_account',
           label: 'Ridership Report',
           route: 'ridershipReport',
+        },
+        {
+          icon: 'domain_verification',
+          label: 'Reconsillation Report',
+          route: 'reconsillationReport',
         },
       ],
     },

@@ -1,0 +1,67 @@
+<div class="reconsillation">
+  <mat-card class="reconsillation__card">
+    <div class="reconsillation__title-wrapper">
+      <mat-icon>domain_verification</mat-icon>
+      <app-page-title title="Reconsillation Report"></app-page-title>
+    </div>
+    <mat-card-content>
+      <form
+        (ngSubmit)="onSubmit()"
+        [formGroup]="reconsillationForm"
+        class="reconsillation__outer-container"
+      >
+        <app-date-time-picker
+          label="Start Date Time"
+          formControlName="startDateTime"
+        ></app-date-time-picker>
+
+        <app-date-time-picker
+          label="End Date Time"
+          formControlName="endDateTime"
+        ></app-date-time-picker>
+
+        <app-drop-down
+          class="status-dropdown-container"
+          label="Status"
+          placeholder="Select Status"
+          [listData]="statusData"
+        >
+        </app-drop-down>
+
+        <div class="reconsillation__btn-container">
+          <app-button-field
+            type="submit"
+            label="Search"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+          <app-button-field
+            type="button"
+            backgroundColor="#fff"
+            color="#3361ff"
+            label="Clear"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-content>
+      <div class="reconsillation__content-container">
+        <app-search></app-search>
+        <div class="reconsillation__fab-btn-wrapper">
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          ></app-fab-button>
+        </div>
+      </div>
+      <app-table [tableData]="reconsillationTableData"></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

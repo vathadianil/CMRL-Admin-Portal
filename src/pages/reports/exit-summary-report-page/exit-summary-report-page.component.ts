@@ -19,16 +19,14 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
 import { TableComponent } from '../../../components/table/table.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { SearchComponent } from '../../../components/search/search.component';
-import { EntrySummaryInterface } from '../../../models/entry-summary.interface';
+import { ExitSummaryInterface } from '../../../models/exit-summary.interface';
 
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 
 @Component({
-  selector: 'app-entry-summary-report-page',
+  selector: 'app-exit-summary-report-page',
   standalone: true,
-  templateUrl: './entry-summary-report-page.component.html',
-  styleUrl: './entry-summary-report-page.component.scss',
   imports: [
     CommonModule,
     MatCardModule,
@@ -42,15 +40,17 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
     FabButtonFieldComponent,
     SearchComponent,
   ],
+  templateUrl: './exit-summary-report-page.component.html',
+  styleUrl: './exit-summary-report-page.component.scss',
 })
-export class EntrySummaryReportPageComponent implements OnInit {
-  entrySummaryForm!: FormGroup;
+export class ExitSummaryReportPageComponent implements OnInit {
+  exitSummaryForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];
-  params: any[] = [];
   equipmentData: any[] = [];
-  fileName = 'Entry Summary Report';
-  columnsToExport = entrySummaryReportData;
+  params: any[] = [];
+  fileName = 'Exit Summary Report';
+  columnsToExport = exitSummaryReportData;
 
   constructor(
     private commonService: CommonService,
@@ -58,9 +58,9 @@ export class EntrySummaryReportPageComponent implements OnInit {
     private exportPdfService: ExportPdfService
   ) {}
 
-  entrySummaryTableData: {
+  exitSummaryTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<EntrySummaryInterface>;
+    dataSource: MatTableDataSource<ExitSummaryInterface>;
   }[] = [
     {
       displayedColumns: [
@@ -72,7 +72,7 @@ export class EntrySummaryReportPageComponent implements OnInit {
         'count',
       ],
 
-      dataSource: new MatTableDataSource<EntrySummaryInterface>([
+      dataSource: new MatTableDataSource<ExitSummaryInterface>([
         {
           transactionDate: '13 feb 2024',
           stationName: '0101 miyapur',
@@ -99,7 +99,7 @@ export class EntrySummaryReportPageComponent implements OnInit {
 
     this.equipmentData = this.commonService.getEquipments();
 
-    this.entrySummaryForm = new FormGroup({
+    this.exitSummaryForm = new FormGroup({
       startDateTime: new FormControl(
         {
           value: new Date(
@@ -135,35 +135,35 @@ export class EntrySummaryReportPageComponent implements OnInit {
     this.params = [
       {
         key: 'fromDate',
-        value: this.entrySummaryForm.get('fromDate')?.value,
+        value: this.exitSummaryForm.get('fromDate')?.value,
       },
       {
         key: 'toDate',
-        value: this.entrySummaryForm.get('toDate')?.value,
+        value: this.exitSummaryForm.get('toDate')?.value,
       },
       {
         key: 'stations',
-        value: this.entrySummaryForm.get('transactionType')?.value,
+        value: this.exitSummaryForm.get('transactionType')?.value,
       },
       {
         key: 'transactionType',
-        value: this.entrySummaryForm.get('transactionType')?.value,
+        value: this.exitSummaryForm.get('transactionType')?.value,
       },
       {
         key: 'equipmentName',
-        value: this.entrySummaryForm.get('equipmentName')?.value,
+        value: this.exitSummaryForm.get('equipmentName')?.value,
       },
     ];
     return this.params;
   }
 
   onSubmit() {
-    console.log(this.entrySummaryForm.value);
+    console.log(this.exitSummaryForm.value);
   }
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.entrySummaryTableData[0].dataSource.data,
+      this.exitSummaryTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -172,7 +172,7 @@ export class EntrySummaryReportPageComponent implements OnInit {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.entrySummaryTableData[0].dataSource.data,
+      this.exitSummaryTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -180,7 +180,7 @@ export class EntrySummaryReportPageComponent implements OnInit {
   }
 }
 
-export const entrySummaryReportData = [
+export const exitSummaryReportData = [
   'transactionDate',
   'stationName',
   'equipmentGroupId',

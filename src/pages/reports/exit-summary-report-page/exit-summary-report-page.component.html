@@ -1,15 +1,15 @@
-<div class="entrySummary">
-  <mat-card class="entrySummary__card">
-    <div class="entrySummary__title-wrapper">
+<div class="exitSummary">
+  <mat-card class="exitSummary__card">
+    <div class="exitSummary__title-wrapper">
       <mat-icon>input</mat-icon>
-      <app-page-title title="Entry Summary Report"></app-page-title>
+      <app-page-title title="Exit Summary Report"></app-page-title>
     </div>
 
     <mat-card-content>
       <form
-        class="entrySummary__outer-container"
+        class="exitSummary__outer-container"
         (ngSubmit)="onSubmit()"
-        [formGroup]="entrySummaryForm"
+        [formGroup]="exitSummaryForm"
       >
         <app-date-time-picker
           label="Shift Start Date Time"
@@ -38,7 +38,7 @@
         >
         </app-drop-down>
 
-        <div class="entrySummary__btn-container">
+        <div class="exitSummary__btn-container">
           <app-button-field
             type="submit"
             label="Search"
@@ -60,19 +60,18 @@
     </mat-card-content>
   </mat-card>
 
-
-  <mat-card class="entrySummary__card">
+  <mat-card class="exitSummary__card">
     <mat-card-content>
-      <div class="entrySummary__content-container">
+      <div class="exitSummary__content-container">
         <app-search></app-search>
-        <div class="entrySummary__fab-btn-wrapper">
+        <div class="exitSummary__fab-btn-wrapper">
           <app-fab-button
-          (excelClicked)="onExcelClicked()"
-          (pdfClicked)="onPdfClicked()"
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
           ></app-fab-button>
         </div>
       </div>
-      <app-table [tableData]="entrySummaryTableData"></app-table>
+      <app-table [tableData]="exitSummaryTableData"></app-table>
     </mat-card-content>
   </mat-card>
 </div>

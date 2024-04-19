@@ -64,11 +64,27 @@ export const routes: Routes = [
       },
 
       {
-        path: 'entrySummary',
+        path: 'entrySummaryReport',
         loadComponent: () =>
           import(
             `../pages/reports/entry-summary-report-page/entry-summary-report-page.component`
           ).then((c) => c.EntrySummaryReportPageComponent),
+      },
+
+      {
+        path: 'exitSummaryReport',
+        loadComponent: () =>
+          import(`../pages/reports/exit-summary-report-page/exit-summary-report-page.component`).then(
+            (c) => c.ExitSummaryReportPageComponent
+          ),
+      },
+
+      {
+        path: 'reconsillationReport',
+        loadComponent: () =>
+          import(`../pages/reports/reconsillation-report-page/reconsillation-report-page.component`).then(
+            (c) => c.ReconsillationReportPageComponent
+          ),
       },
     ],
   },
