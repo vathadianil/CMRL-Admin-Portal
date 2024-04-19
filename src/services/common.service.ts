@@ -8,7 +8,7 @@ export class CommonService {
   stationData: any[] = [];
   transactionTypeData: any[] = [];
   equipmentData: any[] = [];
-  statusData : any[] = [];
+  statusData: any[] = [];
 
   constructor() {}
 
@@ -65,10 +65,11 @@ export class CommonService {
 
   getStatus() {
     const status = [
-      { statusId: '1', statusName: 'Status 1' },
-      { statusId: '2', statusName: 'Status 2' },
-      { statusId: '3', statusName: 'Status 3' },
-      { statusId: '4', statusName: 'Status 4' },
+      { statusId: '1', statusName: 'Matched' },
+      { statusId: '2', statusName: 'Unmatched' },
+      { statusId: '3', statusName: 'Matched and Unmatched' },
+      { statusId: '4', statusName: 'Excess in AFC' },
+      { statusId: '5', statusName: 'Excess in PPBL' },
     ];
     this.statusData = status.map(
       (stat: { statusId: any; statusName: any }) => ({
@@ -78,8 +79,4 @@ export class CommonService {
     );
     return this.statusData;
   }
-
-
-
-
 }
