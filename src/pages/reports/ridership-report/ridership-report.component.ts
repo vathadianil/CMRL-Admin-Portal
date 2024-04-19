@@ -15,6 +15,8 @@ import { CommonService } from '../../../services/common.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { ridershipreportInterface } from '../../../models/ridership-report-interface';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
+import { ExportService } from '../../../services/export.service';
+import { ExportPdfService } from '../../../services/export-pdf.service';
 
 @Component({
   selector: 'app-ridership-report',
@@ -43,10 +45,13 @@ export class RidershipReportComponent {
   stationDefaultValue: any;
   transactionTypeData: any[];
   equipmentData: any[];
+  fileName = 'RiderShip Report';
+  columnsToExport =ridershipTableData;
+  params: any[] = [];
 
-  
-
-  constructor(private commonService: CommonService) {}
+  constructor(private commonService: CommonService,
+    private exportService: ExportService,
+    private exportPdfService: ExportPdfService) {}
 
   ridershipTableData: {
     displayedColumns: string[];
@@ -57,9 +62,7 @@ export class RidershipReportComponent {
         'stationId',
         'stationName',
         'entryCount',
-        'exitCount'
-
-       
+        'exitCount',
       ],
       dataSource: new MatTableDataSource<ridershipreportInterface>([
         {
@@ -67,10 +70,7 @@ export class RidershipReportComponent {
           stationName:'miyapur',
           entryCount:0,
           exitCount:0,
-        },
-        
-     
-       
+        },  
        
       ]),
     },
@@ -82,8 +82,8 @@ export class RidershipReportComponent {
     this.equipmentData = this.commonService.getEquipments();
 
     this.ridershipReportForm = new FormGroup({
-      // firstName: new FormControl(),
-      startDateTime: new FormControl(
+      
+      fromdate: new FormControl(
         {
           value: new Date(
             new Date().getFullYear(),
@@ -97,7 +97,7 @@ export class RidershipReportComponent {
         },
         Validators.required
       ),
-      endDateTime: new FormControl(
+      todate: new FormControl(
         {
           value: new Date(
             new Date().getFullYear(),
@@ -116,4 +116,56 @@ export class RidershipReportComponent {
   onSubmit() {
     console.log(this.ridershipReportForm.value);
   }
+
+getParameters() {
+  this.params = [
+    {
+      key: 'fromDate',
+      value: this.ridershipReportForm.get('fromDate')?.value,
+    },
+    {
+      key: 'toDate',
+      value: this.ridershipReportForm.get('toDate')?.value,
+    },
+    {
+      key: 'stations',
+      value: this.ridershipReportForm.get('transactionType')?.value,
+    },
+    {
+      key: 'transactionType',
+      value: this.ridershipReportForm.get('transactionType')?.value,
+    },
+    {
+      key: 'equipmentName',
+      value: this.ridershipReportForm.get('equipmentName')?.value,
+    },
+  ];
+  return this.params;
 }
+
+onExcelClicked() {
+  this.exportService.exportToExcel(
+    this.ridershipTableData[0].dataSource.data,
+    this.fileName,
+    this.columnsToExport,
+    this.getParameters()
+  );
+}
+
+onPdfClicked() {
+  this.exportPdfService.exportToPDF(
+    this.ridershipTableData[0].dataSource.data,
+    this.fileName,
+    this.columnsToExport,
+    this.getParameters()
+  );
+}
+}
+
+export const ridershipTableData = [
+         'stationId',
+         'stationName',
+         'entryCount',
+         'exitCount'
+];
+

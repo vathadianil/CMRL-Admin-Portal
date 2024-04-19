@@ -54,7 +54,10 @@
         <div class="content-container">
           <app-search></app-search>
           <div class="shiftstart__fab-btn-wrapper">
-            <app-fab-button></app-fab-button>
+            <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()">
+          </app-fab-button>
           </div>
         </div>
         <app-table [tableData]="shiftstartTableData"></app-table>

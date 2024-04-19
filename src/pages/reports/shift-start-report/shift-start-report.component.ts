@@ -14,6 +14,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonService } from '../../../services/common.service';
 import { ShiftStartdatainterface } from '../../../models/shift-start-interface';
 import { MatTableDataSource } from '@angular/material/table';
+import { ExportService } from '../../../services/export.service';
+import { ExportPdfService } from '../../../services/export-pdf.service';
 
 
 @Component({
@@ -42,10 +44,15 @@ export class ShiftStartReportComponent implements OnInit {
   stationDefaultValue: any;
   transactionTypeData: any[];
   equipmentData: any[];
-
+  fileName = 'Shift Start Report';
+  columnsToExport = shiftstartTableData;
+  params: any[] = [];
   
 
-  constructor(private commonService: CommonService) {}
+  constructor(private commonService: CommonService,
+    private exportService: ExportService,
+    private exportPdfService: ExportPdfService
+    ) {}
 
   shiftstartTableData: {
     displayedColumns: string[];
@@ -107,5 +114,66 @@ export class ShiftStartReportComponent implements OnInit {
       firstName: new FormControl(),
     });
   }
+  getParameters() {
+    this.params = [
+      {
+        key: 'fromDate',
+        value: this.shiftstartReportForm.get('fromDate')?.value,
+      },
+      {
+        key: 'toDate',
+        value: this.shiftstartReportForm.get('toDate')?.value,
+      },
+      {
+        key: 'stations',
+        value: this.shiftstartReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'transactionType',
+        value: this.shiftstartReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'equipmentName',
+        value: this.shiftstartReportForm.get('equipmentName')?.value,
+      },
+    ];
+    return this.params;
+  }
+  onSubmit() {
+    console.log(this.shiftstartReportForm.value);
+  }
+
+  onExcelClicked() {
+    this.exportService.exportToExcel(
+      this.shiftstartTableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.getParameters()
+    );
+  }
+
+  onPdfClicked() {
+    this.exportPdfService.exportToPDF(
+      this.shiftstartTableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.getParameters()
+    );
+  }
 }
+
+export const shiftstartTableData = [
+  'shift_start_date_time',
+        'lineId',
+        'stationId',
+        'equipmentGroupId',
+        'equepmentId',
+        'acquirerId',
+        'operatorId',
+        'terminalId',
+        'agentId',
+        'tom_Efo_Shift_start',
+];
+
+
 

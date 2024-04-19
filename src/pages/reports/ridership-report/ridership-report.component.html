@@ -6,8 +6,8 @@
     </div>
     <mat-card-content>
       <form class="ridership__outer-container" (ngSubmit)="onSubmit()" [formGroup]="ridershipReportForm">
-        <app-date-time-picker label="Start Date Time" formControlName="startDateTime"></app-date-time-picker>
-        <app-date-time-picker label="End Date Time" formControlName="endDateTime"></app-date-time-picker>
+        <app-date-time-picker label="Start Date Time" formControlName="fromdate"></app-date-time-picker>
+        <app-date-time-picker label="End Date Time" formControlName="todate"></app-date-time-picker>
         <div class="ridership__btn-container">
           <app-button-field type="submit" label="Search" [width]="8" [height]="2.9">
           </app-button-field>
@@ -23,7 +23,9 @@
       <div class="content-container">
         <app-search></app-search>
         <div class="ridership__fab-btn-wrapper">
-          <app-fab-button></app-fab-button>
+          <app-fab-button
+          (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"></app-fab-button>
         </div>
       </div>
       <app-table [tableData]="ridershipTableData"></app-table>
