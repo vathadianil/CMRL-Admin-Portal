@@ -14,6 +14,7 @@ import { MerchantWiseRevenueComponent } from '../../components/ngx-charts/mercha
 import { Router } from '@angular/router';
 import { BarChartContainerComponent } from '../../components/ngx-charts/bar/bar-chart-container/bar-chart-container.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-home-page',
@@ -32,6 +33,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatExpansionModule,
     MatListModule,
     MatTooltipModule,
+    FooterComponent,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
