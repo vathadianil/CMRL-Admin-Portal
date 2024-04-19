@@ -1,69 +1,74 @@
-<div class="header__container">
-  <img src="../../assets/img/cmr_logo.png" alt="Logo" class="header__logo" />
-  <div class="header__icons">
-    <mat-icon fontIcon="group"></mat-icon>
-    <mat-icon
-      fontIcon="power_settings_new
-    "
-    ></mat-icon>
-  </div>
-</div>
-<mat-drawer-container class="home" autosize>
-  <mat-drawer mode="side" class="home__side-customise" opened>
-    @for(item of menuItems; track item.label ) { @if(!item?.submenu?.length) {
-    <mat-list-item
-      class="home__menu-button home__list-item mat-elevation-z2"
-      [routerLink]="[item.route]"
-      routerLinkActive="active"
-      #active="routerLinkActive"
-      matTooltipPosition="above"
-      [matTooltip]="item.label.length > 18 ? item.label : ''"
-    >
+<div class="content">
+  <div class="header__container">
+    <img src="../../assets/img/cmr_logo.png" alt="Logo" class="header__logo" />
+    <div class="header__icons">
+      <mat-icon fontIcon="group"></mat-icon>
       <mat-icon
-        [style.color]="active.isActive ? '#fff' : item.color"
-        matListItemIcon
-        >{{ item.icon }}</mat-icon
+        fontIcon="power_settings_new
+    "
+      ></mat-icon>
+    </div>
+  </div>
+  <mat-drawer-container class="home" autosize>
+    <mat-drawer mode="side" class="home__side-customise" opened>
+      @for(item of menuItems; track item.label ) { @if(!item?.submenu?.length) {
+      <mat-list-item
+        class="home__menu-button home__list-item mat-elevation-z2"
+        [routerLink]="[item.route]"
+        routerLinkActive="active"
+        #active="routerLinkActive"
+        matTooltipPosition="above"
+        [matTooltip]="item.label.length > 18 ? item.label : ''"
       >
-
-      <span
-        class="home__menu-text"
-        [style.color]="active.isActive ? '#fff' : item.color"
-        >{{ item.label }}</span
-      >
-    </mat-list-item>
-    } @if(item?.submenu?.length){
-    <mat-expansion-panel class="home__submenu-panel">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon [style.color]="item.color">{{ item.icon }}</mat-icon>
-          <span [style.color]="item.color"> {{ item.label }}</span>
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <mat-list>
-        @for(submenu of item.submenu; track submenu.label ){
-        <mat-list-item
-          class="home__menu-button home__expansion-item"
-          [routerLink]="[submenu.route]"
-          routerLinkActive="active"
-          #active="routerLinkActive"
-          matTooltipPosition="above"
-          [matTooltip]="submenu.label.length > 18 ? submenu.label : ''"
+        <mat-icon
+          [style.color]="active.isActive ? '#fff' : item.color"
+          matListItemIcon
+          >{{ item.icon }}</mat-icon
         >
-          <mat-icon
-            [style.color]="active.isActive ? '#fff' : ''"
-            matListItemIcon
-            >{{ submenu.icon }}</mat-icon
+
+        <span
+          class="home__menu-text"
+          [style.color]="active.isActive ? '#fff' : item.color"
+          >{{ item.label }}</span
+        >
+      </mat-list-item>
+      } @if(item?.submenu?.length){
+      <mat-expansion-panel class="home__submenu-panel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon [style.color]="item.color">{{ item.icon }}</mat-icon>
+            <span [style.color]="item.color"> {{ item.label }}</span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list>
+          @for(submenu of item.submenu; track submenu.label ){
+          <mat-list-item
+            class="home__menu-button home__expansion-item"
+            [routerLink]="[submenu.route]"
+            routerLinkActive="active"
+            #active="routerLinkActive"
+            matTooltipPosition="above"
+            [matTooltip]="submenu.label.length > 18 ? submenu.label : ''"
           >
-          <span
-            class="home__menu-text"
-            [style.color]="active.isActive ? '#fff' : ''"
-            >{{ submenu.label }}</span
-          >
-        </mat-list-item>
-        }
-      </mat-list>
-    </mat-expansion-panel>
-    } }
-  </mat-drawer>
-  <router-outlet></router-outlet>
-</mat-drawer-container>
+            <mat-icon
+              [style.color]="active.isActive ? '#fff' : ''"
+              matListItemIcon
+              >{{ submenu.icon }}</mat-icon
+            >
+            <span
+              class="home__menu-text"
+              [style.color]="active.isActive ? '#fff' : ''"
+              >{{ submenu.label }}</span
+            >
+          </mat-list-item>
+          }
+        </mat-list>
+      </mat-expansion-panel>
+      } }
+    </mat-drawer>
+    <router-outlet></router-outlet>
+  </mat-drawer-container>
+</div>
+<div class="footer">
+  <app-footer></app-footer>
+</div>
