@@ -11,7 +11,9 @@
   (click)="onButtonClick()"
 >
   {{ label }}
-  <mat-icon *ngIf="showSpinner" class="app-button__icon">
+  @if(showSpinner){
+  <mat-icon class="app-button__icon">
     <mat-spinner diameter="20"> </mat-spinner
   ></mat-icon>
+  }
 </button>
