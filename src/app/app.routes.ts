@@ -88,7 +88,7 @@ export const routes: Routes = [
       },
 
       {
-        path: 'transactionsequence',
+        path: 'transactionSequence',
         loadComponent: () =>
           import(`../pages/reports/transaction-sequence/transaction-sequence.component`).then(
             (c) => c.TransactionSequenceComponent

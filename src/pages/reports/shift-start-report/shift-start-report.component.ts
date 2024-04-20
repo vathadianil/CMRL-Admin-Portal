@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
@@ -9,7 +8,6 @@ import { ButtonFieldComponent } from '../../../components/button-field/button-fi
 import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
-
 import { MatIconModule } from '@angular/material/icon';
 import { CommonService } from '../../../services/common.service';
 import { ShiftStartdatainterface } from '../../../models/shift-start-interface';
@@ -17,15 +15,10 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatLabel } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
-
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
-
-
-
-
 
 @Component({
   selector: 'app-shift-start-report',
@@ -46,9 +39,6 @@ import { InputTextComponent } from '../../../components/input-text/input-text.co
     MatLabel,
     MatFormFieldModule,
     InputTextComponent
-    
-    
-    
   ],
   templateUrl: './shift-start-report.component.html',
   styleUrl: './shift-start-report.component.scss'
@@ -178,7 +168,7 @@ export class ShiftStartReportComponent implements OnInit {
 }
 
 export const shiftstartTableData = [
-  'shift_start_date_time',
+        'shift_start_date_time',
         'lineId',
         'stationId',
         'equipmentGroupId',
