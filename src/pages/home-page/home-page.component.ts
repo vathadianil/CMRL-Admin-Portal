@@ -101,6 +101,11 @@ export class HomePageComponent {
           label: 'Reconsillation Report',
           route: 'reconsillationReport',
         },
+        {
+          icon: 'assignment_turned_in',
+          label: 'Transaction Sequence',
+          route: 'transactionSequence',
+        },
       ],
     },
   ];

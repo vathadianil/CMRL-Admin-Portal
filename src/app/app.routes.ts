@@ -86,6 +86,14 @@ export const routes: Routes = [
             (c) => c.ReconsillationReportPageComponent
           ),
       },
+
+      {
+        path: 'transactionsequence',
+        loadComponent: () =>
+          import(`../pages/reports/transaction-sequence/transaction-sequence.component`).then(
+            (c) => c.TransactionSequenceComponent
+          ),
+      },
     ],
   },
 ];
