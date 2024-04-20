@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators,ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { CommonService } from '../../../services/common.service';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
@@ -18,16 +23,14 @@ import { MatFormField } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
-
-
-
-
-
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { DatePickerComponent } from '../../../components/date-picker/date-picker.component';
 
 @Component({
   selector: 'app-transaction-sequence',
   standalone: true,
-  imports: [TableComponent,
+  imports: [
+    TableComponent,
     ReactiveFormsModule,
     PagetitleComponent,
     DropDownComponent,
@@ -40,10 +43,12 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
     MatLabel,
     MatFormField,
     DateTimePickerComponent,
-    
-    ],
+    DatePickerComponent,
+  ],
+  providers: [provideNativeDateAdapter()],
+
   templateUrl: './transaction-sequence.component.html',
-  styleUrl: './transaction-sequence.component.scss'
+  styleUrl: './transaction-sequence.component.scss',
 })
 export class TransactionSequenceComponent implements OnInit {
   transactionsequenceReportForm!: FormGroup;
@@ -56,17 +61,10 @@ export class TransactionSequenceComponent implements OnInit {
   columnsToExport = transactionsequenceTableData;
   myDateTimeControl: any;
 
-
-  
-  
-  
-
   constructor(
     private commonService: CommonService,
     private exportService: ExportService,
-    private exportPdfService: ExportPdfService,
-
-    
+    private exportPdfService: ExportPdfService
   ) {}
 
   transactionsequenceTableData: {
@@ -84,47 +82,38 @@ export class TransactionSequenceComponent implements OnInit {
       ],
       dataSource: new MatTableDataSource<transactionsequenceInterface>([
         {
-          stationId:'1010',
-          equipmentId:'11',
-          transactionType:22,
-          transactionsequenceNumber:33,
-          status:'yes',
-          businessDate:'22-2-24',
-
+          stationId: '1010',
+          equipmentId: '11',
+          transactionType: 22,
+          transactionsequenceNumber: 33,
+          status: 'yes',
+          businessDate: '22-2-24',
         },
-        
-       
       ]),
     },
   ];
 
   ngOnInit(): void {
-    this.stationData = this.commonService.getStationsList();
     this.transactionTypeData = this.commonService.getTransactionTypes();
-    this.equipmentData = this.commonService.getEquipments();
 
     this.transactionsequenceReportForm = new FormGroup({
-     fromdate: new FormControl(
+      fromdate: new FormControl(
         {
           value: new Date(
             new Date().getFullYear(),
             new Date().getMonth() + 1,
             new Date().getDate(),
-           
             0,
             0,
             0
           ),
 
           disabled: false,
-          
         },
-        Validators.required   
-     ), 
+        Validators.required
+      ),
     });
   }
-
-
 
   getParameters() {
     this.params = [
@@ -132,21 +121,10 @@ export class TransactionSequenceComponent implements OnInit {
         key: 'fromDate',
         value: this.transactionsequenceReportForm.get('fromDate')?.value,
       },
-      {
-        key: 'toDate',
-        value: this.transactionsequenceReportForm.get('toDate')?.value,
-      },
-      {
-        key: 'stations',
-        value: this.transactionsequenceReportForm.get('transactionType')?.value,
-      },
+
       {
         key: 'transactionType',
         value: this.transactionsequenceReportForm.get('transactionType')?.value,
-      },
-      {
-        key: 'equipmentName',
-        value: this.transactionsequenceReportForm.get('equipmentName')?.value,
       },
     ];
     return this.params;
@@ -156,8 +134,6 @@ export class TransactionSequenceComponent implements OnInit {
     console.log(this.transactionsequenceReportForm.value);
   }
 
-
-
   onExcelClicked() {
     this.exportService.exportToExcel(
       this.transactionsequenceTableData[0].dataSource.data,
@@ -166,7 +142,7 @@ export class TransactionSequenceComponent implements OnInit {
       this.getParameters()
     );
   }
-  
+
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
       this.transactionsequenceTableData[0].dataSource.data,
@@ -175,17 +151,13 @@ export class TransactionSequenceComponent implements OnInit {
       this.getParameters()
     );
   }
-
-
 }
 
 export const transactionsequenceTableData = [
-        'stationId',
-        'equipmentId',
-        'transactionType',
-        'transactionsequenceNumber',
-        'status',
-        'businessDate',
-]; 
-
-
+  'stationId',
+  'equipmentId',
+  'transactionType',
+  'transactionsequenceNumber',
+  'status',
+  'businessDate',
+];

@@ -38,10 +38,10 @@ import { InputTextComponent } from '../../../components/input-text/input-text.co
     MatIconModule,
     MatLabel,
     MatFormFieldModule,
-    InputTextComponent
+    InputTextComponent,
   ],
   templateUrl: './shift-start-report.component.html',
-  styleUrl: './shift-start-report.component.scss'
+  styleUrl: './shift-start-report.component.scss',
 })
 export class ShiftStartReportComponent implements OnInit {
   shiftstartReportForm!: FormGroup;
@@ -52,12 +52,12 @@ export class ShiftStartReportComponent implements OnInit {
   fileName = 'Shift Start Report';
   columnsToExport = shiftstartTableData;
   params: any[] = [];
-  
 
-  constructor(private commonService: CommonService,
+  constructor(
+    private commonService: CommonService,
     private exportService: ExportService,
     private exportPdfService: ExportPdfService
-    ) {}
+  ) {}
 
   shiftstartTableData: {
     displayedColumns: string[];
@@ -75,12 +75,11 @@ export class ShiftStartReportComponent implements OnInit {
         'terminalId',
         'agentId',
         'tom_Efo_Shift_start',
-       
       ],
       dataSource: new MatTableDataSource<ShiftStartdatainterface>([
         {
-          shift_start_date_time:'30-Mar-2020 10:35:29',
-          lineId:'01' ,
+          shift_start_date_time: '30-Mar-2020 10:35:29',
+          lineId: '01',
           stationId: '0106-Moosapet',
           equipmentGroupId: 3,
           equepmentId: 1002,
@@ -88,12 +87,11 @@ export class ShiftStartReportComponent implements OnInit {
           operatorId: 6014,
           terminalId: '1010C2',
           agentId: 11102,
-          tom_Efo_Shift_start:'0101',
-         
+          tom_Efo_Shift_start: '0101',
         },
         {
-          shift_start_date_time:'30-Mar-2020 10:35:29',
-          lineId:'01' ,
+          shift_start_date_time: '30-Mar-2020 10:35:29',
+          lineId: '01',
           stationId: '0106-Moosapet',
           equipmentGroupId: 3,
           equepmentId: 1002,
@@ -101,11 +99,8 @@ export class ShiftStartReportComponent implements OnInit {
           operatorId: 6014,
           terminalId: '1010C2',
           agentId: 1102,
-          tom_Efo_Shift_start:'0101',
+          tom_Efo_Shift_start: '0101',
         },
-     
-       
-       
       ]),
     },
   ];
@@ -168,17 +163,14 @@ export class ShiftStartReportComponent implements OnInit {
 }
 
 export const shiftstartTableData = [
-        'shift_start_date_time',
-        'lineId',
-        'stationId',
-        'equipmentGroupId',
-        'equepmentId',
-        'acquirerId',
-        'operatorId',
-        'terminalId',
-        'agentId',
-        'tom_Efo_Shift_start',
+  'shift_start_date_time',
+  'lineId',
+  'stationId',
+  'equipmentGroupId',
+  'equepmentId',
+  'acquirerId',
+  'operatorId',
+  'terminalId',
+  'agentId',
+  'tom_Efo_Shift_start',
 ];
-
-
-
