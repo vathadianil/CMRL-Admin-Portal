@@ -9,6 +9,7 @@ export class CommonService {
   transactionTypeData: any[] = [];
   equipmentData: any[] = [];
   statusData: any[] = [];
+  corridorData: any[] = [];
 
   constructor() {}
 
@@ -78,5 +79,20 @@ export class CommonService {
       })
     );
     return this.statusData;
+  }
+
+  getCorridors() {
+    const corridor = [
+      { corridorId: '1', corridorName: 'CORRIDOR_I' },
+      { corridorId: '2', corridorName: 'CORRIDOR_II' },
+      { corridorId: '3', corridorName: 'CORRIDOR_III' },
+    ];
+    this.corridorData = corridor.map(
+      (corr: { corridorId: any; corridorName: any }) => ({
+        name: corr.corridorId + '-' + corr.corridorName,
+        value: corr.corridorId,
+      })
+    );
+    return this.corridorData;
   }
 }

@@ -108,5 +108,20 @@ export class HomePageComponent {
         },
       ],
     },
+
+
+    {
+      icon: 'developer_board',
+      label: 'Device Management',
+      route: 'deviceManagemet',
+      color: '#feca33',
+      submenu: [
+        {
+          icon: 'memory',
+          label: 'Reader Management',
+          route: 'readerManagement',
+        },
+      ],
+    },
   ];
 }

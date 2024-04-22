@@ -94,6 +94,14 @@ export const routes: Routes = [
             (c) => c.TransactionSequenceComponent
           ),
       },
+
+      {
+        path: 'readerManagement',
+        loadComponent: () =>
+          import(`../pages/device-management/reader-management-page/reader-management-page.component`).then(
+            (c) => c.ReaderManagementPageComponent
+          ),
+      },
     ],
   },
 ];

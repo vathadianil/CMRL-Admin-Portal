@@ -1,0 +1,78 @@
+<div class="readerManagement">
+  <mat-card class="readerManagement__card">
+    <div class="readerManagement__title-wrapper">
+      <mat-icon>map</mat-icon>
+      <app-page-title title="Reader Management"></app-page-title>
+      
+
+      <app-fab-button
+       class="btn" 
+      [icon]="'add'"
+      [showMenu]="false" 
+      [isDownloadBtn]="false"
+      matTooltip="Add OTS Reader"
+      matTooltipPosition="above"
+      >
+      </app-fab-button>
+    </div>
+    <mat-card-content>
+      <form
+        class="readerManagement__outer-container"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="readerManagemetForm"
+      >
+        <app-drop-down
+          label="Corridor"
+          placeholder="Select Corridor"
+          [listData]="corridorData"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Stations"
+          placeholder="Select Station"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+        >
+        </app-drop-down>
+
+        <div class="readerManagement__btn-container">
+          <app-button-field
+            type="submit"
+            label="Search"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+          <app-button-field
+            type="button"
+            backgroundColor="#fff"
+            color="#3361ff"
+            label="Clear"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- =========== -->
+
+  <mat-card class="readerManagement__card-table">
+    <mat-card-content>
+      <div class="readerManagement__content-container">
+        <app-search></app-search>
+        <div class="readerManagement__fab-btn-wrapper">
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table [tableData]="readerManagementTable"></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>
