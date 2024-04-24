@@ -11,7 +11,6 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
 import { transactionsequenceInterface } from '../../../models/transaction-sequence.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { TableComponent } from '../../../components/table/table.component';
-
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
