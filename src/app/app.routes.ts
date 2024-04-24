@@ -74,32 +74,39 @@ export const routes: Routes = [
       {
         path: 'exitSummaryReport',
         loadComponent: () =>
-          import(`../pages/reports/exit-summary-report-page/exit-summary-report-page.component`).then(
-            (c) => c.ExitSummaryReportPageComponent
-          ),
+          import(
+            `../pages/reports/exit-summary-report-page/exit-summary-report-page.component`
+          ).then((c) => c.ExitSummaryReportPageComponent),
       },
 
       {
         path: 'reconsillationReport',
         loadComponent: () =>
-          import(`../pages/reports/reconsillation-report-page/reconsillation-report-page.component`).then(
-            (c) => c.ReconsillationReportPageComponent
-          ),
+          import(
+            `../pages/reports/reconsillation-report-page/reconsillation-report-page.component`
+          ).then((c) => c.ReconsillationReportPageComponent),
       },
 
       {
         path: 'transactionSequence',
         loadComponent: () =>
-          import(`../pages/reports/transaction-sequence/transaction-sequence.component`).then(
-            (c) => c.TransactionSequenceComponent
-          ),
+          import(
+            `../pages/reports/transaction-sequence/transaction-sequence.component`
+          ).then((c) => c.TransactionSequenceComponent),
       },
 
       {
         path: 'readerManagement',
         loadComponent: () =>
-          import(`../pages/device-management/reader-management-page/reader-management-page.component`).then(
-            (c) => c.ReaderManagementPageComponent
+          import(
+            `../pages/device-management/reader-management-page/reader-management-page.component`
+          ).then((c) => c.ReaderManagementPageComponent),
+      },
+      {
+        path: 'lines',
+        loadComponent: () =>
+          import(`../pages/station-management/lines/lines.component`).then(
+            (c) => c.LinesComponent
           ),
       },
     ],

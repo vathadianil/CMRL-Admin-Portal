@@ -1,0 +1,36 @@
+<div class="lines">
+  <mat-card class="lines__card">
+    <div class="lines__title-wrapper">
+      <mat-icon>reorder</mat-icon>
+      <app-page-title title="Lines"></app-page-title>
+    </div>
+  </mat-card>
+
+  <!-- =========== -->
+
+  <mat-card class="lines__card-table">
+    <mat-card-content>
+      <div class="lines__content-container">
+        <app-search></app-search>
+        <div class="lines__fab-btn-wrapper">
+          <app-fab-button
+            [icon]="'add'"
+            [showMenu]="false"
+            [isDownloadBtn]="false"
+          >
+          </app-fab-button>
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table
+        [tableData]="linesTable"
+        [actions]="actionItems"
+        [sortCols]="sortCols"
+      ></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>
