@@ -8,6 +8,6 @@ export interface ReaderManagementInterface {
   terminalId: string;
   terminalIpAddress: string;
   paytmActivationCode: string;
-  activeStatus: string;
-  action: string;
+  activeStatus: boolean;
+  action: boolean;
 }

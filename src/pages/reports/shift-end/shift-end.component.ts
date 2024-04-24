@@ -306,7 +306,7 @@ export class ShiftEndComponent implements OnInit {
       },
       {
         key: 'stations',
-        value: this.shiftEndForm.get('transactionType')?.value,
+        value: this.shiftEndForm.get('stations')?.value,
       },
       {
         key: 'transactionType',

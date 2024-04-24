@@ -102,6 +102,14 @@ export const routes: Routes = [
             (c) => c.ReaderManagementPageComponent
           ),
       },
+
+      {
+        path: 'edcDeviceManagement',
+        loadComponent: () =>
+          import(`../pages/device-management/edc-device-management-page/edc-device-management-page.component`).then(
+            (c) => c.EdcDeviceManagementPageComponent
+          ),
+      },
     ],
   },
 ];

@@ -1,0 +1,82 @@
+<div class="edcDeviceManagement">
+  <mat-card class="edcDeviceManagement__card">
+    <div class="edcDeviceManagement__title-wrapper">
+      <mat-icon>map</mat-icon>
+      <app-page-title title="EDC Device Management"></app-page-title>
+
+      <div class="edcDeviceManagement__top-btn-container">
+        <app-fab-button
+          class="btn"
+          [icon]="'add'"
+          [showMenu]="false"
+          [isDownloadBtn]="false"
+          matTooltip="Add EDC Device"
+          matTooltipPosition="above"
+        >
+        </app-fab-button>
+      </div>
+    </div>
+    <mat-card-content>
+      <form
+        class="edcDeviceManagement__outer-container"
+        (ngSubmit)="onSubmit()"
+        [formGroup]="edcDeviceManagemetForm"
+      >
+        <app-drop-down
+          label="Corridor"
+          placeholder="Select Corridor"
+          [listData]="corridorData"
+        >
+        </app-drop-down>
+        <app-drop-down
+          class="station-dropdown-container"
+          label="Stations"
+          placeholder="Select Station"
+          [listData]="stationData"
+          [defaultValue]="stationDefaultValue"
+        >
+        </app-drop-down>
+
+        <div class="edcDeviceManagement__btn-container">
+          <app-button-field
+            type="submit"
+            label="Search"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+          <app-button-field
+            type="button"
+            backgroundColor="#fff"
+            color="#3361ff"
+            label="Clear"
+            [width]="8"
+            [height]="2.9"
+          >
+          </app-button-field>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <!-- =========== -->
+
+  <mat-card class="edcDeviceManagement__card-table">
+    <mat-card-content>
+      <div class="edcDeviceManagement__content-container">
+        <app-search></app-search>
+        <div class="edcDeviceManagement__fab-btn-wrapper">
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table
+        [tableData]="edcDeviceManagementTable"
+      
+      ></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

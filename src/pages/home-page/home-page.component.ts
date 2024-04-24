@@ -109,7 +109,6 @@ export class HomePageComponent {
       ],
     },
 
-
     {
       icon: 'developer_board',
       label: 'Device Management',
@@ -120,6 +119,11 @@ export class HomePageComponent {
           icon: 'memory',
           label: 'Reader Management',
           route: 'readerManagement',
+        },
+        {
+          icon: 'memory',
+          label: 'EDC Device Management',
+          route: 'edcDeviceManagement',
         },
       ],
     },
