@@ -15,4 +15,5 @@ export interface TransactionDataQueryInterface {
   paytmTid: string;
   paytmMid: string;
   bussinessDate: string;
+  status: string;
 }
