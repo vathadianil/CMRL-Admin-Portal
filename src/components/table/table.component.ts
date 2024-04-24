@@ -75,4 +75,8 @@ export class TableComponent implements OnInit, AfterViewInit {
       this._liveAnnouncer.announce('Sorting cleared');
     }
   }
+
+  getStatusStyle(status: string) {
+    return status === 'In-Active' ? { color: 'red' } : { color: 'green' };
+  }
 }
