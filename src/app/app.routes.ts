@@ -109,6 +109,13 @@ export const routes: Routes = [
             (c) => c.LinesComponent
           ),
       },
+      {
+        path: 'stations',
+        loadComponent: () =>
+          import(
+            `../pages/station-management/stations/stations.component`
+          ).then((c) => c.StationsComponent),
+      },
     ],
   },
 ];

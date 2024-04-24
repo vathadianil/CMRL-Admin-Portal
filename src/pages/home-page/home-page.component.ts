@@ -133,6 +133,11 @@ export class HomePageComponent {
           label: 'Lines',
           route: 'lines',
         },
+        {
+          icon: 'tram',
+          label: 'Stations',
+          route: 'stations',
+        },
       ],
     },
   ];

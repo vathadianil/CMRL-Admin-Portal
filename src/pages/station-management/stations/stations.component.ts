@@ -12,9 +12,9 @@ import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
-import { LinesInterface } from '../../../models/lines.interface';
+import { StationsInterface } from '../../../models/stations.interface';
 @Component({
-  selector: 'app-lines',
+  selector: 'app-stations',
   standalone: true,
   imports: [
     MatCardModule,
@@ -28,35 +28,63 @@ import { LinesInterface } from '../../../models/lines.interface';
     FabButtonFieldComponent,
     TableComponent,
   ],
-  templateUrl: './lines.component.html',
-  styleUrl: './lines.component.scss',
+  templateUrl: './stations.component.html',
+  styleUrl: './stations.component.scss',
 })
-export class LinesComponent {
+export class StationsComponent {
   stationData: any[] = [];
   corridorData: any[] = [];
-  fileName = 'Lines';
-  columnsToExport = linesData;
+  fileName = 'Stations';
+  columnsToExport = stationsData;
   params: any[] = [];
   actionItems = ['update', 'delete'];
-  sortCols = ['lineId', 'lineName', 'lineShortname', 'status'];
+  sortCols = [
+    'stationId',
+    'stationName',
+    'shortname',
+    'line',
+    'ipAddSc',
+    'ipAddCC',
+    'status',
+  ];
 
   constructor(
     private exportService: ExportService,
     private exportPdfService: ExportPdfService
   ) {}
 
-  linesTable: {
+  stationsTable: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<LinesInterface>;
+    dataSource: MatTableDataSource<StationsInterface>;
   }[] = [
     {
-      displayedColumns: ['lineId', 'lineName', 'lineShortname', 'status'],
-      dataSource: new MatTableDataSource<LinesInterface>([
+      displayedColumns: [
+        'stationId',
+        'stationName',
+        'shortname',
+        'line',
+        'ipAddSc',
+        'ipAddCC',
+        'status',
+      ],
+      dataSource: new MatTableDataSource<StationsInterface>([
         {
-          lineId: 1,
-          lineName: 1101,
-          lineShortname: 5,
+          stationId: 32,
+          stationName: 'Meenambakkam Metro',
+          shortname: 'MNB Metro',
+          line: 'CORRIDOR-I',
+          ipAddSc: '10.1.2.0',
+          ipAddCC: '10.1.2.0',
           status: 'Active',
+        },
+        {
+          stationId: 35,
+          stationName: 'Alandur',
+          shortname: 'Ald',
+          line: 'CORRIDOR-II',
+          ipAddSc: '10.1.9.0',
+          ipAddCC: '10.1.8.0',
+          status: 'In-Active',
         },
       ]),
     },
@@ -74,7 +102,7 @@ export class LinesComponent {
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.linesTable[0].dataSource.data,
+      this.stationsTable[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -83,7 +111,7 @@ export class LinesComponent {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.linesTable[0].dataSource.data,
+      this.stationsTable[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -91,4 +119,12 @@ export class LinesComponent {
   }
 }
 
-export const linesData = ['lineId', 'lineName', 'lineShortname', 'status'];
+export const stationsData = [
+  'stationId',
+  'stationName',
+  'shortname',
+  'line',
+  'ipAddSc',
+  'ipAddCC',
+  'status',
+];

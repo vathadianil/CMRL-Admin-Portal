@@ -1,0 +1,36 @@
+<div class="stations">
+  <mat-card class="stations__card">
+    <div class="stations__title-wrapper">
+      <mat-icon>tram</mat-icon>
+      <app-page-title title="Stations"></app-page-title>
+    </div>
+  </mat-card>
+
+  <!-- =========== -->
+
+  <mat-card class="stations__card-table">
+    <mat-card-content>
+      <div class="stations__content-container">
+        <app-search></app-search>
+        <div class="stations__fab-btn-wrapper">
+          <app-fab-button
+            [icon]="'add'"
+            [showMenu]="false"
+            [isDownloadBtn]="false"
+          >
+          </app-fab-button>
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table
+        [tableData]="stationsTable"
+        [actions]="actionItems"
+        [sortCols]="sortCols"
+      ></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>
