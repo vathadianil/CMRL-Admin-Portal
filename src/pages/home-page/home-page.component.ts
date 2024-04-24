@@ -54,6 +54,12 @@ export class HomePageComponent {
       color: '#15b72e',
     },
     {
+      icon: 'monitoring',
+      label: 'Device Monitoring',
+      route: '/home/deviceMonitoring',
+      color: '#8833ff',
+    },
+    {
       icon: 'file_open',
       label: 'Reports',
       route: 'reports',
@@ -108,7 +114,6 @@ export class HomePageComponent {
         },
       ],
     },
-
     {
       icon: 'developer_board',
       label: 'Device Management',

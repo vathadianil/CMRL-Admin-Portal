@@ -26,6 +26,14 @@ export const routes: Routes = [
       },
 
       {
+        path: 'deviceMonitoring',
+        loadComponent: () =>
+          import(
+            `../pages/device-monitoring-page/device-monitoring-page.component`
+          ).then((c) => c.DeviceMonitoringPageComponent),
+      },
+
+      {
         path: 'transactionDataQuery',
         loadComponent: () =>
           import(
