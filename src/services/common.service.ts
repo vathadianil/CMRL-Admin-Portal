@@ -15,10 +15,12 @@ export class CommonService {
 
   getStationsList() {
     const stations = [
-      { stationId: 1, stationName: 'Nagole' },
-      { stationId: 2, stationName: 'Uppal' },
-      { stationId: 3, stationName: 'Uppal Stadium' },
-      { stationId: 4, stationName: 'NGRI' },
+      { stationId: 1, stationName: 'Meenambakkam Metro' },
+      { stationId: 2, stationName: 'Nanganallur Road' },
+      { stationId: 3, stationName: 'Alandur' },
+      { stationId: 4, stationName: 'Guindy metro' },
+      { stationId: 5, stationName: 'Little mount' },
+      { stationId: 6, stationName: 'Saidapet metroNandanam' },
     ];
     this.stationData = stations.map(
       (station: { stationName: any; stationId: any }) => ({

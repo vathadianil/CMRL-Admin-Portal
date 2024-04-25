@@ -50,7 +50,24 @@ export class CardMasterDataComponent implements OnInit {
   fileName = 'Transaction Data Query';
   columnsToExport = cardMasterData;
   params: any[] = [];
-
+  sortCols = [
+    'customerName',
+    'customerMobileNo',
+    'trxId',
+    'trxType',
+    'lineId',
+    'stationId',
+    'equpGrpId',
+    'equpId',
+    'aqurId',
+    'operId',
+    'trmId',
+    'crdType',
+    'panSha',
+    'prdType',
+    'businessDt',
+    'trxDtTm',
+  ];
   constructor(
     private commonService: CommonService,
     private exportService: ExportService,

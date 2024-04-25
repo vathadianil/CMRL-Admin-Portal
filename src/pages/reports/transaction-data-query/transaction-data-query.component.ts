@@ -51,6 +51,25 @@ export class TransactionDataQueryComponent implements OnInit {
   fileName = 'Transaction Data Query';
   columnsToExport = transactionData;
   params: any[] = [];
+  sortCols = [
+    'transactionDateTime',
+    'transId',
+    'transType',
+    'lineId',
+    'stationId',
+    'equipmentGroupId',
+    'equipId',
+    'acquirerId',
+    'operatorId',
+    'terminalId',
+    'panSha',
+    'serviceType',
+    'tomEfoShiftId',
+    'paytmTid',
+    'paytmMid',
+    'bussinessDate',
+    'status',
+  ];
 
   constructor(
     private commonService: CommonService,
@@ -79,6 +98,7 @@ export class TransactionDataQueryComponent implements OnInit {
         'paytmTid',
         'paytmMid',
         'bussinessDate',
+        'status',
       ],
       dataSource: new MatTableDataSource<TransactionDataQueryInterface>([
         {
@@ -98,11 +118,12 @@ export class TransactionDataQueryComponent implements OnInit {
           paytmTid: '11075316',
           paytmMid: 'LTMetr33790038971459',
           bussinessDate: '24-Aug-2023',
+          status: 'active',
         },
         {
           transactionDateTime: '03-Feb-2611 06:50:25',
           transId: '764566834220230824025339',
-          transType: '03',
+          transType: '04',
           lineId: '0303-Stadium',
           stationId: '3',
           equipmentGroupId: '1143',
@@ -116,6 +137,7 @@ export class TransactionDataQueryComponent implements OnInit {
           paytmTid: '11075316',
           paytmMid: 'LTMetr33790038971459',
           bussinessDate: '24-Aug-2023',
+          status: 'in-active',
         },
       ]),
     },

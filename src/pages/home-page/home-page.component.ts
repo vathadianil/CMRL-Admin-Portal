@@ -127,5 +127,23 @@ export class HomePageComponent {
         },
       ],
     },
+    {
+      icon: 'train',
+      label: 'Station Management',
+      route: 'stationManagement',
+      color: 'purple',
+      submenu: [
+        {
+          icon: 'reorder',
+          label: 'Lines',
+          route: 'lines',
+        },
+        {
+          icon: 'tram',
+          label: 'Stations',
+          route: 'stations',
+        },
+      ],
+    },
   ];
 }

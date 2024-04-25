@@ -37,31 +37,28 @@ import { ToggleSliderComponent } from '../../../components/toggle-slider/toggle-
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
-    ToggleSliderComponent
+    ToggleSliderComponent,
   ],
   templateUrl: './edc-device-management-page.component.html',
   styleUrl: './edc-device-management-page.component.scss',
 })
 export class EdcDeviceManagementPageComponent {
-
   edcDeviceManagemetForm!: FormGroup;
 
   stationData: any[] = [];
   corridorData: any[] = [];
   stationDefaultValue = 'All Stations';
+  actions = ['toggle'];
 
   fileName = 'EDC Device Management';
   columnsToExport = edcDeviceManagementData;
   params: any[] = [];
 
-
   constructor(
     private commonService: CommonService,
     private exportService: ExportService,
     private exportPdfService: ExportPdfService
-  ) {
-   
-  }
+  ) {}
 
   edcDeviceManagementTable: {
     displayedColumns: string[];
@@ -79,7 +76,6 @@ export class EdcDeviceManagementPageComponent {
         'terminalIpAddress',
         'paytmActivationCode',
         'activeStatus',
-        'action',
       ],
       dataSource: new MatTableDataSource<EdcDeviceManagementInterface>([
         {
@@ -92,8 +88,7 @@ export class EdcDeviceManagementPageComponent {
           terminalId: '10114F',
           terminalIpAddress: '10.21.17.82',
           paytmActivationCode: '11180534',
-          activeStatus: "",
-          action: ToggleSliderComponent,
+          activeStatus: 'active',
         },
 
         {
@@ -106,13 +101,11 @@ export class EdcDeviceManagementPageComponent {
           terminalId: '10114F',
           terminalIpAddress: '10.21.17.82',
           paytmActivationCode: '11180534',
-          activeStatus: '',
-          action: ToggleSliderComponent,
+          activeStatus: 'active',
         },
       ]),
     },
   ];
-
 
   // setActiveStatus(){
   //   this.edcDeviceManagementTable[0].dataSource.data.forEach(
@@ -122,12 +115,6 @@ export class EdcDeviceManagementPageComponent {
   //     }
   //   )
   // }
- 
-
-
-
-
- 
 
   ngOnInit(): void {
     this.stationData = this.commonService.getStationsList();
@@ -135,9 +122,6 @@ export class EdcDeviceManagementPageComponent {
     this.edcDeviceManagemetForm = new FormGroup({
       corridor: new FormControl(Validators.required),
     });
-
-
-    
   }
 
   getParameters() {
@@ -149,12 +133,6 @@ export class EdcDeviceManagementPageComponent {
     ];
     return this.params;
   }
-
-
-  
-
-
-
 
   onSubmit() {
     console.log(this.edcDeviceManagemetForm.value);
@@ -191,5 +169,5 @@ export const edcDeviceManagementData = [
   'terminalIpAddress',
   'paytmActivationCode',
   'activeStatus',
-  'action',
+  'actions',
 ];
