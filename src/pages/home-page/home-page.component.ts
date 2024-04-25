@@ -134,7 +134,7 @@ export class HomePageComponent {
       color: 'purple',
       submenu: [
         {
-          icon: 'reorder',
+          icon: 'tune',
           label: 'Lines',
           route: 'lines',
         },

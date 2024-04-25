@@ -37,7 +37,7 @@ export class StationsComponent {
   fileName = 'Stations';
   columnsToExport = stationsData;
   params: any[] = [];
-  actionItems = ['update', 'delete'];
+  actionItems = ['update'];
   sortCols = [
     'stationId',
     'stationName',
