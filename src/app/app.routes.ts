@@ -32,6 +32,13 @@ export const routes: Routes = [
             (c) => c.MonitoringComponent
           ),
       },
+      {
+        path: 'monitoring/:stationId',
+        loadComponent: () =>
+          import(
+            `../pages/station-monitoring/station-monitoring.component`
+          ).then((c) => c.StationMonitoringComponent),
+      },
 
       {
         path: 'transactionDataQuery',

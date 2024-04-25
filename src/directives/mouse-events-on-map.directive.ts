@@ -31,6 +31,10 @@ export class MouseEventsOnMapDirective {
     this.panning = false;
   }
 
+  @HostListener('mouseleave', ['$event']) onMouseLeave(event: any) {
+    this.panning = false;
+  }
+
   @HostListener('mousemove', ['$event']) onMouseMove(event: any) {
     event.preventDefault();
     if (!this.panning) {

@@ -6,6 +6,25 @@
         alt="map"
         class="monitoring__map"
       />
+      @for (btn of btnData; track $index) {
+      <button
+        class="monitoring__btn"
+        mat-mini-fab
+        aria-label="Example icon button with a menu icon"
+        [ngStyle]="{
+          top: btn?.top + 'px',
+          bottom: btn?.bottom + 'px',
+          left: btn?.left + 'px',
+          right: btn?.right + 'px',
+        }"
+        [ngClass]="
+          btn?.isActive ? 'monitoring__btn-active' : 'monitoring__btn-inactive'
+        "
+        [routerLink]="btn?.stationId"
+      >
+        <img src="../../assets/img/location.svg" alt="" />
+      </button>
+      }
     </div>
   </div>
 </mat-card>

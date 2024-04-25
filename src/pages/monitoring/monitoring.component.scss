@@ -2,6 +2,7 @@
   margin: 0 1em 1em 2em;
   overflow: hidden;
   border-radius: 1em;
+  position: relative;
   &__zoom-outer {
     width: 100%;
     height: 77vh;
@@ -19,8 +20,19 @@
   }
 
   &__map {
-    width: 100%;
+    display: block;
+    width: auto;
     height: auto;
     object-fit: cover;
+  }
+  &__btn {
+    position: absolute;
+    transform: scale(0.6);
+    &-active {
+      background-color: var(--green800);
+    }
+    &-inactive {
+      background-color: var(--text-color1);
+    }
   }
 }
