@@ -26,6 +26,21 @@ export const routes: Routes = [
       },
 
       {
+        path: 'monitoring',
+        loadComponent: () =>
+          import(`../pages/monitoring/monitoring.component`).then(
+            (c) => c.MonitoringComponent
+          ),
+      },
+      {
+        path: 'monitoring/:stationId',
+        loadComponent: () =>
+          import(
+            `../pages/station-monitoring/station-monitoring.component`
+          ).then((c) => c.StationMonitoringComponent),
+      },
+
+      {
         path: 'transactionDataQuery',
         loadComponent: () =>
           import(
