@@ -22,12 +22,31 @@ import { RouterModule } from '@angular/router';
 export class MonitoringComponent {
   btnData = [
     {
-      top: 32.5,
+      top: 40,
       bottom: 0,
-      left: 531,
+      left: 604,
       right: 0,
       isActive: true,
-      stationId: '0301',
+      stationId: '0101',
+      stationName: 'Velmugugan Nagar',
+    },
+    {
+      top: 40,
+      bottom: 0,
+      left: 654.5,
+      right: 0,
+      isActive: true,
+      stationId: '0102',
+      stationName: 'Manjambakkam',
+    },
+    {
+      top: 40,
+      bottom: 0,
+      left: 718,
+      right: 0,
+      isActive: false,
+      stationId: '0103',
+      stationName: 'Assissi Nagar',
     },
   ];
 }
