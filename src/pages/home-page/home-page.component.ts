@@ -55,8 +55,8 @@ export class HomePageComponent {
     },
     {
       icon: 'monitoring',
-      label: 'Device Monitoring',
-      route: '/home/deviceMonitoring',
+      label: 'Monitoring',
+      route: '/home/monitoring',
       color: '#8833ff',
     },
     {

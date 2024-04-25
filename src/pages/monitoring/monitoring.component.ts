@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { MouseDownOnMapDirective } from '../../directives/map/mouse-down-on-map.directive';
 
 @Component({
-  selector: 'app-device-monitoring-page',
+  selector: 'app-monitoring',
   standalone: true,
   imports: [MouseDownOnMapDirective],
-  templateUrl: './device-monitoring-page.component.html',
-  styleUrl: './device-monitoring-page.component.scss',
+  templateUrl: './monitoring.component.html',
+  styleUrl: './monitoring.component.scss',
 })
-export class DeviceMonitoringPageComponent {
+export class MonitoringComponent {
   scale = 1;
   panning = false;
   pointX = 0;

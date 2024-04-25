@@ -26,11 +26,11 @@ export const routes: Routes = [
       },
 
       {
-        path: 'deviceMonitoring',
+        path: 'monitoring',
         loadComponent: () =>
-          import(
-            `../pages/device-monitoring-page/device-monitoring-page.component`
-          ).then((c) => c.DeviceMonitoringPageComponent),
+          import(`../pages/monitoring/monitoring.component`).then(
+            (c) => c.MonitoringComponent
+          ),
       },
 
       {
