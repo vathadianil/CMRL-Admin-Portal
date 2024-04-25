@@ -1,15 +1,21 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
 .monitoring {
-  margin: 0 1em 1em 2em;
   overflow: hidden;
   border-radius: 1em;
   position: relative;
-  &__zoom-outer {
-    width: 100%;
-    height: 77vh;
-  }
+  max-width: 1250px;
+  min-width: 1250px;
+
   &__zoom {
     width: 100%;
-    height: 100%;
+    height: 77vh;
     transform-origin: 0px 0px;
     transform: scale(1) translate(0px 0px);
     cursor: grab;

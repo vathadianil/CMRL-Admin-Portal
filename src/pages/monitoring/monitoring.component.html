@@ -1,5 +1,5 @@
-<mat-card class="monitoring">
-  <div class="monitoring__zoom-outer">
+<div class="wrapper">
+  <mat-card class="monitoring">
     <div class="monitoring__zoom" appMouseEventsOnMap>
       <img
         src="../../assets/img/metro-map.svg"
@@ -12,11 +12,11 @@
         mat-mini-fab
         aria-label="Example icon button with a menu icon"
         [ngStyle]="{
-          top: btn?.top + 'px',
-          bottom: btn?.bottom + 'px',
-          left: btn?.left + 'px',
-          right: btn?.right + 'px',
-        }"
+            top: btn?.top + 'px',
+            bottom: btn?.bottom + 'px',
+            left: btn?.left + 'px',
+            right: btn?.right + 'px',
+          }"
         [ngClass]="
           btn?.isActive ? 'monitoring__btn-active' : 'monitoring__btn-inactive'
         "
@@ -26,5 +26,5 @@
       </button>
       }
     </div>
-  </div>
-</mat-card>
+  </mat-card>
+</div>
