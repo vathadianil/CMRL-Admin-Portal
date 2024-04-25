@@ -1,8 +1,13 @@
 .monitoring {
   margin: 0 1em 1em 2em;
-  height: 77vh;
-  border: 3px solid red;
   overflow: hidden;
+  border-radius: 1em;
+}
+
+.zoom-outer {
+  width: 100%;
+  height: 77vh;
+  // border: 3px solid red;
 }
 
 .zoom {
