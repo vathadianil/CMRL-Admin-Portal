@@ -12,16 +12,11 @@
   }
 
   &__header-wrapper {
-    display: flex;   
+    display: flex; 
+    white-space: nowrap; 
   }
   
-  &__action-header-cell {
-    text-align: left;
-    padding-left: 10px;
-    white-space: nowrap;
-  }
-
-  &__action-icons {      
+   &__action-icons {      
     margin: 14px 0 14px 0;
   }
 
