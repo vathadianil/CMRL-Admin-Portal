@@ -20,8 +20,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
-import { CardMasterInterface } from '../../../models/card-master-data.interface';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
+import { cardMasterData } from '../../export-data';
+import { cardmasterData } from '../../sample';
 
 @Component({
   selector: 'app-card-master-data',
@@ -73,73 +74,15 @@ export class CardMasterDataComponent implements OnInit {
     private exportService: ExportService,
     private exportPdfService: ExportPdfService
   ) {}
-  cardMasterData: {
+
+  myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<CardMasterInterface>;
-  }[] = [
-    {
-      displayedColumns: [
-        'customerName',
-        'customerMobileNo',
-        'trxId',
-        'trxType',
-        'lineId',
-        'stationId',
-        'equpGrpId',
-        'equpId',
-        'aqurId',
-        'operId',
-        'trmId',
-        'crdType',
-        'panSha',
-        'prdType',
-        'businessDt',
-        'trxDtTm',
-      ],
-      dataSource: new MatTableDataSource<CardMasterInterface>([
-        {
-          customerName: 'John Doe',
-          customerMobileNo: '1234567890',
-          trxId: 'ABC123',
-          trxType: 'Purchase',
-          lineId: 'Line ',
-          stationId: 'Station ',
-          equpGrpId: 'Group ',
-          equpId: 'Equipment ',
-          aqurId: 'Acquirer ',
-          operId: 'Operator ',
-          trmId: 'Terminal ',
-          crdType: 'Credit',
-          panSha: 'XXXX-XXXX-XXXX-234',
-          prdType: 'Product ',
-          businessDt: '2024-04-15',
-          trxDtTm: '2024-04-15T10:30:00',
-        },
-        {
-          customerName: 'Jane Smith',
-          customerMobileNo: '9876543210',
-          trxId: 'XYZ789',
-          trxType: 'Refund',
-          lineId: 'Line ',
-          stationId: 'Station ',
-          equpGrpId: 'Group ',
-          equpId: 'Equipment ',
-          aqurId: 'Acquirer ',
-          operId: 'Operator ',
-          trmId: 'Terminal ',
-          crdType: 'Debit',
-          panSha: 'XXXX-XXXX-XXXX-5678',
-          prdType: 'Product ',
-          businessDt: '2024-04-16',
-          trxDtTm: '2024-04-16T14:45:00',
-        },
-      ]),
-    },
-  ];
+    dataSource: MatTableDataSource<any>;
+  }[] = [];
 
   ngOnInit() {
     this.transactionTypeData = this.commonService.getTransactionTypes();
-
+    this.getTableData();
     this.cardMasterForm = new FormGroup({
       fromDate: new FormControl(
         {
@@ -170,6 +113,27 @@ export class CardMasterDataComponent implements OnInit {
         Validators.required
       ),
     });
+  }
+
+  getTableData() {
+    let responseData = [];
+    const response = cardmasterData;
+
+    response.data.map((item) => {
+      let dataList = {};
+      response.headers.map((header) => {
+        dataList = { ...dataList, [header.label]: item[header.key] };
+      });
+      responseData.push(dataList);
+    });
+
+    this.sortCols = response.headers.map((header: any) => header.label);
+    this.myTableData = [
+      {
+        displayedColumns: response.headers.map((header: any) => header.label),
+        dataSource: new MatTableDataSource<any>(responseData),
+      },
+    ];
   }
 
   getParameters() {
@@ -203,7 +167,7 @@ export class CardMasterDataComponent implements OnInit {
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.cardMasterData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -212,28 +176,10 @@ export class CardMasterDataComponent implements OnInit {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.cardMasterData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
     );
   }
 }
-export const cardMasterData = [
-  'customerName',
-  'customerMobileNo',
-  'trxId',
-  'trxType',
-  'lineId',
-  'stationId',
-  'equpGrpId',
-  'equpId',
-  'aqurId',
-  'operId',
-  'trmId',
-  'crdType',
-  'panSha',
-  'prdType',
-  'businessDt',
-  'trxDtTm',
-];
