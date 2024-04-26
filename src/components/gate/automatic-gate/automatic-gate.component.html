@@ -1,23 +1,152 @@
-@for (gate of gateData; track $index) {
-<div style="display: flex">
-  <div class="gate">
-    @if ($index ===0) {
-    <app-gate-cabinate></app-gate-cabinate>
-    }@else {
-    <app-gate-cabinate
-      [screenLocation]="gate.screenLocation"
-    ></app-gate-cabinate>
-    }
-    <app-gate-direction [gate]="gate"></app-gate-direction>
-    @if ($index === gateData.length-1) {
-    <app-gate-cabinate
-      [screenLocation]="{
-        isEntrySide: true
-      }"
-    ></app-gate-cabinate>
+@if (gateData[0].array === '1') {
+<div class="gate">
+  <p class="gate__array-title">AG Array {{ gateData[0].array }}</p>
+  <div class="gate__cabinet">
+    @for (gate of gateData; track $index) {
+    <div class="gate__cabinet-wrapper">
+      <div class="gate__cabinet-type">
+        {{ gate.type }}
+      </div>
+      <div class="gate__cabinet-container">
+        @if ($index ===0) {
+        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+        }@else {
+        <app-gate-cabinate
+          [screenLocation]="gate.screenLocation"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+        }
+        <app-gate-direction [gate]="gate"></app-gate-direction>
+        @if ($index === gateData.length-1) {
+        <app-gate-cabinate
+          [screenLocation]="{
+            isEntrySide: true
+          }"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+        }
+      </div>
+      <div class="gate__cabinet-gate-id">
+        {{ gate.equipmentId }}
+      </div>
+    </div>
+
     }
   </div>
-  <div style="margin-top: 29px; margin-left: 5px">{{ gate.equipmentId }}</div>
 </div>
+} @if (gateData[0].array === '2') {
+<div class="gate">
+  <p class="gate__array-title">AG Array {{ gateData[0].array }}</p>
+  <div class="gate__cabinet">
+    @for (gate of gateData; track $index) {
+    <div class="gate__cabinet-wrapper">
+      <div class="gate__cabinet-type">
+        {{ gate.type }}
+      </div>
+      <div class="gate__cabinet-container">
+        @if ($index ===0) {
+        <app-gate-cabinate
+          [screenLocation]="{
+            isExitSide: true
+          }"
+          [array]="gate.array"
+        ></app-gate-cabinate>
 
+        }@else {
+        <app-gate-cabinate
+          [screenLocation]="gate.screenLocation"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+        }
+        <app-gate-direction [gate]="gate"></app-gate-direction>
+        @if ($index === gateData.length-1) {
+        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+        }
+      </div>
+      <div class="gate__cabinet-gate-id">
+        {{ gate.equipmentId }}
+      </div>
+    </div>
+
+    }
+  </div>
+</div>
+} @if (gateData[0].array === '3') {
+<div class="gate">
+  <p class="gate__array-title">AG Array {{ gateData[0].array }}</p>
+  <div class="gate__cabinet">
+    @for (gate of gateData; track $index) {
+    <div class="gate__cabinet-wrapper">
+      <div class="gate__cabinet-type">
+        {{ gate.type }}
+      </div>
+      <div class="gate__cabinet-container">
+        @if ($index ===0) {
+        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+        }@else {
+        <app-gate-cabinate
+          [screenLocation]="gate.screenLocation"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+        }
+        <app-gate-direction [gate]="gate"></app-gate-direction>
+        @if ($index === gateData.length-1) {
+        <app-gate-cabinate
+          [screenLocation]="{
+            isExitSide: true
+          }"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+        }
+      </div>
+      <div class="gate__cabinet-gate-id">
+        {{ gate.equipmentId }}
+      </div>
+    </div>
+
+    }
+  </div>
+</div>
+} @if (gateData[0].array === '4') {
+<div class="gate">
+  <p class="gate__array-title">AG Array {{ gateData[0].array }}</p>
+  <div class="gate__cabinet gate__cabinet-array4">
+    @for (gate of gateData; track $index) {
+    <div class="gate__cabinet-wrapper">
+      <div
+        class="gate__cabinet-type"
+        [ngStyle]="{ 'margin-top': $index !== gateData.length - 1 && 0 }"
+      >
+        {{ gate.type }}
+      </div>
+      <div class="gate__cabinet-container gate__cabinet-array4">
+        @if ($index ===0) {
+        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+        }@else {
+        <app-gate-cabinate
+          [screenLocation]="gate.screenLocation"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+        }
+        <app-gate-direction [gate]="gate"></app-gate-direction>
+        @if ($index === gateData.length-1) {
+        <app-gate-cabinate
+          [screenLocation]="{
+            isEntrySide: true
+          }"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+        }
+      </div>
+      <div
+        class="gate__cabinet-gate-id"
+        [ngStyle]="{ 'margin-top': $index !== gateData.length - 1 && 0 }"
+      >
+        {{ gate.equipmentId }}
+      </div>
+    </div>
+
+    }
+  </div>
+</div>
 }
