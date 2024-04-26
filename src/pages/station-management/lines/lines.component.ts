@@ -12,7 +12,8 @@ import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
-import { LinesInterface } from '../../../models/lines.interface';
+import { linesData } from '../../sample';
+import { exportLinesData } from '../../export-data';
 @Component({
   selector: 'app-lines',
   standalone: true,
@@ -35,7 +36,7 @@ export class LinesComponent {
   stationData: any[] = [];
   corridorData: any[] = [];
   fileName = 'Lines';
-  columnsToExport = linesData;
+  columnsToExport = exportLinesData;
   params: any[] = [];
   actionItems = ['update', 'delete'];
   sortCols = ['lineId', 'lineName', 'lineShortname', 'status'];
@@ -45,25 +46,35 @@ export class LinesComponent {
     private exportPdfService: ExportPdfService
   ) {}
 
-  linesTable: {
+  myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<LinesInterface>;
-  }[] = [
-    {
-      displayedColumns: ['lineId', 'lineName', 'lineShortname', 'status'],
-      dataSource: new MatTableDataSource<LinesInterface>([
-        {
-          lineId: 1,
-          lineName: 1101,
-          lineShortname: 5,
-          status: 'Active',
-        },
-      ]),
-    },
-  ];
+    dataSource: MatTableDataSource<any>;
+  }[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getTableData();
+  }
 
+  getTableData() {
+    let responseData = [];
+    const response = linesData;
+
+    response.data.map((item) => {
+      let dataList = {};
+      response.headers.map((header) => {
+        dataList = { ...dataList, [header.label]: item[header.key] };
+      });
+      responseData.push(dataList);
+    });
+
+    this.sortCols = response.headers.map((header: any) => header.label);
+    this.myTableData = [
+      {
+        displayedColumns: response.headers.map((header: any) => header.label),
+        dataSource: new MatTableDataSource<any>(responseData),
+      },
+    ];
+  }
   getParameters() {
     return this.params;
   }
@@ -74,7 +85,7 @@ export class LinesComponent {
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.linesTable[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -83,12 +94,10 @@ export class LinesComponent {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.linesTable[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
     );
   }
 }
-
-export const linesData = ['lineId', 'lineName', 'lineShortname', 'status'];

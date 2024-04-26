@@ -12,7 +12,8 @@ import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
-import { StationsInterface } from '../../../models/stations.interface';
+import { stationsData } from '../../sample';
+import { exportStationsData } from '../../export-data';
 @Component({
   selector: 'app-stations',
   standalone: true,
@@ -35,7 +36,7 @@ export class StationsComponent {
   stationData: any[] = [];
   corridorData: any[] = [];
   fileName = 'Stations';
-  columnsToExport = stationsData;
+  columnsToExport = exportStationsData;
   params: any[] = [];
   actionItems = ['update'];
   sortCols = [
@@ -53,44 +54,35 @@ export class StationsComponent {
     private exportPdfService: ExportPdfService
   ) {}
 
-  stationsTable: {
+  myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<StationsInterface>;
-  }[] = [
-    {
-      displayedColumns: [
-        'stationId',
-        'stationName',
-        'shortname',
-        'line',
-        'ipAddSc',
-        'ipAddCC',
-        'status',
-      ],
-      dataSource: new MatTableDataSource<StationsInterface>([
-        {
-          stationId: 32,
-          stationName: 'Meenambakkam Metro',
-          shortname: 'MNB Metro',
-          line: 'CORRIDOR-I',
-          ipAddSc: '10.1.2.0',
-          ipAddCC: '10.1.2.0',
-          status: 'Active',
-        },
-        {
-          stationId: 35,
-          stationName: 'Alandur',
-          shortname: 'Ald',
-          line: 'CORRIDOR-II',
-          ipAddSc: '10.1.9.0',
-          ipAddCC: '10.1.8.0',
-          status: 'In-Active',
-        },
-      ]),
-    },
-  ];
+    dataSource: MatTableDataSource<any>;
+  }[] = [];
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getTableData();
+  }
+
+  getTableData() {
+    let responseData = [];
+    const response = stationsData;
+
+    response.data.map((item) => {
+      let dataList = {};
+      response.headers.map((header) => {
+        dataList = { ...dataList, [header.label]: item[header.key] };
+      });
+      responseData.push(dataList);
+    });
+
+    this.sortCols = response.headers.map((header: any) => header.label);
+    this.myTableData = [
+      {
+        displayedColumns: response.headers.map((header: any) => header.label),
+        dataSource: new MatTableDataSource<any>(responseData),
+      },
+    ];
+  }
 
   getParameters() {
     return this.params;
@@ -102,7 +94,7 @@ export class StationsComponent {
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.stationsTable[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -111,20 +103,10 @@ export class StationsComponent {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.stationsTable[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
     );
   }
 }
-
-export const stationsData = [
-  'stationId',
-  'stationName',
-  'shortname',
-  'line',
-  'ipAddSc',
-  'ipAddCC',
-  'status',
-];

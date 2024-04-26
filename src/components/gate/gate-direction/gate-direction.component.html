@@ -1,0 +1,11 @@
+<div class="flap__container">
+  @if(gate.isEntryGate || gate.isReversableGate){
+  <div class="flap__entry">
+    <mat-icon class="flap__icon">keyboard_double_arrow_right</mat-icon>
+  </div>
+  } @if(gate.isExitGate||gate.isReversableGate){
+  <div class="flap__exit">
+    <mat-icon class="flap__icon">keyboard_double_arrow_left</mat-icon>
+  </div>
+  }
+</div>

@@ -1,0 +1,22 @@
+.wrapper {
+  width: 100%;
+  height: var(--gate-cabinet-height);
+  border: 2px solid var(--black);
+  border-radius: 0.3em;
+  position: relative;
+}
+
+.screen {
+  position: absolute;
+  top: 1px;
+  width: var(--gate-screen-width);
+  aspect-ratio: 1;
+  background-color: var(--blue800);
+  border-radius: 0.3em;
+  &__entry {
+    left: 1px;
+  }
+  &__exit {
+    right: 1px;
+  }
+}
