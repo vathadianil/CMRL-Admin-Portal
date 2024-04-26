@@ -9,4 +9,35 @@ import { GateDirectionComponent } from '../gate-direction/gate-direction.compone
   templateUrl: './automatic-gate.component.html',
   styleUrl: './automatic-gate.component.scss',
 })
-export class AutomaticGateComponent {}
+export class AutomaticGateComponent {
+  gateData = [
+    {
+      array: '0001',
+      equipmentType: 'AG',
+      equipmentId: '0003',
+      screenLocation: {
+        isEntrySide: true,
+      },
+      isEntryGate: true,
+    },
+    {
+      array: '0001',
+      equipmentType: 'AG',
+      equipmentId: '0002',
+      screenLocation: {
+        isEntrySide: true,
+      },
+      isEntryGate: true,
+    },
+    {
+      array: '0001',
+      equipmentType: 'AG',
+      equipmentId: '0001',
+      screenLocation: {
+        isEntrySide: true,
+        isExitSide: true,
+      },
+      isReversableGate: true,
+    },
+  ];
+}

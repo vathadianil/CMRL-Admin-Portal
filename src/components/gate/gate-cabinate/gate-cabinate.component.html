@@ -1,3 +1,7 @@
 <div class="wrapper">
-  <div class="screen"></div>
+  @if (screenLocation?.isEntrySide) {
+  <div class="screen screen__entry"></div>
+  } @if (screenLocation?.isExitSide) {
+  <div class="screen screen__exit"></div>
+  }
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 
 @Component({
@@ -8,4 +8,6 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './gate-direction.component.html',
   styleUrl: './gate-direction.component.scss',
 })
-export class GateDirectionComponent {}
+export class GateDirectionComponent {
+  @Input() gate: any;
+}
