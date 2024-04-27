@@ -21,6 +21,9 @@ export class StationMonitoringComponent {
       direction: {
         isEntry: true,
       },
+      status: {
+        hasError: true,
+      },
     },
     {
       array: '1',
@@ -31,6 +34,9 @@ export class StationMonitoringComponent {
       },
       direction: {
         isEntry: true,
+      },
+      status: {
+        hasCommunicationBreak: true,
       },
     },
     {
