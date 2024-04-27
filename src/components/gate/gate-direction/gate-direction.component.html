@@ -8,7 +8,30 @@
       'flap__com-break': gate?.status?.hasCommunicationBreak
     }"
   >
-    <mat-icon class="flap__icon">keyboard_double_arrow_right</mat-icon>
+    @if ( gate?.status?.hasError ) {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/error.json',
+  loop: true,
+  autoplay: true,}"
+      [width]="25"
+      [height]="25"
+    ></app-lottie-animation>
+    } @else if (gate?.status?.hasCommunicationBreak){
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/com-break.json',
+  loop: true,
+  autoplay: true,}"
+    ></app-lottie-animation>
+    } @else {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/walking.json',
+    loop: true,
+    autoplay: true,}"
+      [width]="25"
+      [height]="25"
+    ></app-lottie-animation>
+
+    }
   </div>
   } @if(gate?.direction?.isExit){
   <div
@@ -18,7 +41,30 @@
       'flap__com-break': gate?.status?.hasCommunicationBreak
     }"
   >
-    <mat-icon class="flap__icon">keyboard_double_arrow_left</mat-icon>
+    @if ( gate?.status?.hasError ) {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/error.json',
+    loop: true,
+    autoplay: true,}"
+      [width]="25"
+      [height]="25"
+    ></app-lottie-animation>
+    }@else if (gate?.status?.hasCommunicationBreak){
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/com-break.json',
+    loop: true,
+    autoplay: true,}"
+    ></app-lottie-animation>
+    }@else {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/walking.json',
+    loop: true,
+    autoplay: true,}"
+      [width]="25"
+      [height]="25"
+      [isReverse]="true"
+    ></app-lottie-animation>
+    }
   </div>
   }
 </div>
@@ -32,7 +78,29 @@
       'flap__com-break': gate?.status?.hasCommunicationBreak
     }"
   >
-    <mat-icon class="flap__icon">keyboard_double_arrow_right</mat-icon>
+    @if ( gate?.status?.hasError ) {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/error.json',
+    loop: true,
+    autoplay: true,}"
+      [width]="25"
+      [height]="25"
+    ></app-lottie-animation>
+    }@else if (gate?.status?.hasCommunicationBreak){
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/com-break.json',
+      loop: true,
+      autoplay: true,}"
+    ></app-lottie-animation>
+    }@else {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/walking.json',
+    loop: true,
+    autoplay: true,}"
+      [width]="25"
+      [height]="25"
+    ></app-lottie-animation>
+    }
   </div>
   } @if(gate?.direction?.isEntry ){
   <div
@@ -42,7 +110,30 @@
       'flap__com-break': gate?.status?.hasCommunicationBreak
     }"
   >
-    <mat-icon class="flap__icon">keyboard_double_arrow_left</mat-icon>
+    @if ( gate?.status?.hasError ) {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/error.json',
+    loop: true,
+    autoplay: true,}"
+      [width]="25"
+      [height]="25"
+    ></app-lottie-animation>
+    }@else if (gate?.status?.hasCommunicationBreak){
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/com-break.json',
+      loop: true,
+      autoplay: true,}"
+    ></app-lottie-animation>
+    }@else {
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/walking.json',
+    loop: true,
+    autoplay: true,}"
+      [width]="25"
+      [height]="25"
+      [isReverse]="true"
+    ></app-lottie-animation>
+    }
   </div>
   }
 </div>
