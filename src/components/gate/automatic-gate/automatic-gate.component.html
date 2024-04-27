@@ -8,9 +8,16 @@
         {{ gate.type }}
       </div>
       <div class="gate__cabinet-container">
-        @if ($index ===0) {
-        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+        @if ($index ===0 ) { @if ( gate.screenLocation.isExitSide ) {
+        <app-gate-cabinate
+          [screenLocation]="{
+            isExitSide: true
+          }"
+          [array]="gate.array"
+        ></app-gate-cabinate>
         }@else {
+        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+        } }@else {
         <app-gate-cabinate
           [screenLocation]="gate.screenLocation"
           [array]="gate.array"
@@ -37,22 +44,28 @@
 } @if (gateData[0].array === '2') {
 <div class="gate">
   <p class="gate__array-title">AG Array {{ gateData[0].array }}</p>
-  <div class="gate__cabinet">
+  <div class="gate__cabinet gate__cabinet-array2">
     @for (gate of gateData; track $index) {
     <div class="gate__cabinet-wrapper">
-      <div class="gate__cabinet-type">
+      <div
+        class="gate__cabinet-type"
+        [ngStyle]="{ 'margin-top': $index !== gateData.length - 1 && 0 }"
+      >
         {{ gate.type }}
       </div>
-      <div class="gate__cabinet-container">
-        @if ($index ===0) {
+      <div class="gate__cabinet-container gate__cabinet-array2">
+        @if ($index ===0 ) { @if ( gate.screenLocation.isEntrySide ) {
+
         <app-gate-cabinate
           [screenLocation]="{
-            isExitSide: true
+            isEntrySide: true
           }"
           [array]="gate.array"
         ></app-gate-cabinate>
-
         }@else {
+        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+
+        } }@else {
         <app-gate-cabinate
           [screenLocation]="gate.screenLocation"
           [array]="gate.array"
@@ -60,10 +73,19 @@
         }
         <app-gate-direction [gate]="gate"></app-gate-direction>
         @if ($index === gateData.length-1) {
-        <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
+        <app-gate-cabinate
+          [screenLocation]="{
+            isExitSide: true
+          }"
+          [array]="gate.array"
+        ></app-gate-cabinate>
+
         }
       </div>
-      <div class="gate__cabinet-gate-id">
+      <div
+        class="gate__cabinet-gate-id"
+        [ngStyle]="{ 'margin-top': $index !== gateData.length - 1 && 0 }"
+      >
         {{ gate.equipmentId }}
       </div>
     </div>
@@ -81,7 +103,7 @@
         {{ gate.type }}
       </div>
       <div class="gate__cabinet-container">
-        @if ($index ===0) {
+        @if ($index ===0&& !gate.screenLocation.isEntrySide) {
         <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
         }@else {
         <app-gate-cabinate
@@ -120,7 +142,7 @@
         {{ gate.type }}
       </div>
       <div class="gate__cabinet-container gate__cabinet-array4">
-        @if ($index ===0) {
+        @if ($index ===0 && !gate.screenLocation.isExitSide) {
         <app-gate-cabinate [array]="gate.array"></app-gate-cabinate>
         }@else {
         <app-gate-cabinate

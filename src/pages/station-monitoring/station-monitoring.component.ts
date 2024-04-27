@@ -18,7 +18,9 @@ export class StationMonitoringComponent {
       screenLocation: {
         isEntrySide: true,
       },
-      isEntryGate: true,
+      direction: {
+        isEntry: true,
+      },
     },
     {
       array: '1',
@@ -27,7 +29,9 @@ export class StationMonitoringComponent {
       screenLocation: {
         isEntrySide: true,
       },
-      isEntryGate: true,
+      direction: {
+        isEntry: true,
+      },
     },
     {
       array: '1',
@@ -37,7 +41,10 @@ export class StationMonitoringComponent {
         isEntrySide: true,
         isExitSide: true,
       },
-      isReversableGate: true,
+      direction: {
+        isEntry: true,
+        isExit: true,
+      },
     },
   ];
 
@@ -45,20 +52,24 @@ export class StationMonitoringComponent {
     {
       array: '2',
       type: 'Exit',
-      equipmentId: '0011',
-      screenLocation: {
-        isExitSide: true,
-      },
-      isExitGate: true,
-    },
-    {
-      array: '2',
-      type: 'Exit',
       equipmentId: '0012',
       screenLocation: {
         isExitSide: true,
       },
-      isExitGate: true,
+      direction: {
+        isExit: true,
+      },
+    },
+    {
+      array: '2',
+      type: 'Exit',
+      equipmentId: '0011',
+      screenLocation: {
+        isExitSide: true,
+      },
+      direction: {
+        isExit: true,
+      },
     },
   ];
 
@@ -70,7 +81,9 @@ export class StationMonitoringComponent {
       screenLocation: {
         isExitSide: true,
       },
-      isExitGate: true,
+      direction: {
+        isExit: true,
+      },
     },
     {
       array: '3',
@@ -79,40 +92,11 @@ export class StationMonitoringComponent {
       screenLocation: {
         isExitSide: true,
       },
-      isExitGate: true,
+      direction: {
+        isExit: true,
+      },
     },
   ];
-
-  // array4Data = [
-  //   {
-  //     array: '4',
-  //     type: 'Reversable',
-  //     equipmentId: '0021',
-  //     screenLocation: {
-  //       isEntrySide: true,
-  //     },
-  //     isReversableGate: true,
-  //   },
-  //   {
-  //     array: '4',
-  //     type: 'Entry',
-  //     equipmentId: '0022',
-  //     screenLocation: {
-  //       isEntrySide: true,
-  //       isExitSide: true,
-  //     },
-  //     isEntryGate: true,
-  //   },
-  //   {
-  //     array: '4',
-  //     type: 'Entry',
-  //     equipmentId: '0023',
-  //     screenLocation: {
-  //       isEntrySide: true,
-  //     },
-  //     isEntryGate: true,
-  //   },
-  // ];
 
   array4Data = [
     {
@@ -122,7 +106,9 @@ export class StationMonitoringComponent {
       screenLocation: {
         isEntrySide: true,
       },
-      isEntryGate: true,
+      direction: {
+        isEntry: true,
+      },
     },
     {
       array: '4',
@@ -131,17 +117,22 @@ export class StationMonitoringComponent {
       screenLocation: {
         isEntrySide: true,
       },
-      isEntryGate: true,
+      direction: {
+        isEntry: true,
+      },
     },
     {
       array: '4',
       type: 'Reversable',
-      equipmentId: '0023',
+      equipmentId: '0021',
       screenLocation: {
         isEntrySide: true,
         isExitSide: true,
       },
-      isReversableGate: true,
+      direction: {
+        isEntry: true,
+        isExit: true,
+      },
     },
   ];
 }
