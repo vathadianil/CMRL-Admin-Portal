@@ -59,6 +59,40 @@
             <img src="../../assets/img/location.svg" alt="" />
           </button>
           }
+          @for (btn of  BlueLineData; track $index) {
+            <button
+              class="monitoring__btn"
+              mat-mini-fab
+              aria-label="Example icon button with a menu icon"
+              [ngStyle]="{
+                  top: btn?.top + 'px',
+                  bottom: btn?.bottom + 'px',
+                  left: btn?.left + 'px',
+                  right: btn?.right + 'px',
+                }"
+                [style.background]="btn.isActive ? btn?.color : '#bec7d6'"
+              [routerLink]="btn?.stationId"
+            >
+              <img src="../../assets/img/location.svg" alt="" />
+            </button>
+            }
+            @for (btn of GreenLineData; track $index) {
+              <button
+                class="monitoring__btn"
+                mat-mini-fab
+                aria-label="Example icon button with a menu icon"
+                [ngStyle]="{
+                    top: btn?.top + 'px',
+                    bottom: btn?.bottom + 'px',
+                    left: btn?.left + 'px',
+                    right: btn?.right + 'px',
+                  }"
+                  [style.background]="btn.isActive ? btn?.color : '#bec7d6'"
+                [routerLink]="btn?.stationId"
+              >
+                <img src="../../assets/img/location.svg" alt="" />
+              </button>
+              }
     </div>
   </mat-card>
 </div>
