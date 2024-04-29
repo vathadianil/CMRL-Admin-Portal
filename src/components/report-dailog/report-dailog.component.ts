@@ -5,13 +5,14 @@ import { MatCardModule} from '@angular/material/card';
 import { TableComponent } from "../table/table.component";
 import { MatTableDataSource } from '@angular/material/table';
 import { InputTextComponent } from "../input-text/input-text.component";
+import { ButtonFieldComponent } from "../button-field/button-field.component";
 
 @Component({
     selector: 'app-report-dailog',
     standalone: true,
     templateUrl: './report-dailog.component.html',
     styleUrl: './report-dailog.component.scss',
-    imports: [MatCardModule, TableComponent, InputTextComponent,CommonModule]
+    imports: [MatCardModule, TableComponent, InputTextComponent, CommonModule, MatDialogModule, ButtonFieldComponent]
 })
 export class ReportDailogComponent {
 Object: any;
