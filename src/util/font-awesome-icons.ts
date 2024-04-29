@@ -9,6 +9,10 @@ import {
   faUserTag,
   faUserShield,
   faEllipsis,
+  faDownload,
+  faPlus,
+  faPen,
+  faTrashCan,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faHome;
@@ -33,6 +37,14 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faUserShield);
     case 'dots':
       return (fontawesomeIcon = faEllipsis);
+    case 'download':
+      return (fontawesomeIcon = faDownload);
+    case 'add':
+      return (fontawesomeIcon = faPlus);
+    case 'edit':
+      return (fontawesomeIcon = faPen);
+    case 'delete':
+      return (fontawesomeIcon = faTrashCan);
   }
   return fontawesomeIcon;
 }

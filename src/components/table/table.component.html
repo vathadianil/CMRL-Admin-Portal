@@ -42,14 +42,21 @@
             mat-icon-button
             class="table__action-icons"
           >
-            <mat-icon class="table__edit-icon" aria-label="Edit">edit</mat-icon>
+            <fa-icon
+              class="table__edit-icon"
+              aria-label="Edit"
+              [icon]="getIcon('edit')"
+              >edit</fa-icon
+            >
           </div>
           <div
             *ngIf="actions.includes('delete')"
             mat-icon-button
             class="table__action-icons"
           >
-            <mat-icon class="table__delete-icon">delete_outline</mat-icon>
+            <fa-icon class="table__delete-icon" [icon]="getIcon('delete')"
+              >delete</fa-icon
+            >
           </div>
         </td>
       </ng-container>

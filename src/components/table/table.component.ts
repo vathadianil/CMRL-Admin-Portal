@@ -13,7 +13,8 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../util/font-awesome-icons';
 @Component({
   standalone: true,
   imports: [
@@ -22,6 +23,7 @@ import { LiveAnnouncer } from '@angular/cdk/a11y';
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
+    FontAwesomeModule,
   ],
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -39,6 +41,8 @@ export class TableComponent implements OnInit, AfterViewInit {
   @Input() displaySecondRowColumns: string[] = [];
   @ViewChild(MatSort) sort!: MatSort;
   actionColWidth = '';
+  getIcon = getIcon;
+  icon: any;
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
   ngOnInit() {
