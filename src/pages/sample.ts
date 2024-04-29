@@ -36,7 +36,7 @@ export const transactionQueryData = {
       paytmTid: '11075316',
       paytmMid: 'LTMetr33790038971459',
       bussinessDate: '24-Aug-2023',
-      status: 'active',
+      status: 'Active',
     },
     {
       transactionDateTime: '03-Feb-2611 06:50:25',
@@ -55,7 +55,7 @@ export const transactionQueryData = {
       paytmTid: '11075316',
       paytmMid: 'LTMetr33790038971459',
       bussinessDate: '23-Aug-2023',
-      status: 'in-active',
+      status: 'In-Active',
     },
   ],
 };
@@ -163,6 +163,12 @@ export const linesData = {
       lineName: 1101,
       lineShortname: 5,
       status: 'Active',
+    },
+    {
+      lineId: 2,
+      lineName: 1100,
+      lineShortname: 5,
+      status: 'In-Active',
     },
   ],
 };

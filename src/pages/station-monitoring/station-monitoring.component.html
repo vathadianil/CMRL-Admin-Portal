@@ -1,3 +1,12 @@
 <mat-card class="monitoring">
-  <app-automatic-gate></app-automatic-gate>
+  <div style="display: flex; justify-content: space-around">
+    <div>
+      <app-automatic-gate [gateData]="array1Data"></app-automatic-gate>
+      <app-automatic-gate [gateData]="array2Data"></app-automatic-gate>
+    </div>
+    <div>
+      <app-automatic-gate [gateData]="array3Data"></app-automatic-gate>
+      <app-automatic-gate [gateData]="array4Data"></app-automatic-gate>
+    </div>
+  </div>
 </mat-card>

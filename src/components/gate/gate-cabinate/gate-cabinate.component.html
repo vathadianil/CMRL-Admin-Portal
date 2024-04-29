@@ -1,7 +1,17 @@
+@if (array==='1' || array==='2') {
 <div class="wrapper">
   @if (screenLocation?.isEntrySide) {
-  <div class="screen screen__entry"></div>
+  <div class="screen screen__left"></div>
   } @if (screenLocation?.isExitSide) {
-  <div class="screen screen__exit"></div>
+  <div class="screen screen__right"></div>
   }
 </div>
+}@if (array==='3' || array==='4') {
+<div class="wrapper">
+  @if (screenLocation?.isEntrySide) {
+  <div class="screen screen__right"></div>
+  } @if (screenLocation?.isExitSide) {
+  <div class="screen screen__left"></div>
+  }
+</div>
+}
