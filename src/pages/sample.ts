@@ -172,3 +172,56 @@ export const linesData = {
     },
   ],
 };
+
+export const usersData = {
+  headers: [
+    { key: 'userCode', label: 'User code' },
+    { key: 'name', label: 'Name' },
+    { key: 'role', label: 'Role' },
+    { key: 'station', label: 'Station' },
+    { key: 'line', label: 'Line' },
+    { key: 'status', label: 'Status' },
+  ],
+  data: [
+    {
+      userCode: 11,
+      name: 'Rajesh',
+      role: 'Admin',
+      station: 'Meenambakkam Metro',
+      line: 'Carridor-I',
+      status: 'In-Active',
+    },
+  ],
+};
+
+export const roleData = {
+  headers: [
+    { key: 'roleCode', label: 'Role code' },
+    { key: 'roleName', label: 'Role Name' },
+    { key: 'rolePrivileges', label: 'Role Privileges' },
+    { key: 'status', label: 'Status' },
+  ],
+  data: [
+    {
+      roleCode: 111,
+      roleName: 'Reports',
+      rolePrivileges: 'Exit Summary Report',
+      status: 'Active',
+    },
+  ],
+};
+
+export const privilegesData = {
+  headers: [
+    { key: 'privilegeCode', label: 'Privilege Code' },
+    { key: 'privilegeType', label: 'Privilege Type' },
+    { key: 'status', label: 'Status' },
+  ],
+  data: [
+    {
+      privilegeCode: 111,
+      privilegeType: 'Monitoring',
+      status: 'Active',
+    },
+  ],
+};

@@ -1,0 +1,40 @@
+<div class="privileges">
+  <mat-card class="privileges__card">
+    <div class="privileges__title-wrapper">
+      <mat-icon
+        ><span class="material-symbols-outlined">
+          admin_panel_settings
+        </span></mat-icon
+      >
+      <app-page-title title="Privileges"></app-page-title>
+    </div>
+  </mat-card>
+
+  <!-- =========== -->
+
+  <mat-card class="privileges__card-table">
+    <mat-card-content>
+      <div class="privileges__content-container">
+        <app-search></app-search>
+        <div class="privileges__fab-btn-wrapper">
+          <app-fab-button
+            [icon]="'add'"
+            [showMenu]="false"
+            [isDownloadBtn]="false"
+          >
+          </app-fab-button>
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table
+        [tableData]="myTableData"
+        [actions]="actionItems"
+        [sortCols]="sortCols"
+      ></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

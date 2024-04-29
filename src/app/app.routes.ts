@@ -131,6 +131,27 @@ export const routes: Routes = [
             `../pages/station-management/stations/stations.component`
           ).then((c) => c.StationsComponent),
       },
+      {
+        path: 'users',
+        loadComponent: () =>
+          import(`../pages/user-management/users/users.component`).then(
+            (c) => c.UsersComponent
+          ),
+      },
+      {
+        path: 'roles',
+        loadComponent: () =>
+          import(`../pages/user-management/roles/roles.component`).then(
+            (c) => c.RolesComponent
+          ),
+      },
+      {
+        path: 'privileges',
+        loadComponent: () =>
+          import(
+            `../pages/user-management/privileges/privileges.component`
+          ).then((c) => c.PrivilegesComponent),
+      },
     ],
   },
 ];

@@ -118,7 +118,7 @@ export class HomePageComponent {
       icon: 'developer_board',
       label: 'Device Management',
       route: 'deviceManagemet',
-      color: '#feca33',
+      color: 'purple',
       submenu: [
         {
           icon: 'memory',
@@ -131,7 +131,7 @@ export class HomePageComponent {
       icon: 'train',
       label: 'Station Management',
       route: 'stationManagement',
-      color: 'purple',
+      color: '#feca33',
       submenu: [
         {
           icon: 'tune',
@@ -142,6 +142,29 @@ export class HomePageComponent {
           icon: 'tram',
           label: 'Stations',
           route: 'stations',
+        },
+      ],
+    },
+    {
+      icon: 'manage_accounts',
+      label: 'User Management',
+      route: 'userManagement',
+      color: 'maroon',
+      submenu: [
+        {
+          icon: 'group',
+          label: 'Users',
+          route: 'users',
+        },
+        {
+          icon: 'settings_accessibility',
+          label: 'Roles',
+          route: 'roles',
+        },
+        {
+          icon: 'admin_panel_settings',
+          label: 'Privileges',
+          route: 'privileges',
         },
       ],
     },
