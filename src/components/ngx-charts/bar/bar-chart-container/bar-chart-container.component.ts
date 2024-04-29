@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-bar-chart-container',
@@ -18,6 +20,7 @@ import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component'
     BarChartComponent,
     CommonModule,
     MatMenuModule,
+    FontAwesomeModule,
   ],
   templateUrl: './bar-chart-container.component.html',
   styleUrl: './bar-chart-container.component.scss',
@@ -25,6 +28,7 @@ import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component'
 export class BarChartContainerComponent {
   @Input() chartData: any = {};
   constructor(private dialog: MatDialog) {}
+  getIcon = getIcon;
 
   openGraphDetail(): void {
     const dialogRef = this.dialog.open(ChartDialogComponent, {
