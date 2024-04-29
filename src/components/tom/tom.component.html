@@ -1,0 +1,18 @@
+<div class="tom">
+  <p class="tom__type">{{ equipmentData?.type | uppercase }}</p>
+  <div class="tom__img-container">
+    <img
+      src="../../assets/img/tom-in-service.png"
+      alt="tom"
+      class="tom__image"
+    />
+  </div>
+  <p class="tom__id">{{ equipmentData?.equipmentId }}</p>
+  <div class="tom__animation">
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/in-service.json',
+    loop: true,
+    autoplay: true,}"
+    ></app-lottie-animation>
+  </div>
+</div>
