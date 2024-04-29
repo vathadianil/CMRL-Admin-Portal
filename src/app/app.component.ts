@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 
 @Component({
   selector: 'app-root',

@@ -15,6 +15,8 @@ import { Router } from '@angular/router';
 import { BarChartContainerComponent } from '../../components/ngx-charts/bar/bar-chart-container/bar-chart-container.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FooterComponent } from '../../components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-home-page',
@@ -34,11 +36,13 @@ import { FooterComponent } from '../../components/footer/footer.component';
     MatListModule,
     MatTooltipModule,
     FooterComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent {
+  getIcon = getIcon;
   constructor(private router: Router) {}
 
   navigateTo(route: string): void {
@@ -60,7 +64,7 @@ export class HomePageComponent {
       color: '#8833ff',
     },
     {
-      icon: 'file_open',
+      icon: 'file',
       label: 'Reports',
       route: 'reports',
       color: '#FF6633',
@@ -115,10 +119,10 @@ export class HomePageComponent {
       ],
     },
     {
-      icon: 'developer_board',
+      icon: 'microChip',
       label: 'Device Management',
       route: 'deviceManagemet',
-      color: 'purple',
+      color: '#feca33',
       submenu: [
         {
           icon: 'memory',
@@ -131,7 +135,7 @@ export class HomePageComponent {
       icon: 'train',
       label: 'Station Management',
       route: 'stationManagement',
-      color: '#feca33',
+      color: 'purple',
       submenu: [
         {
           icon: 'tune',
@@ -149,7 +153,7 @@ export class HomePageComponent {
       icon: 'manage_accounts',
       label: 'User Management',
       route: 'userManagement',
-      color: 'maroon',
+      color: '#c824ce',
       submenu: [
         {
           icon: 'group',
@@ -157,12 +161,12 @@ export class HomePageComponent {
           route: 'users',
         },
         {
-          icon: 'settings_accessibility',
+          icon: 'roles',
           label: 'Roles',
           route: 'roles',
         },
         {
-          icon: 'admin_panel_settings',
+          icon: 'privileges',
           label: 'Privileges',
           route: 'privileges',
         },
