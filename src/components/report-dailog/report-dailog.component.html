@@ -1,6 +1,23 @@
 <mat-card>
   <mat-card-content>
-    <h1>{{tableData.id}}</h1>
-    <button (click)="btnClick()">click</button>
+    <h1>{{ tableData.id }}</h1>
+    <form>
+<!-- 
+      @for(item of Object.keys(tableData); track item.id){
+      
+      } -->
+
+      <div *ngFor="let item of tableData | keyvalue">
+        <app-input-text [label]="item.key.toString()"></app-input-text>
+      </div>
+
+      <!-- <div *ngFor="let item of Object.keys(myObject)">
+        Key: {{ item }}
+      </div> -->
+
+      <button (click)="btnClick()">Submit</button>
+    </form>
+
+   
   </mat-card-content>
 </mat-card>

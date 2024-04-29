@@ -55,7 +55,7 @@ export class TableComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(ReportDailogComponent, {
       data: element,
     });
-    console.log(element);
+    // console.log(element);
     dialogRef.afterClosed().subscribe();
   }
 
@@ -75,7 +75,8 @@ export class TableComponent implements OnInit, AfterViewInit {
       action: 'update',
       value: element,
     };
-    this.onActionClick.emit(data);
+    // this.onActionClick.emit(data);
+    this.openDialog(element)
   }
 
   deleteItem(element: any): void {

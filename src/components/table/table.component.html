@@ -42,7 +42,7 @@
             mat-icon-button
             class="table__action-icons"
           >
-            <mat-icon class="table__edit-icon" aria-label="Edit">edit</mat-icon>
+            <mat-icon class="table__edit-icon" aria-label="Edit" (click)="editItem(element)">edit</mat-icon>
           </div>
           <div
             *ngIf="actions.includes('delete')"
@@ -59,7 +59,7 @@
             <app-toggle-slider></app-toggle-slider>
           </div>
 
-          <div
+          <!-- <div
             *ngIf="actions.includes('view_report')"
             mat-icon-button
             class="table__action-icons"
@@ -67,7 +67,7 @@
             <mat-icon class="table__view-icon" (click)="openDialog(element)"
               >visibility</mat-icon
             >
-          </div>
+          </div> -->
         </td>
       </ng-container>
       } @if(actions.length){
