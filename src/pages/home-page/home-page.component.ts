@@ -149,7 +149,7 @@ export class HomePageComponent {
       icon: 'manage_accounts',
       label: 'User Management',
       route: 'userManagement',
-      color: 'maroon',
+      color: '#c824ce',
       submenu: [
         {
           icon: 'group',
