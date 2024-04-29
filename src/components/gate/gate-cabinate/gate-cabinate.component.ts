@@ -10,4 +10,5 @@ import { Component, Input } from '@angular/core';
 })
 export class GateCabinateComponent {
   @Input() screenLocation: any;
+  @Input() array: string = '';
 }

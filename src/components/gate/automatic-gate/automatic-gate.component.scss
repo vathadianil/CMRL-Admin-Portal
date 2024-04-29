@@ -1,3 +1,37 @@
+@use "../../../scss/util" as *;
 .gate {
-  width: var(--gate-cabinet-width);
+  width: var(--gate-array-width);
+  margin: 1em;
+  &__array-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: toRem(14);
+  }
+  &__cabinet {
+    padding: 1em;
+    border: 1px solid var(--black);
+    border-radius: 0.3em;
+    &-array4,
+    &-array2 {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    &-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+    &-container {
+      min-width: var(--gate-cabinet-width);
+    }
+    &-gate-id,
+    &-type {
+      margin-top: var(--gate-cabinet-height);
+      margin-left: toRem(5);
+      margin-right: toRem(5);
+      font-size: toRem(14);
+    }
+    &-type {
+      width: 30%;
+    }
+  }
 }

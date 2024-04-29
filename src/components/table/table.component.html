@@ -17,11 +17,11 @@
           </div>
         </th>
         <td mat-cell *matCellDef="let element">
-          @if(column !== 'status'){
+          @if(column !== 'Status'){
           {{ element[column] }}
           } @else {
-          <div [ngStyle]="getStatusStyle(element['status'])">
-            {{ element["status"] }}
+          <div [ngStyle]="getStatusStyle(element['Status'])">
+            {{ element["Status"] }}
           </div>
           }
         </td>

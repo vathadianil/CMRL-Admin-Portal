@@ -1,0 +1,36 @@
+@if (isReverse) {
+<div
+  class="main__container"
+  style="rotate: y 180deg"
+  [ngStyle]="{ width: width + 'px' }"
+  [ngStyle]="{ height: height + 'px' }"
+>
+  <ng-lottie
+    [options]="options"
+    width="100%"
+    height="100%"
+    (animationCreated)="animationCreated($event)"
+  />
+  <!-- 
+  <button class="animation__button" (click)="play()">Play</button>
+  <button class="animation__button" (click)="pause()">Pause</button>
+  <button class="animation__button" (click)="stop()">Stop</button> -->
+</div>
+}@else {
+<div
+  class="main__container"
+  [ngStyle]="{ width: width + 'px' }"
+  [ngStyle]="{ height: height + 'px' }"
+>
+  <ng-lottie
+    [options]="options"
+    width="100%"
+    height="100%"
+    (animationCreated)="animationCreated($event)"
+  />
+  <!-- 
+  <button class="animation__button" (click)="play()">Play</button>
+  <button class="animation__button" (click)="pause()">Pause</button>
+  <button class="animation__button" (click)="stop()">Stop</button> -->
+</div>
+}

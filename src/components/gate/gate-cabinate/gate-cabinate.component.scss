@@ -13,10 +13,10 @@
   aspect-ratio: 1;
   background-color: var(--blue800);
   border-radius: 0.3em;
-  &__entry {
+  &__left {
     left: 1px;
   }
-  &__exit {
+  &__right {
     right: 1px;
   }
 }
