@@ -42,11 +42,11 @@
             mat-icon-button
             class="table__action-icons"
           >
-            <mat-icon class="table__edit-icon" aria-label="Edit" (click)="editItem(element)">edit</mat-icon>
             <fa-icon
               class="table__edit-icon"
               aria-label="Edit"
               [icon]="getIcon('edit')"
+              (click)="editItem(element)"
               >edit</fa-icon
             >
           </div>
