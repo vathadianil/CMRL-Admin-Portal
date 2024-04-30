@@ -14,6 +14,8 @@ import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { exportRolesData } from '../../export-data';
 import { roleData } from '../../sample';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 @Component({
   selector: 'app-roles',
   standalone: true,
@@ -28,11 +30,13 @@ import { roleData } from '../../sample';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './roles.component.html',
   styleUrl: './roles.component.scss',
 })
 export class RolesComponent {
+  getIcon = getIcon;
   userData: any[] = [];
   fileName = 'Roles';
   columnsToExport = exportRolesData;
