@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { TvmComponent } from './tvm/tvm.component';
-import { TomComponent } from './tom/tom.component';
 import { CommonModule } from '@angular/common';
+import { TvmComponent } from '../tvm/tvm.component';
+import { TomComponent } from '../tom/tom.component';
 
 @Component({
   selector: 'app-tom-room-layout',

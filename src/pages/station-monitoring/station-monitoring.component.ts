@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { AutomaticGateComponent } from '../../components/gate/automatic-gate/automatic-gate.component';
-import { TomRoomLayoutComponent } from '../../components/tom-room-layout/tom-room-layout.component';
+import { TomRoomLayoutComponent } from '../../components/rooms-layout/tom-room-layout/tom-room-layout.component';
 
 @Component({
   selector: 'app-station-monitoring',
