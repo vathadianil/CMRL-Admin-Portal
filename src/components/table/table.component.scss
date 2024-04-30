@@ -16,8 +16,8 @@
     white-space: nowrap; 
   }
   
-   &__action-icons {      
-    margin: 14px 0 14px 0;
+  &__action-icons {      
+    margin: 16px 0 16px 0;
   }
 
   &__action-icon-wrapper {
@@ -26,8 +26,7 @@
   }
   
   &__edit-icon {  
-   color:var(--yellow500);  
-    
+   color:var(--yellow500);      
   }
  
   &__delete-icon {  
