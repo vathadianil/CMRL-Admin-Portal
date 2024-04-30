@@ -167,7 +167,7 @@ export class StationMonitoringComponent {
   tom2Data = [
     {
       location: 'tom2',
-      type: 'tvm',
+      type: 'tom',
       equipmentId: '0011',
       status: {
         hasError: false,
@@ -176,7 +176,7 @@ export class StationMonitoringComponent {
     },
     {
       location: 'tom2',
-      type: 'tom',
+      type: 'tvm',
       equipmentId: '0011',
       status: {
         hasError: false,
