@@ -20,34 +20,35 @@
       class="tom__image"
     />
     }
-  </div>
-  <p class="tom__id">{{ equipmentData?.equipmentId }}</p>
-  <div
-    class="tom__animation"
-    [ngClass]="{
-      'tom__animation-com-break': equipmentData?.status?.hasCommunicationBreak
-    }"
-  >
-    @if (equipmentData?.status?.hasCommunicationBreak) {
-    <app-lottie-animation
-      [width]="40"
-      [height]="40"
-      [options]="{ path: '../../assets/lottie-files/com-break.json',
+
+    <div
+      class="tom__animation"
+      [ngClass]="{
+        'tom__animation-com-break': equipmentData?.status?.hasCommunicationBreak
+      }"
+    >
+      @if (equipmentData?.status?.hasCommunicationBreak) {
+      <app-lottie-animation
+        [width]="40"
+        [height]="40"
+        [options]="{ path: '../../assets/lottie-files/com-break.json',
       loop: true,
       autoplay: true,}"
-    ></app-lottie-animation>
-    } @else if (equipmentData?.status?.hasError){
-    <app-lottie-animation
-      [options]="{ path: '../../assets/lottie-files/error.json',
+      ></app-lottie-animation>
+      } @else if (equipmentData?.status?.hasError){
+      <app-lottie-animation
+        [options]="{ path: '../../assets/lottie-files/error.json',
     loop: true,
     autoplay: true,}"
-    ></app-lottie-animation>
-    }@else {
-    <app-lottie-animation
-      [options]="{ path: '../../assets/lottie-files/in-service.json',
+      ></app-lottie-animation>
+      }@else {
+      <app-lottie-animation
+        [options]="{ path: '../../assets/lottie-files/in-service.json',
     loop: true,
     autoplay: true,}"
-    ></app-lottie-animation>
-    }
+      ></app-lottie-animation>
+      }
+    </div>
   </div>
+  <p class="tom__id">{{ equipmentData?.equipmentId }}</p>
 </div>

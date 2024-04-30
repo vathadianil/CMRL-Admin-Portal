@@ -1,0 +1,17 @@
+<div class="scr-efo-room">
+  <p class="scr-efo-room__title">
+    {{ scrEfoRoomData[0]?.location | uppercase }} Room
+  </p>
+
+  <div class="scr-efo-room__wrapper">
+    <p style="text-align: end">You are Here</p>
+    <div class="scr-efo-room__container">
+      @for (equipment of scrEfoRoomData; track $index) { @if (equipment?.type
+      === 'efo') {
+      <app-tom [equipmentData]="equipment"></app-tom>
+      }@else if (equipment?.type === 'tr') {
+      <app-tr [equipmentData]="equipment"> </app-tr>
+      } }
+    </div>
+  </div>
+</div>

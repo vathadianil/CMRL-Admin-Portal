@@ -2,11 +2,17 @@ import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { AutomaticGateComponent } from '../../components/gate/automatic-gate/automatic-gate.component';
 import { TomRoomLayoutComponent } from '../../components/rooms-layout/tom-room-layout/tom-room-layout.component';
+import { ScrEfoRoomLayoutComponent } from '../../components/rooms-layout/scr-efo-room-layout/scr-efo-room-layout.component';
 
 @Component({
   selector: 'app-station-monitoring',
   standalone: true,
-  imports: [MatCardModule, AutomaticGateComponent, TomRoomLayoutComponent],
+  imports: [
+    MatCardModule,
+    AutomaticGateComponent,
+    TomRoomLayoutComponent,
+    ScrEfoRoomLayoutComponent,
+  ],
   templateUrl: './station-monitoring.component.html',
   styleUrl: './station-monitoring.component.scss',
 })
@@ -171,7 +177,7 @@ export class StationMonitoringComponent {
       equipmentId: '0011',
       status: {
         hasError: true,
-        hasCommunicationBreak: false,
+        hasCommunicationBreak: true,
       },
     },
     {
@@ -180,6 +186,27 @@ export class StationMonitoringComponent {
       equipmentId: '0011',
       status: {
         hasError: true,
+        hasCommunicationBreak: true,
+      },
+    },
+  ];
+
+  scrData = [
+    {
+      location: 'scr',
+      type: 'tr',
+      equipmentId: '0001',
+      status: {
+        hasError: false,
+        hasCommunicationBreak: false,
+      },
+    },
+    {
+      location: 'scr',
+      type: 'efo',
+      equipmentId: '0031',
+      status: {
+        hasError: false,
         hasCommunicationBreak: false,
       },
     },
