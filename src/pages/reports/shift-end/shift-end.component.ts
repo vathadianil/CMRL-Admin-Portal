@@ -27,6 +27,7 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
+
 @Component({
   selector: 'app-shift-end',
   standalone: true,
@@ -45,12 +46,11 @@ import { getIcon } from '../../../util/font-awesome-icons';
     DateTimePickerComponent,
     CustomInputComponent,
     InputTextComponent,
-        FontAwesomeModule,
+    FontAwesomeModule,
   ],
 })
 export class ShiftEndComponent implements OnInit {
-
-  getIcon=getIcon;
+  getIcon = getIcon;
   shiftEndForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;
@@ -83,7 +83,6 @@ export class ShiftEndComponent implements OnInit {
         'businessDate',
         'shiftStartTime',
         'shiftEndTime',
-      
       ],
       dataSource: new MatTableDataSource<ShiftEndDataInterface>([
         {

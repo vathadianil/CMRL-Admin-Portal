@@ -4,10 +4,12 @@
 
   margin: 1em;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+
   &__img-container {
+    position: relative;
     width: 150px;
     height: 130px;
   }
@@ -17,11 +19,11 @@
   }
   &__animation {
     position: absolute;
-    bottom: 30px;
-    left: 80px;
+    bottom: 31px;
+    left: 50px;
     &-com-break {
-      bottom: 25px;
-      left: 75px;
+      bottom: 26px;
+      left: 45px;
     }
   }
   &__id,

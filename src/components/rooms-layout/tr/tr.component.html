@@ -1,30 +1,21 @@
-<div class="tvm">
-  <p class="tvm__type">{{ equipmentData?.type | uppercase }}</p>
-  <div class="tvm__img-container">
+<div class="tr">
+  <p class="tr__type">{{ equipmentData?.type | uppercase }}</p>
+  <div class="tr__img-container">
     @if (equipmentData?.status?.hasCommunicationBreak) {
-    <img
-      src="../../assets/img/tvm-comm-break.svg"
-      alt="tvm inservice"
-      class="tvm__image"
-    />
+    <img src="../../assets/img/tvm-comm-break.svg" alt="TR" class="tr__image" />
     }@else if (equipmentData?.status?.hasError){
     <img
       src="../../assets/img/tvm-out-of-service.svg"
-      alt="tvm inservice"
-      class="tvm__image"
+      alt="TR"
+      class="tr__image"
     />
     }@else {
-    <img
-      src="../../assets/img/tvm-in-service.svg"
-      alt="tvm inservice"
-      class="tvm__image"
-    />
+    <img src="../../assets/img/tvm-in-service.svg" alt="TR" class="tr__image" />
     }
-
     <div
-      class="tvm__animation"
+      class="tr__animation"
       [ngClass]="{
-        'tvm__animation-com-break': equipmentData?.status?.hasCommunicationBreak
+        'tr__animation-com-break': equipmentData?.status?.hasCommunicationBreak
       }"
     >
       @if (equipmentData?.status?.hasCommunicationBreak) {
@@ -32,23 +23,23 @@
         [width]="35"
         [height]="35"
         [options]="{ path: '../../assets/lottie-files/com-break.json',
-  loop: true,
-  autoplay: true,}"
+    loop: true,
+    autoplay: true,}"
       ></app-lottie-animation>
       }@else if (equipmentData?.status?.hasError ) {
       <app-lottie-animation
         [options]="{ path: '../../assets/lottie-files/error.json',
-  loop: true,
-  autoplay: true,}"
+    loop: true,
+    autoplay: true,}"
       ></app-lottie-animation>
       }@else {
       <app-lottie-animation
         [options]="{ path: '../../assets/lottie-files/in-service.json',
-  loop: true,
-  autoplay: true,}"
+    loop: true,
+    autoplay: true,}"
       ></app-lottie-animation>
       }
     </div>
   </div>
-  <p class="tvm__id">{{ equipmentData?.equipmentId }}</p>
+  <p class="tr__id">{{ equipmentData?.equipmentId }}</p>
 </div>

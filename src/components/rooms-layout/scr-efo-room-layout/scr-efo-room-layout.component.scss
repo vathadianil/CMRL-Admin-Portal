@@ -1,0 +1,17 @@
+@use "../../../scss/util" as *;
+.scr-efo-room {
+  &__wrapper {
+    border: 1px solid var(--black);
+    border-radius: 0.3em;
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    text-align: center;
+    font-size: toRem(14);
+    font-weight: bold;
+  }
+}
