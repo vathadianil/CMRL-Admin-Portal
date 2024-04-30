@@ -44,9 +44,12 @@ import { InputTextComponent } from '../../../components/input-text/input-text.co
     DateTimePickerComponent,
     CustomInputComponent,
     InputTextComponent,
+        FontAwesomeModule,
   ],
 })
 export class ShiftEndComponent implements OnInit {
+
+  getIcon=getIcon;
   shiftEndForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;

@@ -96,7 +96,7 @@ export class HomePageComponent {
         },
 
         {
-          icon: 'cancel_presentation',
+          icon: 'exit',
           label: 'Exit Summary Report',
           route: 'exitSummaryReport',
         },
@@ -125,7 +125,7 @@ export class HomePageComponent {
       color: '#feca33',
       submenu: [
         {
-          icon: 'memory',
+          icon: 'map',
           label: 'Reader Management',
           route: 'readerManagement',
         },

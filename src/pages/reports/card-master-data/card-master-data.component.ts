@@ -23,6 +23,8 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
 import { cardMasterData } from '../../export-data';
 import { cardmasterData } from '../../sample';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-card-master-data',
@@ -41,11 +43,13 @@ import { cardmasterData } from '../../sample';
     MatIconModule,
     DateTimePickerComponent,
     InputTextComponent,
+    FontAwesomeModule
   ],
   templateUrl: './card-master-data.component.html',
   styleUrl: './card-master-data.component.scss',
 })
 export class CardMasterDataComponent implements OnInit {
+  getIcon=getIcon;
   cardMasterForm!: FormGroup;
   transactionTypeData: any[] = [];
   fileName = 'Transaction Data Query';

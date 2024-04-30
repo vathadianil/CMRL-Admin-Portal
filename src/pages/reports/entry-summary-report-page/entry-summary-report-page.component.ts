@@ -23,6 +23,8 @@ import { EntrySummaryInterface } from '../../../models/entry-summary.interface';
 
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-entry-summary-report-page',
@@ -41,9 +43,11 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
     TableComponent,
     FabButtonFieldComponent,
     SearchComponent,
+    FontAwesomeModule,
   ],
 })
 export class EntrySummaryReportPageComponent implements OnInit {
+  getIcon=getIcon;
   entrySummaryForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];

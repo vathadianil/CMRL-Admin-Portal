@@ -24,6 +24,8 @@ import { HttpService } from '../../../services/http.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { transactionQueryData } from '../../sample';
 import { transactionData } from '../../export-data';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-transaction-data-query',
@@ -41,12 +43,14 @@ import { transactionData } from '../../export-data';
     FabButtonFieldComponent,
     MatIconModule,
     DateTimePickerComponent,
+    FontAwesomeModule
   ],
   providers: [HttpClientModule],
   templateUrl: './transaction-data-query.component.html',
   styleUrl: './transaction-data-query.component.scss',
 })
 export class TransactionDataQueryComponent implements OnInit {
+  getIcon=getIcon;
   transReportForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];

@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-drop-down',
@@ -29,11 +31,14 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatInputModule,
     MatIconModule,
+    FontAwesomeModule,
+  
   ],
   templateUrl: './drop-down.component.html',
   styleUrls: ['./drop-down.component.scss'],
 })
 export class DropDownComponent implements OnChanges, OnInit {
+  getIcon=getIcon;
   @Output() dropdownValue: EventEmitter<any> = new EventEmitter();
   @Input() width: string = '100%';
   @Input() label: string = 'Label';

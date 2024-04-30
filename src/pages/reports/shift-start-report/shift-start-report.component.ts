@@ -19,6 +19,8 @@ import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-shift-start-report',
@@ -39,11 +41,14 @@ import { InputTextComponent } from '../../../components/input-text/input-text.co
     MatLabel,
     MatFormFieldModule,
     InputTextComponent,
+    FontAwesomeModule
   ],
   templateUrl: './shift-start-report.component.html',
   styleUrl: './shift-start-report.component.scss',
 })
 export class ShiftStartReportComponent implements OnInit {
+
+  getIcon=getIcon;
   shiftstartReportForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;
@@ -52,6 +57,7 @@ export class ShiftStartReportComponent implements OnInit {
   fileName = 'Shift Start Report';
   columnsToExport = shiftstartTableData;
   params: any[] = [];
+
 
   constructor(
     private commonService: CommonService,
