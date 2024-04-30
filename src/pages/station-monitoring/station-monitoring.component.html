@@ -10,7 +10,9 @@
     </div>
     <div>
       <app-automatic-gate [gateData]="array3Data"></app-automatic-gate>
-      <!-- <app-scr-efo-room-layout></app-scr-efo-room-layout> -->
+      <app-scr-efo-room-layout
+        [scrEfoRoomData]="efoData"
+      ></app-scr-efo-room-layout>
       <app-automatic-gate [gateData]="array4Data"></app-automatic-gate>
     </div>
     <app-tom-room-layout [tomRoomData]="tom2Data"></app-tom-room-layout>
