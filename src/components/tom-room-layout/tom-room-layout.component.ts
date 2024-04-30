@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { TvmComponent } from '../tvm/tvm.component';
-import { TomComponent } from '../tom/tom.component';
+import { TvmComponent } from './tvm/tvm.component';
+import { TomComponent } from './tom/tom.component';
 import { CommonModule } from '@angular/common';
 
 @Component({

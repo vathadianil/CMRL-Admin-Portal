@@ -1,14 +1,15 @@
-@use "../../scss//util" as *;
-.tvm {
+@use "../../../scss//util" as *;
+.tom {
   //   border: 2px solid var(--black);
+
   margin: 1em;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   &__img-container {
-    width: 100px;
-    height: 150px;
+    width: 150px;
+    height: 130px;
   }
   &__image {
     width: 100%;
@@ -16,10 +17,11 @@
   }
   &__animation {
     position: absolute;
-    top: 30px;
-    left: 55px;
+    bottom: 30px;
+    left: 80px;
     &-com-break {
-      top: 25px;
+      bottom: 25px;
+      left: 75px;
     }
   }
   &__id,
