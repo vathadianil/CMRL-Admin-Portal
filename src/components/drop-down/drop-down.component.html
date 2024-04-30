@@ -9,7 +9,7 @@
       matInput
       [matAutocomplete]="auto"
     />
-    <mat-icon matSuffix>expand_more</mat-icon>
+    <fa-icon matSuffix style=" padding: 10px;" [icon]="getIcon('expand_more')">expand_more</fa-icon>
     <mat-autocomplete
       #auto
       [displayWith]="displayWith.bind(this)"

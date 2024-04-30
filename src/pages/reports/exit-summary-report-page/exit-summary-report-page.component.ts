@@ -23,6 +23,8 @@ import { ExitSummaryInterface } from '../../../models/exit-summary.interface';
 
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-exit-summary-report-page',
@@ -39,11 +41,13 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
     TableComponent,
     FabButtonFieldComponent,
     SearchComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './exit-summary-report-page.component.html',
   styleUrl: './exit-summary-report-page.component.scss',
 })
 export class ExitSummaryReportPageComponent implements OnInit {
+  getIcon=getIcon;
   exitSummaryForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];

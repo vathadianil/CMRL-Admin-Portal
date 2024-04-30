@@ -25,6 +25,8 @@ import { CustomInputComponent } from '../../../components/custom-input/custom-in
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { InputTextComponent } from "../../../components/input-text/input-text.component";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 
 @Component({
@@ -44,10 +46,13 @@ import { InputTextComponent } from "../../../components/input-text/input-text.co
         TableComponent,
         DateTimePickerComponent,
         CustomInputComponent,
-        InputTextComponent
+        InputTextComponent,
+        FontAwesomeModule
     ]
 })
 export class ShiftEndComponent implements OnInit {
+
+  getIcon=getIcon;
   shiftEndForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
 import { DropDownComponent } from '../../../components/drop-down/drop-down.component';
@@ -19,6 +19,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ReaderManagementInterface } from '../../../models/reader-management.interface';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-rider-management-page',
@@ -36,13 +38,15 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
+    FontAwesomeModule,
   ],
 })
 export class ReaderManagementPageComponent implements OnInit {
+  getIcon = getIcon;
   readerManagemetForm!: FormGroup;
 
   stationData: any[] = [];
-  corridorData : any[] = []
+  corridorData: any[] = [];
   stationDefaultValue = 'All Stations';
 
   fileName = 'Reader Management';
@@ -93,7 +97,7 @@ export class ReaderManagementPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.stationData = this.commonService.getStationsList();
-   this.corridorData = this.commonService.getCorridors()
+    this.corridorData = this.commonService.getCorridors();
     this.readerManagemetForm = new FormGroup({
       firstName: new FormControl(),
     });
@@ -105,11 +109,9 @@ export class ReaderManagementPageComponent implements OnInit {
         key: 'stations',
         value: this.readerManagemetForm.get('transactionType')?.value,
       },
-     
     ];
     return this.params;
   }
-
 
   onSubmit() {
     console.log(this.readerManagemetForm.value);
@@ -132,9 +134,6 @@ export class ReaderManagementPageComponent implements OnInit {
       this.getParameters()
     );
   }
-
-
-
 }
 
 export const readerManagementData = [

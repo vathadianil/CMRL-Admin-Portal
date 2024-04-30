@@ -14,6 +14,8 @@ import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { linesData } from '../../sample';
 import { exportLinesData } from '../../export-data';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 @Component({
   selector: 'app-lines',
   standalone: true,
@@ -28,11 +30,13 @@ import { exportLinesData } from '../../export-data';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './lines.component.html',
   styleUrl: './lines.component.scss',
 })
 export class LinesComponent {
+  getIcon = getIcon;
   stationData: any[] = [];
   corridorData: any[] = [];
   fileName = 'Lines';

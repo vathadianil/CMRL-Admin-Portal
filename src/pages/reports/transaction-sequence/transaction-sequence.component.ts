@@ -24,6 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { DatePickerComponent } from '../../../components/date-picker/date-picker.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-transaction-sequence',
@@ -43,6 +45,7 @@ import { DatePickerComponent } from '../../../components/date-picker/date-picker
     MatFormField,
     DateTimePickerComponent,
     DatePickerComponent,
+    FontAwesomeModule,
   ],
   providers: [provideNativeDateAdapter()],
 
@@ -50,6 +53,7 @@ import { DatePickerComponent } from '../../../components/date-picker/date-picker
   styleUrl: './transaction-sequence.component.scss',
 })
 export class TransactionSequenceComponent implements OnInit {
+  getIcon = getIcon;
   transactionsequenceReportForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;

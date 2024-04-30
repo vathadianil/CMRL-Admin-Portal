@@ -14,6 +14,19 @@ import {
   faPen,
   faTrashCan,
   faCircleInfo,
+  faClock,
+  faEnvelopeOpenText,
+  faNewspaper,
+  faCreditCard,
+  faRightToBracket,
+  faRightFromBracket,
+  faPowerOff,
+  faChevronDown,
+  faMoneyBill,
+  faSquareCheck,
+  faMap,
+  faSliders,
+  faTrainTram,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faCircleInfo;
@@ -46,6 +59,34 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faPen);
     case 'delete':
       return (fontawesomeIcon = faTrashCan);
+    case 'alarm':
+      return (fontawesomeIcon = faClock);
+    case 'inbox':
+      return (fontawesomeIcon = faEnvelopeOpenText);
+    case 'article_shortcut':
+      return (fontawesomeIcon = faNewspaper);
+    case 'credit_card':
+      return (fontawesomeIcon = faCreditCard);
+    case 'input':
+      return (fontawesomeIcon = faRightToBracket);
+    case 'exit':
+      return (fontawesomeIcon = faRightFromBracket);
+    case 'supervisor_account':
+      return (fontawesomeIcon = faUserGroup);
+    case 'power':
+      return (fontawesomeIcon = faPowerOff);
+    case 'expand_more':
+      return (fontawesomeIcon = faChevronDown);
+    case 'domain_verification':
+      return (fontawesomeIcon = faMoneyBill);
+    case 'assignment_turned_in':
+      return (fontawesomeIcon = faSquareCheck);
+    case 'map':
+      return (fontawesomeIcon = faMap);
+    case 'tune':
+      return (fontawesomeIcon = faSliders);
+    case 'tram':
+      return (fontawesomeIcon = faTrainTram);
   }
   return fontawesomeIcon;
 }

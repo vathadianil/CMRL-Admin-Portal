@@ -17,6 +17,8 @@ import { ridershipreportInterface } from '../../../models/ridership-report-inter
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-ridership-report',
@@ -34,12 +36,14 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
     FabButtonFieldComponent,
     CustomInputComponent,
     MatIconModule,
-    DateTimePickerComponent 
+    DateTimePickerComponent,
+    FontAwesomeModule
   ],
   templateUrl: './ridership-report.component.html',
   styleUrl: './ridership-report.component.scss'
 })
 export class RidershipReportComponent {
+  getIcon=getIcon;
   ridershipReportForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;

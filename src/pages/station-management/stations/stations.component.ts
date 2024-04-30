@@ -14,6 +14,8 @@ import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { stationsData } from '../../sample';
 import { exportStationsData } from '../../export-data';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 @Component({
   selector: 'app-stations',
   standalone: true,
@@ -28,11 +30,13 @@ import { exportStationsData } from '../../export-data';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './stations.component.html',
   styleUrl: './stations.component.scss',
 })
 export class StationsComponent {
+  getIcon = getIcon;
   stationData: any[] = [];
   corridorData: any[] = [];
   fileName = 'Stations';

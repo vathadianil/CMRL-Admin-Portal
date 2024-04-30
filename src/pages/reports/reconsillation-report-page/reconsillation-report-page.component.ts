@@ -23,6 +23,8 @@ import { ButtonFieldComponent } from '../../../components/button-field/button-fi
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { ReconsillationReportInterface } from '../../../models/reconsillation-report.interface';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-reconsillation-report-page',
@@ -41,9 +43,11 @@ import { ReconsillationReportInterface } from '../../../models/reconsillation-re
     FabButtonFieldComponent,
     TableComponent,
     ButtonFieldComponent,
+    FontAwesomeModule
   ],
 })
 export class ReconsillationReportPageComponent implements OnInit {
+  getIcon=getIcon;
   reconsillationForm!: FormGroup;
   statusData: any[] = [];
   params: any[] = [];
