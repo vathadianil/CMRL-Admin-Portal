@@ -37,7 +37,7 @@ export class RolesComponent {
   fileName = 'Roles';
   columnsToExport = exportRolesData;
   params: any[] = [];
-  actionItems = ['update', 'delete'];
+  actionItems = ['update'];
   sortCols = ['Role Code', 'Role Name', 'Role Privileges', 'Status'];
 
   constructor(
