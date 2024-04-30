@@ -131,6 +131,14 @@ export const routes: Routes = [
             `../pages/station-management/stations/stations.component`
           ).then((c) => c.StationsComponent),
       },
+
+      {
+        path: 'edcDeviceManagement',
+        loadComponent: () =>
+          import(`../pages/device-management/edc-device-management-page/edc-device-management-page.component`).then(
+            (c) => c.EdcDeviceManagementPageComponent
+          ),
+      },
       {
         path: 'users',
         loadComponent: () =>

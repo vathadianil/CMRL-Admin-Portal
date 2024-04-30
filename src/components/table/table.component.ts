@@ -13,6 +13,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { ToggleSliderComponent } from '../toggle-slider/toggle-slider.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ReportDailogComponent } from '../report-dailog/report-dailog.component';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../util/font-awesome-icons';
 @Component({
@@ -23,6 +27,7 @@ import { getIcon } from '../../util/font-awesome-icons';
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
+    ToggleSliderComponent,
     FontAwesomeModule,
   ],
   selector: 'app-table',
@@ -44,7 +49,21 @@ export class TableComponent implements OnInit, AfterViewInit {
   getIcon = getIcon;
   icon: any;
 
-  constructor(private _liveAnnouncer: LiveAnnouncer) {}
+  constructor(
+    private _liveAnnouncer: LiveAnnouncer,
+    public dialog: MatDialog
+  ) {}
+
+  // dailog open function
+
+  openDialog(element: any) {
+    const dialogRef = this.dialog.open(ReportDailogComponent, {
+      data: element,
+    });
+    // console.log(element);
+    dialogRef.afterClosed().subscribe();
+  }
+
   ngOnInit() {
     // if (this.actions?.length)
     //   this.actionColWidth = `${this.actions?.length * 60}px`;
@@ -61,7 +80,8 @@ export class TableComponent implements OnInit, AfterViewInit {
       action: 'update',
       value: element,
     };
-    this.onActionClick.emit(data);
+    // this.onActionClick.emit(data);
+    this.openDialog(element)
   }
 
   deleteItem(element: any): void {

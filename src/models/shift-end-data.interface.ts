@@ -9,6 +9,5 @@ export interface ShiftEndDataInterface  {
     businessDate: string;
     shiftStartTime: string;
     shiftEndTime: string;
-    actions: string;
-    
+    // actions: string 
   }

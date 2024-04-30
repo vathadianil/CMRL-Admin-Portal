@@ -1,4 +1,4 @@
-export interface ReaderManagementInterface {
+export interface EdcDeviceManagementInterface {
   lineId: number;
   stationId: number;
   equipmentGroupId: number;
@@ -8,6 +8,5 @@ export interface ReaderManagementInterface {
   terminalId: string;
   terminalIpAddress: string;
   paytmActivationCode: string;
-  activeStatus: boolean;
-  action: boolean;
+  activeStatus: string;
 }

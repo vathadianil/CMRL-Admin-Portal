@@ -84,7 +84,10 @@
           ></app-fab-button>
         </div>
       </div>
-      <app-table [tableData]="shiftEndTableData"></app-table>
+      <app-table 
+      [tableData]="shiftEndTableData"
+      [actions]="actions" 
+      ></app-table>
     </mat-card-content>
   </mat-card>
 </div>

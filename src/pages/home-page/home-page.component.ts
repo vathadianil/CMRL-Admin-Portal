@@ -129,6 +129,11 @@ export class HomePageComponent {
           label: 'Reader Management',
           route: 'readerManagement',
         },
+        {
+          icon: 'memory',
+          label: 'EDC Device Management',
+          route: 'edcDeviceManagement',
+        },
       ],
     },
     {
