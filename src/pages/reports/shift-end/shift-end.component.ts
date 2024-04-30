@@ -25,7 +25,8 @@ import { CustomInputComponent } from '../../../components/custom-input/custom-in
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 @Component({
   selector: 'app-shift-end',
   standalone: true,
