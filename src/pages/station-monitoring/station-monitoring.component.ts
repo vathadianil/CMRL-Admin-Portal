@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { AutomaticGateComponent } from '../../components/gate/automatic-gate/automatic-gate.component';
+import { TomRoomLayoutComponent } from '../../components/tom-room-layout/tom-room-layout.component';
 
 @Component({
   selector: 'app-station-monitoring',
   standalone: true,
-  imports: [MatCardModule, AutomaticGateComponent],
+  imports: [MatCardModule, AutomaticGateComponent, TomRoomLayoutComponent],
   templateUrl: './station-monitoring.component.html',
   styleUrl: './station-monitoring.component.scss',
 })
@@ -138,6 +139,48 @@ export class StationMonitoringComponent {
       direction: {
         isEntry: true,
         isExit: true,
+      },
+    },
+  ];
+
+  tom1Data = [
+    {
+      location: 'tom1',
+      type: 'tom',
+      equipmentId: '0001',
+      status: {
+        hasError: false,
+        hasCommunicationBreak: false,
+      },
+    },
+    {
+      location: 'tom1',
+      type: 'tvm',
+      equipmentId: '0001',
+      status: {
+        hasError: false,
+        hasCommunicationBreak: false,
+      },
+    },
+  ];
+
+  tom2Data = [
+    {
+      location: 'tom2',
+      type: 'tvm',
+      equipmentId: '0011',
+      status: {
+        hasError: false,
+        hasCommunicationBreak: false,
+      },
+    },
+    {
+      location: 'tom2',
+      type: 'tom',
+      equipmentId: '0011',
+      status: {
+        hasError: false,
+        hasCommunicationBreak: false,
       },
     },
   ];

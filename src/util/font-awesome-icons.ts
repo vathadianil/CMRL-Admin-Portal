@@ -13,9 +13,10 @@ import {
   faPlus,
   faPen,
   faTrashCan,
+  faCircleInfo,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
-  let fontawesomeIcon = faHome;
+  let fontawesomeIcon = faCircleInfo;
   switch (icon) {
     case 'home':
       return (fontawesomeIcon = faHome);

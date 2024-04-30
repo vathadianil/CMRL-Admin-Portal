@@ -1,0 +1,8 @@
+<div class="tom-room">
+  @for (equipment of tomRoomData; track $index) { @if (equipment.type === 'tom')
+  {
+  <app-tom [equipmentData]="equipment"></app-tom>
+  }@else if (equipment.type === 'tvm') {
+  <app-tvm [equipmentData]="equipment"> </app-tvm>
+  } }
+</div>

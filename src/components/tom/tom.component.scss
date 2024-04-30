@@ -1,0 +1,27 @@
+@use "../../scss//util" as *;
+.tom {
+  //   border: 2px solid var(--black);
+
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  &__img-container {
+    width: 150px;
+    height: 130px;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+  }
+  &__animation {
+    position: absolute;
+    bottom: 30px;
+    left: 80px;
+  }
+  &__id,
+  &__type {
+    font-size: toRem(14);
+  }
+}

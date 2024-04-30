@@ -1,5 +1,8 @@
 <mat-card class="monitoring">
-  <div style="display: flex; justify-content: space-around">
+  <div
+    style="display: flex; justify-content: space-around; align-items: center"
+  >
+    <app-tom-room-layout [tomRoomData]="tom1Data"></app-tom-room-layout>
     <div>
       <app-automatic-gate [gateData]="array1Data"></app-automatic-gate>
       <app-automatic-gate [gateData]="array2Data"></app-automatic-gate>
@@ -8,5 +11,6 @@
       <app-automatic-gate [gateData]="array3Data"></app-automatic-gate>
       <app-automatic-gate [gateData]="array4Data"></app-automatic-gate>
     </div>
+    <app-tom-room-layout [tomRoomData]="tom2Data"></app-tom-room-layout>
   </div>
 </mat-card>

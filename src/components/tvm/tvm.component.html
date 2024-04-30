@@ -1,0 +1,18 @@
+<div class="tvm">
+  <p class="tvm__type">{{ equipmentData?.type | uppercase }}</p>
+  <div class="tvm__img-container">
+    <img
+      src="../../assets/img/tvm-in-service.svg"
+      alt="tvm inservice"
+      class="tvm__image"
+    />
+  </div>
+  <p class="tvm__id">{{ equipmentData?.equipmentId }}</p>
+  <div class="tvm__animation">
+    <app-lottie-animation
+      [options]="{ path: '../../assets/lottie-files/in-service.json',
+  loop: true,
+  autoplay: true,}"
+    ></app-lottie-animation>
+  </div>
+</div>
