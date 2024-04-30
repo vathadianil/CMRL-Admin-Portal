@@ -11,8 +11,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { merge } from 'rxjs';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../util/font-awesome-icons';
 @Component({
   selector: 'app-input',
   standalone: true,
@@ -23,6 +23,7 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
+    FontAwesomeModule,
   ],
   templateUrl: './input.component.html',
   styleUrl: './input.component.scss',
@@ -36,6 +37,7 @@ export class InputComponent {
   input = new FormControl('', [Validators.required]);
   errorMessage = '';
   hide = true;
+  getIcon = getIcon;
 
   constructor() {
     merge(this.input.statusChanges, this.input.valueChanges)

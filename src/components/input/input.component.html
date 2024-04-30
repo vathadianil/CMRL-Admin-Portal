@@ -20,7 +20,10 @@
     [attr.aria-label]="'Hide password'"
     [attr.aria-pressed]="hide"
   >
-    <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    <fa-icon
+      [icon]="hide ? getIcon('visibility_off') : getIcon('visibility')"
+      >{{ hide ? "visibility_off" : "visibility" }}</fa-icon
+    >
   </button>
   } @if (input.invalid) {
   <mat-error>{{ errorMessage }}</mat-error>

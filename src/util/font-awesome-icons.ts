@@ -27,6 +27,9 @@ import {
   faMap,
   faSliders,
   faTrainTram,
+  faEye,
+  faEyeSlash,
+  faCopyright,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faCircleInfo;
@@ -87,6 +90,12 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faSliders);
     case 'tram':
       return (fontawesomeIcon = faTrainTram);
+    case 'visibility':
+      return (fontawesomeIcon = faEye);
+    case 'visibility_off':
+      return (fontawesomeIcon = faEyeSlash);
+    case 'copyright':
+      return (fontawesomeIcon = faCopyright);
   }
   return fontawesomeIcon;
 }
