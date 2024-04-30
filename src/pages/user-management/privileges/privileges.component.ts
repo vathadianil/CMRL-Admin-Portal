@@ -38,7 +38,7 @@ export class PrivilegesComponent {
   fileName = 'Privileges';
   columnsToExport = exportPriviledgesData;
   params: any[] = [];
-  actionItems = ['update', 'delete'];
+  actionItems = ['update'];
   sortCols = ['Privilege Code', 'Privilege Type', 'Status'];
 
   constructor(

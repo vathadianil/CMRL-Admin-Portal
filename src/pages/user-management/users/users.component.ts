@@ -38,7 +38,7 @@ export class UsersComponent {
   fileName = 'Users';
   columnsToExport = exportUsersData;
   params: any[] = [];
-  actionItems = ['update', 'delete'];
+  actionItems = ['update'];
   sortCols = ['User code', 'Name', 'Role', 'Station', 'Line', 'Status'];
 
   constructor(
