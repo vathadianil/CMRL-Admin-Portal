@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { AutomaticGateComponent } from '../../components/gate/automatic-gate/automatic-gate.component';
-import { TomRoomLayoutComponent } from '../../components/tom-room-layout/tom-room-layout.component';
+import { TomRoomLayoutComponent } from '../../components/rooms-layout/tom-room-layout/tom-room-layout.component';
 
 @Component({
   selector: 'app-station-monitoring',
@@ -167,19 +167,19 @@ export class StationMonitoringComponent {
   tom2Data = [
     {
       location: 'tom2',
-      type: 'tvm',
+      type: 'tom',
       equipmentId: '0011',
       status: {
-        hasError: false,
+        hasError: true,
         hasCommunicationBreak: false,
       },
     },
     {
       location: 'tom2',
-      type: 'tom',
+      type: 'tvm',
       equipmentId: '0011',
       status: {
-        hasError: false,
+        hasError: true,
         hasCommunicationBreak: false,
       },
     },

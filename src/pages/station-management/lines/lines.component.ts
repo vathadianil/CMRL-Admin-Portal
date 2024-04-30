@@ -42,7 +42,7 @@ export class LinesComponent {
   fileName = 'Lines';
   columnsToExport = exportLinesData;
   params: any[] = [];
-  actionItems = ['update', 'delete'];
+  actionItems = ['update'];
   sortCols = ['lineId', 'lineName', 'lineShortname', 'status'];
 
   constructor(

@@ -147,7 +147,7 @@ export class ExitSummaryReportPageComponent implements OnInit {
       },
       {
         key: 'stations',
-        value: this.exitSummaryForm.get('transactionType')?.value,
+        value: this.exitSummaryForm.get('stations')?.value,
       },
       {
         key: 'transactionType',

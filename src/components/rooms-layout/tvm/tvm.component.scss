@@ -1,4 +1,4 @@
-@use "../../scss//util" as *;
+@use "../../../scss//util" as *;
 .tvm {
   //   border: 2px solid var(--black);
   margin: 1em;
@@ -18,6 +18,9 @@
     position: absolute;
     top: 30px;
     left: 55px;
+    &-com-break {
+      top: 25px;
+    }
   }
   &__id,
   &__type {

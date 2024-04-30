@@ -16,17 +16,16 @@ import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { ReaderManagementInterface } from '../../../models/reader-management.interface';
+
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { getIcon } from '../../../util/font-awesome-icons';
+
+import { EdcDeviceManagementInterface } from '../../../models/edc-device-management.interface';
+import { ToggleSliderComponent } from '../../../components/toggle-slider/toggle-slider.component';
 
 @Component({
-  selector: 'app-rider-management-page',
+  selector: 'app-edc-device-management-page',
   standalone: true,
-  templateUrl: './reader-management-page.component.html',
-  styleUrl: './reader-management-page.component.scss',
   imports: [
     MatCardModule,
     MatIconModule,
@@ -38,19 +37,21 @@ import { getIcon } from '../../../util/font-awesome-icons';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
-    FontAwesomeModule,
+    ToggleSliderComponent,
   ],
+  templateUrl: './edc-device-management-page.component.html',
+  styleUrl: './edc-device-management-page.component.scss',
 })
-export class ReaderManagementPageComponent implements OnInit {
-  getIcon = getIcon;
-  readerManagemetForm!: FormGroup;
+export class EdcDeviceManagementPageComponent {
+  edcDeviceManagemetForm!: FormGroup;
 
   stationData: any[] = [];
   corridorData: any[] = [];
   stationDefaultValue = 'All Stations';
+  actions = ['toggle'];
 
-  fileName = 'Reader Management';
-  columnsToExport = readerManagementData;
+  fileName = 'EDC Device Management';
+  columnsToExport = edcDeviceManagementData;
   params: any[] = [];
 
   constructor(
@@ -59,9 +60,9 @@ export class ReaderManagementPageComponent implements OnInit {
     private exportPdfService: ExportPdfService
   ) {}
 
-  readerManagementTable: {
+  edcDeviceManagementTable: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<ReaderManagementInterface>;
+    dataSource: MatTableDataSource<EdcDeviceManagementInterface>;
   }[] = [
     {
       displayedColumns: [
@@ -75,9 +76,8 @@ export class ReaderManagementPageComponent implements OnInit {
         'terminalIpAddress',
         'paytmActivationCode',
         'activeStatus',
-        'action',
       ],
-      dataSource: new MatTableDataSource<ReaderManagementInterface>([
+      dataSource: new MatTableDataSource<EdcDeviceManagementInterface>([
         {
           lineId: 1,
           stationId: 1101,
@@ -88,18 +88,39 @@ export class ReaderManagementPageComponent implements OnInit {
           terminalId: '10114F',
           terminalIpAddress: '10.21.17.82',
           paytmActivationCode: '11180534',
-          activeStatus: true,
-          action: true,
+          activeStatus: 'active',
+        },
+
+        {
+          lineId: 1,
+          stationId: 1101,
+          equipmentGroupId: 5,
+          equipmentId: 5012,
+          deviceId: '17ED6A76',
+          terminalType: 'exit',
+          terminalId: '10114F',
+          terminalIpAddress: '10.21.17.82',
+          paytmActivationCode: '11180534',
+          activeStatus: 'active',
         },
       ]),
     },
   ];
 
+  // setActiveStatus(){
+  //   this.edcDeviceManagementTable[0].dataSource.data.forEach(
+  //     item => {
+  //       item.activeStatus = item.action ? "active" : "deactive"
+  //       console.log(item.activeStatus)
+  //     }
+  //   )
+  // }
+
   ngOnInit(): void {
     this.stationData = this.commonService.getStationsList();
     this.corridorData = this.commonService.getCorridors();
-    this.readerManagemetForm = new FormGroup({
-      firstName: new FormControl(),
+    this.edcDeviceManagemetForm = new FormGroup({
+      corridor: new FormControl(Validators.required),
     });
   }
 
@@ -107,23 +128,20 @@ export class ReaderManagementPageComponent implements OnInit {
     this.params = [
       {
         key: 'stations',
-        value: this.readerManagemetForm.get('stations')?.value,
-      },
-      {
-        key: 'corridor',
-        value: this.readerManagemetForm.get('corridor')?.value,
+        value: this.edcDeviceManagemetForm.get('transactionType')?.value,
       },
     ];
     return this.params;
   }
 
   onSubmit() {
-    console.log(this.readerManagemetForm.value);
+    console.log(this.edcDeviceManagemetForm.value);
+    console.log(this.edcDeviceManagementTable[0].dataSource.data);
   }
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.readerManagementTable[0].dataSource.data,
+      this.edcDeviceManagementTable[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -132,7 +150,7 @@ export class ReaderManagementPageComponent implements OnInit {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.readerManagementTable[0].dataSource.data,
+      this.edcDeviceManagementTable[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -140,7 +158,7 @@ export class ReaderManagementPageComponent implements OnInit {
   }
 }
 
-export const readerManagementData = [
+export const edcDeviceManagementData = [
   'lineId',
   'stationId',
   'equipmentGroupId',
@@ -151,5 +169,5 @@ export const readerManagementData = [
   'terminalIpAddress',
   'paytmActivationCode',
   'activeStatus',
-  'action',
+  'actions',
 ];

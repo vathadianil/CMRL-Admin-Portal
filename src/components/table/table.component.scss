@@ -34,6 +34,10 @@
     color:rgb(233, 73, 73); 
   }
 
+  &__view-icon {  
+    color:var(--blue800); 
+  }
+
   .mat-mdc-row:hover .mat-mdc-cell {
     background-color: var(--blue50);
   }

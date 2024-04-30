@@ -24,31 +24,28 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
-import { InputTextComponent } from "../../../components/input-text/input-text.component";
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { getIcon } from '../../../util/font-awesome-icons';
-
+import { InputTextComponent } from '../../../components/input-text/input-text.component';
 
 @Component({
-    selector: 'app-shift-end',
-    standalone: true,
-    templateUrl: './shift-end.component.html',
-    styleUrl: './shift-end.component.scss',
-    imports: [
-        MatCardModule,
-        MatIconModule,
-        PagetitleComponent,
-        DropDownComponent,
-        ButtonFieldComponent,
-        ReactiveFormsModule,
-        SearchComponent,
-        FabButtonFieldComponent,
-        TableComponent,
-        DateTimePickerComponent,
-        CustomInputComponent,
-        InputTextComponent,
-        FontAwesomeModule
-    ]
+  selector: 'app-shift-end',
+  standalone: true,
+  templateUrl: './shift-end.component.html',
+  styleUrl: './shift-end.component.scss',
+  imports: [
+    MatCardModule,
+    MatIconModule,
+    PagetitleComponent,
+    DropDownComponent,
+    ButtonFieldComponent,
+    ReactiveFormsModule,
+    SearchComponent,
+    FabButtonFieldComponent,
+    TableComponent,
+    DateTimePickerComponent,
+    CustomInputComponent,
+    InputTextComponent,
+        FontAwesomeModule,
+  ],
 })
 export class ShiftEndComponent implements OnInit {
 
@@ -61,6 +58,7 @@ export class ShiftEndComponent implements OnInit {
   params: any[] = [];
   fileName = 'Shift End Report';
   columnsToExport = shiftEndReportData;
+  actions = ['update'];
 
   constructor(
     private commonService: CommonService,
@@ -84,7 +82,7 @@ export class ShiftEndComponent implements OnInit {
         'businessDate',
         'shiftStartTime',
         'shiftEndTime',
-        'actions',
+      
       ],
       dataSource: new MatTableDataSource<ShiftEndDataInterface>([
         {
@@ -98,7 +96,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '29-Feb-2023',
           shiftStartTime: '30-Dec-2023 09:35:29',
           shiftEndTime: '30-Dec-2023 10:35:29',
-          actions: 'view_report',
         },
         {
           id: '2',
@@ -111,7 +108,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '30-Mar-2024',
           shiftStartTime: '30-Oct-2023 12:35:29',
           shiftEndTime: '12-Oct-2023 12:35:29',
-          actions: 'view_report',
         },
         {
           id: '3',
@@ -124,7 +120,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '30-Mar-2024',
           shiftStartTime: '12-Mar-2023 10:35:29',
           shiftEndTime: '15-Mar-2024 10:35:29',
-          actions: 'view_report',
         },
         {
           id: '4',
@@ -137,7 +132,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '16-Jan-2023',
           shiftStartTime: '30-Dec-2023 09:35:29',
           shiftEndTime: '25-Apr-2023 12:14:29',
-          actions: 'view_report',
         },
         {
           id: '5',
@@ -150,7 +144,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '29-Feb-2023',
           shiftStartTime: '30-Oct-2023 12:35:29',
           shiftEndTime: '25-Apr-2024 12:14:29',
-          actions: 'view_report',
         },
         {
           id: '6',
@@ -163,7 +156,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '16-Jan-2023',
           shiftStartTime: '25-Apr-2023 12:14:29',
           shiftEndTime: '09-May-2024 11:11:11',
-          actions: 'view_report',
         },
         {
           id: '7',
@@ -176,7 +168,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '29-Feb-2023',
           shiftStartTime: '09-May-2024 11:11:11',
           shiftEndTime: '30-Dec-2023 10:35:29',
-          actions: 'view_report',
         },
         {
           id: '8',
@@ -189,7 +180,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '29-Feb-2023',
           shiftStartTime: '12-Mar-2023 10:35:29',
           shiftEndTime: '09-May-2024 11:11:11',
-          actions: 'view_report',
         },
         {
           id: '9',
@@ -202,7 +192,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '29-Feb-2023',
           shiftStartTime: '25-Apr-2023 12:14:29',
           shiftEndTime: '30-Dec-2023 09:35:29',
-          actions: 'view_report',
         },
         {
           id: '10',
@@ -215,7 +204,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '16-Jan-2023',
           shiftStartTime: '30-Oct-2023 12:35:29',
           shiftEndTime: '25-Apr-2023 12:14:29',
-          actions: 'view_report',
         },
         {
           id: '11',
@@ -228,7 +216,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '29-Feb-2023',
           shiftStartTime: '12-Mar-2023 10:35:29',
           shiftEndTime: '30-Dec-2023 09:35:29',
-          actions: 'view_report',
         },
         {
           id: '12',
@@ -241,7 +228,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '16-Jan-2023',
           shiftStartTime: '30-Oct-2023 12:35:29',
           shiftEndTime: '30-Dec-2023 09:35:29',
-          actions: 'view_report',
         },
         {
           id: '13',
@@ -254,7 +240,6 @@ export class ShiftEndComponent implements OnInit {
           businessDate: '16-Jan-2023',
           shiftStartTime: '30-Oct-2023 12:35:29',
           shiftEndTime: '30-Dec-2023 10:35:29',
-          actions: 'view_report',
         },
       ]),
     },
@@ -297,8 +282,6 @@ export class ShiftEndComponent implements OnInit {
     });
   }
 
-
-
   getParameters() {
     this.params = [
       {
@@ -311,7 +294,7 @@ export class ShiftEndComponent implements OnInit {
       },
       {
         key: 'stations',
-        value: this.shiftEndForm.get('transactionType')?.value,
+        value: this.shiftEndForm.get('stations')?.value,
       },
       {
         key: 'transactionType',
@@ -329,8 +312,6 @@ export class ShiftEndComponent implements OnInit {
     console.log(this.shiftEndForm.value);
   }
 
-
-
   onExcelClicked() {
     this.exportService.exportToExcel(
       this.shiftEndTableData[0].dataSource.data,
@@ -339,7 +320,7 @@ export class ShiftEndComponent implements OnInit {
       this.getParameters()
     );
   }
-  
+
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
       this.shiftEndTableData[0].dataSource.data,
@@ -348,8 +329,6 @@ export class ShiftEndComponent implements OnInit {
       this.getParameters()
     );
   }
-
-
 }
 
 export const shiftEndReportData = [
@@ -363,5 +342,4 @@ export const shiftEndReportData = [
   'businessDate',
   'shiftStartTime',
   'shiftEndTime',
-  'actions',
 ];

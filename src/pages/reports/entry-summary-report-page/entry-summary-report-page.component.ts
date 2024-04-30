@@ -147,7 +147,7 @@ export class EntrySummaryReportPageComponent implements OnInit {
       },
       {
         key: 'stations',
-        value: this.entrySummaryForm.get('transactionType')?.value,
+        value: this.entrySummaryForm.get('stations')?.value,
       },
       {
         key: 'transactionType',
