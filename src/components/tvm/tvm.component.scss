@@ -18,6 +18,9 @@
     position: absolute;
     top: 30px;
     left: 55px;
+    &-com-break {
+      top: 25px;
+    }
   }
   &__id,
   &__type {

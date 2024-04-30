@@ -170,7 +170,7 @@ export class StationMonitoringComponent {
       type: 'tom',
       equipmentId: '0011',
       status: {
-        hasError: false,
+        hasError: true,
         hasCommunicationBreak: false,
       },
     },
@@ -179,7 +179,7 @@ export class StationMonitoringComponent {
       type: 'tvm',
       equipmentId: '0011',
       status: {
-        hasError: false,
+        hasError: true,
         hasCommunicationBreak: false,
       },
     },
