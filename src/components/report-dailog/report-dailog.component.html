@@ -1,23 +1,29 @@
-<!-- <h2 mat-dialog-title>{{ tableData.id }}</h2>
-<mat-dialog-content class="mat-typography">
-    <form>
-      <div *ngFor="let item of tableData | keyvalue" class="outer-container">
-        <app-input-text [label]="item.key.toString()"></app-input-text>
-      </div>
-      <button (click)="btnClick()">Submit</button>
-    </form>
+<div class="dailog">
+  <form class="outer-container">
+    <div *ngFor="let item of tableData | keyvalue">
+      <app-input-text [label]="item.key.toString()"></app-input-text>
+    </div>
+  </form>
+  <div class="btn-container">
+  
+     
 
-  </mat-dialog-content> -->
+      <app-button-field
+      class="cancel-btn"
+        type="button"
+        backgroundColor="#fff"
+        color="#3361ff"
+        label="Cancel"
+        [width]="8"
+        [height]="2.5"
+      ></app-button-field>
 
-  <div class="dailog">
-       
-          <h2 mat-dialog-title>{{ tableData.id }}</h2>
-          <form class="outer-container">
-            <div *ngFor="let item of tableData | keyvalue" >
-              <app-input-text [label]="item.key.toString()"></app-input-text>
-            </div>
-            <!-- <button (click)="btnClick()">Submit</button> -->
-            <app-button-field></app-button-field>
-          </form>
-
+      <app-button-field
+     
+      label="Save"
+      [width]="8"
+      [height]="2.5"
+    ></app-button-field>
+    
   </div>
+</div>

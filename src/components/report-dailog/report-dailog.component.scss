@@ -1,16 +1,22 @@
-.dailog{
-  
-     max-width: 600px;
-     max-height: 600px;
-  }
-
+.dailog {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  max-width: 800px;
+  max-height: 600px;
+}
 
 .outer-container {
-    display: flex;
-    flex-direction: row;
-    // justify-content: space-between;
-    flex-wrap: wrap;
-    background: #FF0000;
-    gap: 1em;
-  
-  }
+  display: grid;
+  grid-gap: .8em 1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto,50px);
+}
+
+.btn-container{
+margin-left: auto;
+}
+
+.cancel-btn{
+  margin-right: 1em;
+}

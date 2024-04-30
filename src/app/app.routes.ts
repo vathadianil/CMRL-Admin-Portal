@@ -131,7 +131,6 @@ export const routes: Routes = [
             `../pages/station-management/stations/stations.component`
           ).then((c) => c.StationsComponent),
       },
-<<<<<<< HEAD
 
       {
         path: 'edcDeviceManagement',
@@ -140,7 +139,6 @@ export const routes: Routes = [
             (c) => c.EdcDeviceManagementPageComponent
           ),
       },
-=======
       {
         path: 'users',
         loadComponent: () =>
@@ -162,7 +160,6 @@ export const routes: Routes = [
             `../pages/user-management/privileges/privileges.component`
           ).then((c) => c.PrivilegesComponent),
       },
->>>>>>> main
     ],
   },
 ];
