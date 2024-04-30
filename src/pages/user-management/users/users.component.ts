@@ -14,6 +14,8 @@ import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { exportUsersData } from '../../export-data';
 import { usersData } from '../../sample';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-users',
@@ -29,11 +31,13 @@ import { usersData } from '../../sample';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.scss',
 })
 export class UsersComponent {
+  getIcon = getIcon;
   userData: any[] = [];
   fileName = 'Users';
   columnsToExport = exportUsersData;
