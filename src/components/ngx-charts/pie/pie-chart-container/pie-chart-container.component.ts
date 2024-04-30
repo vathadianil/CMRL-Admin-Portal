@@ -6,6 +6,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { PieChartComponent } from '../pie-chart/pie-chart.component';
 import { MatDialog } from '@angular/material/dialog';
 import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-pie-chart-container',
@@ -16,12 +18,14 @@ import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component'
     MatIconModule,
     PieChartComponent,
     CommonModule,
+    FontAwesomeModule,
   ],
   templateUrl: './pie-chart-container.component.html',
   styleUrl: './pie-chart-container.component.scss',
 })
 export class PieChartContainerComponent {
   @Input() chartData: any = {};
+  getIcon = getIcon;
 
   constructor(private dialog: MatDialog) {}
 

@@ -1,0 +1,40 @@
+<div class="roles">
+  <mat-card class="roles__card">
+    <div class="roles__title-wrapper">
+      <mat-icon
+        ><span class="material-symbols-outlined">
+          settings_accessibility
+        </span></mat-icon
+      >
+      <app-page-title title="Roles"></app-page-title>
+    </div>
+  </mat-card>
+
+  <!-- =========== -->
+
+  <mat-card class="roles__card-table">
+    <mat-card-content>
+      <div class="roles__content-container">
+        <app-search></app-search>
+        <div class="roles__fab-btn-wrapper">
+          <app-fab-button
+            [icon]="'add'"
+            [showMenu]="false"
+            [isDownloadBtn]="false"
+          >
+          </app-fab-button>
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table
+        [tableData]="myTableData"
+        [actions]="actionItems"
+        [sortCols]="sortCols"
+      ></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

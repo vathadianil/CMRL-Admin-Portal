@@ -1,0 +1,38 @@
+<div class="users">
+  <mat-card class="users__card">
+    <div class="users__title-wrapper">
+      <mat-icon
+        ><span class="material-symbols-outlined"> group </span></mat-icon
+      >
+      <app-page-title title="Users"></app-page-title>
+    </div>
+  </mat-card>
+
+  <!-- =========== -->
+
+  <mat-card class="users__card-table">
+    <mat-card-content>
+      <div class="users__content-container">
+        <app-search></app-search>
+        <div class="users__fab-btn-wrapper">
+          <app-fab-button
+            [icon]="'add'"
+            [showMenu]="false"
+            [isDownloadBtn]="false"
+          >
+          </app-fab-button>
+          <app-fab-button
+            (excelClicked)="onExcelClicked()"
+            (pdfClicked)="onPdfClicked()"
+          >
+          </app-fab-button>
+        </div>
+      </div>
+      <app-table
+        [tableData]="myTableData"
+        [actions]="actionItems"
+        [sortCols]="sortCols"
+      ></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

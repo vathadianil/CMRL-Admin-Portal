@@ -6,6 +6,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-gauge-chart-contaienr',
@@ -16,12 +18,14 @@ import { ChartDialogComponent } from '../../chart-dialog/chart-dialog.component'
     MatIconModule,
     GaugeChartComponent,
     CommonModule,
+    FontAwesomeModule,
   ],
   templateUrl: './gauge-chart-contaienr.component.html',
   styleUrl: './gauge-chart-contaienr.component.scss',
 })
 export class GaugeChartContaienrComponent {
   @Input() chartData: any = {};
+  getIcon = getIcon;
 
   constructor(private dialog: MatDialog) {}
 

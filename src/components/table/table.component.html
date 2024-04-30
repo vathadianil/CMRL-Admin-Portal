@@ -42,14 +42,25 @@
             mat-icon-button
             class="table__action-icons"
           >
+<<<<<<< HEAD
             <mat-icon class="table__edit-icon" aria-label="Edit" (click)="editItem(element)">edit</mat-icon>
+=======
+            <fa-icon
+              class="table__edit-icon"
+              aria-label="Edit"
+              [icon]="getIcon('edit')"
+              >edit</fa-icon
+            >
+>>>>>>> main
           </div>
           <div
             *ngIf="actions.includes('delete')"
             mat-icon-button
             class="table__action-icons"
           >
-            <mat-icon class="table__delete-icon">delete_outline</mat-icon>
+            <fa-icon class="table__delete-icon" [icon]="getIcon('delete')"
+              >delete</fa-icon
+            >
           </div>
           <div
             *ngIf="actions.includes('toggle')"

@@ -20,12 +20,11 @@
         matTooltipPosition="above"
         [matTooltip]="item.label.length > 18 ? item.label : ''"
       >
-        <mat-icon
+        <fa-icon
+          class="home__menu-icon"
           [style.color]="active.isActive ? '#fff' : item.color"
-          matListItemIcon
-          >{{ item.icon }}</mat-icon
-        >
-
+          [icon]="getIcon(item.icon)"
+        ></fa-icon>
         <span
           class="home__menu-text"
           [style.color]="active.isActive ? '#fff' : item.color"
@@ -36,7 +35,11 @@
       <mat-expansion-panel class="home__submenu-panel">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <mat-icon [style.color]="item.color">{{ item.icon }}</mat-icon>
+            <fa-icon
+              class="home__menu-icon"
+              [style.color]="item.color"
+              [icon]="getIcon(item.icon)"
+            ></fa-icon>
             <span [style.color]="item.color"> {{ item.label }}</span>
           </mat-panel-title>
         </mat-expansion-panel-header>
@@ -50,11 +53,11 @@
             matTooltipPosition="above"
             [matTooltip]="submenu.label.length > 18 ? submenu.label : ''"
           >
-            <mat-icon
-              [style.color]="active.isActive ? '#fff' : ''"
-              matListItemIcon
-              >{{ submenu.icon }}</mat-icon
-            >
+            <fa-icon
+              class="home__menu-icon"
+              [style.color]="active.isActive ? '#fff' : item.color"
+              [icon]="getIcon(submenu.icon)"
+            ></fa-icon>
             <span
               class="home__menu-text"
               [style.color]="active.isActive ? '#fff' : ''"

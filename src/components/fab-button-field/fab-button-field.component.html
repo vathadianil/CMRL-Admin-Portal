@@ -5,11 +5,12 @@
     [matMenuTriggerFor]="showMenu && menu"
     [ngClass]="isDownloadBtn ? 'fab__downlod-btn' : 'fab__add-btn'"
   >
-    <mat-icon
+    <fa-icon
       [ngClass]="
         isDownloadBtn ? 'fab__downlod-btn__color' : 'fab__add-btn__color'
       "
-      >{{ icon }}</mat-icon
+      [icon]="getIcon(icon)"
+      >{{ icon }}</fa-icon
     >
     <mat-menu #menu="matMenu">
       <button mat-menu-item class="fab__menu-content" (click)="onExcelClick()">

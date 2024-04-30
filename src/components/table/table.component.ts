@@ -13,10 +13,15 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+<<<<<<< HEAD
 import { ToggleSliderComponent } from '../toggle-slider/toggle-slider.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ReportDailogComponent } from '../report-dailog/report-dailog.component';
 
+=======
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../util/font-awesome-icons';
+>>>>>>> main
 @Component({
   standalone: true,
   imports: [
@@ -25,7 +30,11 @@ import { ReportDailogComponent } from '../report-dailog/report-dailog.component'
     MatIconModule,
     MatPaginatorModule,
     MatSortModule,
+<<<<<<< HEAD
     ToggleSliderComponent,
+=======
+    FontAwesomeModule,
+>>>>>>> main
   ],
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -43,6 +52,8 @@ export class TableComponent implements OnInit, AfterViewInit {
   @Input() displaySecondRowColumns: string[] = [];
   @ViewChild(MatSort) sort!: MatSort;
   actionColWidth = '';
+  getIcon = getIcon;
+  icon: any;
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,

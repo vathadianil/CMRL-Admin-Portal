@@ -51,3 +51,23 @@ export const exportLinesData = [
   'Line Short Name',
   'Status',
 ];
+
+export const exportUsersData = [
+  'User code',
+  'Name',
+  'Role',
+  'Station',
+  'Line',
+  'Status',
+];
+export const exportRolesData = [
+  'Role Code',
+  'Role Name',
+  'Role Privileges',
+  'Status',
+];
+export const exportPriviledgesData = [
+  'Privilege Code',
+  'Privilege Type',
+  'Status',
+];

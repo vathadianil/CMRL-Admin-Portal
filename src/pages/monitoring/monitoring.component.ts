@@ -29,7 +29,7 @@ export class MonitoringComponent {
       isActive: true,
       stationId: '0101',
       stationName: 'Madhavaram Milk Colony',
-      color:'#7f0183'
+      color:'linear-gradient(to bottom, #730176, #a5006e, #d00059, #ef003a, #ff0000)'
     },
     {
       top: 80,
@@ -159,7 +159,7 @@ export class MonitoringComponent {
       isActive: true,
       stationId: '0114',
       stationName: 'Kilpauk',
-      color:'#7f0183'
+      color:'linear-gradient(to bottom, #730176, #af0043, #b43c00, #8c7900, #1ba40b)'
     },
     {
       top: 498,
@@ -209,7 +209,7 @@ export class MonitoringComponent {
       isActive: true,
       stationId: '0119',
       stationName: 'Thousand Lights',
-      color:'#7f0183'
+      color:'linear-gradient(to bottom, #730176, #73008d, #6c00a8, #5700c5, #0b17e5)'
     },
      {
       top: 665,
@@ -239,7 +239,7 @@ export class MonitoringComponent {
       isActive: true,
       stationId: '0122',
       stationName: 'Thirumayilai',
-      color:'#7f0183'
+      color:'linear-gradient(to bottom, #730176, #b3006a, #e12554, #fa5f36, #ff9806)'
     },
      {
       top: 808.5,
@@ -409,7 +409,7 @@ export class MonitoringComponent {
       isActive: true,
       stationId: '0139',
       stationName: 'Sholinganallur',
-      color:'#7f0183'
+      color:'linear-gradient(to bottom, #730176, #a5006e, #d00059, #ef003a, #ff0000)'
     },
     {
       top: 1380.5,
@@ -643,7 +643,7 @@ export class MonitoringComponent {
       isActive: true,
       stationId: '0213',
       stationName: 'Thirumangalam',
-      color:'#ff0000'
+      color:'linear-gradient(to bottom, #ff0000, #da5f00, #ab8300, #749900, #1ca80b)'
     },
     {
       top: 408.5,
@@ -673,7 +673,7 @@ export class MonitoringComponent {
       isActive: true,
       stationId: '0215',
       stationName: 'Puratchi Thalaivi Dr.J. Jayalalitha',
-      color:'#ff0000'
+      color:'linear-gradient(to bottom, #ff0000, #da5f00, #ab8300, #749900, #1ca80b)'
     },
     {
       top: 566.8,
@@ -1063,13 +1063,468 @@ export class MonitoringComponent {
     {
       top: 685,
       bottom: 0,
-      left: 494,
+      left: 538,
       right: 0,
       isActive: true,
       stationId: '0309',
       stationName: 'Avichi School',
       color:'#ff9806'
     },
+    {
+      top: 685,
+      bottom: 0,
+      left: 581,
+      right: 0,
+      isActive: true,
+      stationId: '0310',
+      stationName: 'Saligramam',
+      color:'#ff9806'
+    },
+    {
+      top: 682.5,
+      bottom: 0,
+      left: 624.5,
+      right: 0,
+      isActive: true,
+      stationId: '0311',
+      stationName: 'Vadapalani',
+      color:'linear-gradient(to bottom, #1ca80b, #71a900, #a6a700, #d5a100, #ff9806)'
+    },
+    {
+      top: 654.5,
+      bottom: 0,
+      left: 660,
+      right: 0,
+      isActive: true,
+      stationId: '0312',
+      stationName: 'Power House',
+      color:'#ff9806'
+    },
+    {
+      top: 623.5,
+      bottom: 0,
+      left: 701,
+      right: 0,
+      isActive: true,
+      stationId: '0313',
+      stationName: 'Meenakshi College',
+      color:'#ff9806'
+    },
+    {
+      top: 632.5,
+      bottom: 0,
+      left: 755,
+      right: 0,
+      isActive: true,
+      stationId: '0314',
+      stationName: 'Nungambak Kam Metro',
+      color:'#ff9806'
+    },
+    {
+      top: 688,
+      bottom: 0,
+      left: 775,
+      right: 0,
+      isActive: true,
+      stationId: '0315',
+      stationName: 'Panagal Park',
+      color:'#ff9806'
+    },
+    {
+      top: 749,
+      bottom: 0,
+      left: 780,
+      right: 0,
+      isActive: true,
+      stationId: '0316',
+      stationName: 'Nandanam',
+      color:'linear-gradient(to bottom, #0b17e5, #d000ab, #ff006b, #ff4936, #ff9806)'
+    },
+    {
+      top: 776.5,
+      bottom: 0,
+      left: 791,
+      right: 0,
+      isActive: true,
+      stationId: '0317',
+      stationName: 'Boat Club',
+      color:'#ff9806'
+    },
+    {
+      top: 783.5,
+      bottom: 0,
+      left: 827,
+      right: 0,
+      isActive: true,
+      stationId: '0318',
+      stationName: 'Bharathidasan Road',
+      color:'#ff9806'
+    },
+    {
+      top: 751,
+      bottom: 0,
+      left: 888,
+      right: 0,
+      isActive: true,
+      stationId: '0319',
+      stationName: 'Alwarpet',
+      color:'#ff9806'
+    },
+    {
+      top: 751,
+      bottom: 0,
+      left: 1020.5,
+      right: 0,
+      isActive: true,
+      stationId: '0320',
+      stationName: 'Kutchery Road',
+      color:'#ff9806'
+    },
+    {
+      top: 710,
+      bottom: 0,
+      left: 1056.5,
+      right: 0,
+      isActive: true,
+      stationId: '0321',
+      stationName: 'Lighthouse Metro',
+      color:'#ff9806'
+    },
+  ];
+  
+  BlueLineData=[
+    {
+      top: 1063.5,
+      bottom: 0,
+      left: 491.5,
+      right: 0,
+      isActive: true,
+      stationId: '0401',
+      stationName: 'Airport',
+      color:'linear-gradient(to bottom, #0b17e5, #006eff, #008bda, #009d76, #1ca80b)'
+    },
+    {
+      top: 1016.5,
+      bottom: 0,
+      left: 531.5,
+      right: 0,
+      isActive: true,
+      stationId: '0402',
+      stationName: 'Meenambakkam Metro',
+      color:'linear-gradient(to bottom, #0b17e5, #006eff, #008bda, #009d76, #1ca80b)'
+    },
+    {
+      top: 966,
+      bottom: 0,
+      left: 579.5,
+      right: 0,
+      isActive: true,
+      stationId: '0403',
+      stationName: 'Nanganallur Road',
+      color:'linear-gradient(to bottom, #0b17e5, #006eff, #008bda, #009d76, #1ca80b)'
+    },
+    {
+      top: 880,
+      bottom: 0,
+      left: 660,
+      right: 0,
+      isActive: true,
+      stationId: '0404',
+      stationName: 'Guindy Metro',
+      color:'#0b17e5'
+    },
+    {
+      top: 846,
+      bottom: 0,
+      left: 690,
+      right: 0,
+      isActive: true,
+      stationId: '0404',
+      stationName: 'Litle Mount',
+      color:'#0b17e5'
+    },
+    {
+      top: 814,
+      bottom: 0,
+      left: 721,
+      right: 0,
+      isActive: true,
+      stationId: '0405',
+      stationName: 'Saidapet Metro',
+      color:'#0b17e5'
+    },
+    {
+      top: 713,
+      bottom: 0,
+      left: 816.5,
+      right: 0,
+      isActive: true,
+      stationId: '0406',
+      stationName: 'Teynampet',
+      color:'#0b17e5'
+    },
+    {
+      top: 674,
+      bottom: 0,
+      left: 852,
+      right: 0,
+      isActive: true,
+      stationId: '0407',
+      stationName: 'AG-DMS',
+      color:'#0b17e5'
+    },
+    {
+      top: 592,
+      bottom: 0,
+      left: 927.5,
+      right: 0,
+      isActive: true,
+      stationId: '0408',
+      stationName: 'LIC',
+      color:'#0b17e5'
+    },
+    {
+      top: 548,
+      bottom: 0,
+      left: 969,
+      right: 0,
+      isActive: true,
+      stationId: '0409',
+      stationName: 'Government Estate',
+      color:'#0b17e5'
+    },
+    {
+      top: 475,
+      bottom: 0,
+      left: 1028.5,
+      right: 0,
+      isActive: true,
+      stationId: '0410',
+      stationName: 'Puratchi Thalaivar Dr.M.G.R Center',
+      color:'linear-gradient(to top, #0b17e5, #006eff, #008bda, #009d76, #1ca80b)'
+    },
+    {
+      top: 475,
+      bottom: 0,
+      left: 1080,
+      right: 0,
+      isActive: true,
+      stationId: '0411',
+      stationName: 'High Court',
+      color:'#0b17e5'
+    },
+    {
+      top: 405,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0412',
+      stationName: 'Mannadi',
+      color:'#0b17e5'
+    },
+    {
+      top: 337,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0413',
+      stationName: 'Washermanpet Metro',
+      color:'#0b17e5'
+    },
+    {
+      top: 302.5,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0414',
+      stationName: 'Sir Thyagaraya College',
+      color:'#0b17e5'
+    },
+    {
+      top: 263.5,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0415',
+      stationName: 'Thondiarpet Metro',
+      color:'#0b17e5'
+    },
+    {
+      top: 229,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0416',
+      stationName: 'New Washermanpet',
+      color:'#0b17e5'
+    },
+    {
+      top: 197,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0417',
+      stationName: 'Tollgate',
+      color:'#0b17e5'
+    },
+    {
+      top: 161,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0418',
+      stationName: 'Kaladipet',
+      color:'#0b17e5'
+    },
+    {
+      top: 125,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0419',
+      stationName: 'Thiruvottriyur Theradi',
+      color:'#0b17e5'
+    },
+    {
+      top: 89,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0420',
+      stationName: 'Thiruvottriyur Metro',
+      color:'#0b17e5'
+    },
+    {
+      top: 55,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0421',
+      stationName: 'WIMCO Nagar Metro',
+      color:'#0b17e5'
+    },
+    {
+      top: 17.5,
+      bottom: 0,
+      left: 1092.5,
+      right: 0,
+      isActive: true,
+      stationId: '0422',
+      stationName: 'WIMCO Nagar Depot',
+      color:'#0b17e5'
+    },
   ];
 
+  GreenLineData=[
+    {
+      top: 612.5,
+      bottom: 0,
+      left: 624.5,
+      right: 0,
+      isActive: true,
+      stationId: '0501',
+      stationName: 'Power House',
+      color:'#1ca80b'
+    },
+    {
+      top: 453,
+      bottom: 0,
+      left: 533,
+      right: 0,
+      isActive: true,
+      stationId: '0502',
+      stationName: 'Koyambedu',
+      color:'#1ca80b'
+    },
+    {
+      top: 352.5,
+      bottom: 0,
+      left: 635,
+      right: 0,
+      isActive: true,
+      stationId: '0503',
+      stationName: 'Anna Nagar Tower',
+      color:'#1ca80b'
+    },
+    {
+      top: 363.5,
+      bottom: 0,
+      left: 680,
+      right: 0,
+      isActive: true,
+      stationId: '0504',
+      stationName: 'Anna Nagar East',
+      color:'#1ca80b'
+    },
+    {
+      top: 399,
+      bottom: 0,
+      left: 715.5,
+      right: 0,
+      isActive: true,
+      stationId: '0505',
+      stationName: 'Shenoy Nagar',
+      color:'#1ca80b'
+    },
+    {
+      top: 462.5,
+      bottom: 0,
+      left: 779,
+      right: 0,
+      isActive: true,
+      stationId: '0506',
+      stationName: 'Pachayiyappas College',
+      color:'#1ca80b'
+    },
+    {
+      top: 462.5,
+      bottom: 0,
+      left: 889.5,
+      right: 0,
+      isActive: true,
+      stationId: '0507',
+      stationName: 'Nehru Park',
+      color:'#1ca80b'
+    },
+    {
+      top: 462.5,
+      bottom: 0,
+      left: 952.5,
+      right: 0,
+      isActive: true,
+      stationId: '0508',
+      stationName: 'Egmore Metro',
+      color:'#1ca80b'
+    },
+    {
+      top: 752,
+      bottom: 0,
+      left: 624.5,
+      right: 0,
+      isActive: true,
+      stationId: '0509',
+      stationName: '',
+      color:'#1ca80b'
+    },
+    {
+      top: 826.5,
+      bottom: 0,
+      left: 624.5,
+      right: 0,
+      isActive: true,
+      stationId: '0510',
+      stationName: 'Saidapet Metro',
+      color:'#1ca80b'
+    },
+  ];
 }
