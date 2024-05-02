@@ -4,16 +4,17 @@
   </p>
 
   <div class="scr-efo-room__wrapper">
-    @if (scrEfoRoomData[0]?.location ==='scr') {
-    <p style="text-align: end">You are Here</p>
+    @for (equipment of scrEfoRoomData; track $index) { @if (equipment?.type ===
+    'efo') {
+    <app-tom [equipmentData]="equipment"></app-tom>
+    }@else if (equipment?.type === 'tr') {
+    <app-tr [equipmentData]="equipment"> </app-tr>
+    } } @if (scrEfoRoomData[0]?.location ==='scr') {
+    <p style="text-align: center">
+      You <br />
+      are <br />
+      Here
+    </p>
     }
-    <div class="scr-efo-room__container">
-      @for (equipment of scrEfoRoomData; track $index) { @if (equipment?.type
-      === 'efo') {
-      <app-tom [equipmentData]="equipment"></app-tom>
-      }@else if (equipment?.type === 'tr') {
-      <app-tr [equipmentData]="equipment"> </app-tr>
-      } }
-    </div>
   </div>
 </div>
