@@ -8,8 +8,8 @@
   align-items: center;
 
   &__img-container {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     position: relative;
   }
   &__image {
@@ -18,10 +18,11 @@
   }
   &__animation {
     position: absolute;
-    top: 30px;
-    left: 55px;
+    top: 22px;
+    left: 25px;
     &-com-break {
-      top: 25px;
+      top: 15px;
+      left: 20px;
     }
   }
   &__id,

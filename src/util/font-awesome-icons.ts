@@ -23,7 +23,6 @@ import {
   faPowerOff,
   faChevronDown,
   faMoneyBill,
-  faSquareCheck,
   faMap,
   faSliders,
   faTrainTram,
@@ -76,7 +75,7 @@ export function getIcon(icon: string): any {
     case 'exit':
       return (fontawesomeIcon = faRightFromBracket);
     case 'supervisor_account':
-      return (fontawesomeIcon = faUserGroup);
+      return (fontawesomeIcon = faPersonArrowUpFromLine);
     case 'power':
       return (fontawesomeIcon = faPowerOff);
     case 'expand_more':
@@ -84,7 +83,7 @@ export function getIcon(icon: string): any {
     case 'domain_verification':
       return (fontawesomeIcon = faMoneyBill);
     case 'assignment_turned_in':
-      return (fontawesomeIcon = faSquareCheck);
+      return (fontawesomeIcon = faListCheck);
     case 'map':
       return (fontawesomeIcon = faMap);
     case 'tune':

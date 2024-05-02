@@ -211,4 +211,25 @@ export class StationMonitoringComponent {
       },
     },
   ];
+
+  efoData = [
+    {
+      location: 'efo',
+      type: 'tr',
+      equipmentId: '0011',
+      status: {
+        hasError: true,
+        hasCommunicationBreak: true,
+      },
+    },
+    {
+      location: 'efo',
+      type: 'efo',
+      equipmentId: '0041',
+      status: {
+        hasError: false,
+        hasCommunicationBreak: false,
+      },
+    },
+  ];
 }

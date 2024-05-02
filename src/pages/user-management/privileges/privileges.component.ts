@@ -14,6 +14,8 @@ import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { exportPriviledgesData, exportRolesData } from '../../export-data';
 import { privilegesData, roleData } from '../../sample';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-privileges',
@@ -29,11 +31,13 @@ import { privilegesData, roleData } from '../../sample';
     SearchComponent,
     FabButtonFieldComponent,
     TableComponent,
+    FontAwesomeModule,
   ],
   templateUrl: './privileges.component.html',
   styleUrl: './privileges.component.scss',
 })
 export class PrivilegesComponent {
+  getIcon = getIcon;
   userData: any[] = [];
   fileName = 'Privileges';
   columnsToExport = exportPriviledgesData;

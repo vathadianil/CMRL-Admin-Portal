@@ -2,15 +2,15 @@
   <p class="tr__type">{{ equipmentData?.type | uppercase }}</p>
   <div class="tr__img-container">
     @if (equipmentData?.status?.hasCommunicationBreak) {
-    <img src="../../assets/img/tvm-comm-break.svg" alt="TR" class="tr__image" />
+    <img src="../../assets/img/tr-comm-break.svg" alt="TR" class="tr__image" />
     }@else if (equipmentData?.status?.hasError){
     <img
-      src="../../assets/img/tvm-out-of-service.svg"
+      src="../../assets/img/tr-out-of-service.svg"
       alt="TR"
       class="tr__image"
     />
     }@else {
-    <img src="../../assets/img/tvm-in-service.svg" alt="TR" class="tr__image" />
+    <img src="../../assets/img/tr-in-service.svg" alt="TR" class="tr__image" />
     }
     <div
       class="tr__animation"
@@ -20,20 +20,25 @@
     >
       @if (equipmentData?.status?.hasCommunicationBreak) {
       <app-lottie-animation
-        [width]="35"
-        [height]="35"
+        [width]="30"
+        [height]="30"
         [options]="{ path: '../../assets/lottie-files/com-break.json',
     loop: true,
     autoplay: true,}"
       ></app-lottie-animation>
       }@else if (equipmentData?.status?.hasError ) {
       <app-lottie-animation
+        [width]="20"
+        [height]="20"
         [options]="{ path: '../../assets/lottie-files/error.json',
     loop: true,
     autoplay: true,}"
       ></app-lottie-animation>
       }@else {
+
       <app-lottie-animation
+        [width]="20"
+        [height]="20"
         [options]="{ path: '../../assets/lottie-files/in-service.json',
     loop: true,
     autoplay: true,}"
