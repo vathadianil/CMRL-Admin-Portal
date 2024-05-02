@@ -14,11 +14,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSort, Sort, MatSortModule } from '@angular/material/sort';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
 import { ToggleSliderComponent } from '../toggle-slider/toggle-slider.component';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
-import { ReportDailogComponent } from '../report-dailog/report-dailog.component';
-
+import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../util/font-awesome-icons';
+import { ModelPopupComponent } from '../model-popup/model-popup.component';
 @Component({
   standalone: true,
   imports: [
@@ -57,7 +56,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   // dailog open function
 
   openDialog(element: any) {
-    const dialogRef = this.dialog.open(ReportDailogComponent, {
+    const dialogRef = this.dialog.open(ModelPopupComponent, {
       data: element,
     });
     // console.log(element);
@@ -81,7 +80,7 @@ export class TableComponent implements OnInit, AfterViewInit {
       value: element,
     };
     // this.onActionClick.emit(data);
-    this.openDialog(element)
+    this.openDialog(element);
   }
 
   deleteItem(element: any): void {

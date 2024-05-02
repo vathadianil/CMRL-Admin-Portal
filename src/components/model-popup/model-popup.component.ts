@@ -13,10 +13,10 @@ import { InputTextComponent } from '../input-text/input-text.component';
 import { ButtonFieldComponent } from '../button-field/button-field.component';
 
 @Component({
-  selector: 'app-report-dailog',
+  selector: 'app-model-popup',
   standalone: true,
-  templateUrl: './report-dailog.component.html',
-  styleUrl: './report-dailog.component.scss',
+  templateUrl: './model-popup.component.html',
+  styleUrl: './model-popup.component.scss',
   imports: [
     TableComponent,
     InputTextComponent,
@@ -25,9 +25,9 @@ import { ButtonFieldComponent } from '../button-field/button-field.component';
     ButtonFieldComponent,
   ],
 })
-export class ReportDailogComponent {
+export class ModelPopupComponent {
   constructor(
-    public dialogRef: MatDialogRef<ReportDailogComponent>,
+    public dialogRef: MatDialogRef<ModelPopupComponent>,
     @Inject(MAT_DIALOG_DATA) public tableData: any
   ) {}
 
