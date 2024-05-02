@@ -63,6 +63,14 @@ export class TransactionSequenceComponent implements OnInit {
   fileName = 'Transaction Sequence Number Check';
   columnsToExport = transactionsequenceTableData;
   myDateTimeControl: any;
+  sortCols = [
+    'stationId',
+    'equipmentId',
+    'transactionType',
+    'transactionsequenceNumber',
+    'status',
+    'businessDate',
+  ];
 
   constructor(
     private commonService: CommonService,

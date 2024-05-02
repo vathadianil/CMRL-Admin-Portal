@@ -60,6 +60,18 @@ export class ShiftEndComponent implements OnInit {
   fileName = 'Shift End Report';
   columnsToExport = shiftEndReportData;
   actions = ['update'];
+  sortCols = [
+    'id',
+    'equipmentID',
+    'acquirerID',
+    'opertatorID',
+    'terminalID',
+    'agentID',
+    'shiftID',
+    'businessDate',
+    'shiftStartTime',
+    'shiftEndTime',
+  ];
 
   constructor(
     private commonService: CommonService,
