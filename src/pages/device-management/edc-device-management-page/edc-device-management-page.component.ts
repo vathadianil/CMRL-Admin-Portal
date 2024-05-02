@@ -78,7 +78,7 @@ export class EdcDeviceManagementPageComponent {
         'terminalId',
         'terminalIpAddress',
         'paytmActivationCode',
-        'status',
+        'Status',
       ],
       dataSource: new MatTableDataSource<EdcDeviceManagementInterface>([
         {
@@ -91,7 +91,7 @@ export class EdcDeviceManagementPageComponent {
           terminalId: '10114F',
           terminalIpAddress: '10.21.17.82',
           paytmActivationCode: '11180534',
-          status: 'In-Active',
+          Status: 'In-Active',
         },
 
         {
@@ -104,7 +104,7 @@ export class EdcDeviceManagementPageComponent {
           terminalId: '10114F',
           terminalIpAddress: '10.21.17.82',
           paytmActivationCode: '11180534',
-          status: 'Active',
+          Status: 'Active',
         },
       ]),
     },
@@ -171,6 +171,6 @@ export const edcDeviceManagementData = [
   'terminalId',
   'terminalIpAddress',
   'paytmActivationCode',
-  'status',
+  'Status',
   'actions',
 ];

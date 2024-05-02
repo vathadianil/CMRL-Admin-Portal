@@ -8,5 +8,5 @@ export interface EdcDeviceManagementInterface {
   terminalId: string;
   terminalIpAddress: string;
   paytmActivationCode: string;
- status: string;
+ Status: string;
 }
