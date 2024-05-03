@@ -41,14 +41,13 @@ import { getIcon } from '../../../util/font-awesome-icons';
     MatLabel,
     MatFormFieldModule,
     InputTextComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   templateUrl: './shift-start-report.component.html',
   styleUrl: './shift-start-report.component.scss',
 })
 export class ShiftStartReportComponent implements OnInit {
-
-  getIcon=getIcon;
+  getIcon = getIcon;
   shiftstartReportForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;
@@ -57,7 +56,18 @@ export class ShiftStartReportComponent implements OnInit {
   fileName = 'Shift Start Report';
   columnsToExport = shiftstartTableData;
   params: any[] = [];
-
+  sortCols = [
+    'shift_start_date_time',
+    'lineId',
+    'stationId',
+    'equipmentGroupId',
+    'equepmentId',
+    'acquirerId',
+    'operatorId',
+    'terminalId',
+    'agentId',
+    'tom_Efo_Shift_start',
+  ];
 
   constructor(
     private commonService: CommonService,

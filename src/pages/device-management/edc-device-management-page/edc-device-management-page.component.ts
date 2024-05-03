@@ -56,6 +56,19 @@ export class EdcDeviceManagementPageComponent {
   fileName = 'EDC Device Management';
   columnsToExport = edcDeviceManagementData;
   params: any[] = [];
+  sortCols = [
+    'lineId',
+    'stationId',
+    'equipmentGroupId',
+    'equipmentId',
+    'deviceId',
+    'terminalType',
+    'terminalId',
+    'terminalIpAddress',
+    'paytmActivationCode',
+    'activeStatus',
+    'actions',
+  ];
 
   constructor(
     private commonService: CommonService,

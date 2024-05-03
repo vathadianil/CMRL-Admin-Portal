@@ -47,7 +47,7 @@ import { getIcon } from '../../../util/font-awesome-icons';
   styleUrl: './exit-summary-report-page.component.scss',
 })
 export class ExitSummaryReportPageComponent implements OnInit {
-  getIcon=getIcon;
+  getIcon = getIcon;
   exitSummaryForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];
@@ -55,6 +55,14 @@ export class ExitSummaryReportPageComponent implements OnInit {
   params: any[] = [];
   fileName = 'Exit Summary Report';
   columnsToExport = exitSummaryReportData;
+  sortCols = [
+    'transactionDate',
+    'stationName',
+    'equipmentGroupId',
+    'equipmentId',
+    'cardType',
+    'count',
+  ];
 
   constructor(
     private commonService: CommonService,
