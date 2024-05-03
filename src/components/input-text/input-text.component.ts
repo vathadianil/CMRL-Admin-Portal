@@ -11,4 +11,5 @@ import { MatInputModule } from '@angular/material/input';
 export class InputTextComponent {
   @Input() label: string = '';
   @Input() placeholder: string = '';
+  @Input() value : string = '';
 }

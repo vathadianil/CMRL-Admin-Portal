@@ -47,9 +47,24 @@
               aria-label="Edit"
               [icon]="getIcon('edit')"
               (click)="editItem(element)"
+              >eye</fa-icon
+            >
+          </div>
+          <div
+            *ngIf="actions.includes('view')"
+            mat-icon-button
+            class="table__action-icons"
+          >
+            <fa-icon
+              class="table__view-icon"
+              aria-label="View"
+              [icon]="getIcon('eye')"
+              (click)="viewItem(element)"
               >edit</fa-icon
             >
           </div>
+
+
           <div
             *ngIf="actions.includes('delete')"
             mat-icon-button

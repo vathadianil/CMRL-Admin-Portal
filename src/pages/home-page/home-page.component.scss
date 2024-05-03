@@ -1,8 +1,6 @@
 @use "../../scss/util" as *;
 .content {
   max-height: calc(100% - 300px);
-  margin-bottom: 1em;
-  // height: 100%;
 }
 .header {
   &__container {
