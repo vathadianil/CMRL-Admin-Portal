@@ -32,7 +32,7 @@ import {
   faServer,
   faPersonArrowUpFromLine,
   faListCheck,
-  faThumbtack
+  faThumbtack,
   faFileExcel,
   faFilePdf,
   faLocationCrosshairs,

@@ -1,5 +1,3 @@
-import { sequence } from '@angular/animations';
-
 export const transactionQueryData = {
   headers: [
     { key: 'transactionDateTime', label: 'Transaction Date Time' },
@@ -533,7 +531,7 @@ export const transactionsequencedata = {
 
 export const shiftstartData = {
   headers: [
-    { key: 'shift_start_date_time', label: 'Shift Start Date Time' },
+    { key: 'shiftStartDateTime', label: 'Shift Start Date Time' },
     { key: 'lineId', label: 'Line Id' },
     { key: 'stationId', label: 'Station Id' },
     { key: 'equipmentGroupId', label: 'Equipment Group Id' },
@@ -542,11 +540,11 @@ export const shiftstartData = {
     { key: 'operatorId', label: 'Operator Id' },
     { key: 'terminalId', label: 'Terminal Id' },
     { key: 'agentId', label: 'Agent Id' },
-    { key: 'tom_Efo_Shift_start', label: 'Tom Efo Shift Start' },
+    { key: 'tomEfoShiftStart', label: 'Tom Efo Shift Start' },
   ],
   data: [
     {
-      shift_start_date_time: '30-Mar-2020 10:35:29',
+      shiftStartDateTime: '30-Mar-2020 10:35:29',
       lineId: '01',
       stationId: '0106-Moosapet',
       equipmentGroupId: '3',
@@ -555,54 +553,54 @@ export const shiftstartData = {
       operatorId: '6014',
       terminalId: '1010C2',
       agentId: '11102',
-      tom_Efo_Shift_start: '0101',
+      tomEfoShiftStart: '0101',
     },
   ],
 };
 
 export const OverStayConfigurationData = {
   headers: [
-    { key: 'Same_Station_Exit', label: 'Same Station Exit' },
-    { key: 'Over_Stay_Duration_From', label: 'Over Stay Duration Frome' },
-    { key: 'Over_Stay_Duration_To', label: 'Over Stay Duration To' },
-    { key: 'Penalty_Amount', label: 'Penalty Amount' },
+    { key: 'sameStationExit', label: 'Same Station Exit' },
+    { key: 'overStayDurationFrom', label: 'Over Stay Duration Frome' },
+    { key: 'overStayDurationTo', label: 'Over Stay Duration To' },
+    { key: 'penaltyAmount', label: 'Penalty Amount' },
   ],
   data: [
     {
-      Same_Station_Exit:'No',
-      Over_Stay_Duration_From: 151,
-      Over_Stay_Duration_To: 211,
-      Penalty_Amount: 1,
+      sameStationExit:'No',
+      overStayDurationFrom: 151,
+      overStayDurationTo: 211,
+      penaltyAmount: 1,
     },
     {
-      Same_Station_Exit:'No',
-      Over_Stay_Duration_From: 211,
-      Over_Stay_Duration_To: 270,
-      Penalty_Amount: 3,
+      sameStationExit:'No',
+      overStayDurationFrom: 211,
+      overStayDurationTo: 270,
+      penaltyAmount: 3,
     },
     {
-      Same_Station_Exit:'No',
-      Over_Stay_Duration_From: 271,
-      Over_Stay_Duration_To: 330,
-      Penalty_Amount: 4,
+      sameStationExit:'No',
+      overStayDurationFrom: 271,
+      overStayDurationTo: 330,
+      penaltyAmount: 4,
     },
     {
-      Same_Station_Exit:'No',
-      Over_Stay_Duration_From: 331,
-      Over_Stay_Duration_To: 999,
-      Penalty_Amount: 6,
+      sameStationExit:'No',
+      overStayDurationFrom: 331,
+      overStayDurationTo: 999,
+      penaltyAmount: 6,
     },
     {
-      Same_Station_Exit:'No',
-      Over_Stay_Duration_From: 31,
-      Over_Stay_Duration_To: 90,
-      Penalty_Amount: 1,
+      sameStationExit:'No',
+      overStayDurationFrom: 31,
+      overStayDurationTo: 90,
+      penaltyAmount: 1,
     },
     {
-      Same_Station_Exit:'No',
-      Over_Stay_Duration_From: 91,
-      Over_Stay_Duration_To: 150,
-      Penalty_Amount: 3,
+      sameStationExit:'No',
+      overStayDurationFrom: 91,
+      overStayDurationTo: 150,
+      penaltyAmount: 3,
     },
   ],
 };
