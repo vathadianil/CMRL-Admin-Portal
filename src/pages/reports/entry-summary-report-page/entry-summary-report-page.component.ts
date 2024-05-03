@@ -47,7 +47,7 @@ import { getIcon } from '../../../util/font-awesome-icons';
   ],
 })
 export class EntrySummaryReportPageComponent implements OnInit {
-  getIcon=getIcon;
+  getIcon = getIcon;
   entrySummaryForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];
@@ -55,6 +55,14 @@ export class EntrySummaryReportPageComponent implements OnInit {
   equipmentData: any[] = [];
   fileName = 'Entry Summary Report';
   columnsToExport = entrySummaryReportData;
+  sortCols = [
+    'transactionDate',
+    'stationName',
+    'equipmentGroupId',
+    'equipmentId',
+    'cardType',
+    'count',
+  ];
 
   constructor(
     private commonService: CommonService,
