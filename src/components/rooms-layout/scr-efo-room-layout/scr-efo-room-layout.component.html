@@ -10,11 +10,32 @@
     }@else if (equipment?.type === 'tr') {
     <app-tr [equipmentData]="equipment"> </app-tr>
     } } @if (scrEfoRoomData[0]?.location ==='scr') {
-    <p style="text-align: center">
-      You <br />
-      are <br />
-      Here
-    </p>
+    <mat-card class="scr-efo-room__icon-container">
+      <fa-icon
+        class="scr-efo-room__icon"
+        [icon]="getIcon('location')"
+      ></fa-icon>
+
+      <div class="scr-efo-room__animation">
+        <app-lottie-animation
+          [options]="{ path: '../../assets/lottie-files/location.json',
+      loop: true,
+      autoplay: true,}"
+          [width]="60"
+          [height]="60"
+        ></app-lottie-animation>
+      </div>
+
+      <div class="scr-efo-room__info">
+        <p>
+          @for (char of 'You are Here'.split(''); track $index) {
+          <span [style.transform]="'rotate(' + $index * 16 + 'deg)'">{{
+            char
+          }}</span>
+          }
+        </p>
+      </div>
+    </mat-card>
     }
   </div>
 </div>

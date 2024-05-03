@@ -22,7 +22,8 @@ import { ExportPdfService } from '../../../services/export-pdf.service';
 
 import { EdcDeviceManagementInterface } from '../../../models/edc-device-management.interface';
 import { ToggleSliderComponent } from '../../../components/toggle-slider/toggle-slider.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../../util/font-awesome-icons';
 @Component({
   selector: 'app-edc-device-management-page',
   standalone: true,
@@ -38,11 +39,13 @@ import { ToggleSliderComponent } from '../../../components/toggle-slider/toggle-
     FabButtonFieldComponent,
     TableComponent,
     ToggleSliderComponent,
+    FontAwesomeModule
   ],
   templateUrl: './edc-device-management-page.component.html',
   styleUrl: './edc-device-management-page.component.scss',
 })
 export class EdcDeviceManagementPageComponent {
+  getIcon = getIcon;
   edcDeviceManagemetForm!: FormGroup;
 
   stationData: any[] = [];
@@ -53,6 +56,19 @@ export class EdcDeviceManagementPageComponent {
   fileName = 'EDC Device Management';
   columnsToExport = edcDeviceManagementData;
   params: any[] = [];
+  sortCols = [
+    'lineId',
+    'stationId',
+    'equipmentGroupId',
+    'equipmentId',
+    'deviceId',
+    'terminalType',
+    'terminalId',
+    'terminalIpAddress',
+    'paytmActivationCode',
+    'activeStatus',
+    'actions',
+  ];
 
   constructor(
     private commonService: CommonService,
@@ -75,7 +91,7 @@ export class EdcDeviceManagementPageComponent {
         'terminalId',
         'terminalIpAddress',
         'paytmActivationCode',
-        'activeStatus',
+        'Status',
       ],
       dataSource: new MatTableDataSource<EdcDeviceManagementInterface>([
         {
@@ -88,7 +104,7 @@ export class EdcDeviceManagementPageComponent {
           terminalId: '10114F',
           terminalIpAddress: '10.21.17.82',
           paytmActivationCode: '11180534',
-          activeStatus: 'active',
+          Status: 'In-Active',
         },
 
         {
@@ -101,7 +117,7 @@ export class EdcDeviceManagementPageComponent {
           terminalId: '10114F',
           terminalIpAddress: '10.21.17.82',
           paytmActivationCode: '11180534',
-          activeStatus: 'active',
+          Status: 'Active',
         },
       ]),
     },
@@ -168,6 +184,6 @@ export const edcDeviceManagementData = [
   'terminalId',
   'terminalIpAddress',
   'paytmActivationCode',
-  'activeStatus',
+  'Status',
   'actions',
 ];

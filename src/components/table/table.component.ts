@@ -18,6 +18,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../util/font-awesome-icons';
 import { ModelPopupComponent } from '../model-popup/model-popup.component';
+import { ViewModelPopupComponent } from '../view-model-popup/view-model-popup.component';
 @Component({
   standalone: true,
   imports: [
@@ -59,7 +60,15 @@ export class TableComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(ModelPopupComponent, {
       data: element,
     });
-    // console.log(element);
+    console.log(element);
+    dialogRef.afterClosed().subscribe();
+  }
+
+  openViewDialog(element: any) {
+    const dialogRef = this.dialog.open(ViewModelPopupComponent, {
+      data: element,
+    });
+    console.log(element);
     dialogRef.afterClosed().subscribe();
   }
 
@@ -89,6 +98,15 @@ export class TableComponent implements OnInit, AfterViewInit {
       value: element,
     };
     this.onActionClick.emit(data);
+  }
+
+  viewItem(element: any): void {
+    const data = {
+      action: 'update',
+      value: element,
+    };
+    // this.onActionClick.emit(data);
+    this.openViewDialog(element);
   }
 
   announceSortChange(sortState: Sort) {

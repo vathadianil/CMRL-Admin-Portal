@@ -19,12 +19,12 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
 import { TableComponent } from '../../../components/table/table.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { SearchComponent } from '../../../components/search/search.component';
-import { EntrySummaryInterface } from '../../../models/entry-summary.interface';
-
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
+import { entrysummarydata } from '../../sample';
+import { entrySummaryReportData } from '../../export-data';
 
 @Component({
   selector: 'app-entry-summary-report-page',
@@ -47,7 +47,7 @@ import { getIcon } from '../../../util/font-awesome-icons';
   ],
 })
 export class EntrySummaryReportPageComponent implements OnInit {
-  getIcon=getIcon;
+  getIcon = getIcon;
   entrySummaryForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];
@@ -55,6 +55,14 @@ export class EntrySummaryReportPageComponent implements OnInit {
   equipmentData: any[] = [];
   fileName = 'Entry Summary Report';
   columnsToExport = entrySummaryReportData;
+  sortCols = [
+    'transactionDate',
+    'stationName',
+    'equipmentGroupId',
+    'equipmentId',
+    'cardType',
+    'count',
+  ];
 
   constructor(
     private commonService: CommonService,
@@ -62,46 +70,16 @@ export class EntrySummaryReportPageComponent implements OnInit {
     private exportPdfService: ExportPdfService
   ) {}
 
-  entrySummaryTableData: {
+  myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<EntrySummaryInterface>;
-  }[] = [
-    {
-      displayedColumns: [
-        'transactionDate',
-        'stationName',
-        'equipmentGroupId',
-        'equipmentId',
-        'cardType',
-        'count',
-      ],
-
-      dataSource: new MatTableDataSource<EntrySummaryInterface>([
-        {
-          transactionDate: '13 feb 2024',
-          stationName: '0101 miyapur',
-          equipmentGroupId: 4,
-          equipmentId: 4002,
-          cardType: 1,
-          count: 2,
-        },
-
-        {
-          transactionDate: '13 feb 2024',
-          stationName: '0102 nagole',
-          equipmentGroupId: 4,
-          equipmentId: 4002,
-          cardType: 2,
-          count: 2,
-        },
-      ]),
-    },
-  ];
+    dataSource: MatTableDataSource<any>;
+  }[] = [];
 
   ngOnInit(): void {
     this.stationData = this.commonService.getStationsList();
 
     this.equipmentData = this.commonService.getEquipments();
+    this.getTableData();
 
     this.entrySummaryForm = new FormGroup({
       startDateTime: new FormControl(
@@ -133,6 +111,27 @@ export class EntrySummaryReportPageComponent implements OnInit {
         Validators.required
       ),
     });
+  }
+
+  getTableData() {
+    let responseData = [];
+    const response = entrysummarydata;
+
+    response.data.map((item) => {
+      let dataList = {};
+      response.headers.map((header) => {
+        dataList = { ...dataList, [header.label]: item[header.key] };
+      });
+      responseData.push(dataList);
+    });
+
+    this.sortCols = response.headers.map((header: any) => header.label);
+    this.myTableData = [
+      {
+        displayedColumns: response.headers.map((header: any) => header.label),
+        dataSource: new MatTableDataSource<any>(responseData),
+      },
+    ];
   }
 
   getParameters() {
@@ -167,7 +166,7 @@ export class EntrySummaryReportPageComponent implements OnInit {
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.entrySummaryTableData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -176,19 +175,10 @@ export class EntrySummaryReportPageComponent implements OnInit {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.entrySummaryTableData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
     );
   }
 }
-
-export const entrySummaryReportData = [
-  'transactionDate',
-  'stationName',
-  'equipmentGroupId',
-  'equipmentId',
-  'cardType',
-  'count',
-];

@@ -52,6 +52,19 @@ export class ReaderManagementPageComponent implements OnInit {
   fileName = 'Reader Management';
   columnsToExport = readerManagementData;
   params: any[] = [];
+  sortCols = [
+    'lineId',
+    'stationId',
+    'equipmentGroupId',
+    'equipmentId',
+    'deviceId',
+    'terminalType',
+    'terminalId',
+    'terminalIpAddress',
+    'paytmActivationCode',
+    'activeStatus',
+    'action',
+  ];
 
   constructor(
     private commonService: CommonService,

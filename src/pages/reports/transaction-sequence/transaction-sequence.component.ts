@@ -26,6 +26,8 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { DatePickerComponent } from '../../../components/date-picker/date-picker.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
+import { transactionsequencedata } from '../../sample';
+import { transactionsequenceTableData } from '../../export-data';
 
 @Component({
   selector: 'app-transaction-sequence',
@@ -63,41 +65,28 @@ export class TransactionSequenceComponent implements OnInit {
   fileName = 'Transaction Sequence Number Check';
   columnsToExport = transactionsequenceTableData;
   myDateTimeControl: any;
+  sortCols = [
+    'stationId',
+    'equipmentId',
+    'transactionType',
+    'transactionsequenceNumber',
+    'status',
+    'businessDate',
+  ];
 
   constructor(
     private commonService: CommonService,
     private exportService: ExportService,
     private exportPdfService: ExportPdfService
   ) {}
-
-  transactionsequenceTableData: {
+  myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<transactionsequenceInterface>;
-  }[] = [
-    {
-      displayedColumns: [
-        'stationId',
-        'equipmentId',
-        'transactionType',
-        'transactionsequenceNumber',
-        'status',
-        'businessDate',
-      ],
-      dataSource: new MatTableDataSource<transactionsequenceInterface>([
-        {
-          stationId: '1010',
-          equipmentId: '11',
-          transactionType: 22,
-          transactionsequenceNumber: 33,
-          status: 'yes',
-          businessDate: '22-2-24',
-        },
-      ]),
-    },
-  ];
+    dataSource: MatTableDataSource<any>;
+  }[] = [];
 
   ngOnInit(): void {
     this.transactionTypeData = this.commonService.getTransactionTypes();
+    this.getTableData();
 
     this.transactionsequenceReportForm = new FormGroup({
       fromdate: new FormControl(
@@ -116,6 +105,26 @@ export class TransactionSequenceComponent implements OnInit {
         Validators.required
       ),
     });
+  }
+  getTableData() {
+    let responseData = [];
+    const response = transactionsequencedata;
+
+    response.data.map((item) => {
+      let dataList = {};
+      response.headers.map((header) => {
+        dataList = { ...dataList, [header.label]: item[header.key] };
+      });
+      responseData.push(dataList);
+    });
+
+    this.sortCols = response.headers.map((header: any) => header.label);
+    this.myTableData = [
+      {
+        displayedColumns: response.headers.map((header: any) => header.label),
+        dataSource: new MatTableDataSource<any>(responseData),
+      },
+    ];
   }
 
   getParameters() {
@@ -139,7 +148,7 @@ export class TransactionSequenceComponent implements OnInit {
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.transactionsequenceTableData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -148,19 +157,10 @@ export class TransactionSequenceComponent implements OnInit {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.transactionsequenceTableData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
     );
   }
 }
-
-export const transactionsequenceTableData = [
-  'stationId',
-  'equipmentId',
-  'transactionType',
-  'transactionsequenceNumber',
-  'status',
-  'businessDate',
-];

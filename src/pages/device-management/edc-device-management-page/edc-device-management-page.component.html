@@ -1,7 +1,7 @@
 <div class="edcDeviceManagement">
   <mat-card class="edcDeviceManagement__card">
     <div class="edcDeviceManagement__title-wrapper">
-      <mat-icon>map</mat-icon>
+      <fa-icon [icon]="getIcon('server')">server</fa-icon>
       <app-page-title title="EDC Device Management"></app-page-title>
 
       <div class="edcDeviceManagement__top-btn-container">
@@ -75,8 +75,7 @@
       </div>
       <app-table
         [tableData]="edcDeviceManagementTable"
-        [actions]="actions"
-      ></app-table>
+        [actions]="actions" [sortCols]="sortCols"></app-table>
     </mat-card-content>
   </mat-card>
 </div>

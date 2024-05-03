@@ -130,7 +130,7 @@ export class HomePageComponent {
           route: 'readerManagement',
         },
         {
-          icon: 'memory',
+          icon: 'server',
           label: 'EDC Device Management',
           route: 'edcDeviceManagement',
         },

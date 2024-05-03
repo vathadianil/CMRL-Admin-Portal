@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
@@ -13,12 +18,13 @@ import { CustomInputComponent } from '../../../components/custom-input/custom-in
 import { MatIconModule } from '@angular/material/icon';
 import { CommonService } from '../../../services/common.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { ridershipreportInterface } from '../../../models/ridership-report-interface';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
+import { ridershipdata } from '../../sample';
+import { ridershipTableData } from '../../export-data';
 
 @Component({
   selector: 'app-ridership-report',
@@ -37,56 +43,41 @@ import { getIcon } from '../../../util/font-awesome-icons';
     CustomInputComponent,
     MatIconModule,
     DateTimePickerComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   templateUrl: './ridership-report.component.html',
-  styleUrl: './ridership-report.component.scss'
+  styleUrl: './ridership-report.component.scss',
 })
 export class RidershipReportComponent {
-  getIcon=getIcon;
+  getIcon = getIcon;
   ridershipReportForm!: FormGroup;
   stationData: any[];
   stationDefaultValue: any;
   transactionTypeData: any[];
   equipmentData: any[];
   fileName = 'RiderShip Report';
-  columnsToExport =ridershipTableData;
+  columnsToExport = ridershipTableData;
   params: any[] = [];
+  sortCols = ['stationId', 'stationName', 'entryCount', 'exitCount'];
 
-  constructor(private commonService: CommonService,
+  constructor(
+    private commonService: CommonService,
     private exportService: ExportService,
-    private exportPdfService: ExportPdfService) {}
+    private exportPdfService: ExportPdfService
+  ) {}
 
-  ridershipTableData: {
+  myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<ridershipreportInterface>;
-  }[] = [
-    {
-      displayedColumns: [
-        'stationId',
-        'stationName',
-        'entryCount',
-        'exitCount',
-      ],
-      dataSource: new MatTableDataSource<ridershipreportInterface>([
-        {
-          stationId:'0101',
-          stationName:'miyapur',
-          entryCount:0,
-          exitCount:0,
-        },  
-       
-      ]),
-    },
-  ];
+    dataSource: MatTableDataSource<any>;
+  }[] = [];
 
   ngOnInit(): void {
     this.stationData = this.commonService.getStationsList();
     this.transactionTypeData = this.commonService.getTransactionTypes();
     this.equipmentData = this.commonService.getEquipments();
+    this.getTableData();
 
     this.ridershipReportForm = new FormGroup({
-      
       fromdate: new FormControl(
         {
           value: new Date(
@@ -117,59 +108,72 @@ export class RidershipReportComponent {
       ),
     });
   }
+
+  getTableData() {
+    let responseData = [];
+    const response = ridershipdata;
+
+    response.data.map((item) => {
+      let dataList = {};
+      response.headers.map((header) => {
+        dataList = { ...dataList, [header.label]: item[header.key] };
+      });
+      responseData.push(dataList);
+    });
+
+    this.sortCols = response.headers.map((header: any) => header.label);
+    this.myTableData = [
+      {
+        displayedColumns: response.headers.map((header: any) => header.label),
+        dataSource: new MatTableDataSource<any>(responseData),
+      },
+    ];
+  }
   onSubmit() {
     console.log(this.ridershipReportForm.value);
   }
 
-getParameters() {
-  this.params = [
-    {
-      key: 'fromDate',
-      value: this.ridershipReportForm.get('fromDate')?.value,
-    },
-    {
-      key: 'toDate',
-      value: this.ridershipReportForm.get('toDate')?.value,
-    },
-    {
-      key: 'stations',
-      value: this.ridershipReportForm.get('transactionType')?.value,
-    },
-    {
-      key: 'transactionType',
-      value: this.ridershipReportForm.get('transactionType')?.value,
-    },
-    {
-      key: 'equipmentName',
-      value: this.ridershipReportForm.get('equipmentName')?.value,
-    },
-  ];
-  return this.params;
-}
+  getParameters() {
+    this.params = [
+      {
+        key: 'fromDate',
+        value: this.ridershipReportForm.get('fromDate')?.value,
+      },
+      {
+        key: 'toDate',
+        value: this.ridershipReportForm.get('toDate')?.value,
+      },
+      {
+        key: 'stations',
+        value: this.ridershipReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'transactionType',
+        value: this.ridershipReportForm.get('transactionType')?.value,
+      },
+      {
+        key: 'equipmentName',
+        value: this.ridershipReportForm.get('equipmentName')?.value,
+      },
+    ];
+    return this.params;
+  }
 
-onExcelClicked() {
-  this.exportService.exportToExcel(
-    this.ridershipTableData[0].dataSource.data,
-    this.fileName,
-    this.columnsToExport,
-    this.getParameters()
-  );
-}
+  onExcelClicked() {
+    this.exportService.exportToExcel(
+      this.myTableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.getParameters()
+    );
+  }
 
-onPdfClicked() {
-  this.exportPdfService.exportToPDF(
-    this.ridershipTableData[0].dataSource.data,
-    this.fileName,
-    this.columnsToExport,
-    this.getParameters()
-  );
+  onPdfClicked() {
+    this.exportPdfService.exportToPDF(
+      this.myTableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.getParameters()
+    );
+  }
 }
-}
-
-export const ridershipTableData = [
-         'stationId',
-         'stationName',
-         'entryCount',
-         'exitCount'
-];
-

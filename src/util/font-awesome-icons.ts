@@ -29,9 +29,13 @@ import {
   faEye,
   faEyeSlash,
   faCopyright,
+  faServer,
   faPersonArrowUpFromLine,
   faListCheck,
   faThumbtack
+  faFileExcel,
+  faFilePdf,
+  faLocationCrosshairs,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faCircleInfo;
@@ -101,6 +105,16 @@ export function getIcon(icon: string): any {
     case 'thumbtack':
       return (fontawesomeIcon =faThumbtack);
     
+    case 'server':
+      return (fontawesomeIcon = faServer);
+    case 'file_copy':
+      return (fontawesomeIcon = faFileExcel);
+    case 'picture_as_pdf':
+      return (fontawesomeIcon = faFilePdf);
+    case 'eye':
+      return (fontawesomeIcon = faEye);
+    case 'location':
+      return (fontawesomeIcon = faLocationCrosshairs);
   }
   return fontawesomeIcon;
 }
