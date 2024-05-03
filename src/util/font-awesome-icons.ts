@@ -34,6 +34,7 @@ import {
   faListCheck,
   faFileExcel,
   faFilePdf,
+  faLocationCrosshairs,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faCircleInfo;
@@ -106,8 +107,10 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faFileExcel);
     case 'picture_as_pdf':
       return (fontawesomeIcon = faFilePdf);
-      case 'eye':
-        return (fontawesomeIcon = faEye);
+    case 'eye':
+      return (fontawesomeIcon = faEye);
+    case 'location':
+      return (fontawesomeIcon = faLocationCrosshairs);
   }
   return fontawesomeIcon;
 }
