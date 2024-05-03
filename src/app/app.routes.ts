@@ -160,6 +160,13 @@ export const routes: Routes = [
             `../pages/user-management/privileges/privileges.component`
           ).then((c) => c.PrivilegesComponent),
       },
+      {
+        path: 'OverStayConfiguration',
+        loadComponent: () =>
+          import(
+            `../pages/penalty-management/over-stay-configuration/over-stay-configuration.component`
+          ).then((c) => c.OverStayConfigurationComponent),
+      },
     ],
   },
 ];

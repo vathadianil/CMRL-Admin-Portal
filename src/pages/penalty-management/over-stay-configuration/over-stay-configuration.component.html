@@ -1,0 +1,41 @@
+<div class="Penalty">
+    <mat-card class="Penalty__card">
+      <div class="Penalty__title-wrapper">
+        <fa-icon [icon]="getIcon('map')">map</fa-icon>
+        <app-page-title title="Over Stay Configuration"></app-page-title>
+        <div class="Penalty__top-btn-container">
+          <app-fab-button
+          class="btn" 
+         [icon]="'add'"
+         [showMenu]="false" 
+         [isDownloadBtn]="false"
+         matTooltip="Over Stay Penalty"
+         matTooltipPosition="above"
+         >
+         </app-fab-button>
+        </div>
+      </div>
+    </mat-card>
+     
+    <mat-card class="Penalty__card-table">
+      <mat-card-content>
+        <div class="Penalty__content-container">
+          <app-search></app-search>
+          <div class="Penalty__fab-btn-wrapper">
+            <app-fab-button
+              (excelClicked)="onExcelClicked()"
+              (pdfClicked)="onPdfClicked()"
+            >
+            </app-fab-button>
+          </div>
+        </div>
+        <app-table [tableData]="myTableData"
+        [actions]="actions"
+        [sortCols]="sortCols" 
+        ></app-table>
+      </mat-card-content>
+    </mat-card>
+</div>
+
+
+

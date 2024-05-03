@@ -71,6 +71,13 @@ export const exportPriviledgesData = [
   'Privilege Type',
   'Status',
 ];
+
+export const exportOverStayConfigurationData = [
+  'Same Station Exit',
+  'Over Stay Duration From',
+  'Over Stay Duration To',
+  'Penalty Amount',
+];
 export const shiftstartTableData = [
   'Shift Start Date Time',
   'Line Id',

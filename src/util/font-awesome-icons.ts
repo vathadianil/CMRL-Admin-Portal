@@ -32,6 +32,7 @@ import {
   faServer,
   faPersonArrowUpFromLine,
   faListCheck,
+  faThumbtack,
   faFileExcel,
   faFilePdf,
   faLocationCrosshairs,
@@ -101,6 +102,9 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faEyeSlash);
     case 'copyright':
       return (fontawesomeIcon = faCopyright);
+    case 'thumbtack':
+      return (fontawesomeIcon =faThumbtack);
+    
     case 'server':
       return (fontawesomeIcon = faServer);
     case 'file_copy':

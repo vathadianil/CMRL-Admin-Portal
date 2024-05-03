@@ -1,5 +1,3 @@
-import { sequence } from '@angular/animations';
-
 export const transactionQueryData = {
   headers: [
     { key: 'transactionDateTime', label: 'Transaction Date Time' },
@@ -228,34 +226,7 @@ export const privilegesData = {
   ],
 };
 
-export const shiftstartData = {
-  headers: [
-    { key: 'shift_start_date_time', label: 'Shift Start Date Time' },
-    { key: 'lineId', label: 'Line Id' },
-    { key: 'stationId', label: 'Station Id' },
-    { key: 'equipmentGroupId', label: 'Equipment Group Id' },
-    { key: 'equepmentId', label: 'Equepment Id' },
-    { key: 'acquirerId', label: 'Acquirer Id' },
-    { key: 'operatorId', label: 'Operator Id' },
-    { key: 'terminalId', label: 'Terminal Id' },
-    { key: 'agentId', label: 'Agent Id' },
-    { key: 'tom_Efo_Shift_start', label: 'Tom Efo Shift Start' },
-  ],
-  data: [
-    {
-      shift_start_date_time: '30-Mar-2020 10:35:29',
-      lineId: '01',
-      stationId: '0106-Moosapet',
-      equipmentGroupId: '3',
-      equepmentId: '1002',
-      acquirerId: '4',
-      operatorId: '6014',
-      terminalId: '1010C2',
-      agentId: '11102',
-      tom_Efo_Shift_start: '0101',
-    },
-  ],
-};
+
 
 export const shiftenddata = {
   headers: [
@@ -554,6 +525,82 @@ export const transactionsequencedata = {
       transactionsequenceNumber: 33,
       status: 'yes',
       businessDate: '22-2-24',
+    },
+  ],
+};
+
+export const shiftstartData = {
+  headers: [
+    { key: 'shiftStartDateTime', label: 'Shift Start Date Time' },
+    { key: 'lineId', label: 'Line Id' },
+    { key: 'stationId', label: 'Station Id' },
+    { key: 'equipmentGroupId', label: 'Equipment Group Id' },
+    { key: 'equepmentId', label: 'Equepment Id' },
+    { key: 'acquirerId', label: 'Acquirer Id' },
+    { key: 'operatorId', label: 'Operator Id' },
+    { key: 'terminalId', label: 'Terminal Id' },
+    { key: 'agentId', label: 'Agent Id' },
+    { key: 'tomEfoShiftStart', label: 'Tom Efo Shift Start' },
+  ],
+  data: [
+    {
+      shiftStartDateTime: '30-Mar-2020 10:35:29',
+      lineId: '01',
+      stationId: '0106-Moosapet',
+      equipmentGroupId: '3',
+      equepmentId: '1002',
+      acquirerId: '4',
+      operatorId: '6014',
+      terminalId: '1010C2',
+      agentId: '11102',
+      tomEfoShiftStart: '0101',
+    },
+  ],
+};
+
+export const OverStayConfigurationData = {
+  headers: [
+    { key: 'sameStationExit', label: 'Same Station Exit' },
+    { key: 'overStayDurationFrom', label: 'Over Stay Duration Frome' },
+    { key: 'overStayDurationTo', label: 'Over Stay Duration To' },
+    { key: 'penaltyAmount', label: 'Penalty Amount' },
+  ],
+  data: [
+    {
+      sameStationExit:'No',
+      overStayDurationFrom: 151,
+      overStayDurationTo: 211,
+      penaltyAmount: 1,
+    },
+    {
+      sameStationExit:'No',
+      overStayDurationFrom: 211,
+      overStayDurationTo: 270,
+      penaltyAmount: 3,
+    },
+    {
+      sameStationExit:'No',
+      overStayDurationFrom: 271,
+      overStayDurationTo: 330,
+      penaltyAmount: 4,
+    },
+    {
+      sameStationExit:'No',
+      overStayDurationFrom: 331,
+      overStayDurationTo: 999,
+      penaltyAmount: 6,
+    },
+    {
+      sameStationExit:'No',
+      overStayDurationFrom: 31,
+      overStayDurationTo: 90,
+      penaltyAmount: 1,
+    },
+    {
+      sameStationExit:'No',
+      overStayDurationFrom: 91,
+      overStayDurationTo: 150,
+      penaltyAmount: 3,
     },
   ],
 };
