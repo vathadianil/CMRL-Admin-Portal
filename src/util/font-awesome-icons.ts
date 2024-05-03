@@ -29,6 +29,7 @@ import {
   faEye,
   faEyeSlash,
   faCopyright,
+  faServer,
   faPersonArrowUpFromLine,
   faListCheck,
 } from '@fortawesome/free-solid-svg-icons';
@@ -97,6 +98,8 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faEyeSlash);
     case 'copyright':
       return (fontawesomeIcon = faCopyright);
+    case 'server':
+      return (fontawesomeIcon = faServer);
   }
   return fontawesomeIcon;
 }
