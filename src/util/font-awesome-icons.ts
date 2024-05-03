@@ -99,10 +99,7 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faEyeSlash);
     case 'copyright':
       return (fontawesomeIcon = faCopyright);
-    case 'file_copy':
-      return (fontawesomeIcon = faFileExcel);
-    case 'picture_as_pdf':
-      return (fontawesomeIcon = faFilePdf);
+    
   }
   return fontawesomeIcon;
 }
