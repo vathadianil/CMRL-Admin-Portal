@@ -5,6 +5,7 @@ import {
   MatDialogModule,
   MatDialogRef,
   MAT_DIALOG_DATA,
+  MatDialogClose,
 } from '@angular/material/dialog';
 import { InputTextComponent } from '../input-text/input-text.component';
 import { ButtonFieldComponent } from '../button-field/button-field.component';

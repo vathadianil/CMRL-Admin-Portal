@@ -3,17 +3,6 @@
   <div>
     <table mat-table [dataSource]="dataSource">
       @for (column of displayedColumns; track column){
-      <!-- <ng-container [matColumnDef]="column">
-        <th mat-header-cell *matHeaderCellDef>
-          <div class="table__header-wrapper">
-            <span> {{ column }}</span>
-          </div>
-        </th>
-        <td mat-cell *matCellDef="let element">
-          {{ element[column] }}
-        </td>
-      </ng-container> -->
-
       <ng-container matColumnDef="column">
         <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
         <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
@@ -27,6 +16,7 @@
 
   <div class="btn-container">
     <app-button-field
+      mat-dialog-close
       class="cancel-btn"
       type="button"
       backgroundColor="#fff"

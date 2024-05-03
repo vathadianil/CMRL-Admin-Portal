@@ -1,23 +1,14 @@
-<div class="dailog">
-  <h1>{{tableData.id}}</h1>
-  <form class="outer-container">
-    <div *ngFor="let item of tableData | keyvalue">
-      <app-input-text [label]="item.key.toString()" [value] = "item.value.toString()"></app-input-text>
-      
-    </div>
-  </form>
-  <div class="btn-container">
-
 
 <div class="model">
   <div class="model__dailog">
     <form class="model__outer-container">
       <div *ngFor="let item of tableData | keyvalue">
-        <app-input-text [label]="item.key.toString()"></app-input-text>
+        <app-input-text [label]="item.key.toString()" [value] = "item.value.toString()"></app-input-text>
       </div>
     </form>
     <div class="model__btn-container">
       <app-button-field
+      mat-dialog-close
         class="model__cancel-btn"
         type="button"
         backgroundColor="#fff"
@@ -25,7 +16,6 @@
         label="Cancel"
         [width]="8"
         [height]="2.5"
-        (buttonClick)="btnClick()"
       ></app-button-field>
       <app-button-field
         label="Save"
