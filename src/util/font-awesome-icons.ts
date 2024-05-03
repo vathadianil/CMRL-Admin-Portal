@@ -31,8 +31,6 @@ import {
   faCopyright,
   faPersonArrowUpFromLine,
   faListCheck,
-  faFileExcel,
-  faFilePdf,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faCircleInfo;
@@ -99,7 +97,6 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faEyeSlash);
     case 'copyright':
       return (fontawesomeIcon = faCopyright);
-    
   }
   return fontawesomeIcon;
 }
