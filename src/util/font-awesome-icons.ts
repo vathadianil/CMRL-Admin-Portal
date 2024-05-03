@@ -106,6 +106,8 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faFileExcel);
     case 'picture_as_pdf':
       return (fontawesomeIcon = faFilePdf);
+      case 'eye':
+        return (fontawesomeIcon = faEye);
   }
   return fontawesomeIcon;
 }

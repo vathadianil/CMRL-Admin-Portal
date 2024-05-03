@@ -4,6 +4,7 @@ import {
   MatDialogModule,
   MatDialogRef,
   MAT_DIALOG_DATA,
+  MatDialogClose,
 } from '@angular/material/dialog';
 import { TableComponent } from '../table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
@@ -28,22 +29,5 @@ export class ModelPopupComponent {
     public dialogRef: MatDialogRef<ModelPopupComponent>,
     @Inject(MAT_DIALOG_DATA) public tableData: any
   ) {}
-
-  getDisplayedColumns(): string[] {
-    if (
-      this.tableData &&
-      this.tableData.length > 0 &&
-      this.tableData[0].dataSource.data.length > 0
-    ) {
-      return Object.keys(this.tableData[0].dataSource.data[0]);
-    }
-    return [];
-  }
-
-  data = [
-    {
-      displayedColumns: this.getDisplayedColumns(),
-      dataSource: new MatTableDataSource<any>([this.tableData]),
-    },
-  ];
+  
 }
