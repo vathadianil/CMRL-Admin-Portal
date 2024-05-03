@@ -14,13 +14,13 @@
     >
     <mat-menu #menu="matMenu">
       <button mat-menu-item class="fab__menu-content" (click)="onExcelClick()">
-        <mat-icon class="fab__downlod-btn__color"> file_copy</mat-icon>
+        <fa-icon matSuffix style=" padding: 10px;" [icon]="getIcon('file_copy')"class="fab__downlod-btn"> file_copy</fa-icon>
         <span>Excel</span>
       </button>
       @if (showPdf) {
       <mat-divider></mat-divider>
       <button mat-menu-item class="fab__menu-content" (click)="onPdfClick()">
-        <mat-icon class="fab__add-btn__color">picture_as_pdf</mat-icon>
+        <fa-icon matSuffix style=" padding: 10px;" [icon]="getIcon('picture_as_pdf')"class="fab__add-btn__color">picture_as_pdf</fa-icon>
         <span>PDF</span>
       </button>
       }
