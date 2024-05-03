@@ -18,12 +18,13 @@ import { CustomInputComponent } from '../../../components/custom-input/custom-in
 import { MatIconModule } from '@angular/material/icon';
 import { CommonService } from '../../../services/common.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { ridershipreportInterface } from '../../../models/ridership-report-interface';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { ExportService } from '../../../services/export.service';
 import { ExportPdfService } from '../../../services/export-pdf.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
+import { ridershipdata } from '../../sample';
+import { ridershipTableData } from '../../export-data';
 
 @Component({
   selector: 'app-ridership-report',
@@ -65,27 +66,16 @@ export class RidershipReportComponent {
     private exportPdfService: ExportPdfService
   ) {}
 
-  ridershipTableData: {
+  myTableData: {
     displayedColumns: string[];
-    dataSource: MatTableDataSource<ridershipreportInterface>;
-  }[] = [
-    {
-      displayedColumns: ['stationId', 'stationName', 'entryCount', 'exitCount'],
-      dataSource: new MatTableDataSource<ridershipreportInterface>([
-        {
-          stationId: '0101',
-          stationName: 'miyapur',
-          entryCount: 0,
-          exitCount: 0,
-        },
-      ]),
-    },
-  ];
+    dataSource: MatTableDataSource<any>;
+  }[] = [];
 
   ngOnInit(): void {
     this.stationData = this.commonService.getStationsList();
     this.transactionTypeData = this.commonService.getTransactionTypes();
     this.equipmentData = this.commonService.getEquipments();
+    this.getTableData();
 
     this.ridershipReportForm = new FormGroup({
       fromdate: new FormControl(
@@ -117,6 +107,27 @@ export class RidershipReportComponent {
         Validators.required
       ),
     });
+  }
+
+  getTableData() {
+    let responseData = [];
+    const response = ridershipdata;
+
+    response.data.map((item) => {
+      let dataList = {};
+      response.headers.map((header) => {
+        dataList = { ...dataList, [header.label]: item[header.key] };
+      });
+      responseData.push(dataList);
+    });
+
+    this.sortCols = response.headers.map((header: any) => header.label);
+    this.myTableData = [
+      {
+        displayedColumns: response.headers.map((header: any) => header.label),
+        dataSource: new MatTableDataSource<any>(responseData),
+      },
+    ];
   }
   onSubmit() {
     console.log(this.ridershipReportForm.value);
@@ -150,7 +161,7 @@ export class RidershipReportComponent {
 
   onExcelClicked() {
     this.exportService.exportToExcel(
-      this.ridershipTableData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
@@ -159,17 +170,10 @@ export class RidershipReportComponent {
 
   onPdfClicked() {
     this.exportPdfService.exportToPDF(
-      this.ridershipTableData[0].dataSource.data,
+      this.myTableData[0].dataSource.data,
       this.fileName,
       this.columnsToExport,
       this.getParameters()
     );
   }
 }
-
-export const ridershipTableData = [
-  'stationId',
-  'stationName',
-  'entryCount',
-  'exitCount',
-];
