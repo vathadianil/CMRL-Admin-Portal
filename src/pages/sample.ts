@@ -225,3 +225,50 @@ export const privilegesData = {
     },
   ],
 };
+
+export const OverStayConfigurationData = {
+  headers: [
+    { key: 'Same_Station_Exit', label: 'Same Station Exit' },
+    { key: 'Over_Stay_Duration_From', label: 'Over Stay Duration Frome' },
+    { key: 'Over_Stay_Duration_To', label: 'Over Stay Duration To' },
+    { key: 'Penalty_Amount', label: 'Penalty Amount' },
+  ],
+  data: [
+    {
+      Same_Station_Exit:'No',
+      Over_Stay_Duration_From: 151,
+      Over_Stay_Duration_To: 211,
+      Penalty_Amount: 1,
+    },
+    {
+      Same_Station_Exit:'No',
+      Over_Stay_Duration_From: 211,
+      Over_Stay_Duration_To: 270,
+      Penalty_Amount: 3,
+    },
+    {
+      Same_Station_Exit:'No',
+      Over_Stay_Duration_From: 271,
+      Over_Stay_Duration_To: 330,
+      Penalty_Amount: 4,
+    },
+    {
+      Same_Station_Exit:'No',
+      Over_Stay_Duration_From: 331,
+      Over_Stay_Duration_To: 999,
+      Penalty_Amount: 6,
+    },
+    {
+      Same_Station_Exit:'No',
+      Over_Stay_Duration_From: 31,
+      Over_Stay_Duration_To: 90,
+      Penalty_Amount: 1,
+    },
+    {
+      Same_Station_Exit:'No',
+      Over_Stay_Duration_From: 91,
+      Over_Stay_Duration_To: 150,
+      Penalty_Amount: 3,
+    },
+  ],
+};

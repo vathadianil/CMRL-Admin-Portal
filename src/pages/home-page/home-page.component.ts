@@ -177,5 +177,20 @@ export class HomePageComponent {
         },
       ],
     },
+
+    {
+      icon: 'thumbtack',
+      label: 'Penalty Management',
+      route: 'PenaltyManagement',
+      color: '#33bfff',
+      submenu: [
+        {
+          icon: 'visibility',
+          label: 'Over Stay Configuration',
+          route: 'OverStayConfiguration',
+        },
+      
+      ],
+    },
   ];
 }

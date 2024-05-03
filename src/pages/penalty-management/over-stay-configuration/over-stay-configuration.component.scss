@@ -1,0 +1,39 @@
+.Penalty{
+    margin: 0 1em 1em 2em;
+    &__card {
+        border-radius: 1em;
+        margin-bottom: 2em;
+    }
+    &__card-table {
+        border-radius: 1em;
+    }
+
+    &__title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 1em 0 1em 1em;
+        font-weight: bold;
+        font-size: larger;
+        color: var(--blue800);
+        
+    }
+
+    &__top-btn-container{
+        margin-left: auto;
+        margin-right: 1em;
+        border-radius: 2em;
+    }
+    &__fab-btn-wrapper {
+        display: flex;
+        gap: 2em;
+    }
+
+    &__content-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+    }
+
+
+}

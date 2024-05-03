@@ -71,3 +71,10 @@ export const exportPriviledgesData = [
   'Privilege Type',
   'Status',
 ];
+
+export const exportOverStayConfigurationData = [
+  'Same_Station_Exit',
+  'Over_Stay_Duration_From',
+  'Over_Stay_Duration_To',
+  'Penalty_Amount',
+];
