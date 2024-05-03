@@ -561,7 +561,7 @@ export const shiftstartData = {
 export const OverStayConfigurationData = {
   headers: [
     { key: 'sameStationExit', label: 'Same Station Exit' },
-    { key: 'overStayDurationFrom', label: 'Over Stay Duration Frome' },
+    { key: 'overStayDurationFrom', label: 'Over Stay Duration From' },
     { key: 'overStayDurationTo', label: 'Over Stay Duration To' },
     { key: 'penaltyAmount', label: 'Penalty Amount' },
   ],
