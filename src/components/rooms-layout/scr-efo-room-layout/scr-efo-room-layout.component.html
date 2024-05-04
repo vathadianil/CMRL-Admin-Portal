@@ -11,14 +11,16 @@
     <app-tr [equipmentData]="equipment"> </app-tr>
     } } @if (scrEfoRoomData[0]?.location ==='scr') {
     <div class="scr-efo-room__icon-container">
-      <!-- <fa-icon
-        class="scr-efo-room__icon"
-        [icon]="getIcon('location')"
-      ></fa-icon> -->
       <img
         class="scr-efo-room__icon"
         src="../../../assets/img/man.svg"
         alt="Man"
+      />
+
+      <img
+        src="../../../assets/img/you-are-here.svg"
+        alt="You are Here"
+        class="scr-efo-room__info"
       />
 
       <div class="scr-efo-room__animation">
