@@ -2,29 +2,6 @@
 .content {
   max-height: calc(100% - 300px);
 }
-.header {
-  &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--background-color);
-    //padding: 8px;
-  }
-
-  &__logo {
-    margin-right: auto;
-    margin-left: 1em;
-    height: 60px;
-    aspect-ratio: 1;
-  }
-
-  &__icons {
-    display: flex;
-    gap: 1em;
-    color: var(--text-color2);
-    margin: 1em;
-  }
-}
 
 .home {
   min-height: 80vh;
