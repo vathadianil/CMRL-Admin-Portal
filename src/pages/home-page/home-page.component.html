@@ -1,12 +1,5 @@
 <div class="content">
-  <div class="header__container">
-    <img src="../../assets/img/cmr_logo.png" alt="Logo" class="header__logo" />
-    <div class="header__icons">
-      <fa-icon [icon]="getIcon('group')">group</fa-icon>
-
-      <fa-icon [icon]="getIcon('power')">power</fa-icon>
-    </div>
-  </div>
+  <app-header></app-header>
   <mat-drawer-container class="home" autosize>
     <mat-drawer mode="side" class="home__side-customise" opened>
       @for(item of menuItems; track item.label ) { @if(!item?.submenu?.length) {

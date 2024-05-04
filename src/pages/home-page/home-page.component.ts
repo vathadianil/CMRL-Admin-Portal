@@ -17,6 +17,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../util/font-awesome-icons';
+import { HeaderComponent } from '../../components/header/header.component';
 
 @Component({
   selector: 'app-home-page',
@@ -35,6 +36,7 @@ import { getIcon } from '../../util/font-awesome-icons';
     MatExpansionModule,
     MatListModule,
     MatTooltipModule,
+    HeaderComponent,
     FooterComponent,
     FontAwesomeModule,
   ],
@@ -194,7 +196,6 @@ export class HomePageComponent {
           label: 'Adjustment',
           route: 'Adjustment',
         },
-      
       ],
     },
   ];
