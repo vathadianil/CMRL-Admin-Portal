@@ -21,7 +21,7 @@
   &__icons {
     display: flex;
     gap: 1em;
-    color: #938a8a;
+    color: var(--text-color2);
     margin: 1em;
   }
 }
@@ -52,6 +52,7 @@
 
   &__menu-icon {
     margin-right: 18px;
+    color: var(--text-color2);
   }
 
   &__list-item {
@@ -67,6 +68,7 @@
   &__menu-text {
     font-weight: 500;
     font-size: toRem(14);
+    color: var(--text-color2);
   }
 
   &__side-customise {

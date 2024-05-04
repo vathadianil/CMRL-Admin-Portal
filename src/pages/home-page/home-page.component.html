@@ -53,6 +53,7 @@
           >
             <fa-icon
               class="home__menu-icon"
+              [style.color]="active.isActive ? '#fff' : ''"
               [icon]="getIcon(submenu.icon)"
             ></fa-icon>
             <span
