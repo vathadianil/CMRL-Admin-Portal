@@ -191,6 +191,11 @@ export class HomePageComponent {
           label: 'Over Stay Configuration',
           route: 'OverStayConfiguration',
         },
+        {
+          icon: 'CircleExclamation',
+          label: 'Adjustment',
+          route: 'Adjustment',
+        },
       ],
     },
   ];

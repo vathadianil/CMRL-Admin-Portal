@@ -78,6 +78,15 @@ export const exportOverStayConfigurationData = [
   'Over Stay Duration To',
   'Penalty Amount',
 ];
+
+export const exportAdjustmentsData = [
+  'Param Id',
+  'Adjustment Code',
+  'Adjustment Name',
+  'Adjustment Amount',
+  'Parameter Version',
+  'Status',
+];
 export const shiftstartTableData = [
   'Shift Start Date Time',
   'Line Id',

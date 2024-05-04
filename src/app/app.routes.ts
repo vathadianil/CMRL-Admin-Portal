@@ -167,6 +167,13 @@ export const routes: Routes = [
             `../pages/penalty-management/over-stay-configuration/over-stay-configuration.component`
           ).then((c) => c.OverStayConfigurationComponent),
       },
+      {
+        path: 'Adjustment',
+        loadComponent: () =>
+          import(
+            `../pages/penalty-management/adjustments/adjustments.component`
+          ).then((c) => c.AdjustmentsComponent),
+      },
     ],
   },
 ];

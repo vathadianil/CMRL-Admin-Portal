@@ -604,3 +604,31 @@ export const OverStayConfigurationData = {
     },
   ],
 };
+export const AdjustmentsData = {
+  headers: [
+    { key: 'paramId', label: 'Param Id' },
+    { key: 'adjustmentCode', label: 'Adjustment Code' },
+    { key: 'adjustmentName', label: 'Adjustment Name' },
+    { key: 'adjustmentAmount', label: 'Adjustment Amount' },
+    { key: 'parameterVersion', label: 'Parameter Version' },
+    { key: 'status', label: 'Status' },
+  ],
+  data: [
+    {
+      paramId: 2002,
+      adjustmentCode: 3,
+      adjustmentName: 'Mismatch At Entry',
+      adjustmentAmount:1 ,
+      parameterVersion:20230704160700 ,
+      status: 'Active',
+    },
+    {
+      paramId: 2002,
+      adjustmentCode: 4,
+      adjustmentName: 'Mismatch At Exit',
+      adjustmentAmount:1 ,
+      parameterVersion:20230704160700 ,
+      status: 'In-Active',
+    },
+  ],
+};
