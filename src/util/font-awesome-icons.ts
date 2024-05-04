@@ -36,6 +36,8 @@ import {
   faFileExcel,
   faFilePdf,
   faLocationCrosshairs,
+  faCircleExclamation,
+  
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faCircleInfo;
@@ -115,6 +117,8 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faEye);
     case 'location':
       return (fontawesomeIcon = faLocationCrosshairs);
+    case 'CircleExclamation':
+      return (fontawesomeIcon = faCircleExclamation);
   }
   return fontawesomeIcon;
 }

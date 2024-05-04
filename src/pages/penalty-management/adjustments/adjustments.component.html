@@ -1,0 +1,37 @@
+<div class="Adjustment">
+    <mat-card class="Adjustment__card">
+        <div class="Adjustment__title-wrapper">
+          <fa-icon [icon]="getIcon('CircleExclamation')">map</fa-icon>
+          <app-page-title title="Adjustments"></app-page-title>
+        </div>
+    </mat-card>
+
+    <mat-card class="Adjustment__card-table">
+        <mat-card-content>
+          <div class="Adjustment__content-container">
+            <app-search></app-search>
+            <div class="Adjustment__fab-btn-wrapper">
+              <app-fab-button
+                class="btn" 
+                [icon]="'add'"
+                [showMenu]="false" 
+                [isDownloadBtn]="false"
+                matTooltip="Add Adjustment"
+                matTooltipPosition="above"
+              >
+              </app-fab-button>
+              <app-fab-button
+                (excelClicked)="onExcelClicked()"
+                (pdfClicked)="onPdfClicked()"
+              >
+              </app-fab-button>
+            </div>
+          </div>
+          <app-table [tableData]="myTableData"
+          [actions]="actions"
+          [sortCols]="sortCols" 
+          ></app-table>
+        </mat-card-content>
+      </mat-card>
+
+</div>
