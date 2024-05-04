@@ -28,13 +28,11 @@
 
   &__animation {
     position: absolute;
-
     margin: auto;
   }
 
   &__icon {
-    color: var(--green800);
-    width: 70px;
+    width: 30px;
     aspect-ratio: 1;
   }
   &__info {
@@ -42,5 +40,6 @@
     height: 100px;
     position: absolute;
     top: -55px;
+    left: 50%;
   }
 }
