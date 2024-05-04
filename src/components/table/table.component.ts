@@ -18,7 +18,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../util/font-awesome-icons';
 import { ModelPopupComponent } from '../model-popup/model-popup.component';
-import { ViewModelPopupComponent } from '../view-model-popup/view-model-popup.component';
+import { ShiftEndPopUpComponent } from '../../pages/reports/shift-end/shift-end-pop-up/shift-end-pop-up.component';
 @Component({
   standalone: true,
   imports: [
@@ -65,7 +65,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
 
   openViewDialog(element: any) {
-    const dialogRef = this.dialog.open(ViewModelPopupComponent, {
+    const dialogRef = this.dialog.open(ShiftEndPopUpComponent, {
       data: element,
     });
     console.log(element);
@@ -97,12 +97,12 @@ export class TableComponent implements OnInit, AfterViewInit {
       action: 'delete',
       value: element,
     };
-    this.onActionClick.emit(data);
+    this.onActionClick.emit(element);
   }
 
   viewItem(element: any): void {
     const data = {
-      action: 'update',
+      action: 'view',
       value: element,
     };
     // this.onActionClick.emit(data);

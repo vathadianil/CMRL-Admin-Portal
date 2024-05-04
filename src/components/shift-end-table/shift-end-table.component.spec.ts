@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewModelPopupComponent } from './view-model-popup.component';
+import { ShiftEndTableComponent } from './shift-end-table.component';
 
-describe('ViewModelPopupComponent', () => {
-  let component: ViewModelPopupComponent;
-  let fixture: ComponentFixture<ViewModelPopupComponent>;
+describe('ShiftEndTableComponent', () => {
+  let component: ShiftEndTableComponent;
+  let fixture: ComponentFixture<ShiftEndTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewModelPopupComponent]
+      imports: [ShiftEndTableComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ViewModelPopupComponent);
+    fixture = TestBed.createComponent(ShiftEndTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

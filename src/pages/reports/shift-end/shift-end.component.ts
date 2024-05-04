@@ -62,7 +62,7 @@ export class ShiftEndComponent implements OnInit {
   params: any[] = [];
   fileName = 'Shift End Report';
   columnsToExport = shiftEndReportData;
-  actions = ['update'];
+  actions = ['view'];
   sortCols = [
     'id',
     'equipmentID',
