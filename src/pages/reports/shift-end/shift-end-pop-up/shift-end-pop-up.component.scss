@@ -1,0 +1,22 @@
+.model {
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+
+  &__top-container {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+ 
+}
+
+
+.title {
+    font-size: .85em;
+    font-weight: 600;
+    color: var(--text-color2);
+}
