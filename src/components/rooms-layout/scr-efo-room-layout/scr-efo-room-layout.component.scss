@@ -34,14 +34,13 @@
 
   &__icon {
     color: var(--green800);
-    width: 100px;
+    width: 70px;
     aspect-ratio: 1;
   }
   &__info {
     width: 80px;
     height: 100px;
     position: absolute;
-    top: -50px;
-    left: 50%;
+    top: -55px;
   }
 }
