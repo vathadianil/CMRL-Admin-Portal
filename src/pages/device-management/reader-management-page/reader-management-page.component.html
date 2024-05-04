@@ -3,17 +3,6 @@
     <div class="readerManagement__title-wrapper">
       <fa-icon [icon]="getIcon('map')">map</fa-icon>
       <app-page-title title="Reader Management"></app-page-title>
-      
-
-      <app-fab-button
-       class="btn" 
-      [icon]="'add'"
-      [showMenu]="false" 
-      [isDownloadBtn]="false"
-      matTooltip="Add OTS Reader"
-      matTooltipPosition="above"
-      >
-      </app-fab-button>
     </div>
     <mat-card-content>
       <form
@@ -65,6 +54,14 @@
       <div class="readerManagement__content-container">
         <app-search></app-search>
         <div class="readerManagement__fab-btn-wrapper">
+          <app-fab-button
+            [icon]="'add'"
+            [showMenu]="false" 
+            [isDownloadBtn]="false"
+            matTooltip="Add OTS Reader"
+            matTooltipPosition="above"
+          >
+          </app-fab-button>
           <app-fab-button
             (excelClicked)="onExcelClicked()"
             (pdfClicked)="onPdfClicked()"
