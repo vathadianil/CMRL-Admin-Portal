@@ -17,7 +17,6 @@ import { ToggleSliderComponent } from '../toggle-slider/toggle-slider.component'
 import { MatDialog } from '@angular/material/dialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../util/font-awesome-icons';
-import { ModelPopupComponent } from '../model-popup/model-popup.component';
 import { ShiftEndPopUpComponent } from '../../pages/reports/shift-end/shift-end-pop-up/shift-end-pop-up.component';
 import { SearchComponent } from '../search/search.component';
 import { ExportService } from '../../services/export.service';
@@ -65,16 +64,6 @@ export class TableComponent implements OnInit, AfterViewInit {
     private exportService: ExportService,
     private exportPdfService: ExportPdfService
   ) {}
-
-  // dailog open function
-
-  openDialog(element: any) {
-    const dialogRef = this.dialog.open(ModelPopupComponent, {
-      data: element,
-    });
-    console.log(element);
-    dialogRef.afterClosed().subscribe();
-  }
 
   openViewDialog(element: any) {
     const dialogRef = this.dialog.open(ShiftEndPopUpComponent, {
