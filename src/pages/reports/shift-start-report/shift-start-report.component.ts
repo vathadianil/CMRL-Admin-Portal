@@ -14,8 +14,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatLabel } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCardModule } from '@angular/material/card';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -72,11 +70,11 @@ export class ShiftStartReportComponent implements OnInit {
     'tom_Efo_Shift_start',
   ];
 
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+
+  constructor(private commonService: CommonService) {}
 
   myTableData: {
     displayedColumns: string[];
@@ -142,23 +140,5 @@ export class ShiftStartReportComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.shiftstartReportForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }

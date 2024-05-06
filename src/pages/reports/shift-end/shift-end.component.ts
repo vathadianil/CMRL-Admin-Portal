@@ -21,8 +21,6 @@ import { FabButtonFieldComponent } from '../../../components/fab-button-field/fa
 import { TableComponent } from '../../../components/table/table.component';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
 import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
@@ -75,12 +73,10 @@ export class ShiftEndComponent implements OnInit {
     'shiftStartTime',
     'shiftEndTime',
   ];
-
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
 
   myTableData: {
     displayedColumns: string[];
@@ -174,23 +170,5 @@ export class ShiftEndComponent implements OnInit {
 
   onSubmit() {
     console.log(this.shiftEndForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
