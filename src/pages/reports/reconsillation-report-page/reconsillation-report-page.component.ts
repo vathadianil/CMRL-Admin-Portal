@@ -19,10 +19,6 @@ import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { TableComponent } from '../../../components/table/table.component';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
-
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
-import { ReconsillationReportInterface } from '../../../models/reconsillation-report.interface';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
 import { reconsillationData } from '../../sample';
@@ -132,12 +128,10 @@ export class ReconsillationReportPageComponent implements OnInit {
     'dlLastUpdated',
     'insertTime',
   ];
-
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
 
   myTableData: {
     displayedColumns: string[];
@@ -221,23 +215,5 @@ export class ReconsillationReportPageComponent implements OnInit {
 
   onSubmit() {
     console.log(this.reconsillationForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
