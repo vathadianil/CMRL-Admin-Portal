@@ -19,6 +19,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../util/font-awesome-icons';
 import { ModelPopupComponent } from '../model-popup/model-popup.component';
 import { ShiftEndPopUpComponent } from '../../pages/reports/shift-end/shift-end-pop-up/shift-end-pop-up.component';
+import { SearchComponent } from '../search/search.component';
+import { ExportService } from '../../services/export.service';
+import { ExportPdfService } from '../../services/export-pdf.service';
+import { FabButtonFieldComponent } from '../fab-button-field/fab-button-field.component';
 @Component({
   standalone: true,
   imports: [
@@ -29,6 +33,8 @@ import { ShiftEndPopUpComponent } from '../../pages/reports/shift-end/shift-end-
     MatSortModule,
     ToggleSliderComponent,
     FontAwesomeModule,
+    SearchComponent,
+    FabButtonFieldComponent,
   ],
   selector: 'app-table',
   templateUrl: './table.component.html',
@@ -41,6 +47,9 @@ export class TableComponent implements OnInit, AfterViewInit {
   }[];
   @Input() actions: string[] = [];
   @Input() sortCols: string[] = [];
+  @Input() fileName: string = '';
+  @Input() columnsToExport = [];
+  @Input() formParameters: Function;
   @Output() onActionClick = new EventEmitter<any>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @Input() displaySecondRowColumns: string[] = [];
@@ -51,7 +60,9 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   constructor(
     private _liveAnnouncer: LiveAnnouncer,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private exportService: ExportService,
+    private exportPdfService: ExportPdfService
   ) {}
 
   // dailog open function
@@ -119,5 +130,36 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   getStatusStyle(status: string) {
     return status === 'In-Active' ? { color: 'red' } : { color: 'green' };
+  }
+
+  onExcelClicked() {
+    // const parameters = this.getParameters ? this.getParameters() : {};
+    // console.log(parameters);
+    console.log(this.formParameters());
+    this.exportService.exportToExcel(
+      this.tableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.formParameters()
+    );
+  }
+
+  onPdfClicked() {
+    this.exportPdfService.exportToPDF(
+      this.tableData[0].dataSource.data,
+      this.fileName,
+      this.columnsToExport,
+      this.formParameters()
+    );
+  }
+
+  applyFilter(filterValue: string): void {
+    // Convert the filter value to lowercase for case-insensitive filtering
+    const normalizedFilterValue = filterValue.trim().toLowerCase();
+
+    // Apply the filter to each table's data source
+    this.tableData.map((data) => {
+      data.dataSource.filter = normalizedFilterValue;
+    });
   }
 }

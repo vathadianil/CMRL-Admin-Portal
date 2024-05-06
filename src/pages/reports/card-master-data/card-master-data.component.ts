@@ -18,8 +18,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { CommonService } from '../../../services/common.service';
 import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { InputTextComponent } from '../../../components/input-text/input-text.component';
 import { cardMasterData } from '../../export-data';
 import { cardmasterData } from '../../sample';
@@ -43,13 +41,13 @@ import { getIcon } from '../../../util/font-awesome-icons';
     MatIconModule,
     DateTimePickerComponent,
     InputTextComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   templateUrl: './card-master-data.component.html',
   styleUrl: './card-master-data.component.scss',
 })
 export class CardMasterDataComponent implements OnInit {
-  getIcon=getIcon;
+  getIcon = getIcon;
   cardMasterForm!: FormGroup;
   transactionTypeData: any[] = [];
   fileName = 'Transaction Data Query';
@@ -73,11 +71,10 @@ export class CardMasterDataComponent implements OnInit {
     'businessDt',
     'trxDtTm',
   ];
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
 
   myTableData: {
     displayedColumns: string[];
@@ -167,23 +164,5 @@ export class CardMasterDataComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.cardMasterForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }

@@ -75,19 +75,7 @@
 
   <mat-card class="shiftEnd__card-table">
     <mat-card-content>
-      <div class="shiftEnd__content-container">
-        <app-search></app-search>
-        <div class="shiftEnd__fab-btn-wrapper">
-          <app-fab-button
-            (excelClicked)="onExcelClicked()"
-            (pdfClicked)="onPdfClicked()"
-          ></app-fab-button>
-        </div>
-      </div>
-      <app-table 
-      [tableData]="myTableData"
-      [actions]="actions" [sortCols]="sortCols"
-      ></app-table>
+      <app-table [tableData]="myTableData" [actions]="actions" [sortCols]="sortCols" [fileName]="fileName" [columnsToExport]="columnsToExport" [formParameters]="formParameters"></app-table>
     </mat-card-content>
   </mat-card>
 </div>
