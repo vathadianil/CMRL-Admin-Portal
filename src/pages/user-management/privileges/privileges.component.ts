@@ -10,8 +10,6 @@ import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { exportPriviledgesData, exportRolesData } from '../../export-data';
 import { privilegesData, roleData } from '../../sample';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -45,10 +43,10 @@ export class PrivilegesComponent {
   actionItems = ['update'];
   sortCols = ['Privilege Code', 'Privilege Type', 'Status'];
 
-  constructor(
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor() {}
 
   myTableData: {
     displayedColumns: string[];
@@ -85,23 +83,5 @@ export class PrivilegesComponent {
 
   onSubmit() {
     console.log();
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
