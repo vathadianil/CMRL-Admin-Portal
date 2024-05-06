@@ -19,8 +19,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonService } from '../../../services/common.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
 import { ridershipdata } from '../../sample';
@@ -60,11 +58,10 @@ export class RidershipReportComponent {
   params: any[] = [];
   sortCols = ['stationId', 'stationName', 'entryCount', 'exitCount'];
 
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
 
   myTableData: {
     displayedColumns: string[];
@@ -157,23 +154,5 @@ export class RidershipReportComponent {
       },
     ];
     return this.params;
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
