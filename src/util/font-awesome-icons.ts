@@ -38,7 +38,10 @@ import {
   faLocationCrosshairs,
   faCircleExclamation,
   faClipboard,
-  
+  faChartLine,
+  faBook,
+  faUpDown,
+  faReceipt,
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
   let fontawesomeIcon = faCircleInfo;
@@ -106,8 +109,8 @@ export function getIcon(icon: string): any {
     case 'copyright':
       return (fontawesomeIcon = faCopyright);
     case 'thumbtack':
-      return (fontawesomeIcon =faThumbtack);
-    
+      return (fontawesomeIcon = faThumbtack);
+
     case 'server':
       return (fontawesomeIcon = faServer);
     case 'file_copy':
@@ -122,6 +125,14 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faCircleExclamation);
     case 'Clipboard':
       return (fontawesomeIcon = faClipboard);
+    case 'stock':
+      return (fontawesomeIcon = faChartLine);
+    case 'book':
+      return (fontawesomeIcon = faBook);
+    case 'up-down':
+      return (fontawesomeIcon = faUpDown);
+    case 'receipt':
+      return (fontawesomeIcon = faReceipt);
   }
   return fontawesomeIcon;
 }

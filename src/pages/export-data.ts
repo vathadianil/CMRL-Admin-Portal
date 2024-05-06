@@ -227,3 +227,12 @@ export const transactionsequenceTableData = [
   'Status',
   'Business Date',
 ];
+
+export const stockManagementTableData = [
+  'Transaction Date',
+  'Product Id',
+  'Station Id',
+  'Equepment Id',
+  'Lot Id',
+  'Card Count',
+];

@@ -1,0 +1,103 @@
+<div class="stock">
+  <mat-card class="stock__card">
+    <div class="stock__title-wrapper">
+      <div class="stock__title-container">
+        <fa-icon [icon]="getIcon('book')">tune</fa-icon>
+        <app-page-title title="Stock Data Query"></app-page-title>
+      </div>
+      <div class="stock__top-btn-container">
+        <app-button-field
+          type="button"
+          label="Stock Inventory"
+          [width]="8"
+          [height]="2"
+          [icon]="'receipt'"
+        >
+        </app-button-field>
+        <app-button-field
+          type="button"
+          label="Management"
+          [width]="8"
+          [height]="2"
+          [icon]="'up-down'"
+        >
+        </app-button-field>
+      </div>
+    </div>
+    <mat-card-content>
+      <div class="stock__form-container">
+        <form
+          class="stock__outer-container"
+          (ngSubmit)="onSubmit()"
+          [formGroup]="stockDataForm"
+        >
+          <app-date-time-picker
+            label="Start Date Time"
+            formControlName="startDateTime"
+          ></app-date-time-picker>
+
+          <app-date-time-picker
+            label="End Date Time"
+            formControlName="endDateTime"
+          ></app-date-time-picker>
+
+          <app-drop-down
+            label="Transaction Type"
+            placeholder="Select Transaction Type"
+            placeholder="Select Transaction Type"
+            [listData]="transactionTypeData"
+          >
+          </app-drop-down>
+
+          <app-drop-down
+            class="station-dropdown-container"
+            label="Stations"
+            placeholder="Select Station"
+            [listData]="stationData"
+            [defaultValue]="stationDefaultValue"
+          >
+          </app-drop-down>
+
+          <div class="stock__btn-container">
+            <app-button-field
+              type="submit"
+              label="Search"
+              [width]="8"
+              [height]="2.9"
+            >
+            </app-button-field>
+            <app-button-field
+              type="button"
+              backgroundColor="#fff"
+              color="#3361ff"
+              label="Clear"
+              [width]="8"
+              [height]="2.9"
+            >
+            </app-button-field>
+          </div>
+        </form>
+
+        <mat-card class = "stock__side-card" >
+            <mat-card-content class="stock__side-card__header-container">
+                <p  class="stock__side-card__title" >Stock Details</p>
+            </mat-card-content>
+             <mat-card-content class="stock__side-card__details-container">
+                <p class="stock__side-card__card-name">Rupay Prepaid Card : <span class = "stock__side-card__card-number">6603</span></p>
+                <p class="stock__side-card__card-name">Visa : <span class = "stock__side-card__card-number">0</span></p>
+                <p class="stock__side-card__card-name">Master : <span class = "stock__side-card__card-number">1</span></p>
+             </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="shiftEnd__card-table">
+    <mat-card-content>
+      <div class="shiftEnd__content-container">
+        <app-search></app-search>
+      </div>
+      <app-table [tableData]="myTableData" [sortCols]="sortCols"></app-table>
+    </mat-card-content>
+  </mat-card>
+</div>

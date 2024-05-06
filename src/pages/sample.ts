@@ -661,3 +661,34 @@ export const SurchargeData = {
     
   ],
 };
+
+
+export const stockManagementData = {
+  headers: [
+    { key: 'transactionDate', label: 'Transaction Date' },
+    { key: 'productId', label: 'Product Id' },
+    { key: 'stationId', label: 'Station Id' },
+    { key: 'equepmentId', label: 'Equepment Id' },
+    { key: 'lotId', label: 'Lot Id' },
+    { key: 'cardCount', label: 'Card Count' },
+  ],
+  data: [
+    {
+      transactionDate: '09/04/2024 10:06:48 AM',
+      productId: 1,
+      stationId: 1010,
+      equepmentId : 1949,
+      lotId:140049,
+      cardCount:100 ,
+    },
+    {
+      transactionDate: '10/04/2024 10:06:48 AM',
+      productId: 2,
+      stationId: 1011,
+      equepmentId : 1950,
+      lotId:140050,
+      cardCount:101 ,
+    },
+    
+  ],
+};

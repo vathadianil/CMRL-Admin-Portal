@@ -203,5 +203,18 @@ export class HomePageComponent {
         },
       ],
     },
+    {
+      icon: 'stock',
+      label: 'Stock Management',
+      route: 'stockManagemet',
+      color: '#D2042D',
+      submenu: [
+        {
+          icon: 'book',
+          label: 'Stock Data Query',
+          route: 'stockDataQuery',
+        },
+      ]
+    }
   ];
 }

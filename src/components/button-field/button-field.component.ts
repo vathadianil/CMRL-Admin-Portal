@@ -3,6 +3,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { getIcon } from '../../util/font-awesome-icons';
 
 @Component({
   selector: 'app-button-field',
@@ -12,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatIconModule,
+    FontAwesomeModule
   ],
   templateUrl: './button-field.component.html',
   styleUrls: ['./button-field.component.scss'],
@@ -27,6 +30,9 @@ export class ButtonFieldComponent {
   @Output() buttonClick = new EventEmitter<void>();
   @Input() backgroundColor = '#3361ff';
   @Input() color = '#fff';
+  @Input() icon = ''
+  
+  getIcon = getIcon
 
   onButtonClick() {
     this.buttonClick.emit();

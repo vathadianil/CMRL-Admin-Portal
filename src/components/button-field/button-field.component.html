@@ -10,6 +10,10 @@
   [type]="type"
   (click)="onButtonClick()"
 >
+@if(icon){
+  <fa-icon [icon]="getIcon(icon)">{{icon}}</fa-icon>
+}
+
   {{ label }}
   @if(showSpinner){
   <mat-icon class="app-button__icon">

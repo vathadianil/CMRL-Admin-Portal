@@ -181,6 +181,14 @@ export const routes: Routes = [
             `../pages/penalty-management/surcharge/surcharge.component`
           ).then((c) => c.SurchargeComponent),
       },
+      {
+        path: 'stockDataQuery',
+        loadComponent: () =>
+          import(
+            `../pages/stock-management/stock-data-query/stock-data-query.component`
+          ).then((c) => c.StockDataQueryComponent),
+      },
+    
     ],
   },
 ];
