@@ -37,6 +37,7 @@ import {
   faFilePdf,
   faLocationCrosshairs,
   faCircleExclamation,
+  faClipboard,
   
 } from '@fortawesome/free-solid-svg-icons';
 export function getIcon(icon: string): any {
@@ -119,6 +120,8 @@ export function getIcon(icon: string): any {
       return (fontawesomeIcon = faLocationCrosshairs);
     case 'CircleExclamation':
       return (fontawesomeIcon = faCircleExclamation);
+    case 'Clipboard':
+      return (fontawesomeIcon = faClipboard);
   }
   return fontawesomeIcon;
 }

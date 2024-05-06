@@ -87,6 +87,14 @@ export const exportAdjustmentsData = [
   'Parameter Version',
   'Status',
 ];
+export const exportSurcharge = [
+  'Param Id',
+  'Surcharge Code',
+  'Surcharge Name',
+  'Surcharge Amount',
+  'Parameter Version',
+  'Status',
+];
 export const shiftstartTableData = [
   'Shift Start Date Time',
   'Line Id',
