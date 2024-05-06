@@ -6,9 +6,6 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { CommonService } from '../../../services/common.service';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
-import { transactionsequenceInterface } from '../../../models/transaction-sequence.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { TableComponent } from '../../../components/table/table.component';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
@@ -73,12 +70,10 @@ export class TransactionSequenceComponent implements OnInit {
     'status',
     'businessDate',
   ];
-
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
   myTableData: {
     displayedColumns: string[];
     dataSource: MatTableDataSource<any>;
@@ -144,23 +139,5 @@ export class TransactionSequenceComponent implements OnInit {
 
   onSubmit() {
     console.log(this.transactionsequenceReportForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }

@@ -16,10 +16,6 @@ import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
-
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
-
 import { EdcDeviceManagementInterface } from '../../../models/edc-device-management.interface';
 import { ToggleSliderComponent } from '../../../components/toggle-slider/toggle-slider.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -39,7 +35,7 @@ import { getIcon } from '../../../util/font-awesome-icons';
     FabButtonFieldComponent,
     TableComponent,
     ToggleSliderComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   templateUrl: './edc-device-management-page.component.html',
   styleUrl: './edc-device-management-page.component.scss',
@@ -69,12 +65,10 @@ export class EdcDeviceManagementPageComponent {
     'activeStatus',
     'actions',
   ];
-
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
 
   edcDeviceManagementTable: {
     displayedColumns: string[];
@@ -153,24 +147,6 @@ export class EdcDeviceManagementPageComponent {
   onSubmit() {
     console.log(this.edcDeviceManagemetForm.value);
     console.log(this.edcDeviceManagementTable[0].dataSource.data);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.edcDeviceManagementTable[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.edcDeviceManagementTable[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
 
