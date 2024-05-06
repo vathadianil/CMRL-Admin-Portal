@@ -17,8 +17,6 @@ import { FabButtonFieldComponent } from '../../../components/fab-button-field/fa
 import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
 import { ReaderManagementInterface } from '../../../models/reader-management.interface';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
 
@@ -65,12 +63,10 @@ export class ReaderManagementPageComponent implements OnInit {
     'activeStatus',
     'action',
   ];
-
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
 
   readerManagementTable: {
     displayedColumns: string[];
@@ -132,24 +128,6 @@ export class ReaderManagementPageComponent implements OnInit {
 
   onSubmit() {
     console.log(this.readerManagemetForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.readerManagementTable[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.readerManagementTable[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
 
