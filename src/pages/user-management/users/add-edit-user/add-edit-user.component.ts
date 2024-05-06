@@ -41,7 +41,6 @@ export class AddEditUserComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
     public dialogRef: MatDialogRef<AddEditUserComponent>
   ) {
-    debugger;
     this.userForm = this.fb.group({
       name: ['', Validators.required],
       role: ['', Validators.required],

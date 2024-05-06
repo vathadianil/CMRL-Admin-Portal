@@ -51,6 +51,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   @Input() columnsToExport = [];
   @Input() formParameters: Function;
   @Output() onActionClick = new EventEmitter<any>();
+  @Output() addItemClicked = new EventEmitter<void>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @Input() displaySecondRowColumns: string[] = [];
   @ViewChild(MatSort) sort!: MatSort;
@@ -83,15 +84,17 @@ export class TableComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe();
   }
 
-  ngOnInit() {
-    // if (this.actions?.length)
-    //   this.actionColWidth = `${this.actions?.length * 60}px`;
-  }
+  ngOnInit() {}
+
   ngAfterViewInit() {
     this.tableData.forEach((data) => {
       data.dataSource.sort = this.sort;
       data.dataSource.paginator = this.paginator;
     });
+  }
+
+  addItem(): void {
+    this.addItemClicked.emit();
   }
 
   editItem(element: any): void {
@@ -132,9 +135,6 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
 
   onExcelClicked() {
-    // const parameters = this.getParameters ? this.getParameters() : {};
-    // console.log(parameters);
-    console.log(this.formParameters());
     this.exportService.exportToExcel(
       this.tableData[0].dataSource.data,
       this.fileName,

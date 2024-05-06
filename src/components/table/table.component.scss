@@ -38,6 +38,11 @@
     color:var(--blue800); 
   }
 
+  &__fab-btn-wrapper {
+    display: flex;
+    gap: 2em;
+  }
+
   .mat-mdc-row:hover .mat-mdc-cell {
     background-color: var(--blue50);
   }

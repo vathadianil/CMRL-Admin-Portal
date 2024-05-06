@@ -1,6 +1,13 @@
 <div class="content-container">
   <app-search (searchEmit)="applyFilter($event)"></app-search>
-  <div class="shiftstart__fab-btn-wrapper">
+  <div class="table__fab-btn-wrapper">
+    <app-fab-button
+      [icon]="'add'"
+      [showMenu]="false"
+      [isDownloadBtn]="false"
+      (click)="addItem()"
+    >
+    </app-fab-button>
     <app-fab-button
       (excelClicked)="onExcelClicked()"
       (pdfClicked)="onPdfClicked()"

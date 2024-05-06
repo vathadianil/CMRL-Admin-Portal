@@ -10,28 +10,11 @@
 
   <mat-card class="users__card-table">
     <mat-card-content>
-      <div class="users__content-container">
-        <app-search></app-search>
-
-        <div class="users__fab-btn-wrapper">
-          <app-fab-button
-            [icon]="'add'"
-            [showMenu]="false"
-            [isDownloadBtn]="false"
-            (click)="addUser()"
-          >
-          </app-fab-button>
-          <app-fab-button
-            (excelClicked)="onExcelClicked()"
-            (pdfClicked)="onPdfClicked()"
-          >
-          </app-fab-button>
-        </div>
-      </div>
       <app-table
         [tableData]="myTableData"
         [actions]="actionItems"
         [sortCols]="sortCols"
+        (addItemClicked)="addUser()"
         (onActionClick)="actionClicked($event)"
       ></app-table>
     </mat-card-content>
