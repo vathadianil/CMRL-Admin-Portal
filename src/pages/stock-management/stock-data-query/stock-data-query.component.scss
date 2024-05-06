@@ -1,0 +1,75 @@
+.stock {
+  margin: 0 1em 1em 2em;
+
+  &__card {
+    border-radius: 1em;
+    margin-bottom: 2em;
+  }
+
+  &__title-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 1em;
+    font-weight: bold;
+    font-size: larger;
+    color: var(--blue800);
+  }
+
+  &__title-container {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__top-btn-container {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__form-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__outer-container {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1em;
+    place-content: center;
+  }
+
+  &__side-card {
+    width: 25%;
+    border: 1em;
+    &__header-container {
+      border-bottom: 1px solid #938a8a;
+      margin-bottom: 0.5em;
+      padding: 0.8em;
+    }
+
+    &__title {
+      font-size: 1.2em;
+      font-weight: 400;
+    }
+
+    &__card-name {
+      color: #938a8a;
+    }
+
+    &__card-number {
+      color: green;
+    }
+  }
+
+  &__fab-btn-wrapper {
+    display: flex;
+    gap: 2em;
+  }
+
+  &__btn-container {
+    display: flex;
+    gap: 1em;
+  }
+}
