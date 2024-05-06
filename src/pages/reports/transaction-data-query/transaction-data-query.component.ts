@@ -18,8 +18,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { CommonService } from '../../../services/common.service';
 import { MatIconModule } from '@angular/material/icon';
 import { DateTimePickerComponent } from '../../../components/date-time-picker/date-time-picker.component';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { HttpService } from '../../../services/http.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { transactionQueryData } from '../../sample';
@@ -43,14 +41,14 @@ import { getIcon } from '../../../util/font-awesome-icons';
     FabButtonFieldComponent,
     MatIconModule,
     DateTimePickerComponent,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   providers: [HttpClientModule],
   templateUrl: './transaction-data-query.component.html',
   styleUrl: './transaction-data-query.component.scss',
 })
 export class TransactionDataQueryComponent implements OnInit {
-  getIcon=getIcon;
+  getIcon = getIcon;
   transReportForm!: FormGroup;
   stationDefaultValue = 'All Stations';
   stationData: any[] = [];
@@ -78,11 +76,11 @@ export class TransactionDataQueryComponent implements OnInit {
     'bussinessDate',
     'status',
   ];
-
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
   constructor(
     private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService,
     private httpService: HttpService
   ) {}
 
@@ -177,23 +175,5 @@ export class TransactionDataQueryComponent implements OnInit {
 
   onSubmit() {
     console.log(this.transReportForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
