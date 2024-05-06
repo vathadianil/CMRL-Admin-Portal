@@ -174,6 +174,13 @@ export const routes: Routes = [
             `../pages/penalty-management/adjustments/adjustments.component`
           ).then((c) => c.AdjustmentsComponent),
       },
+      {
+        path: 'Surcharge',
+        loadComponent: () =>
+          import(
+            `../pages/penalty-management/surcharge/surcharge.component`
+          ).then((c) => c.SurchargeComponent),
+      },
     ],
   },
 ];

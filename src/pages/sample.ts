@@ -632,3 +632,32 @@ export const AdjustmentsData = {
     },
   ],
 };
+export const SurchargeData = {
+  headers: [
+    { key: 'paramId', label: 'Param Id' },
+    { key: 'surchargeCode', label: 'Surcharge Code' },
+    { key: 'surchargeName', label: 'Surcharge Name' },
+    { key: 'surchargeAmount', label: 'Surcharge Amount' },
+    { key: 'parameterVersion', label: 'Parameter Version' },
+    { key: 'status', label: 'Status' },
+  ],
+  data: [
+    {
+      paramId: 4001,
+      surchargeCode: 100,
+      surchargeName: 'Add Vala Surcharge',
+      surchargeAmount:3 ,
+      parameterVersion:20230620124402 ,
+      status: 'In-Active',
+    },
+    {
+      paramId: 4001,
+      surchargeCode: 101,
+      surchargeName: 'Card Issuance Surcharge',
+      surchargeAmount:0,
+      parameterVersion:20230620124402 ,
+      status: 'Active',
+    },
+    
+  ],
+};

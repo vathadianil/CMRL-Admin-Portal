@@ -196,6 +196,11 @@ export class HomePageComponent {
           label: 'Adjustment',
           route: 'Adjustment',
         },
+        {
+          icon: 'Clipboard',
+          label: 'Surcharge',
+          route: 'Surcharge',
+        },
       ],
     },
   ];
