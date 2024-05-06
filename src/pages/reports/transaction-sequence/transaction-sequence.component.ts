@@ -14,7 +14,6 @@ import { ButtonFieldComponent } from '../../../components/button-field/button-fi
 import { MatCardModule } from '@angular/material/card';
 import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
-import { CustomInputComponent } from '../../../components/custom-input/custom-input.component';
 import { MatFormField } from '@angular/material/form-field';
 import { MatLabel } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -38,7 +37,6 @@ import { transactionsequenceTableData } from '../../export-data';
     MatCardModule,
     SearchComponent,
     FabButtonFieldComponent,
-    CustomInputComponent,
     MatIconModule,
     MatLabel,
     MatFormField,

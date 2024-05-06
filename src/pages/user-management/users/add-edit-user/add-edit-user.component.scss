@@ -1,0 +1,33 @@
+.add-users {
+  margin-inline:2em;
+
+  &__button-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-bottom:20px;
+  justify-content: flex-end;
+}
+
+&__input-container {
+  margin-right: 20px;
+}
+
+&__form-container{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  grid-gap: 1em;
+  place-content: center;    
+  padding-top: 1em; 
+}
+
+&__title{
+  display: flex;
+  align-items: center;  
+  padding: 1em 0 1em 0;
+  font-size: larger;
+  color: var(--blue800);
+}
+
+}

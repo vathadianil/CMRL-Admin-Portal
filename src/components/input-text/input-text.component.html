@@ -1,6 +1,15 @@
 <div class="dense-2">
   <mat-form-field appearance="outline">
     <mat-label>{{ label }}</mat-label>
-    <input matInput [placeholder]="placeholder" [value]="value"/>
+    <input
+      matInput
+      [placeholder]="placeholder"
+      [(ngModel)]="value"
+      (ngModelChange)="onChange($event)"
+      (blur)="onTouched()"
+      [errorStateMatcher]="errorMatcher()"
+      [disabled]="disabled"
+    />
+    <mat-error class="input-error"> {{ hint }} </mat-error>
   </mat-form-field>
 </div>

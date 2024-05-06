@@ -2,9 +2,10 @@
   <app-search (searchEmit)="applyFilter($event)"></app-search>
   <div class="shiftstart__fab-btn-wrapper">
     <app-fab-button
-    (excelClicked)="onExcelClicked()"
-    (pdfClicked)="onPdfClicked()">
-  </app-fab-button>
+      (excelClicked)="onExcelClicked()"
+      (pdfClicked)="onPdfClicked()"
+    >
+    </app-fab-button>
   </div>
 </div>
 @for(data of tableData;track data){
@@ -72,7 +73,6 @@
               >eye</fa-icon
             >
           </div>
-
 
           <div
             *ngIf="actions.includes('delete')"

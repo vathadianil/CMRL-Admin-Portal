@@ -12,11 +12,13 @@
     <mat-card-content>
       <div class="users__content-container">
         <app-search></app-search>
+
         <div class="users__fab-btn-wrapper">
           <app-fab-button
             [icon]="'add'"
             [showMenu]="false"
             [isDownloadBtn]="false"
+            (click)="addUser()"
           >
           </app-fab-button>
           <app-fab-button
@@ -30,6 +32,7 @@
         [tableData]="myTableData"
         [actions]="actionItems"
         [sortCols]="sortCols"
+        (onActionClick)="actionClicked($event)"
       ></app-table>
     </mat-card-content>
   </mat-card>

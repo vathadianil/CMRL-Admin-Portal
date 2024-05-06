@@ -1,0 +1,52 @@
+<div class="add-users">
+  <app-page-title
+    class="add-users__title"
+    [title]="!isEdit ? 'Add User' : 'Update User'"
+  ></app-page-title>
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <div class="add-users__form-container">
+      <div class="add-users__input-container dense-2">
+        <app-input-text
+          placeholder="Enter your name"
+          formControlName="name"
+          label="Name"
+        ></app-input-text>
+      </div>
+      <app-drop-down
+        label="Role"
+        placeholder="Select Role"
+        [listData]="roleData"
+        width="95%"
+        [defaultValue]="roleDefaultValue"
+        (dropdownValue)="roleValue($event)"
+      >
+      </app-drop-down>
+      <app-drop-down
+        label="Status"
+        placeholder="Select Status"
+        [listData]="status"
+        width="95%"
+        [defaultValue]="statusDefaultValue"
+        (dropdownValue)="statusValue($event)"
+      >
+      </app-drop-down>
+    </div>
+    <div class="add-users__button-wrapper">
+      <app-button-field
+        label="Close"
+        (click)="close()"
+        [fontSize]="16"
+        [width]="8"
+        [height]="2.5"
+      ></app-button-field>
+      <app-button-field
+        type="submit"
+        label="{{ isEdit ? 'Update' : 'Save' }}"
+        [fontSize]="16"
+        [width]="8"
+        [height]="2.5"
+      >
+      </app-button-field>
+    </div>
+  </form>
+</div>

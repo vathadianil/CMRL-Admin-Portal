@@ -99,8 +99,7 @@ export class TableComponent implements OnInit, AfterViewInit {
       action: 'update',
       value: element,
     };
-    // this.onActionClick.emit(data);
-    this.openDialog(element);
+    this.onActionClick.emit(data);
   }
 
   deleteItem(element: any): void {

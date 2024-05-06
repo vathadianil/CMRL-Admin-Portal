@@ -16,6 +16,8 @@ import { exportUsersData } from '../../export-data';
 import { usersData } from '../../sample';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
+import { MatDialog } from '@angular/material/dialog';
+import { AddEditUserComponent } from './add-edit-user/add-edit-user.component';
 
 @Component({
   selector: 'app-users',
@@ -47,7 +49,8 @@ export class UsersComponent {
 
   constructor(
     private exportService: ExportService,
-    private exportPdfService: ExportPdfService
+    private exportPdfService: ExportPdfService,
+    private dialog: MatDialog
   ) {}
 
   myTableData: {
@@ -85,6 +88,31 @@ export class UsersComponent {
 
   onSubmit() {
     console.log();
+  }
+
+  addUser() {
+    const dialogRef = this.dialog.open(AddEditUserComponent, {});
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'added') {
+      }
+    });
+  }
+
+  actionClicked(data: any) {
+    let action = data?.action;
+    switch (action) {
+      case 'update':
+        this.editUser(data);
+        break;
+    }
+  }
+  editUser(data: any) {
+    const dialogRef = this.dialog.open(AddEditUserComponent, { data });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result === 'update') {
+        //this.getUserData();
+      }
+    });
   }
 
   onExcelClicked() {
