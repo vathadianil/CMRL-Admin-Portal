@@ -10,27 +10,7 @@
 
   <mat-card class="stations__card-table">
     <mat-card-content>
-      <div class="stations__content-container">
-        <app-search></app-search>
-        <div class="stations__fab-btn-wrapper">
-          <app-fab-button
-            [icon]="'add'"
-            [showMenu]="false"
-            [isDownloadBtn]="false"
-          >
-          </app-fab-button>
-          <app-fab-button
-            (excelClicked)="onExcelClicked()"
-            (pdfClicked)="onPdfClicked()"
-          >
-          </app-fab-button>
-        </div>
-      </div>
-      <app-table
-        [tableData]="myTableData"
-        [actions]="actionItems"
-        [sortCols]="sortCols"
-      ></app-table>
+      <app-table [tableData]="myTableData" [actions]="actionItems"[sortCols]="sortCols" [fileName]="fileName" [columnsToExport]="columnsToExport" [formParameters]="formParameters"></app-table>
     </mat-card-content>
   </mat-card>
 </div>
