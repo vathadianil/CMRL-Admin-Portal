@@ -6,12 +6,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { getIcon } from '../../../util/font-awesome-icons';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
-import { FabButtonFieldComponent } from "../../../components/fab-button-field/fab-button-field.component";
+import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SearchComponent } from '../../../components/search/search.component';
 import { TableComponent } from '../../../components/table/table.component';
-import { ExportPdfService } from '../../../services/export-pdf.service';
-import { FormControl, } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonService } from '../../../services/common.service';
@@ -21,50 +19,44 @@ import { OverStayConfigurationInterface } from '../../../models/OverStayConfigur
 import { OverStayConfigurationData } from '../../sample';
 import { exportOverStayConfigurationData } from '../../export-data';
 
-
-
 @Component({
-    selector: 'app-over-stay-configuration',
-    standalone: true,
-    templateUrl: './over-stay-configuration.component.html',
-    styleUrl: './over-stay-configuration.component.scss',
-    imports: [
-        MatCardModule,
-        MatIconModule,
-        MatDividerModule,
-        FontAwesomeModule,
-        PagetitleComponent,
-        ButtonFieldComponent,
-        FabButtonFieldComponent,
-        MatTooltipModule,
-        SearchComponent,
-        TableComponent,
-        ReactiveFormsModule,
-        
-    ]
+  selector: 'app-over-stay-configuration',
+  standalone: true,
+  templateUrl: './over-stay-configuration.component.html',
+  styleUrl: './over-stay-configuration.component.scss',
+  imports: [
+    MatCardModule,
+    MatIconModule,
+    MatDividerModule,
+    FontAwesomeModule,
+    PagetitleComponent,
+    ButtonFieldComponent,
+    FabButtonFieldComponent,
+    MatTooltipModule,
+    SearchComponent,
+    TableComponent,
+    ReactiveFormsModule,
+  ],
 })
 export class OverStayConfigurationComponent {
-  getIcon=getIcon;
+  getIcon = getIcon;
   OverStayConfigurationForm!: FormGroup;
-  actions = ['update']
+  actions = ['update'];
   sortCols = [
     'Same_Station_Exit',
     'Over_Stay_Duration_From',
     'Over_Stay_Duration_To',
-    'Penalty_Amount',];
-
-
+    'Penalty_Amount',
+  ];
 
   fileName = 'Over Stay Configuration';
   columnsToExport = exportOverStayConfigurationData;
   params: any[] = [];
 
-
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
   myTableData: {
     displayedColumns: string[];
     dataSource: MatTableDataSource<OverStayConfigurationInterface>;
@@ -73,8 +65,6 @@ export class OverStayConfigurationComponent {
   ngOnInit(): void {
     this.getTableData();
   }
-
-  
 
   getTableData() {
     let responseData = [];
@@ -92,40 +82,18 @@ export class OverStayConfigurationComponent {
     this.myTableData = [
       {
         displayedColumns: response.headers.map((header: any) => header.label),
-        dataSource: new MatTableDataSource<OverStayConfigurationInterface>(responseData),
+        dataSource: new MatTableDataSource<OverStayConfigurationInterface>(
+          responseData
+        ),
       },
     ];
   }
 
-  
   getParameters() {
     return this.params;
   }
 
-
   onSubmit() {
     console.log();
   }
-
-
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this. myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this. myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-  
 }
-

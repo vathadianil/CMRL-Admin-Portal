@@ -6,16 +6,14 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PagetitleComponent } from '../../../components/pageTitle/page-title.component';
 import { getIcon } from '../../../util/font-awesome-icons';
 import { ButtonFieldComponent } from '../../../components/button-field/button-field.component';
-import { FabButtonFieldComponent } from "../../../components/fab-button-field/fab-button-field.component";
+import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { SearchComponent } from '../../../components/search/search.component';
 import { TableComponent } from '../../../components/table/table.component';
-import { ExportPdfService } from '../../../services/export-pdf.service';
-import { FormControl, } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { FormGroup } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonService } from '../../../services/common.service';
-import { ExportService } from '../../../services/export.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { exportSurcharge } from '../../export-data';
 import { SurchargeData } from '../../sample';
@@ -34,25 +32,23 @@ import { SurchargeInterface } from '../../../models/Surcharge';
     MatTooltipModule,
     SearchComponent,
     TableComponent,
-   
   ],
   templateUrl: './surcharge.component.html',
-  styleUrl: './surcharge.component.scss'
+  styleUrl: './surcharge.component.scss',
 })
 export class SurchargeComponent {
-  getIcon=getIcon
+  getIcon = getIcon;
   Surcharge!: FormGroup;
   fileName = 'Surcharge';
-  actions = ['update']
+  actions = ['update'];
   sortCols = [];
   columnsToExport = exportSurcharge;
   params: any[] = [];
 
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
   myTableData: {
     displayedColumns: string[];
     dataSource: MatTableDataSource<SurchargeInterface>;
@@ -62,11 +58,9 @@ export class SurchargeComponent {
     this.getTableData();
   }
 
-  
-
   getTableData() {
     let responseData = [];
-    const response =SurchargeData;
+    const response = SurchargeData;
 
     response.data.map((item) => {
       let dataList = {};
@@ -85,34 +79,11 @@ export class SurchargeComponent {
     ];
   }
 
-  
   getParameters() {
     return this.params;
   }
 
-
   onSubmit() {
     console.log();
   }
-
-
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this. myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this. myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
 }

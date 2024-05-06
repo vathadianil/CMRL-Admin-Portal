@@ -8,28 +8,12 @@
 
       <mat-card class="Surcharge__card-table">
         <mat-card-content>
-          <div class="Surcharge__content-container">
-            <app-search></app-search>
-            <div class="Surcharge__fab-btn-wrapper">
-              <app-fab-button
-                class="btn" 
-                [icon]="'add'"
-                [showMenu]="false" 
-                [isDownloadBtn]="false"
-                matTooltip="Add Adjustment"
-                matTooltipPosition="above"
-              >
-              </app-fab-button>
-              <app-fab-button
-                (excelClicked)="onExcelClicked()"
-                (pdfClicked)="onPdfClicked()"
-              >
-              </app-fab-button>
-            </div>
-          </div>
           <app-table [tableData]="myTableData"
           [actions]="actions"
           [sortCols]="sortCols" 
+          [fileName]="fileName" 
+          [columnsToExport]="columnsToExport" 
+          [formParameters]="formParameters" 
           ></app-table>
         </mat-card-content>
       </mat-card>

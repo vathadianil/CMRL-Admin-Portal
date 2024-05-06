@@ -10,26 +10,12 @@
 
   <mat-card class="roles__card-table">
     <mat-card-content>
-      <div class="roles__content-container">
-        <app-search></app-search>
-        <div class="roles__fab-btn-wrapper">
-          <app-fab-button
-            [icon]="'add'"
-            [showMenu]="false"
-            [isDownloadBtn]="false"
-          >
-          </app-fab-button>
-          <app-fab-button
-            (excelClicked)="onExcelClicked()"
-            (pdfClicked)="onPdfClicked()"
-          >
-          </app-fab-button>
-        </div>
-      </div>
       <app-table
         [tableData]="myTableData"
         [actions]="actionItems"
-        [sortCols]="sortCols"
+        [sortCols]="sortCols" [fileName]="fileName" 
+        [columnsToExport]="columnsToExport" 
+        [formParameters]="formParameters"
       ></app-table>
     </mat-card-content>
   </mat-card>
