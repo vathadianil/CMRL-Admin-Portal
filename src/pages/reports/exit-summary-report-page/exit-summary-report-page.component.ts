@@ -19,9 +19,6 @@ import { DateTimePickerComponent } from '../../../components/date-time-picker/da
 import { TableComponent } from '../../../components/table/table.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { SearchComponent } from '../../../components/search/search.component';
-
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { getIcon } from '../../../util/font-awesome-icons';
 import { exitSummaryReportData } from '../../export-data';
@@ -66,11 +63,10 @@ export class ExitSummaryReportPageComponent implements OnInit {
   ];
   myTableData: any;
 
-  constructor(
-    private commonService: CommonService,
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private commonService: CommonService) {}
 
   ngOnInit(): void {
     this.stationData = this.commonService.getStationsList();
@@ -159,23 +155,5 @@ export class ExitSummaryReportPageComponent implements OnInit {
 
   onSubmit() {
     console.log(this.exitSummaryForm.value);
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }
