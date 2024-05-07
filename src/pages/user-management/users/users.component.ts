@@ -10,8 +10,6 @@ import { SearchComponent } from '../../../components/search/search.component';
 import { FabButtonFieldComponent } from '../../../components/fab-button-field/fab-button-field.component';
 import { TableComponent } from '../../../components/table/table.component';
 import { MatTableDataSource } from '@angular/material/table';
-import { ExportService } from '../../../services/export.service';
-import { ExportPdfService } from '../../../services/export-pdf.service';
 import { exportUsersData } from '../../export-data';
 import { usersData } from '../../sample';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -47,11 +45,10 @@ export class UsersComponent {
   actionItems = ['update'];
   sortCols = ['User code', 'Name', 'Role', 'Station', 'Line', 'Status'];
 
-  constructor(
-    private exportService: ExportService,
-    private exportPdfService: ExportPdfService,
-    private dialog: MatDialog
-  ) {}
+  get formParameters() {
+    return this.getParameters.bind(this);
+  }
+  constructor(private dialog: MatDialog) {}
 
   myTableData: {
     displayedColumns: string[];
@@ -113,23 +110,5 @@ export class UsersComponent {
         //this.getUserData();
       }
     });
-  }
-
-  onExcelClicked() {
-    this.exportService.exportToExcel(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
-  }
-
-  onPdfClicked() {
-    this.exportPdfService.exportToPDF(
-      this.myTableData[0].dataSource.data,
-      this.fileName,
-      this.columnsToExport,
-      this.getParameters()
-    );
   }
 }

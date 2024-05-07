@@ -14,6 +14,9 @@
         [tableData]="myTableData"
         [actions]="actionItems"
         [sortCols]="sortCols"
+        [fileName]="fileName"
+        [columnsToExport]="columnsToExport" 
+        [formParameters]="formParameters"
         (addItemClicked)="addUser()"
         (onActionClick)="actionClicked($event)"
       ></app-table>
