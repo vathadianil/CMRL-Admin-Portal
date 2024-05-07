@@ -12,6 +12,7 @@ import { DropDownComponent } from '../../../../components/drop-down/drop-down.co
 import { PagetitleComponent } from '../../../../components/pageTitle/page-title.component';
 import { InputTextComponent } from '../../../../components/input-text/input-text.component';
 import { ButtonFieldComponent } from '../../../../components/button-field/button-field.component';
+import { GET_STATUS_OPTIONS } from '../../../../constants/dropdowns';
 
 @Component({
   selector: 'app-add-edit-user',
@@ -31,9 +32,9 @@ export class AddEditUserComponent {
   userForm!: FormGroup;
   isEdit: boolean = false;
   roleData = [];
-  statusDefaultValue = null;
+  status = GET_STATUS_OPTIONS;
+  statusDefaultValue = this.status[0].value;
   roleDefaultValue = null;
-  status = [];
   formSubmitted = false;
 
   constructor(
@@ -47,7 +48,6 @@ export class AddEditUserComponent {
       status: ['', Validators.required],
     });
     if (this.data) {
-      console.log(this.data);
       this.isEdit = this.data.action === 'update';
       let userData = this.data.value;
       this.userForm.setValue({

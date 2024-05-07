@@ -8,7 +8,6 @@
       (ngModelChange)="onChange($event)"
       (blur)="onTouched()"
       [errorStateMatcher]="errorMatcher()"
-      [disabled]="disabled"
     />
     <mat-error class="input-error"> {{ hint }} </mat-error>
   </mat-form-field>

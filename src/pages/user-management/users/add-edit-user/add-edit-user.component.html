@@ -12,15 +12,12 @@
           label="Name"
         ></app-input-text>
       </div>
-      <app-drop-down
+      <app-input-text
         label="Role"
         placeholder="Select Role"
-        [listData]="roleData"
-        width="95%"
-        [defaultValue]="roleDefaultValue"
-        (dropdownValue)="roleValue($event)"
+        formControlName="role"
       >
-      </app-drop-down>
+      </app-input-text>
       <app-drop-down
         label="Status"
         placeholder="Select Status"
